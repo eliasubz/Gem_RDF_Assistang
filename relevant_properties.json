@@ -1,0 +1,1663 @@
+[
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode",
+        "label": [
+            {
+                "value": "Condition code",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "The code for a Condition class instance",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Code"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+        "label": [
+            {
+                "value": "has patient",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Consent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase",
+        "label": [
+            {
+                "value": "has administrative case",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "link to an interaction between an individual and healthcare provider(s) via an administrative case identifier for the purpose of providing healthcare service(s) or assessing the health status of an individual",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAllergen",
+        "label": [
+            {
+                "value": "has allergen",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "any substance, product or physical force producing immediate hypersensitivity responsible for the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergen"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite",
+        "label": [
+            {
+                "value": "has body site",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "body site where the concept was measured, performed or collected",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasChromosomalLocation",
+        "label": [
+            {
+                "value": "has chromosomal location",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "chromosomal location of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ChromosomalLocation"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticVariation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+        "label": [
+            {
+                "value": "has code",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "code, name, coding system and version describing the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CareHandling",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ChromosomalLocation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Chromosome",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Consent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Drug",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Gene",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Intent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabAnalyzer",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Laterality",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Location",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Organism",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#PharmaceuticalDoseForm",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#PhysiologicState",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Protein",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Reference",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Substance",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Transcript",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination",
+        "label": [
+            {
+                "value": "has data determination",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "indicates whether the value was measured, calculated or set as a parameter of the ventilator",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile",
+        "label": [
+            {
+                "value": "has data file",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "data file associated to the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Consent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Electrocardiogram",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+        "label": [
+            {
+                "value": "has data provider institute",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "link to the unique business identification number (UID) of the healthcare institute providing the data",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Consent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Location",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasGenomicPosition",
+        "label": [
+            {
+                "value": "has genomic position",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "genomic position of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GenomicPosition"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticVariation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIntent",
+        "label": [
+            {
+                "value": "has intent",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "intention for the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Intent"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasLaterality",
+        "label": [
+            {
+                "value": "has laterality",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "localization with respect to the side of the body",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Laterality"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod",
+        "label": [
+            {
+                "value": "has measurement method",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "measurement method of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice",
+        "label": [
+            {
+                "value": "has medical device",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "product intended for medical use when the main effect is not achieved by a medicinal product; medical devices include, \nbut are not limited to, implants, instruments, devices, in vitro diagnostics, used in the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasNumberOfLeads",
+        "label": [
+            {
+                "value": "has number of leads",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "number of leads used in the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasOrganism",
+        "label": [
+            {
+                "value": "has organism",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "organism associated to the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Organism"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Gene",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Protein",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Transcript"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasOutput",
+        "label": [
+            {
+                "value": "has output",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "output of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Electrocardiogram"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasOxygenEquipment",
+        "label": [
+            {
+                "value": "has oxygen equipment",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "type of device used for oxygen therapy, e.g. nasal cannula, Venturi mask",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": true,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPhysiologicState",
+        "label": [
+            {
+                "value": "has physiologic state",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "physiologic state of the individual",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#PhysiologicState"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasProductCode",
+        "label": [
+            {
+                "value": "has product code",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "code, name, coding system and version describing the product of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Drug",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabAnalyzer",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasProtein",
+        "label": [
+            {
+                "value": "has protein",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "protein product of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Protein"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Gene",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Transcript"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+        "label": [
+            {
+                "value": "has quantity",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "value and unit of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Age",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Substance",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+        "label": [
+            {
+                "value": "has subject pseudo identifier",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "link to a pseudo code assigned as unique identifier to an individual by a data provider institute",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": true,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Age",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Consent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasTypeCode",
+        "label": [
+            {
+                "value": "has type code",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "code, name, coding system and version describing the type of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CareHandling",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Consent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabAnalyzer",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Location",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit",
+        "label": [
+            {
+                "value": "has unit",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "unit of the amount, e.g. mL, mg, min",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "object",
+        "range": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAlternateAllele",
+        "label": [
+            {
+                "value": "has alternate allele",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "the alternate nucleotide (A;T;C;G) of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAssessmentDateTime",
+        "label": [
+            {
+                "value": "has assessment datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime at which the concept was assessed",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime",
+        "label": [
+            {
+                "value": "has coding datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime the concept was coded",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+        "label": [
+            {
+                "value": "has datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Age",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Consent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DataRelease",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDeterminationDateTime",
+        "label": [
+            {
+                "value": "has determination datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime of determination of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Age",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasEndDateTime",
+        "label": [
+            {
+                "value": "has end datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime at which the concept ended",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText",
+        "label": [
+            {
+                "value": "has free text",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "free text related to the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Intent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix",
+        "label": [
+            {
+                "value": "has M prefix",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "prefix associated to the metastasis (M), as defined in the TNM coding system, e.g. c",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMSuffix",
+        "label": [
+            {
+                "value": "has M suffix",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "suffix associated to the metastasis (M), as defined in the TNM coding system, e.g. 1b",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+        "label": [
+            {
+                "value": "has measurement datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime of measurement",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix",
+        "label": [
+            {
+                "value": "has N prefix",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "prefix associated to the nearby tissues (N), as defined in the TNM coding system, e.g. c",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix",
+        "label": [
+            {
+                "value": "has N suffix",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "suffix associated to the nearby tissues (N), as defined in the TNM coding system, e.g. x",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasOnsetDateTime",
+        "label": [
+            {
+                "value": "has onset datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime the concept first occurred or was observed",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceAllele",
+        "label": [
+            {
+                "value": "has reference allele",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "the reference nucleotide (A;T;C;G) of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime",
+        "label": [
+            {
+                "value": "has start datetime",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "datetime at which the concept started",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix",
+        "label": [
+            {
+                "value": "has T prefix",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "prefix associated to the primary tumor (T), as defined in the TNM coding system, e.g. c",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix",
+        "label": [
+            {
+                "value": "has T suffix",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "suffix associated to the primary tumor (T), as defined in the TNM coding system, e.g. 1a",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+        "label": [
+            {
+                "value": "has value",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "value of the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#double",
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantNotation"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "property",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasVersion",
+        "label": [
+            {
+                "value": "has version",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "version of the concept value or code",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "property_type": "datatype",
+        "range": [
+            "http://www.w3.org/2001/XMLSchema#string"
+        ],
+        "domain": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification"
+        ]
+    }
+]

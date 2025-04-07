@@ -1,0 +1,38 @@
+# Ignore virtual environments
+venv/
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs and database files
+*.log
+db.sqlite3
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore utility and temp files
+utils/
+tmp/
+*.bak
+*.swp
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore dependency files
+node_modules/
+package-lock.json
+
+# Ignore compiled files
+*.o
+*.so
+*.dll

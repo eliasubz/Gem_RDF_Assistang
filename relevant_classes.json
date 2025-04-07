@@ -1,0 +1,388 @@
+[
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "http://snomed.info/id/225795001",
+        "label": [],
+        "description": [],
+        "is_deprecated": false,
+        "super_classes": []
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "http://snomed.info/id/419099009",
+        "label": [],
+        "description": [],
+        "is_deprecated": false,
+        "super_classes": []
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "http://snomed.info/id/419199007",
+        "label": [],
+        "description": [],
+        "is_deprecated": false,
+        "super_classes": []
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "http://snomed.info/id/446141000124107",
+        "label": [],
+        "description": [],
+        "is_deprecated": false,
+        "super_classes": []
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+        "label": [
+            {
+                "value": "Condition",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "Class representing Condition in FHIR IPS implementation",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Allergen",
+        "label": [
+            {
+                "value": "Allergen",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "any substance, product or physical force producing immediate hypersensitivity",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#CentralVenousPressure",
+        "label": [
+            {
+                "value": "Central Venous Pressure",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "central venous pressure measured in the venae cavae",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": true,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure",
+        "label": [
+            {
+                "value": "Electrocardiographic Procedure",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "electrographic procedure on the heart which results in a graph of voltage versus time visualizing the electrical activity of the heart muscle using electrodes placed on the skin",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#GenomicPosition_coordinateConvention",
+        "label": [
+            {
+                "value": "Genomic Position coordinate convention",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "convention used for the interpretation of coordinates used in the concept",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#ValueSet",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth",
+        "label": [
+            {
+                "value": "Gestational Age At Birth",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "gestational age of a child at birth",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Laterality",
+        "label": [
+            {
+                "value": "Laterality",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "localization with respect to the side of the body",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice",
+        "label": [
+            {
+                "value": "Medical Device",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "product intended for medical use when the main effect is not achieved by a medicinal product; medical devices include, but are not limited to, implants, instruments, devices, in vitro diagnostics",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation",
+        "label": [
+            {
+                "value": "Oxygen Saturation",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "fraction of oxygen present in the blood",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": true,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#PhysiologicState",
+        "label": [
+            {
+                "value": "Physiologic State",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "physiologic state of the individual, e.g. resting, exercise",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Protein",
+        "label": [
+            {
+                "value": "Protein",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "molecule composed by one or more chains of amino acids",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate",
+        "label": [
+            {
+                "value": "Respiratory Rate",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "frequency at which the breathing occurs",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": true,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation",
+        "label": [
+            {
+                "value": "Single Nucleotide Variation",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "single nucleotide change in a DNA sequence at a specific location",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticVariation",
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification",
+        "label": [
+            {
+                "value": "TNM Classification",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "classification of malignant tumor",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
+        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+        "label": [
+            {
+                "value": "Unit",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "description": [
+            {
+                "value": "unit of measurement",
+                "datatype": "",
+                "language": "en"
+            }
+        ],
+        "is_deprecated": false,
+        "super_classes": [
+            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
+        ]
+    }
+]
