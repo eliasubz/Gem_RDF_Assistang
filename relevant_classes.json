@@ -38,6 +38,15 @@
     {
         "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
         "type": "class",
+        "full_uri": "http://snomed.info/id/446151000124109",
+        "label": [],
+        "description": [],
+        "is_deprecated": false,
+        "super_classes": []
+    },
+    {
+        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+        "type": "class",
         "full_uri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
         "label": [
             {
@@ -79,29 +88,6 @@
         "is_deprecated": false,
         "super_classes": [
             "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
-        ]
-    },
-    {
-        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
-        "type": "class",
-        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#CentralVenousPressure",
-        "label": [
-            {
-                "value": "Central Venous Pressure",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "description": [
-            {
-                "value": "central venous pressure measured in the venae cavae",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "is_deprecated": true,
-        "super_classes": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated"
         ]
     },
     {
@@ -312,30 +298,6 @@
         ],
         "is_deprecated": true,
         "super_classes": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
-        ]
-    },
-    {
-        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
-        "type": "class",
-        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation",
-        "label": [
-            {
-                "value": "Single Nucleotide Variation",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "description": [
-            {
-                "value": "single nucleotide change in a DNA sequence at a specific location",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "is_deprecated": false,
-        "super_classes": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticVariation",
             "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept"
         ]
     },

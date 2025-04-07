@@ -153,7 +153,12 @@ def get_concepts(data, messages: list = messages, real=1):
         history=[
             types.Content(
                 role="user",
-                parts=[types.Part(text=prompt.text)],
+                parts=[
+                    types.Part(
+                        text="Give me a description for all the columns in my csv data so that you can give me"
+                        "you can map the correct property like in the system_instructions explained."
+                    )
+                ],
             ),
             types.Content(
                 role="model",
@@ -166,6 +171,7 @@ def get_concepts(data, messages: list = messages, real=1):
     )
 
     prompt = gem_chat.send_message(data)
+    di["Gemini"] = gem_chat
     return (prompt.text, gem_chat) or ("", gem_chat)
 
 
@@ -196,6 +202,9 @@ def get_relevant_properties(data, messages: list = messages, chat=gem_chat):
 
     chat = gem_chat
     print(di["GemChat"])
+    if chat is None:
+        print("gemichat was not redefined in the outerscope")
+        chat = di["Gemini"]
 
     messages.extend(
         [

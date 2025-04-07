@@ -240,34 +240,6 @@
     {
         "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
         "type": "property",
-        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasChromosomalLocation",
-        "label": [
-            {
-                "value": "has chromosomal location",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "description": [
-            {
-                "value": "chromosomal location of the concept",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "is_deprecated": false,
-        "property_type": "object",
-        "range": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#ChromosomalLocation"
-        ],
-        "domain": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticVariation",
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
-        ]
-    },
-    {
-        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
-        "type": "property",
         "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
         "label": [
             {
@@ -515,34 +487,6 @@
             "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen",
             "https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage",
             "https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor"
-        ]
-    },
-    {
-        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
-        "type": "property",
-        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasGenomicPosition",
-        "label": [
-            {
-                "value": "has genomic position",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "description": [
-            {
-                "value": "genomic position of the concept",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "is_deprecated": false,
-        "property_type": "object",
-        "range": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#GenomicPosition"
-        ],
-        "domain": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticVariation",
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
         ]
     },
     {
@@ -1052,33 +996,6 @@
     {
         "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
         "type": "property",
-        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAlternateAllele",
-        "label": [
-            {
-                "value": "has alternate allele",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "description": [
-            {
-                "value": "the alternate nucleotide (A;T;C;G) of the concept",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "is_deprecated": false,
-        "property_type": "datatype",
-        "range": [
-            "http://www.w3.org/2001/XMLSchema#string"
-        ],
-        "domain": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
-        ]
-    },
-    {
-        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
-        "type": "property",
         "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAssessmentDateTime",
         "label": [
             {
@@ -1484,33 +1401,6 @@
             "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
             "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
             "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition"
-        ]
-    },
-    {
-        "belongs_to": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
-        "type": "property",
-        "full_uri": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceAllele",
-        "label": [
-            {
-                "value": "has reference allele",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "description": [
-            {
-                "value": "the reference nucleotide (A;T;C;G) of the concept",
-                "datatype": "",
-                "language": "en"
-            }
-        ],
-        "is_deprecated": false,
-        "property_type": "datatype",
-        "range": [
-            "http://www.w3.org/2001/XMLSchema#string"
-        ],
-        "domain": [
-            "https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation"
         ]
     },
     {
