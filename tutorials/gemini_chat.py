@@ -6,10 +6,9 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
+LLM_API_KEY = os.getenv("GEM_API_KEY")
 LLM_MODEL = "gemini-2.0-flash"
 
-
-LLM_API_KEY = os.getenv("GEM_API_KEY")
 
 client = genai.Client(api_key=LLM_API_KEY)
 chat = client.chats.create(

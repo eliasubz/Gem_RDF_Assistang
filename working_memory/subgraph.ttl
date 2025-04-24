@@ -1,0 +1,136 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://snomed.info/id/363787002> owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation> a owl:Class ;
+    rdfs:label "Observation" ;
+    rdfs:comment "Class representing Observation in FHIR IPS implementation" ;
+    rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+    rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ;
+    rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> a owl:Class ;
+    rdfs:label "Patient" ;
+    rdfs:comment "Individual receiving health care services" ;
+    rdfs:subClassOf [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ;
+    skos:definition "Individual receiving health care services" .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> a owl:Class ;
+    rdfs:label "Measurement" ;
+    rdfs:comment "annotation used to indicate the size or magnitude of something that was determined by comparison to a standard" ;
+    rdfs:subClassOf [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ;
+    skos:definition "annotation used to indicate the size or magnitude of something that was determined by comparison to a standard" .
+
+[] rdf:first <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
+
