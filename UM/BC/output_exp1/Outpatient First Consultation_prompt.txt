@@ -1,0 +1,100 @@
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Context
+You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies, ontology engineering, and data transformation. Your expertise includes understanding complex, multi-hop relationships between entities in knowledge graphs.
+
+## Task
+Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 1-hop relationships extending from the main entity represented by each row.
+
+## Input
+1. Target Class: https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
+2. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+3. Available Paths:
+1. 1. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+2. 2. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+3. 3. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Substance
+4. 4. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+5. 5. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite]-> https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite
+6. 6. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+7. 7. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology
+8. 8. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile]-> https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile
+9. 9. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute]-> https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute
+10. 10. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasIntent]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Intent
+11. 11. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+12. 12. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology
+13. 13. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+14. 14. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+15. 15. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+16. 16. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasEndDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+17. 17. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string
+18. 18. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+
+4. CSV Data:
+GEN_IDNUMBER -> P0023919393932
+TABLE_IDENTIFIER -> P0023919393932_L3300_v006
+BR_BL_NODES_INVOLV -> 3
+BR_BL_NODES_MAP -> Free
+BR_BL_DATE_DIAG -> 2022-01-11
+BR_BL_INV_HISTO -> Ductal carcinoma
+BR_BL_IVN_SIZE -> 1mm
+BR_BL_TUM_LOC -> links mamma
+BR_BL_INV_GRADE_DIFF -> Cell type not determined
+BR_BL_MIN_RES_MARG_INV -> 5mm
+BR_BL_PROGESTRONE -> Ja
+BR_BL_OESTROGEN -> Nee
+BR_BL_HER2 -> Nee
+BR_BL_SITU_HISTO -> LCIS
+BR_BL_SITU_GRADE_DIFF -> Poorly differentiated
+BR_BL_SIZE_DCIS -> 1.02 mm
+BR_BL_RES_MARG_SITU -> 1.22 mm
+BR_BL_PTSTAGE_PREFIX -> p
+BR_BL_PTSTAGE_SUFFIX -> 1
+BR_BL_YPTSTAGE_PREFIX -> yp
+BR_BL_YPTSTAGE_SUFFIX -> 1
+BR_BL_PNSTAGE_PREFIX -> p
+BR_BL_PNSTAGE_SUFFIX -> 0
+BR_BL_YPNSTAGE_PREFIX -> yp
+BR_BL_YPNSTAGE_SUFFIX -> 0
+BR_BL_PMSTAGE_PREFIX -> p
+BR_BL_PMSTAGE_SUFFIX -> 1
+BR_CHEMO -> Chemo
+BR_CHEMO_START_DATE -> 2014-04-30
+BR_CHEMO_ADJ -> Adj chemotherapie
+BR_CHEMO_ADJ_START_DATE -> 2015-02-01
+BR_END_TR -> Endocr therapie
+BR_END_TR_DATE -> 2021-01-03
+BR_END_TR_ADJ_DATE -> 
+BR_END_TR_ADJ -> Nee
+BR_END_TR_ADJ_STATUS -> 385660001
+BR_HER2_ADJ -> Nee
+BR_HER2_ADJ_STATUS -> 385660001
+BR_HER2_ADJ_DATE -> 
+BR_ANTI_HER2_ADJ_DATE -> 
+BR_ANTI_HER2_ADJ -> Nee
+BR_ANTI_HER2_ADJ_STATUS -> 385660001
+
+## Requirements
+For each CSV column:
+1. Identify the most semantically appropriate path from the main entity through the ontology
+2. Select exactly one optimal path for each column
+3. Document your reasoning for choosing each path, including any alternatives considered
+4. Handle nested relationships and complex datatypes appropriately
+
+## Expected Output
+For each column, provide:
+1. Column number/name
+2. The complete selected path using proper ontology notation (e.g., entity:property1/property2/property3) and the number of the path that is provided also in the input
+3. Brief justification for the selected mapping (1-2 sentences)
+4. Any data transformation required (datatype conversion, formatting, etc.)
+
+## Example Format
+Column: [column_name]
+Path: [Number] [entity]:[property1]/[property2]/[property3]
+Justification: [Brief explanation of why this path is appropriate]
+Transformation: [Any required data processing]
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options

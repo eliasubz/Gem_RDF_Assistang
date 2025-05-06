@@ -1,0 +1,143 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/aidava/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-icd-10: <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+sphn-icd-10:S20.121S a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+<https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:263605001;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/Quantity/P0023919393932_2023-11-28_00v2> .
+
+<https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/Quantity/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/Quantity/Unit/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "2.5mm" .
+
+<https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/Quantity/Unit/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mm .
+
+<https://rdf.aidava.eu/resource/Measurement/BMI/P0023919393932_2023-11-28_00v2> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:39156-5;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/BMI/Quantity/P0023919393932_2023-11-28_00v2> .
+
+<https://rdf.aidava.eu/resource/Measurement/BMI/Quantity/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/BMI/Quantity/Unit/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> 2.1E1 .
+
+<https://rdf.aidava.eu/resource/Measurement/BMI/Quantity/Unit/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:kgperm2 .
+
+<https://rdf.aidava.eu/resource/Patient/BirthDate/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate> .
+
+<https://rdf.aidava.eu/resource/Patient/Gender/Vrouw> a <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:446141000124107;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2023-11-28"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-11-28_00v2> a <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> "Van Hooijdonk";
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName> "Klaas" .
+
+<https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2> a <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> <https://rdf.aidava.eu/resource/Patient/Gender/Vrouw>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> <https://rdf.aidava.eu/resource/Patient/BirthDate/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> "P0023919393932" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Diagnosis/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> <https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> <https://rdf.aidava.eu/resource/ProblemCondition/Diagnosis/Site/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-icd-10:S20.121S;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2023-11-28"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "S20.121S";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2023-11-28"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Diagnosis/Site/Laterality/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Laterality>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:7771000 .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Diagnosis/Site/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:76752008;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasLaterality> <https://rdf.aidava.eu/resource/ProblemCondition/Diagnosis/Site/Laterality/P0023919393932_2023-11-28_00v2> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Lesion/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> <um-vs2:Benign%20neoplasm%20of%20lower-inner%20quadrant%20of%20breast>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Benign neoplasm of lower-inner quadrant of breast" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/PriorBC/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "mammaca rechts centraal";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2023-11-28"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Smoking/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2023-11-28"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Yes" .
+
+<https://rdf.aidava.eu/resource/Procedure/Mastectomie> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1231734007;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2022-11-19"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/RT/P0023919393932_2023-11-28_00v2> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:169333002;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> "2023-04-09"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/RTADJ/P0023919393932_2023-11-28_00v2> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:169334008;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385660001 .
+
+<https://rdf.aidava.eu/resource/Procedure/Reconstruction/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:33496007;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "Column"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/Reresection/P0023919393932_2023-11-28_00v2>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:65801008;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "Column"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385660001 .
+
+<https://rdf.aidava.eu/resource/Procedure/Yes> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:234262008;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2023-03-11"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<um-vs2:Benign%20neoplasm%20of%20lower-inner%20quadrant%20of%20breast> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Code> .

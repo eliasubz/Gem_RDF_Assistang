@@ -1,0 +1,107 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-icd-10: <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+_:0 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:3137-7;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Height/Quantity/129342KW_L3325_v1> .
+
+_:1 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:8867-4;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/HR/Quantity/129342KW_L3325_v1> .
+
+_:2 a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "roken 1p per dag";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+_:3 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:76534-7;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/SBP/Quantity/129342KW_L3325_v1> .
+
+_:4 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:3141-9;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurment/Weight/Quantity/129342KW_L3325_v1> .
+
+_:5 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:76535-4;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/DBP/Quantity/129342KW_L3325_v1> .
+
+snomed:385658003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+sphn-loinc:3137-7 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+sphn-loinc:3141-9 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+sphn-loinc:76534-7 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+sphn-loinc:76535-4 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+sphn-loinc:8867-4 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+ucum:cblbeatscbrpermin a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+ucum:cm a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+ucum:kg a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+ucum:mmsblHgsbr a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+<https://rdf.aidava.eu/resource/Measurement/DBP/Quantity/129342KW_L3325_v1> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/DBP/Quantity/Unit/129342KW_L3325_v1>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "80 mm Hg" .
+
+<https://rdf.aidava.eu/resource/Measurement/DBP/Quantity/Unit/129342KW_L3325_v1> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmsblHgsbr .
+
+<https://rdf.aidava.eu/resource/Measurement/HR/Quantity/129342KW_L3325_v1> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/HR/Quantity/Unit/129342KW_L3325_v1>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "111bpm" .
+
+<https://rdf.aidava.eu/resource/Measurement/HR/Quantity/Unit/129342KW_L3325_v1> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:cblbeatscbrpermin .
+
+<https://rdf.aidava.eu/resource/Measurement/Height/Quantity/129342KW_L3325_v1> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Height/Quantity/Unit/129342KW_L3325_v1>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "191cm" .
+
+<https://rdf.aidava.eu/resource/Measurement/Height/Quantity/Unit/129342KW_L3325_v1>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:cm .
+
+<https://rdf.aidava.eu/resource/Measurement/SBP/Quantity/129342KW_L3325_v1> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/SBP/Quantity/Unit/129342KW_L3325_v1>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "120 millimeters of mercury (mm Hg)" .
+
+<https://rdf.aidava.eu/resource/Measurement/SBP/Quantity/Unit/129342KW_L3325_v1> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmsblHgsbr .
+
+<https://rdf.aidava.eu/resource/Measurment/Weight/Quantity/129342KW_L3325_v1> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurment/Weight/Unit/129342KW_L3325_v1>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "98kg" .
+
+<https://rdf.aidava.eu/resource/Measurment/Weight/Unit/129342KW_L3325_v1> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:kg .

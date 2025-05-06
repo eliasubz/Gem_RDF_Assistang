@@ -27,6 +27,14 @@ with open("working_memory/subgraph.ttl") as f:
 csv_headers = extract_columns("raw_data/measurements.csv")
 
 
+# this is the subgraph of [entity1]:
+# property->> node,
+# properties:
+# nodes:
+
+# for each column mdian , simmple statistics and sample value
+
+
 # 3. Build prompt for OpenAI
 def build_prompt(headers, entities):
     prompt = "You are an expert in semantic web data integration. \n"

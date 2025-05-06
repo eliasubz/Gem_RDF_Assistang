@@ -1,0 +1,88 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-icd-10: <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+snomed:1284852002 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:373801008 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:385658003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:52685006 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+<https://rdf.aidava.eu/resource/Measurement/PainGrade/P0023919393932_L3360_v006> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1284852002;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/PainGrade/Quantity/P0023919393932_L3360_v006> .
+
+<https://rdf.aidava.eu/resource/Measurement/PainGrade/Quantity/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "2" .
+
+<https://rdf.aidava.eu/resource/Measurement/WHOPS/P0023919393932_L3360_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:373801008;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/WHOPS/Quantity/P0023919393932_L3360_v006> .
+
+<https://rdf.aidava.eu/resource/Measurement/WHOPS/Quantity/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "2" .
+
+<https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006> a aidava-sphn:Patient;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> "P0023919393932" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/AxillaryInfection/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Nee" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/COPD/P0023919393932_L3360_v006> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Nee" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Dysphagia/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ja" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Edema/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Hematoma/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ja" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/MenopausalStatus/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Pre-menopausal" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Seroma/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ja" .
+
+<https://rdf.aidava.eu/resource/Procedure/ChronicPainMedication/P0023919393932_L3360_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:52685006;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .

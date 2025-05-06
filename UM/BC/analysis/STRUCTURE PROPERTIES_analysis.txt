@@ -1,0 +1,76 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+Main Entity IRI: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-08-15_00v1
+Total Connections: 7
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-08-15_00v1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/TargetVolume/Breast/P0023919393932_2023-08-15_00v1
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/TargetVolume/ChestWall/P0023919393932_2023-08-15_00v1
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/TargetVolume/PartialBreast/P0023919393932_2023-08-15_00v1
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: FIRST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-08-15_00v1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Klaas
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-08-15_00v1
+
+Column: LAST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-08-15_00v1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Van Hooijdonk
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-08-15_00v1
+
+Column: BIRTH_DATE
+  ↳ No match found in RDF
+
+Column: HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: REFERRAL_HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: DOCUMENT_DATE
+  ↳ No match found in RDF
+
+Column: DOCUMENT_VERSION
+  ↳ No match found in RDF
+
+Column: SIGN_PHYS
+  ↳ No match found in RDF
+
+Column: BR_BREAST
+  Subject: https://rdf.aidava.eu/resource/Measurement/TargetVolume/Breast/Quantity/P0023919393932_2023-08-15_00v1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 25 Gy
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/TargetVolume/Breast/P0023919393932_2023-08-15_00v1
+
+Column: BR_PART_BREAST
+  Subject: https://rdf.aidava.eu/resource/Measurement/TargetVolume/PartialBreast/Quantity/P0023919393932_2023-08-15_00v1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 21 Gy
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/TargetVolume/PartialBreast/P0023919393932_2023-08-15_00v1
+
+Column: BR_CHEST_WALL
+  Subject: https://rdf.aidava.eu/resource/Measurement/TargetVolume/ChestWall/Quantity/P0023919393932_2023-08-15_00v1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 30 Gy
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/TargetVolume/ChestWall/P0023919393932_2023-08-15_00v1

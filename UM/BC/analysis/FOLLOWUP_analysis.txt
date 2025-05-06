@@ -1,0 +1,129 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+Main Entity IRI: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-15_00v2
+Total Connections: 13
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/PostoperativeMDT/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/Trial/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/DistantMetastases/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/MIBI/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/PreoperativeMDT/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/PalliativeTreatment/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/PR/P0023919393932_2023-11-15_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Cancer/P0023919393932_2023-11-15_00v2
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: FIRST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Klaas
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-15_00v2
+
+Column: LAST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Van Hooijdonk
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-15_00v2
+
+Column: BIRTH_DATE
+  ↳ No match found in RDF
+
+Column: HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: SIGN_PHYS
+  ↳ No match found in RDF
+
+Column: REFERRAL_HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: DOCUMENT_DATE
+  ↳ No match found in RDF
+
+Column: DOCUMENT_VERSION
+  ↳ No match found in RDF
+
+Column: BRTUM_REGIO_REC
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Cancer/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BRTUM_DATE_REGIOREC
+  ↳ No match found in RDF
+
+Column: BRTUM_DIST_METS
+  ↳ No match found in RDF
+
+Column: BRTUM_DATE_DISTMETS
+  ↳ No match found in RDF
+
+Column: BR_MDT_POST
+  ↳ No match found in RDF
+
+Column: BR_MDT_PREOP
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Cancer/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_SCR
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Cancer/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_TR_INTENT
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Cancer/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_PAT_CL_TR
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Cancer/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: PROGESTERON_RECEPTOR
+  Subject: https://rdf.aidava.eu/resource/Measurement/PR/P0023919393932_2023-11-15_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Positive
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+
+Column: MIBL_MIBL
+  ↳ No match found in RDF

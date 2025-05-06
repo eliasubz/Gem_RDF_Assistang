@@ -1,0 +1,173 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+Main Entity IRI: https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008
+Total Connections: 19
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/EryUrine/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Creatinine/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/GGT/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Chloride/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Erythrocytes/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Phosphate/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Hemolysis/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/eGFR/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Calcium/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← aidava-reosurce:Measurement/Glucose/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Lymphocyte/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Potassium/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/LDH/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/Hematocrit/P0023919393932_L3316_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← aidava-reosurce:Measurement/Hemoglobin/P0023919393932_L3316_v008
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: FIRST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Klaas
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008
+
+Column: LAST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Van Hooijdonk
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008
+
+Column: GLUCOSE_GLUCOSE
+  Subject: aidava-reosurce:Measurement/Glucose/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 7.8 mmol/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← aidava-reosurce:Measurement/Glucose/P0023919393932_L3316_v008
+
+Column: HEMOLYTISCH_HEMOLYTISCH
+  Subject: https://rdf.aidava.eu/resource/Measurement/Hemolysis/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Licht
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+
+Column: HEMOGLOBINE_HEMOGLOBINE
+  Subject: aidava-reosurce:Measurement/Hemoglobin/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 7.2 mmol/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← aidava-reosurce:Measurement/Hemoglobin/P0023919393932_L3316_v008
+
+Column: HEMATOCRIET_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/Hematocrit/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 0.35 l/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Hematocrit/P0023919393932_L3316_v008
+
+Column: KALIUM_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/Potassium/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 4.2 mmol/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Potassium/P0023919393932_L3316_v008
+
+Column: EGFR_M2
+  Subject: https://rdf.aidava.eu/resource/Measurement/eGFR/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): >90 ml/min/1.73m2
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/eGFR/P0023919393932_L3316_v008
+
+Column: ERY'S_UL
+  Subject: https://rdf.aidava.eu/resource/Measurement/EryUrine/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 3 /ul
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/EryUrine/P0023919393932_L3316_v008
+
+Column: LEUCOCYTEN_UL
+  Subject: https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 5.1 x 10*9/1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/P0023919393932_L3316_v008
+
+Column: KREATININE_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/Creatinine/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 43 umol/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Creatinine/P0023919393932_L3316_v008
+
+Column: LDH_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/LDH/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 318 U/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/LDH/P0023919393932_L3316_v008
+
+Column: CALCIUM_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/Calcium/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 2.31 mmol/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Calcium/P0023919393932_L3316_v008
+
+Column: CHLORIDE_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/Chloride/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 105 mmol/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Chloride/P0023919393932_L3316_v008
+
+Column: LYMFOCYTEN_LYMFOCYTEN
+  Subject: https://rdf.aidava.eu/resource/Measurement/Lymphocyte/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 9.0 %
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Lymphocyte/P0023919393932_L3316_v008
+
+Column: ERYTROCYTEN_I
+  Subject: https://rdf.aidava.eu/resource/Measurement/Erythrocytes/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 3.85 x10*12/I
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Erythrocytes/P0023919393932_L3316_v008
+
+Column: FOSFAAT_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/Phosphate/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 0.8 mmol/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/Phosphate/P0023919393932_L3316_v008
+
+Column: GGT_L
+  Subject: https://rdf.aidava.eu/resource/Measurement/GGT/Quantity/P0023919393932_L3316_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 141 U/l
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/GGT/P0023919393932_L3316_v008

@@ -1,0 +1,55 @@
+
+prefixes:
+  
+  aidava-resource: https://rdf.aidava.eu/resource/
+  
+  atc: https://biomedit.ch/rdf/sphn-resource/atc/ATC/
+  
+  snomed-ct: http://snomed.info/id/
+  
+  icd-10: https://biomedit.ch/rdf/sphn-resource/icd-10-gm/
+  
+  um: http://aidava.eu/rdf/valueset/um/
+  
+  sphn: https://biomedit.ch/rdf/sphn-ontology/sphn#
+  
+  ucum: https://biomedit.ch/rdf/sphn-resource/ucum/
+  
+  loinc: https://biomedit.ch/rdf/sphn-resource/loinc/
+  
+
+sources:
+  
+  EVS_DTS: [/file_storage/66e6c1227be38163489d8635/EVS_DTS.csv~csv]
+  
+  
+
+mappings:
+  
+  b3ca6f27-d798-4688-b555-024a0d041499:
+    source: EVS_DTS
+    
+    s: aidava-resource:EVS/$(TABLE_IDENTIFIER)
+    
+    po:
+      
+      - [a, https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase]
+      
+      
+      - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
+        object:
+          value: aidava-resource:Patient/$(ID nummer)
+          
+          
+          type: iri
+          
+      
+      - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+        object:
+          value: $(TABLE_IDENTIFIER)
+          
+          datatype: http://www.w3.org/2001/XMLSchema#string
+          
+          
+      
+  

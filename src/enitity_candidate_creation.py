@@ -20,7 +20,7 @@ def extract_columns(csv_path):
     return headers
 
 
-print(subgraph)
+# print(subgraph)
 exit()
 
 csv_headers = extract_columns("raw_data/measurements.csv")

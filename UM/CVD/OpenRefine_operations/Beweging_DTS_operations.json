@@ -1,0 +1,56 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Geboortedatum",
+    "expression": "jython:from datetime import datetime\nvalue = datetime.strptime(value, \"%d-%m-%Y\")\nreturn value.strftime(\"%Y-%m-%d\")",
+    "onError": "set-to-blank",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Geboortedatum using expression jython:from datetime import datetime\nvalue = datetime.strptime(value, \"%d-%m-%Y\")\nreturn value.strftime(\"%Y-%m-%d\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Ziekenhuisaankomst datum en tijd",
+    "expression": "jython:from datetime import datetime\nvalue = datetime.strptime(value, \"%d-%m-%Y\")\nreturn value.strftime(\"%Y-%m-%d\")",
+    "onError": "set-to-blank",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Ziekenhuisaankomst datum en tijd using expression jython:from datetime import datetime\nvalue = datetime.strptime(value, \"%d-%m-%Y\")\nreturn value.strftime(\"%Y-%m-%d\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Ziekenhuisontslag datum en tijd",
+    "expression": "jython:from datetime import datetime\nvalue = datetime.strptime(value, \"%d-%m-%Y\")\nreturn value.strftime(\"%Y-%m-%d\")",
+    "onError": "set-to-blank",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Ziekenhuisontslag datum en tijd using expression jython:from datetime import datetime\nvalue = datetime.strptime(value, \"%d-%m-%Y\")\nreturn value.strftime(\"%Y-%m-%d\")"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Naam",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": " ",
+    "regex": false,
+    "maxColumns": 2,
+    "description": "Split column Naam by separator"
+  }
+]

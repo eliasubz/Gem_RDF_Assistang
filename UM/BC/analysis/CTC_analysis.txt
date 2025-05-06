@@ -1,0 +1,103 @@
+Main Entity Type: Unknown
+Main Entity IRI: https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+Total Connections: 7
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  ↳ No match found in RDF
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: BR_DERMATITIS
+  Subject: n8de7617f2b224e199354136e2939b5d3b1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b3
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b5
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_LYMPHEDEMA
+  Subject: n8de7617f2b224e199354136e2939b5d3b1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b3
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b5
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_RIBFRACT1
+  Subject: n8de7617f2b224e199354136e2939b5d3b2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b6
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b7
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_HEART_FAIL
+  Subject: n8de7617f2b224e199354136e2939b5d3b2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b6
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b7
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_RAD_PNEUM
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RP/Measurement/RPScore/Quantity/P0023919393932_L3378_v004
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 2
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/ProblemCondition/RP/Measurement/RPScore/P0023919393932_L3378_v004
+
+Column: BR_HYPERTENSION
+  Subject: n8de7617f2b224e199354136e2939b5d3b1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b3
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b5
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_DM
+  Subject: n8de7617f2b224e199354136e2939b5d3b2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b6
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: n8de7617f2b224e199354136e2939b5d3b7
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): No
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText

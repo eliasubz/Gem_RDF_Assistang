@@ -1,0 +1,308 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+Main Entity IRI: https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006
+Total Connections: 17
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/CHEMO/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/TumourLocation/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/HER2ADJ/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/ENDTRADJ/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/LymphNodeMapping/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/AntiHER2ADJ/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/MappingConclusion/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/HER2/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/InvolvedNodes/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/CHEMOADJ/P0023919393932_L3300_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/ENDTR/P0023919393932_L3300_v006
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: BR_BL_NODES_INVOLV
+  Subject: https://rdf.aidava.eu/resource/Measurement/InvolvedNodes/Quantity/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 3
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/InvolvedNodes/P0023919393932_L3300_v006
+
+Column: BR_BL_NODES_MAP
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/MappingConclusion/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Free
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_BL_DATE_DIAG
+  ↳ No match found in RDF
+
+Column: BR_BL_INV_HISTO
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ductal carcinoma
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_BL_IVN_SIZE
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/Quantity/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 1mm
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/P0023919393932_L3300_v006
+
+Column: BR_BL_TUM_LOC
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/TumourLocation/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): links mamma
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_BL_INV_GRADE_DIFF
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveCancerDifferentiation/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Cell type not determined
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+
+Column: BR_BL_MIN_RES_MARG_INV
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/Quantity/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 5mm
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/P0023919393932_L3300_v006
+
+Column: BR_BL_PROGESTRONE
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/PR/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+
+Column: BR_BL_OESTROGEN
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/ER/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/HER2/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+
+Column: BR_BL_HER2
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/ER/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/HER2/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+
+Column: BR_BL_SITU_HISTO
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): LCIS
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_BL_SITU_GRADE_DIFF
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/InSituDifferentiationGrade/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Poorly differentiated
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/P0023919393932_L3300_v006
+
+Column: BR_BL_SIZE_DCIS
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InSituHistology/Measurement/DCISSize/Quantity/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 1.02 mm
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/DCISSize/P0023919393932_L3300_v006
+
+Column: BR_BL_RES_MARG_SITU
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMISSize/Quantity/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 1.22 mm
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMIS/P0023919393932_L3300_v006
+
+Column: BR_BL_PTSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): p
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_PTSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMSuffix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix
+  Subject: https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix
+
+Column: BR_BL_YPTSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): yp
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_YPTSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMSuffix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix
+  Subject: https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix
+
+Column: BR_BL_PNSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): p
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_PNSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 0
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix
+  Subject: https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 0
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix
+
+Column: BR_BL_YPNSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): yp
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_YPNSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 0
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix
+  Subject: https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 0
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix
+
+Column: BR_BL_PMSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): p
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_PMSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMSuffix
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix
+  Subject: https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix
+
+Column: BR_CHEMO
+  ↳ No match found in RDF
+
+Column: BR_CHEMO_START_DATE
+  ↳ No match found in RDF
+
+Column: BR_CHEMO_ADJ
+  ↳ No match found in RDF
+
+Column: BR_CHEMO_ADJ_START_DATE
+  ↳ No match found in RDF
+
+Column: BR_END_TR
+  ↳ No match found in RDF
+
+Column: BR_END_TR_DATE
+  ↳ No match found in RDF
+
+Column: BR_END_TR_ADJ_DATE
+  ↳ No match found in RDF
+
+Column: BR_END_TR_ADJ
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/ER/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/HER2/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+
+Column: BR_END_TR_ADJ_STATUS
+  ↳ No match found in RDF
+
+Column: BR_HER2_ADJ
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/ER/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/HER2/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+
+Column: BR_HER2_ADJ_STATUS
+  ↳ No match found in RDF
+
+Column: BR_HER2_ADJ_DATE
+  ↳ No match found in RDF
+
+Column: BR_ANTI_HER2_ADJ_DATE
+  ↳ No match found in RDF
+
+Column: BR_ANTI_HER2_ADJ
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/ER/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets ← https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/HER2/P0023919393932_L3300_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+
+Column: BR_ANTI_HER2_ADJ_STATUS
+  ↳ No match found in RDF

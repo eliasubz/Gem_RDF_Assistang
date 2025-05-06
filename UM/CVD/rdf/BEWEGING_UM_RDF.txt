@@ -1,0 +1,38 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/aidava/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<https://rdf.aidava.eu/resource/Patient/129342KW_L3321_v7> a <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> <https://rdf.aidava.eu/resource/Patient/Gender/129342KW_L3321_v7>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> <https://rdf.aidava.eu/resource/Patient/BirthDate/129342KW_L3321_v7>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://rdf.aidava.eu/resource/Patient/Name/Klaas%20Willens>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> "129342KW" .
+
+<https://rdf.aidava.eu/resource/Patient/BirthDate/129342KW_L3321_v7> a <https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate> .
+
+<https://rdf.aidava.eu/resource/Patient/Gender/129342KW_L3321_v7> a <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> <um-vs1:M> .
+
+<https://rdf.aidava.eu/resource/Patient/Name/Klaas%20Willens> a <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> .
+
+<https://rdf.aidava.eu/resource/Procedure/Hospitalization/129342KW_L3321_v7> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/129342KW_L3321_v7>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasEndDateTime> "2020-2-14"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> "2019-3-1"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<um-vs1:M> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .

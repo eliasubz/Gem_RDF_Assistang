@@ -1,0 +1,40 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/aidava/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+snomed:385658003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+<https://rdf.aidava.eu/resource/Patient/P0023919393932_L3372_v008> a <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> "P0023919393932" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/LocalRecurrence/P0023919393932_L3372_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3372_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:314955001;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2023-11-11"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_L3372_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3372_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ja" .
+
+<https://rdf.aidava.eu/resource/Procedure/LastFollowup/P0023919393932_L3372_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3372_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:185389009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2024-12-01"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .

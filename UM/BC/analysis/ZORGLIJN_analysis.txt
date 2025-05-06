@@ -1,0 +1,39 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
+Main Entity IRI: https://rdf.aidava.eu/resource/Procedure/LastFollowup/P0023919393932_L3372_v008
+Total Connections: 5
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_L3372_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/LocalRecurrence/P0023919393932_L3372_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_L3372_v008
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/LastFollowup/P0023919393932_L3372_v008
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: BRTUM_DATE_LASTFU
+  ↳ No match found in RDF
+
+Column: BRTUM_STATUS_LASTFU
+  ↳ No match found in RDF
+
+Column: BRTUM_LOCAL_REC
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_L3372_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BRTUM_DATE_LOCALREC
+  ↳ No match found in RDF
+
+Column: BRTUM_REGIO_REC
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/RegionalRecurrence/P0023919393932_L3372_v008
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText

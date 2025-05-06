@@ -1,0 +1,143 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+Main Entity IRI: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2
+Total Connections: 16
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/RTADJ/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/Reresection/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/RT/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Diagnosis/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Smoking/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/PriorBC/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/Yes
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/BMI/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Lesion/P0023919393932_2023-11-28_00v2
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/Mastectomie
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/Reconstruction/P0023919393932_2023-11-28_00v2
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: FIRST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Klaas
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2
+
+Column: LAST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Van Hooijdonk
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-11-28_00v2
+
+Column: BIRTH_DATE
+  ↳ No match found in RDF
+
+Column: HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: REFERRAL_HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: DOCUMENT_DATE
+  ↳ No match found in RDF
+
+Column: DOCUMENT_VERSION
+  ↳ No match found in RDF
+
+Column: SIGN_PHYS
+  ↳ No match found in RDF
+
+Column: DATE
+  ↳ No match found in RDF
+
+Column: DIAGNOSE
+  ↳ No match found in RDF
+
+Column: GEN_SEX
+  ↳ No match found in RDF
+
+Column: BR_PR_BL_LATERALTIY
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/PriorBC/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): mammaca rechts centraal
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_LES_ID
+  ↳ No match found in RDF
+
+Column: TUMOUR_SIZE
+  Subject: https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/Quantity/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 2.5mm
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Diagnosis/Measurement/RadiologicalTumorSize/P0023919393932_2023-11-28_00v2
+
+Column: BR_BL_LATERALTIY
+  ↳ No match found in RDF
+
+Column: GEN_SMOKING
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Smoking/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: GEN_BMI
+  ↳ No match found in RDF
+
+Column: BR_BL_DATE_SURG
+  ↳ No match found in RDF
+
+Column: BR_BL_TYPE_SURG
+  ↳ No match found in RDF
+
+Column: BR_BL_RE_RESEC
+  ↳ No match found in RDF
+
+Column: BR_BL_RE_RESEC_DATE
+  ↳ No match found in RDF
+
+Column: BR_BL_RE_REC
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Smoking/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_BL_RE_REC_DATE
+  ↳ No match found in RDF
+
+Column: BR_AX_LN_DISSECT
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Smoking/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_AX_LN_DISSECT_DATE
+  ↳ No match found in RDF
+
+Column: BR_RT
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Smoking/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: BR_RT_START_DATE
+  ↳ No match found in RDF
+
+Column: GEN_RT_ADJ
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Smoking/P0023919393932_2023-11-28_00v2
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Yes
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText

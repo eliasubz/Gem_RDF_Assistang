@@ -1,0 +1,114 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-icd-10: <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+snomed:265764009 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:384642005 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:385658003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:387713003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+<https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3> a aidava-sphn:Patient;
+  aidava-sphn:hasAdministrativeGender <https://rdf.aidava.eu/resource/Patient/Gender/129342KW_L3325_v3>;
+  aidava-sphn:hasBirthDate <https://rdf.aidava.eu/resource/Patient/BirthDate/129342KW_L3325_v3>;
+  aidava-sphn:hasSubjectName <https://rdf.aidava.eu/resource/Patient/Name/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> "129342KW" .
+
+<https://rdf.aidava.eu/resource/Patient/BirthDate/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate> .
+
+<https://rdf.aidava.eu/resource/Patient/Gender/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> <um-vs1:M> .
+
+<https://rdf.aidava.eu/resource/Patient/Name/129342KW_L3325_v3> a aidava-sphn:SubjectName .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/AF/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ja";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2020-09-10"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Allergy/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Nee" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Asthma/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Astma ";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2015-1-11"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/CAD/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Geen" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/COPD/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ja";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2021-01-09"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/CardiacArrest/129342KW_L3325_v3>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Geen" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/HF/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "patient met hartfalen" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Hypertension/129342KW_L3325_v3> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Hypertensie";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2021-01-05"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/MI/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Geen" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/PAD/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Geen" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Smoking/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "roken 1p per dag" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/Stroke/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ja";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> "2021-02-03"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://rdf.aidava.eu/resource/Procedure/Mitralplasty/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:384642005;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2019-06-03"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/RenalDialysis/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:265764009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2020-05-04"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/Surgery/129342KW_L3325_v3> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW_L3325_v3>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:387713003;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2019-01-11"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<um-vs1:M> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .

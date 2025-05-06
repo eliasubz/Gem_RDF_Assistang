@@ -1,0 +1,20 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+Main Entity IRI: n2b1ac9c992304f92b0cdce999c47365ab1
+Total Connections: 4
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  ↳ No match found in RDF
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: ALLERGIES_DATE
+  ↳ No match found in RDF
+
+Column: ALLERGIES_TYPE
+  Subject: n2b1ac9c992304f92b0cdce999c47365ab1
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): food allergy
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText

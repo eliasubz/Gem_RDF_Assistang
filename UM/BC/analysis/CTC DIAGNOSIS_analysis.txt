@@ -1,0 +1,113 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+Main Entity IRI: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-09-28
+Total Connections: 8
+
+Column Mappings and Semantic Context:
+
+Column: BR_BL_CTSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/TNM/M/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix
+  Subject: https://rdf.aidava.eu/resource/TNM/N/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+  Subject: https://rdf.aidava.eu/resource/TNM/T/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_CTSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/TNM/T/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 2
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix
+
+Column: BR_BL_CNSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/TNM/M/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix
+  Subject: https://rdf.aidava.eu/resource/TNM/N/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+  Subject: https://rdf.aidava.eu/resource/TNM/T/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_CNSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/TNM/N/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 1
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix
+
+Column: BR_BL_CMSTAGE_PREFIX
+  Subject: https://rdf.aidava.eu/resource/TNM/M/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix
+  Subject: https://rdf.aidava.eu/resource/TNM/N/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix
+  Subject: https://rdf.aidava.eu/resource/TNM/T/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): c
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix
+
+Column: BR_BL_CMSTAGE_SUFFIX
+  Subject: https://rdf.aidava.eu/resource/TNM/M/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+    ↳ Matched Value(s): 0
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasMSuffix
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/TNM/N/P0023919393932_2023-09-28
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/TNM/M/P0023919393932_2023-09-28
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/TNM/T/P0023919393932_2023-09-28
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/ResectedNode/P0023919393932_2023-09-28
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: FIRST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Klaas
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-09-28
+
+Column: LAST_NAME
+  Subject: https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_2023-09-28
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+    ↳ Matched Value(s): Van Hooijdonk
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName ← https://rdf.aidava.eu/resource/Patient/P0023919393932_2023-09-28
+
+Column: BIRTH_DATE
+  ↳ No match found in RDF
+
+Column: DOCUMENT_DATE
+  ↳ No match found in RDF
+
+Column: SIGN_PHYS
+  ↳ No match found in RDF
+
+Column: HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: REFERRAL_HOSPITAL_NAME
+  ↳ No match found in RDF
+
+Column: BR_BL_NODES_RESEC
+  ↳ No match found in RDF

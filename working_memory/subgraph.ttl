@@ -22,6 +22,7 @@
 
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
 
+
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
     rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
 

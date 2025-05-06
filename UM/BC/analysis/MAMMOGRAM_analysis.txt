@@ -1,0 +1,141 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+Main Entity IRI: https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006
+Total Connections: 12
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  Subject: https://rdf.aidava.eu/resource/Patient/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+    ↳ Matched Value(s): P0023919393932
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/PainGrade/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Edema/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Procedure/ChronicPainMedication/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/MenopausalStatus/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Hematoma/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/AxillaryInfection/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/Measurement/WHOPS/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Dysphagia/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/Seroma/P0023919393932_L3360_v006
+      ← https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient ← https://rdf.aidava.eu/resource/ProblemCondition/COPD/P0023919393932_L3360_v006
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: ANXILLARY_INFECTION
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/AxillaryInfection/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/COPD/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: HEMATOMA
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Dysphagia/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Hematoma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Seroma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: SEROMA
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Dysphagia/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Hematoma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Seroma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: DYSPHAGIA
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Dysphagia/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Hematoma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Seroma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: PAIN
+  Subject: https://rdf.aidava.eu/resource/Measurement/PainGrade/Quantity/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 2
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/PainGrade/P0023919393932_L3360_v006
+  Subject: https://rdf.aidava.eu/resource/Measurement/WHOPS/Quantity/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 2
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/WHOPS/P0023919393932_L3360_v006
+
+Column: EDEMA
+  ↳ No match found in RDF
+
+Column: WHO_PS
+  Subject: https://rdf.aidava.eu/resource/Measurement/PainGrade/Quantity/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 2
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/PainGrade/P0023919393932_L3360_v006
+  Subject: https://rdf.aidava.eu/resource/Measurement/WHOPS/Quantity/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+    ↳ Matched Value(s): 2
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue
+    ↳ Incoming triples:
+      ← https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity ← https://rdf.aidava.eu/resource/Measurement/WHOPS/P0023919393932_L3360_v006
+
+Column: MENOPAUSAL
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/MenopausalStatus/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Pre-menopausal
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: COPD
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/AxillaryInfection/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/COPD/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Nee
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: PAIN_MEDICATIE
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Dysphagia/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Hematoma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+  Subject: https://rdf.aidava.eu/resource/ProblemCondition/Seroma/P0023919393932_L3360_v006
+    ↳ rdf:type(s): https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+    ↳ Matched Value(s): Ja
+    ↳ Predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+
+Column: PAIN_MEDICATIE_STATUS
+  ↳ No match found in RDF

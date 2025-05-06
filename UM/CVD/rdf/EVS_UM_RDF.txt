@@ -1,0 +1,92 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-icd-10: <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+_:0 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  aidava-sphn:usingSubstance <https://rdf.aidava.eu/resource/Procedure/P2Y12/Substance/129342KW_L3323_v4>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:840595002;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+_:1 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  aidava-sphn:usingSubstance <https://rdf.aidava.eu/resource/Procedure/Anticoagulant/Substance/129342KW_L3323_v4>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:182764009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+_:2 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  aidava-sphn:usingSubstance <https://rdf.aidava.eu/resource/Procedure/BetaBlocker/Substance/129342KW_L3323_v4>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:315052006;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+_:3 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  aidava-sphn:usingSubstance <https://rdf.aidava.eu/resource/Procedure/Aspirin/Substance/129342KW_L3323_v4>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:717854002;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+snomed:1162905001 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:134350008 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:182764009 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:315052006 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:372862008 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:373254001 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:373267003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:385658003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:387458008 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:717854002 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:840595002 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+<https://rdf.aidava.eu/resource/Procedure/Anticoagulant/Substance/129342KW_L3323_v4>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Substance>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:372862008;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> "rivaroxaban (Xarelto)" .
+
+<https://rdf.aidava.eu/resource/Procedure/Aspirin/Substance/129342KW_L3323_v4> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Substance>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:387458008 .
+
+<https://rdf.aidava.eu/resource/Procedure/BetaBlocker/Substance/129342KW_L3323_v4>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Substance>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:373254001;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> "angina" .
+
+<https://rdf.aidava.eu/resource/Procedure/Lipidlowering/129342KW_L3323_v4> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/129342KW>;
+  aidava-sphn:usingSubstance <https://rdf.aidava.eu/resource/Procedure/Lipidlowering/Substance/129342KW_L3323_v4>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:134350008;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/Lipidlowering/Substance/129342KW_L3323_v4>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Substance>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:373267003;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> "atorvastatin" .
+
+<https://rdf.aidava.eu/resource/Procedure/P2Y12/Substance/129342KW_L3323_v4> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Substance>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1162905001;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> "clopidogrel (Plavix)" .

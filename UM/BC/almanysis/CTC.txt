@@ -1,0 +1,13 @@
+| **CSV Column**     | **Mapped RDF Ontology Path**                                        |
+| ------------------ | ------------------------------------------------------------------- |
+| `GEN_IDNUMBER`     | `https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier` |
+| `TABLE_IDENTIFIER` | `https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier`          |
+| `BR_DERMATITIS`    | `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`       |
+| `BR_LYMPHEDEMA`    | `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`       |
+| `BR_RIBFRACT1`     | `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`       |
+| `BR_HEART_FAIL`    | `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`       |
+| `BR_RAD_PNEUM`     | `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`       |
+| `BR_HYPERTENSION`  | `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`       |
+| `BR_DM`            | `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`       |
+
+All of them are "correct" Missing is that problemcondition has text and what the path is exactly.

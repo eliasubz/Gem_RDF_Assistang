@@ -1,0 +1,246 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/aidava/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<aidava-reosurce:Measurement/Glucose/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:100746-7;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <aidava-reosurce:Measurement/Glucose/Quantity/P0023919393932_L3316_v008> .
+
+<aidava-reosurce:Measurement/Glucose/Quantity/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <aidava-reosurce:Measurement/Glucose/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "7.8 mmol/l" .
+
+<aidava-reosurce:Measurement/Glucose/Quantity/Unit/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmolperL .
+
+<aidava-reosurce:Measurement/Hemoglobin/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:10346-5;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <aidava-reosurce:Measurement/Hemoglobin/Quantity/P0023919393932_L3316_v008> .
+
+<aidava-reosurce:Measurement/Hemoglobin/Quantity/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <aidava-reosurce:Measurement/Hemoglobin/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "7.2 mmol/l" .
+
+<aidava-reosurce:Measurement/Hemoglobin/Unit/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmolperL .
+
+<https://rdf.aidava.eu/resource/Measurement/Calcium/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:1996-8;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Calcium/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Calcium/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Calcium/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "2.31 mmol/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/Calcium/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmolperL .
+
+<https://rdf.aidava.eu/resource/Measurement/Chloride/P0023919393932_L3316_v008> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:2069-3;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Chloride/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Chloride/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Chloride/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "105 mmol/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/Chloride/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmolperL .
+
+<https://rdf.aidava.eu/resource/Measurement/Creatinine/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:101475-2;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Creatinine/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Creatinine/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Creatinine/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "43 umol/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/Creatinine/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:umolperL .
+
+<https://rdf.aidava.eu/resource/Measurement/EryUrine/P0023919393932_L3316_v008> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:30391-7;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/EryUrine/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/EryUrine/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/EryUrine/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "3 /ul" .
+
+<https://rdf.aidava.eu/resource/Measurement/EryUrine/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:cblnbcbrperuL .
+
+<https://rdf.aidava.eu/resource/Measurement/Erythrocytes/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:26453-1;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Erythrocytes/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Erythrocytes/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Erythrocytes/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "3.85 x10*12/I" .
+
+<https://rdf.aidava.eu/resource/Measurement/Erythrocytes/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:10exp12perL .
+
+<https://rdf.aidava.eu/resource/Measurement/GGT/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:2324-2;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/GGT/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/GGT/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/GGT/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "141 U/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/GGT/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:UperL .
+
+<https://rdf.aidava.eu/resource/Measurement/Hematocrit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:20570-8;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Hematocrit/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Hematocrit/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Hematocrit/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "0.35 l/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/Hematocrit/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:LperL .
+
+<https://rdf.aidava.eu/resource/Measurement/Hemolysis/P0023919393932_L3316_v008> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:13535-0;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> "Licht" .
+
+<https://rdf.aidava.eu/resource/Measurement/LDH/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:2532-0;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/LDH/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/LDH/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/LDH/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "318 U/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/LDH/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:UperL .
+
+<https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:20408-1;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "5.1 x 10*9/1" .
+
+<https://rdf.aidava.eu/resource/Measurement/LeucocyteUrine/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:cblnbcbrperuL .
+
+<https://rdf.aidava.eu/resource/Measurement/Lymphocyte/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:26474-7;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Lymphocyte/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Lymphocyte/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Lymphocyte/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "9.0 %" .
+
+<https://rdf.aidava.eu/resource/Measurement/Lymphocyte/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:percent .
+
+<https://rdf.aidava.eu/resource/Measurement/Phosphate/P0023919393932_L3316_v008> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:14879-1;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Phosphate/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Phosphate/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Phosphate/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "0.8 mmol/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/Phosphate/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmolperL .
+
+<https://rdf.aidava.eu/resource/Measurement/Potassium/P0023919393932_L3316_v008> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:39789-3;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/Potassium/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/Potassium/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/Potassium/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "4.2 mmol/l" .
+
+<https://rdf.aidava.eu/resource/Measurement/Potassium/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mmolperL .
+
+<https://rdf.aidava.eu/resource/Measurement/eGFR/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> sphn-loinc:96083-1;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/eGFR/Quantity/P0023919393932_L3316_v008> .
+
+<https://rdf.aidava.eu/resource/Measurement/eGFR/Quantity/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/Measurement/eGFR/Quantity/Unit/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> ">90 ml/min/1.73m2" .
+
+<https://rdf.aidava.eu/resource/Measurement/eGFR/Quantity/Unit/P0023919393932_L3316_v008>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mLperminpercbl1dot73_m2cbr .
+
+<https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> "Van Hooijdonk";
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName> "Klaas" .
+
+<https://rdf.aidava.eu/resource/Patient/P0023919393932_L3316_v008> a <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>;
+  <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://rdf.aidava.eu/resource/Patient/Name/P0023919393932_L3316_v008>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> "P0023919393932" .

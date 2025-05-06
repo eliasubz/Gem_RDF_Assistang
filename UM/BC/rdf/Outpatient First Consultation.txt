@@ -1,0 +1,234 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aidava-resource: <https://rdf.aidava.eu/resource/> .
+@prefix aidava-sphn: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix sphn-icd-10: <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/> .
+@prefix sphn-loinc: <https://biomedit.ch/rdf/sphn-resource/loinc/> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+snomed:1237262009 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:1259200004 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:1287142005 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:13892007 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:169167001 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:169413002 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:263522009 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:2710001000004109 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:384630000 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:385658003 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:385660001 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:394895009 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:443527007 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:444711007 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:83302001 a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+snomed:Nee a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+ucum:mm a <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+<https://rdf.aidava.eu/resource/Measurement/InvolvedNodes/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:443527007;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/Measurement/InvolvedNodes/Quantity/P0023919393932_L3300_v006> .
+
+<https://rdf.aidava.eu/resource/Measurement/InvolvedNodes/Quantity/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "3" .
+
+<https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006> a aidava-sphn:Patient;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> "P0023919393932" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistology/Measurement/DCISSize/Quantity/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/ProblemCondition/InSituHistology/Measurement/DCISSize/Quantity/Unit/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "1.02 mm" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistology/Measurement/DCISSize/Quantity/Unit/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mm .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/DCISSize/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:2710001000004109;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/ProblemCondition/InSituHistology/Measurement/DCISSize/Quantity/P0023919393932_L3300_v006> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/InSituDifferentiationGrade/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:263522009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> "Poorly differentiated" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMIS/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1287142005;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMISSize/Quantity/P0023919393932_L3300_v006> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMISSize/Quantity/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMISSize/Quantity/Unit/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "1.22 mm" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMISSize/Quantity/Unit/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mm .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  aidava-sphn:interprets <https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/DCISSize/P0023919393932_L3300_v006>,
+    <https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/InSituDifferentiationGrade/P0023919393932_L3300_v006>,
+    <https://rdf.aidava.eu/resource/ProblemCondition/InSituHistologyConclusion/Measurement/MRMIS/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "LCIS" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/ER/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:83302001;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> "Nee" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/HER2/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:444711007;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> "Nee" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveCancerDifferentiation/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:263522009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> "Cell type not determined" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:384630000;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/Quantity/P0023919393932_L3300_v006> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/Quantity/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/Quantity/Unit/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "1mm" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/Quantity/Unit/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mm .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1287142005;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/Quantity/P0023919393932_L3300_v006> .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/Quantity/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit> <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/Quantity/Unit/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue> "5mm" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/Quantity/Unit/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ucum:mm .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/PR/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:13892007;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> "Ja" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  aidava-sphn:interprets <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/ER/P0023919393932_L3300_v006>,
+    <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveCancerDifferentiation/P0023919393932_L3300_v006>,
+    <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/InvasiveSize/P0023919393932_L3300_v006>,
+    <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/MRMI/P0023919393932_L3300_v006>,
+    <https://rdf.aidava.eu/resource/ProblemCondition/InvasiveHistologyConclusion/Measurement/PR/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Ductal carcinoma" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/MappingConclusion/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> "2022-01-11"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "Free" .
+
+<https://rdf.aidava.eu/resource/ProblemCondition/TumourLocation/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> "links mamma" .
+
+<https://rdf.aidava.eu/resource/Procedure/AntiHER2ADJ/P0023919393932_L3300_v006> a
+    <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1237262009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385660001 .
+
+<https://rdf.aidava.eu/resource/Procedure/CHEMO/P0023919393932_L3300_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1259200004;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> "2014-04-30"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/CHEMOADJ/P0023919393932_L3300_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:394895009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> "2015-02-01"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/ENDTR/P0023919393932_L3300_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:169413002;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> "2021-01-03"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/Procedure/ENDTRADJ/P0023919393932_L3300_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:169413002;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385660001 .
+
+<https://rdf.aidava.eu/resource/Procedure/HER2ADJ/P0023919393932_L3300_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:1237262009;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:Nee .
+
+<https://rdf.aidava.eu/resource/Procedure/LymphNodeMapping/P0023919393932_L3300_v006>
+  a <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> snomed:169167001;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> snomed:385658003 .
+
+<https://rdf.aidava.eu/resource/pTNM/P0023919393932_L3300_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAssessmentDateTime> "2022-01-11"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMPrefix> "p";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMSuffix> "1";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix> "p";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix> "0";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix> "p";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix> "1" .
+
+<https://rdf.aidava.eu/resource/ypTNM/P0023919393932_L3300_v006> a <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>;
+  aidava-sphn:hasPatient <https://rdf.aidava.eu/resource/Patient/P0023919393932_L3300_v006>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAssessmentDateTime> "2022-01-11"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasNPrefix> "yp";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasNSuffix> "0";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix> "yp";
+  <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTSuffix> "1" .

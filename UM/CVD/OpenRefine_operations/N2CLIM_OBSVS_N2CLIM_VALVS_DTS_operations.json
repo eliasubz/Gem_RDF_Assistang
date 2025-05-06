@@ -1,0 +1,28 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Lengte",
+    "expression": "jython:import re\ntry:\n  res = re.findall(\"\\d+\\.\\d+\", value)[0]\nexcept:\n  res = re.findall(\"\\d+\", value)[0]\nreturn res",
+    "onError": "set-to-blank",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Lengte using expression jython:import re\ntry:\n  res = re.findall(\"\\d+\\.\\d+\", value)[0]\nexcept:\n  res = re.findall(\"\\d+\", value)[0]\nreturn res"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Gewicht",
+    "expression": "jython:import re\ntry:\n  res = re.findall(\"\\d+\\.\\d+\", value)[0]\nexcept:\n  res = re.findall(\"\\d+\", value)[0]\nreturn res",
+    "onError": "set-to-blank",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Gewicht using expression jython:import re\ntry:\n  res = re.findall(\"\\d+\\.\\d+\", value)[0]\nexcept:\n  res = re.findall(\"\\d+\", value)[0]\nreturn res"
+  }
+]

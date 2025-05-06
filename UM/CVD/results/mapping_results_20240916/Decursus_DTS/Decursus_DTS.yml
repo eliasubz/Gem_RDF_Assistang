@@ -1,0 +1,82 @@
+
+prefixes:
+  
+  aidava-resource: https://rdf.aidava.eu/resource/
+  
+  atc: https://biomedit.ch/rdf/sphn-resource/atc/ATC/
+  
+  snomed-ct: http://snomed.info/id/
+  
+  icd-10: https://biomedit.ch/rdf/sphn-resource/icd-10-gm/
+  
+  um: http://aidava.eu/rdf/valueset/um/
+  
+  sphn: https://biomedit.ch/rdf/sphn-ontology/sphn#
+  
+  ucum: https://biomedit.ch/rdf/sphn-resource/ucum/
+  
+  loinc: https://biomedit.ch/rdf/sphn-resource/loinc/
+  
+
+sources:
+  
+  Decursus_DTS: [/file_storage/66e6b0b27be38163489d8617/Decursus_DTS.csv~csv]
+  
+  
+
+mappings:
+  
+  b9bdfc58-3040-4d61-bbaa-2bb5fbf614f5:
+    source: Decursus_DTS
+    
+    s: aidava-resource:Course/Department/$(DOC_ID)
+    
+    po:
+      
+      - [a, https://biomedit.ch/rdf/sphn-ontology/sphn#Location]
+      
+      
+      - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasExact
+        object:
+          value: $(Afdeling)
+          
+          datatype: http://www.w3.org/2001/XMLSchema#string
+          
+          
+      
+  
+  3db7c472-f470-4bb5-936a-71775a8b91b0:
+    source: Decursus_DTS
+    
+    s: aidava-resource:Course/$(DOC_ID)
+    
+    po:
+      
+      - [a, https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase]
+      
+      
+      - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
+        object:
+          value: aidava-resource:Patient/$(ID nummer)
+          
+          
+          type: iri
+          
+      
+      - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasLocation
+        object:
+          value: aidava-resource:Course/Department/$(DOC_ID)
+          
+          
+          type: iri
+          
+      
+      - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+        object:
+          value: $(DOC_ID)
+          
+          datatype: http://www.w3.org/2001/XMLSchema#string
+          
+          
+      
+  

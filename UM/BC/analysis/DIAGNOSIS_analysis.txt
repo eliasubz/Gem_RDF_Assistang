@@ -1,0 +1,17 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+Main Entity IRI: https://rdf.aidava.eu/resource/Age/Quantity/P0023919393932_2023-10-01
+Total Connections: 4
+
+Column Mappings and Semantic Context:
+
+Column: GEN_IDNUMBER
+  ↳ No match found in RDF
+
+Column: TABLE_IDENTIFIER
+  ↳ No match found in RDF
+
+Column: DIAGNOSE_DATE
+  ↳ No match found in RDF
+
+Column: GEN_AGE_DIAGN
+  ↳ No match found in RDF
