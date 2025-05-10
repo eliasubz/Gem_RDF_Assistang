@@ -7,9 +7,8 @@ You are a specialized RDF mapping expert with extensive knowledge of semantic we
 Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 1-hop relationships extending from the main entity represented by each row.
 
 ## Input
-1. Target Class: https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
-2. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
-3. Available Paths:
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+2. Available Paths:
 1. 1. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 2. 2. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
 3. 3. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Substance
@@ -29,27 +28,21 @@ Transform a CSV dataset into RDF triples by mapping each column to the most appr
 17. 17. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string
 18. 18. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
 
-4. CSV Data:
+3. CSV Data:
+Column header names -> Column values
 GEN_IDNUMBER -> P0023919393932
-TABLE_IDENTIFIER -> P0023919393932_L3316_v008
-FIRST_NAME -> Klaas
-LAST_NAME -> Van Hooijdonk
-GLUCOSE_GLUCOSE -> 7.8 mmol/l
-HEMOLYTISCH_HEMOLYTISCH -> Licht
-HEMOGLOBINE_HEMOGLOBINE -> 7.2 mmol/l
-HEMATOCRIET_L -> 0.35 l/l
-KALIUM_L -> 4.2 mmol/l
-EGFR_M2 -> >90 ml/min/1.73m2
-ERY'S_UL -> 3 /ul
-LEUCOCYTEN_UL -> 5.1 x 10*9/1
-KREATININE_L -> 43 umol/l
-LDH_L -> 318 U/l
-CALCIUM_L -> 2.31 mmol/l
-CHLORIDE_L -> 105 mmol/l
-LYMFOCYTEN_LYMFOCYTEN -> 9.0 %
-ERYTROCYTEN_I -> 3.85 x10*12/I
-FOSFAAT_L -> 0.8 mmol/l
-GGT_L -> 141 U/l
+TABLE_IDENTIFIER -> P0023919393932_L3360_v006
+ANXILLARY_INFECTION -> Nee
+HEMATOMA -> Ja
+SEROMA -> Ja
+DYSPHAGIA -> Ja
+PAIN -> 2
+EDEMA -> Onbekend
+WHO_PS -> 2
+MENOPAUSAL -> Pre-menopausal
+COPD -> Nee
+PAIN_MEDICATIE -> Ja
+PAIN_MEDICATIE_STATUS -> 385658003
 
 ## Requirements
 For each CSV column:

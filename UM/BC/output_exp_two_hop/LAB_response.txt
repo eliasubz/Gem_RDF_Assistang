@@ -1,0 +1,200 @@
+Let's analyze each CSV column systematically, selecting the most semantically appropriate path from the available options. I will provide detailed reasoning and note any necessary data transformations.
+
+---
+
+### Column 1: GEN_IDNUMBER
+- **Value:** P0023919393932
+- **Reasoning:** This appears to be a patient identifier; however, no direct 'identifier' property is provided. The closest is 'hasSubjectPseudoIdentifier' (Path 13), which suggests an identifier for the patient.
+- **Selected Path:** **13** `AIDAVA/Patient`:`hasSubjectPseudoIdentifier`
+- **Justification:** This property explicitly indicates a pseudo-identifier for a patient, matching the column's purpose.
+- **Transformation:** No transformation needed; map string directly.
+
+---
+
+### Column 2: TABLE_IDENTIFIER
+- **Value:** P0023919393932_L3316_v008
+- **Reasoning:** Likely an internal or dataset-specific ID; perhaps associated with data files or identifiers. Since it’s a unique dataset identifier, it can be mapped to the 'hasDataFile' property, or as a pseudo-identifier for a data file.
+- **Selected Path:** **8** `AIDAVA/Procedure`:`hasDataFile`
+- **Justification:** The value resembles a data file or version identifier, fitting the `hasDataFile` property. Alternatively, if representing an identifier, could consider a dedicated property, but within provided options, `hasDataFile` aligns best.
+- **Transformation:** No transformation; treat as string.
+
+---
+
+### Column 3: FIRST_NAME
+- **Value:** Klaas
+- **Reasoning:** Personal name; common in patient data. There is no explicit 'hasFirstName' property in the paths, but typically, the patient's name can be stored as a 'foaf:name' or similar. Given the ontology, perhaps the patient's name is stored via a custom property; but since not explicitly available, perhaps as 'hasSubjectPseudoIdentifier' is not appropriate.
+- **Alternative options?** No explicit property for name in the provided paths. Possibly, the name can be stored as a 'hasFreeText' in a related procedure or as a custom data property.
+- **Best fit:** Since no explicit property exists, the closest is to store it as a 'hasFreeText' in a related context, but it's not ideal.
+- **Given constraints:** No suitable path; perhaps store it as a literal associated with the patient entity directly, outside provided paths.
+- **Decision:** Map as a literal property attached directly to Patient entity (not in paths). Since this is outside scope, potentially skip or annotate as not mapped.
+- **Note:** For completeness, indicate no mapping available.
+
+---
+
+### Column 4: LAST_NAME
+- **Value:** Van Hooijdonk
+- **Reasoning:** Same as first name; personal name. Same considerations apply.
+- **Same conclusion:** No explicit property; store as literal attached to patient entity if possible.
+- **Note:** Not covered precisely by provided paths.
+
+---
+
+### Column 5: GLUCOSE_GLUCOSE
+- **Value:** 7.8 mmol/l
+- **Reasoning:** Laboratory result; can be mapped as a 'hasFreeText' or possibly as a measurement linked via 'hasDataFile' or 'hasCode'.
+- **Ideal Path:**
+  - Since this is a measurement, perhaps linked via a Procedure and using 'hasDataFile' or 'hasCode'.
+  - Alternatively, store as a property of the patient or as a measurement linked to a procedure.
+- **Selected Path:** **18** `AIDAVA/Procedure`:`hasStartDateTime` (not ideal), but better to use 'hasFreeText' for raw result.
+- **Best fit:** Use 'hasFreeText' (Path 17) to store the result as a string.
+- **Justification:** The value is a measurement result, best stored as free text associated with a procedure.
+- **Transformation:** No transformation; store as string.
+
+---
+
+### Column 6: HEMOLYTISCH_HEMOLYTISCH
+- **Value:** Licht
+- **Reasoning:** Qualitative measurement or observation; likely a status or note.
+- **Selected Path:** **17** `hasFreeText`
+- **Justification:** Same as previous, store as free text describing the observation.
+- **Transformation:** No transformation needed.
+
+---
+
+### Column 7: HEMOGLOBINE_HEMOGLOBINE
+- **Value:** 7.2 mmol/l
+- **Reasoning:** Laboratory measurement; numerical value with units.
+- **Selected Path:** **17** `hasFreeText`
+- **Justification:** For simplicity, store as free text; ideally, would be modeled as a measurement with proper units.
+- **Transformation:** No transformation beyond string.
+
+---
+
+### Column 8: HEMATOCRIET_L
+- **Value:** 0.35 l/l
+- **Reasoning:** Similar to above; a lab result.
+- **Selected Path:** **17** `hasFreeText`
+- **Justification:** Store as free text.
+- **Transformation:** No transformation.
+
+---
+
+### Column 9: KALIUM_L
+- **Value:** 4.2 mmol/l
+- **Same reasoning as above:**
+- **Selected Path:** **17**
+
+---
+
+### Column 10: EGFR_M2
+- **Value:** >90 ml/min/1.73m2
+- **Reasoning:** A calculated kidney function metric.
+- **Selected Path:** **17** `hasFreeText`
+- **Justification:** Store as descriptive text.
+- **Transformation:** No transformation.
+
+---
+
+### Column 11: ERY'S_UL
+- **Value:** 3 /ul
+- **Reasoning:** Lab count; could be stored as measurement or free text.
+- **Selected Path:** **17**
+
+---
+
+### Column 12: LEUCOCYTEN_UL
+- **Value:** 5.1 x 10*9/1
+- **Reasoning:** Quantitative measurement.
+- **Selected Path:** **17**
+
+---
+
+### Column 13: KREATININE_L
+- **Value:** 43 umol/l
+- **Reasoning:** Lab result.
+- **Selected Path:** **17**
+
+---
+
+### Column 14: LDH_L
+- **Value:** 318 U/l
+- **Reasoning:** Lab measurement.
+- **Selected Path:** **17**
+
+---
+
+### Column 15: CALCIUM_L
+- **Value:** 2.31 mmol/l
+- **Reasoning:** Lab result.
+- **Selected Path:** **17**
+
+---
+
+### Column 16: CHLORIDE_L
+- **Value:** 105 mmol/l
+- **Reasoning:** Lab result.
+- **Selected Path:** **17**
+
+---
+
+### Column 17: LYMFOCYTEN_LYMFOCYTEN
+- **Value:** 9.0 %
+- **Reasoning:** Percentage; lab measurement.
+- **Selected Path:** **17**
+
+---
+
+### Column 18: ERYTROCYTEN_I
+- **Value:** 3.85 x10^12/I
+- **Reasoning:** Quantitative measurement.
+- **Selected Path:** **17**
+
+---
+
+### Column 19: FOSFAAT_L
+- **Value:** 0.8 mmol/l
+- **Reasoning:** Lab result.
+- **Selected Path:** **17**
+
+---
+
+### Column 20: GGT_L
+- **Value:** 141 U/l
+- **Reasoning:** Enzyme activity measurement.
+- **Selected Path:** **17**
+
+---
+
+## Summary of mappings:
+
+| Column | Path Number | RDF Path | Justification | Notes |
+|---|---|---|---|---|
+| GEN_IDNUMBER | 13 | `hasSubjectPseudoIdentifier` | Patient pseudo-ID | Literal |
+| TABLE_IDENTIFIER | 8 | `hasDataFile` | Data file identifier | Literal |
+| FIRST_NAME | N/A | — | No explicit property; store externally | Not mapped |
+| LAST_NAME | N/A | — | Same as above | Not mapped |
+| GLUCOSE_GLUCOSE | 17 | `hasFreeText` | Lab result | Literal string |
+| HEMOLYTISCH_HEMOLYTISCH | 17 | `hasFreeText` | Observation note | Literal |
+| HEMOGLOBINE_HEMOGLOBINE | 17 | `hasFreeText` | Lab value | Literal |
+| HEMATOCRIET_L | 17 | `hasFreeText` | Lab measurement | Literal |
+| KALIUM_L | 17 | `hasFreeText` | Lab measurement | Literal |
+| EGFR_M2 | 17 | `hasFreeText` | Quantitative metric | Literal |
+| ERY'S_UL | 17 | `hasFreeText` | Lab count | Literal |
+| LEUCOCYTEN_UL | 17 | `hasFreeText` | Lab count | Literal |
+| KREATININE_L | 17 | `hasFreeText` | Lab measurement | Literal |
+| LDH_L | 17 | `hasFreeText` | Enzyme level | Literal |
+| CALCIUM_L | 17 | `hasFreeText` | Lab result | Literal |
+| CHLORIDE_L | 17 | `hasFreeText` | Lab result | Literal |
+| LYMFOCYTEN_LYMFOCYTEN | 17 | `hasFreeText` | Percentage | Literal |
+| ERYTROCYTEN_I | 17 | `hasFreeText` | Lab measurement | Literal |
+| FOSFAAT_L | 17 | `hasFreeText` | Measurement | Literal |
+| GGT_L | 17 | `hasFreeText` | Enzyme level | Literal |
+
+---
+
+## Final notes:
+- For patient names, no explicit mapping was available; ideally, custom properties should be added.
+- Numeric lab data is stored as free text for simplicity; a more precise modeling would involve creating measurement entities with units.
+- All data transformations are minimal; just ensure data is stored as literals.
+
+If you'd like, I can generate RDF triples or Turtle syntax for specific data points.

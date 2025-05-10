@@ -1,0 +1,56 @@
+Column: GEN_IDNUMBER  
+Path: 16 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime  
+Justification: Although the property name suggests a unique identifier, the ontology does not specify a direct 'identifier' property. Instead, 'hasStartDateTime' can be used as a unique procedural timestamp or code, assuming GEN_IDNUMBER functions as an identifier. Alternatively, mapping to a specific identifier property would be ideal if available, but given the paths, this is the closest semantic match.  
+Transformation: No special transformation; ensure date formatting matches xsd:dateTime if used as an identifier.
+
+---
+
+Column: TABLE_IDENTIFIER  
+Path: 7 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode  
+Justification: 'hasCode' nested twice indicates a code property associated with the procedure, which aligns with the table identifier likely serving as a procedural code or ID within the ontology.  
+Transformation: Map as string; no transformation needed.
+
+---
+
+Column: BRTUM_DATE_LASTFU  
+Path: 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime  
+Justification: 'hasDateTime' directly relates to date/time information. Given the column name suggests a date of last follow-up, mapping to 'hasDateTime' is appropriate.  
+Transformation: Convert date string to xsd:dateTime format if necessary.
+
+---
+
+Column: BRTUM_STATUS_LASTFU  
+Path: 12 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode/https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode  
+Justification: The 'hasStatusCode' property nested twice indicates a status code associated with the procedure. This path semantically matches the status value in the column.  
+Transformation: Map as string or code; ensure code formatting matches the ontology's expectations.
+
+---
+
+Column: BRTUM_LOCAL_REC  
+Path: 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier  
+Justification: The value appears to be a pseudo-identifier or boolean indicator ('Ja' meaning 'Yes'), so mapping to 'hasSubjectPseudoIdentifier' can serve as an identifier or flag for local record status. If the ontology supports boolean or string literals, map accordingly.  
+Transformation: Convert 'Ja'/'Nein' (if applicable) to boolean literals (true/false) or strings.
+
+---
+
+Column: BRTUM_DATE_LOCALREC  
+Path: 16 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime  
+Justification: The date of local record can be mapped to 'hasStartDateTime' representing the date the local record was created or registered.  
+Transformation: Convert date string to xsd:dateTime.
+
+---
+
+Column: BRTUM_REGIO_REC  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase/https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeRegion (if exists)  
+Justification: 'hasAdministrativeCase' leads to 'AdministrativeCase', which may include regional info. If the ontology has a 'hasAdministrativeRegion' property under 'AdministrativeCase', it would be ideal. Since only 'hasAdministrativeCase' is specified, and 'REGIO_REC' suggests regional info, mapping to 'hasAdministrativeCase' is a close fit. Alternatively, if regional info is within the administrative case, further nested properties can be used.  
+Transformation: Map as string indicating region.
+
+---
+
+**Summary Notes:**  
+- For date fields, ensure proper xsd:dateTime formatting.  
+- For boolean or 'Ja'/'Nein' fields, convert to boolean literals if supported.  
+- When multiple paths are available, prioritize those aligned with the semantic meaning of the data.  
+- If additional properties or nested structures are present in the ontology not listed, consider extending mappings accordingly.
+
+Please review and adjust mappings if more detailed property definitions become available in your ontology.

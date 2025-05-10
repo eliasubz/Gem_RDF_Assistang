@@ -1,0 +1,97 @@
+Column: GEN_IDNUMBER  
+Path: 1 https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient/hasIdentifier/genIDNumber  
+Justification: The column likely represents a unique identifier for the patient, which aligns with the property "hasIdentifier" or similar in the ontology; since "hasIdentifier" is not explicitly listed, mapping to a custom identifier property under Patient is appropriate.  
+Transformation: No transformation needed; treat as string.
+
+---
+
+Column: TABLE_IDENTIFIER  
+Path: 1 https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient/hasIdentifier/tableID  
+Justification: Similar to GEN_IDNUMBER, this probably is a secondary identifier or label for the patient, mapped as an identifier property; or, if not available, a custom property under Patient.  
+Transformation: No transformation needed; treat as string.
+
+---
+
+Column: ANXILLARY_INFECTION  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasComment]-> http://www.w3.org/2001/XMLSchema#string  
+*Alternative considered:* Using a custom property directly under Procedure, but the ontology suggests AdministrativeCase as a context for findings.  
+Justification: The infection status can be recorded as an administrative note or case detail related to the procedure, making this path semantically appropriate.  
+Transformation: Map "Nee"/"Ja"/"Onbekend" to boolean or string ("No"/"Yes"/"Unknown") as needed.
+
+---
+
+Column: HEMATOMA  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasComment]-> http://www.w3.org/2001/XMLSchema#string  
+*Same reasoning as ANXILLARY_INFECTION:* recording complication status as an administrative comment.  
+Transformation: Map "Ja"/"Nee" to boolean or string.
+
+---
+
+Column: SEROMA  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasComment]-> http://www.w3.org/2001/XMLSchema#string  
+*Same as above.*
+
+---
+
+Column: DYSPHAGIA  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasComment]-> http://www.w3.org/2001/XMLSchema#string
+
+---
+
+Column: PAIN  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasPainLevel]-> http://www.w3.org/2001/XMLSchema#integer  
+*Alternative considered:* Using a property directly on Procedure, but pain is often a clinical note associated with administrative case or observation.  
+Justification: Pain level is a clinical observation best mapped under AdministrativeCase or related observation context.  
+Transformation: Map "2" to integer 2.
+
+---
+
+Column: EDEMA  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasComment]-> http://www.w3.org/2001/XMLSchema#string  
+*Alternative considered:* Similar to other complications, stored as comment or observation.
+
+---
+
+Column: WHO_PS  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasComment]-> http://www.w3.org/2001/XMLSchema#string or as a coded value in AdministrativeCase.  
+*Justification:* Since WHO_PS appears to be a score or level, but given the options, storing as a comment or code is appropriate.
+
+---
+
+Column: MENOPAUSAL  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier  
+*Alternative considered:* Possibly as a property indicating menopausal status directly linked to Patient, but the data is likely related to procedure context or observation.  
+*Justification:* The status "Pre-menopausal" can be recorded as an attribute of the patient or as a note linked to the procedure, here mapped via SubjectPseudoIdentifier or similar.  
+Transformation: Map "Pre-menopausal" as string.
+
+---
+
+Column: COPD  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasComment]-> http://www.w3.org/2001/XMLSchema#string  
+*Alternative considered:* Direct property on Patient, but given the pattern, administrative or clinical note is suitable.
+
+---
+
+Column: PAIN_MEDICATIE  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedication]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Medication  
+*Justification:* Medication related to pain management can be mapped as a Medication resource associated with the procedure or patient context.  
+Transformation: Map "Ja" to presence of medication, or record medication name if available.
+
+---
+
+Column: PAIN_MEDICATIE_STATUS  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicationStatus]-> http://www.w3.org/2001/XMLSchema#string or coded terminology  
+*Justification:* To record medication status code, using a property under Procedure.
+
+---
+
+**Summary:**
+- For identifiers, use custom properties or existing identifier properties.
+- For clinical findings (infection, hematoma, seroma, dyspagia, COPD), map to AdministrativeCase comments.
+- For pain levels, use AdministrativeCase with numeric datatype.
+- For categorical data (menopausal status, medication), map as string literals.
+- For medication and status, map to appropriate resource and coded property.
+
+---
+
+If you need detailed RDF Turtle snippets or specific property URIs, please specify.

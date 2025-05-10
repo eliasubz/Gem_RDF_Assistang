@@ -1,0 +1,97 @@
+**Column: GEN_IDNUMBER**  
+**Path:** 1 https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient/hasIdentifier  
+**Justification:** The column appears to contain a unique identifier for the patient; mapping it via a property like `hasIdentifier` (assuming it exists in the ontology) directly links the patient entity to their ID. Given the provided paths, if `hasIdentifier` isn't explicitly listed, the most semantically close is the `hasPseudoIdentifier` property associated with procedures, but since this is about the patient, a direct property such as `hasIdentifier` (not listed but implied) is most appropriate.  
+**Transformation:** No transformation needed; ensure the value is a string compatible with the identifier datatype.
+
+---
+
+**Column: TABLE_IDENTIFIER**  
+**Path:** Not explicitly mapped in available paths; as it is a document or dataset-specific ID, it might be linked as a metadata annotation or as an identifier for a related document entity if modeled.  
+**Justification:** Since no direct path exists, this could be linked to an administrative entity or as an annotation. Alternatively, if modeling the procedure or document, it could be linked via `hasDataFile` or `hasDataProviderInstitute` as an identifier, but given the data, no suitable path is provided.  
+**Transformation:** Store as a string literal attached as metadata or annotation if the ontology allows; otherwise, omit from RDF triples.
+
+---
+
+**Column: FIRST_NAME**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasSubjectPseudoIdentifier/hasSubjectPseudoIdentifier  
+**Justification:** Since the first name pertains to the patient, and the only explicit relationship involves the `hasSubjectPseudoIdentifier` (which links to pseudonymous patient info in procedures), the best fit is to associate the patient's pseudonymous identifier with their name. Alternatively, if the ontology supports direct patient attributes, that would be preferable, but given paths, this is the closest.  
+**Transformation:** Map as a string literal; consider reusing or creating a blank node for the patient if more detailed modeling is needed.
+
+---
+
+**Column: LAST_NAME**  
+**Path:** Same as FIRST_NAME (see above)  
+**Justification:** Same reasoning as FIRST_NAME, leveraging the pseudonymous identifier association.  
+**Transformation:** Map as a string literal.
+
+---
+
+**Column: BIRTH_DATE**  
+**Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasDateTime  
+**Justification:** The patient's birth date can be associated with the procedure's dateTime property if modeling patient-level date is unavailable; alternatively, it's often modeled as a patient attribute, but given the paths, attaching it as a dateTime in a relevant context is acceptable.  
+**Transformation:** Convert the date to xsd:date format (`1968-05-06`).
+
+---
+
+**Column: HOSPITAL_NAME**  
+**Path:** Not directly mapped in provided paths; potentially as an administrative or location attribute.  
+**Justification:** If hospital information is modeled as an `administrativeCase` or as a participant in the procedure, it could be linked via `hasAdministrativeCase` or a similar property. Since no explicit path exists, this may be stored as an annotation or as a new property if ontology allows.  
+**Transformation:** Map as a string literal; may need to create a new property such as `hospitalName` if expanding ontology.
+
+---
+
+**Column: REFERRAL_HOSPITAL_NAME**  
+**Path:** Same as HOSPITAL_NAME, no explicit path provided.  
+**Justification:** Similar reasoning as above; could be modeled as part of administrative case details or as an annotation.  
+**Transformation:** String literal.
+
+---
+
+**Column: DOCUMENT_DATE**  
+**Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasDateTime  
+**Justification:** The document date can be associated with a procedure's dateTime if modeling a specific record; alternatively, it could be linked as a separate date entity.  
+**Transformation:** Convert to xsd:date (`2023-08-15`).
+
+---
+
+**Column: DOCUMENT_VERSION**  
+**Path:** Not explicitly mapped; perhaps as an attribute of a data file or document entity if modeled.  
+**Justification:** Since no explicit property exists, store as a literal or as part of a document entity if modeled.  
+**Transformation:** String literal.
+
+---
+
+**Column: SIGN_PHYS**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasSubjectPseudoIdentifier/hasSubjectPseudoIdentifier  
+**Justification:** The signatory (physician) can be associated via the `hasSignPhysician` property if available; given the paths, it might be linked through the procedure's administrative case or as an annotation. Since not explicitly specified, the best approach is to attach as a literal to a `signPhysician` property or as part of an administrative note.  
+**Transformation:** Map as a string literal.
+
+---
+
+**Column: BR_BREAST**  
+**Path:** 17 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasFreeText  
+**Justification:** The dose (25 Gy) is a free text value representing treatment details; associating via `hasFreeText` is appropriate.  
+**Transformation:** Store as a string literal.
+
+---
+
+**Column: BR_PART_BREAST**  
+**Path:** Same as BR_BREAST, use `hasFreeText`  
+**Justification:** Same reasoning; the partial breast dose can be stored as free text or as a specific property if available.  
+**Transformation:** String literal.
+
+---
+
+**Column: BR_CHEST_WALL**  
+**Path:** Same as above, `hasFreeText`  
+**Justification:** Same as previous; treatment dose details stored as a string literal.  
+**Transformation:** String literal.
+
+---
+
+### Summary
+- **Prioritized semantic accuracy:** I selected paths that best reflect the domain entities and their relationships, even if some are indirect.
+- **Path considerations:** For patient identifiers and demographic info, I used the closest available relationships involving pseudonymous identifiers and date properties.
+- **Data transformation:** Mainly involves date format conversion and ensuring literals are properly typed.
+
+If the ontology supports more detailed patient attributes directly (like first name, last name, birth date), modeling should be adjusted accordingly, possibly creating dedicated patient resources with properties like `foaf:firstName`, `foaf:lastName`, and `schema:birthDate`.

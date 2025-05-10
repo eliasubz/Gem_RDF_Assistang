@@ -1,0 +1,179 @@
+**RDF Mapping Analysis and Path Selection for Each CSV Column**
+
+---
+
+### Column: GEN_IDNUMBER
+- **Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** The unique identifier ("GEN_IDNUMBER") logically maps to the Patient entity. Since the main entity is a Patient, and this ID uniquely identifies the patient, associating it directly with the Patient is most semantically accurate.
+- **Transformation:** None needed; use as string.
+
+---
+
+### Column: TABLE_IDENTIFIER
+- **Selected Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- **Justification:** "TABLE_IDENTIFIER" appears to be a specific code related to a procedure, possibly identifying a particular record or version. Given the ontology's paths, the best fit is associating it with the Product (e.g., a report version or document), via "usingSubstance" if the identifier relates to a substance or product involved in the procedure.
+- **Transformation:** None needed; use as string.
+
+---
+
+### Column: FIRST_NAME
+- **Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** The first name is a property of the Patient. By navigating through Procedure to Patient, we can assign the first name to the patient involved.
+- **Transformation:** None needed; string.
+
+---
+
+### Column: LAST_NAME
+- **Selected Path:** Same as FIRST_NAME (Path 1)
+- **Justification:** Same reasoning as above; last name is a patient attribute.
+- **Transformation:** None needed; string.
+
+---
+
+### Column: BIRTH_DATE
+- **Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** Birth date is a patient attribute; traversing via Procedure ensures correct association.
+- **Transformation:** Convert to xsd:date.
+
+---
+
+### Column: HOSPITAL_NAME
+- **Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Hospital name relates to the administrative context of the procedure, fitting the "hasAdministrativeCase" path, which links to administrative details like hospital info.
+- **Transformation:** None needed; string.
+
+---
+
+### Column: SIGN_PHYS
+- **Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** Signatory or responsible physician can be linked via "hasSubjectPseudoIdentifier" if the property captures personnel identifiers involved in the procedure, or alternatively, a more precise property may exist; but given available paths, this is closest.
+- **Transformation:** None needed; string.
+
+---
+
+### Column: REFERRAL_HOSPITAL_NAME
+- **Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** The referring hospital is part of the administrative context of the procedure.
+- **Transformation:** None needed; string.
+
+---
+
+### Column: DOCUMENT_DATE
+- **Selected Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** Document date naturally aligns with the procedure's date/time property.
+- **Transformation:** Convert to xsd:dateTime.
+
+---
+
+### Column: DOCUMENT_VERSION
+- **Selected Path:** 17 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string
+- **Justification:** Version info is textual, suitable for "hasFreeText" or a similar string property.
+- **Transformation:** None needed; string.
+
+---
+
+### Column: BRTUM_REGIO_REC
+- **Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** The regional record status relates to administrative details.
+- **Transformation:** Convert "Yes"/"No" to boolean or string as appropriate.
+
+---
+
+### Column: BRTUM_DATE_REGIOREC
+- **Selected Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> dateTime
+- **Justification:** Date of regional record, fits with procedure date/time property.
+- **Transformation:** Convert to xsd:dateTime.
+
+---
+
+### Column: BRTUM_DIST_METS
+- **Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Distribution/metastasis status is an administrative detail or observation; stored as free text or coded info.
+- **Transformation:** None needed; string.
+
+---
+
+### Column: BRTUM_DATE_DISTMETS
+- **Selected Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> dateTime
+- **Justification:** Date of metastasis record, fits with procedure date/time.
+- **Transformation:** Convert to xsd:dateTime.
+
+---
+
+### Column: BR_MDT_POST
+- **Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Postoperative MDT status is an administrative or procedural detail.
+- **Transformation:** Convert "Yes"/"No" to boolean.
+
+---
+
+### Column: BR_MDT_PREOP
+- **Selected Path:** Same as BR_MDT_POST (Path 4)
+- **Justification:** Same reasoning—administrative/clinical detail.
+- **Transformation:** Boolean conversion.
+
+---
+
+### Column: BR_SCR
+- **Selected Path:** Path 4 (AdministrativeCase)
+- **Justification:** Screening status is part of administrative or procedural detail.
+- **Transformation:** Boolean.
+
+---
+
+### Column: BR_TR_INTENT
+- **Selected Path:** Path 4 (AdministrativeCase)
+- **Justification:** Treatment intent belongs to administrative/procedure context.
+- **Transformation:** Boolean.
+
+---
+
+### Column: BR_PAT_CL_TR
+- **Selected Path:** Path 4 (AdministrativeCase)
+- **Justification:** Patient classification or treatment group is an administrative classification.
+- **Transformation:** Boolean.
+
+---
+
+### Column: PROGESTERON_RECEPTOR
+- **Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** Receptor status is a property of the tumor or patient; if modeled as a clinical attribute linked via SubjectPseudoIdentifier, this is suitable.
+- **Transformation:** Map "Positive"/"Negative" to string or coded value.
+
+---
+
+### Column: MIBL_MIBL
+- **Selected Path:** 2 Path (usingSubstance) or possibly 1 if directly associated with patient or procedure.
+- **Justification:** MIBL percentage is a measurement, possibly associated with a substance (e.g., microsatellite resection). Given the path options, Path 2 indicates this is linked via "usingSubstance" to a Product or Substance, which can hold the measurement.
+- **Transformation:** Convert percentage string "5%" to decimal (0.05).
+
+---
+
+## Summary of Mapping Decisions:
+| Column | Path Number | Path Description | Justification | Transformation |
+|---------|--------------|---------------------|-----------------|----------------|
+| GEN_IDNUMBER | 1 | Procedure → Patient | Unique patient ID | None |
+| TABLE_IDENTIFIER | 2 | Procedure → Product | Record/version identifier | None |
+| FIRST_NAME | 1 | Procedure → Patient | Patient attribute | None |
+| LAST_NAME | 1 | Procedure → Patient | Patient attribute | None |
+| BIRTH_DATE | 1 | Procedure → Patient | Patient attribute | xsd:date |
+| HOSPITAL_NAME | 4 | Procedure → AdministrativeCase | Hospital info | None |
+| SIGN_PHYS | 1 | Procedure → SubjectPseudoIdentifier | Physician identifier | None |
+| REFERRAL_HOSPITAL_NAME | 4 | Procedure → AdministrativeCase | Referring hospital | None |
+| DOCUMENT_DATE | 15 | Procedure → hasDateTime | Procedure date | xsd:dateTime |
+| DOCUMENT_VERSION | 17 | Procedure → hasFreeText | Version string | None |
+| BRTUM_REGIO_REC | 4 | AdministrativeCase | Regional record status | boolean/string |
+| BRTUM_DATE_REGIOREC | 15 | hasDateTime | Date of regional record | xsd:dateTime |
+| BRTUM_DIST_METS | 4 | AdministrativeCase | Metastasis info | string |
+| BRTUM_DATE_DISTMETS | 15 | hasDateTime | Metastasis date | xsd:dateTime |
+| BR_MDT_POST | 4 | AdministrativeCase | Post-MDT status | boolean |
+| BR_MDT_PREOP | 4 | AdministrativeCase | Pre-op MDT | boolean |
+| BR_SCR | 4 | AdministrativeCase | Screening | boolean |
+| BR_TR_INTENT | 4 | AdministrativeCase | Treatment intent | boolean |
+| BR_PAT_CL_TR | 4 | AdministrativeCase | Patient classification | boolean |
+| PROGESTERON_RECEPTOR | 1 | Procedure → SubjectPseudoIdentifier | Receptor status | string |
+| MIBL_MIBL | 2 | Procedure → usingSubstance → Product/Substance | Measurement with percentage | decimal (0-1) |
+
+---
+
+**Note:** For properties like receptor status and measurement values, specific ontologies or measurement vocabularies could be employed if available. The above mappings prioritize the given paths and the most semantically appropriate associations based on the provided ontology structure.

@@ -1,0 +1,224 @@
+Let's analyze each CSV column systematically, selecting the most appropriate path based on the provided ontology and data semantics.
+
+---
+
+### Column: GEN_IDNUMBER
+**Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient  
+**Justification:** The ID number uniquely identifies a patient and naturally maps to the Patient entity. Given the main entity is a Patient, associating the ID directly with the Patient is semantically correct.  
+**Transformation:** No transformation needed; use the ID as a string literal linked to the Patient entity.
+
+---
+
+### Column: TABLE_IDENTIFIER
+**Selected Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product  
+**Justification:** The table identifier appears to be an internal label for a data record; mapping it to a Product (or a similar resource) associated with the procedure captures the concept of a data artifact. Alternatively, it could be mapped as an external identifier, but given the options, Product is more appropriate.  
+**Transformation:** Map as a string literal or as an IRI if a unique identifier is available externally.
+
+---
+
+### Column: FIRST_NAME
+**Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasGivenName]-> x  
+**Justification:** The patient's first name is a property of the Patient entity. Since the main entity is Patient, the most precise path is directly from Patient to their given name.  
+**Transformation:** Literal string.
+
+---
+
+### Column: LAST_NAME
+**Selected Path:** Same as FIRST_NAME, with property `hasFamilyName` or equivalent (assumed to be available)  
+**Justification:** Similar to first name, last name belongs to the Patient entity.  
+**Transformation:** Literal string.
+
+---
+
+### Column: BIRTH_DATE
+**Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasBirthDate]-> x  
+**Justification:** The date of birth is an attribute of the Patient. Mapping directly from Patient to `hasBirthDate` is semantically appropriate.  
+**Transformation:** Convert to xsd:date.
+
+---
+
+### Column: HOSPITAL_NAME
+**Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasHospitalName]-> x  
+**Justification:** The hospital name is associated with an AdministrativeCase linked to the procedure, which reflects the context of care.  
+**Transformation:** Literal string.
+
+---
+
+### Column: REFERRAL_HOSPITAL_NAME
+**Selected Path:** Same as HOSPITAL_NAME, but via an AdministrativeCase or possibly directly linked to the Patient or Procedure if the ontology supports.  
+**Justification:** Since the referral hospital is involved in the administrative process, mapping via AdministrativeCase is most semantically consistent.  
+**Transformation:** Literal string.
+
+---
+
+### Column: DOCUMENT_DATE
+**Selected Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime  
+**Justification:** The document date corresponds to the procedure's date, which is stored as a datetime property.  
+**Transformation:** Convert to xsd:dateTime.
+
+---
+
+### Column: DOCUMENT_VERSION
+**Selected Path:** 17 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> x  
+**Justification:** Version info is textual and can be mapped as free text associated with the procedure or document. Alternatively, if versioning is formalized, a specific property could be used, but from the options, `hasFreeText` suffices.  
+**Transformation:** String literal.
+
+---
+
+### Column: SIGN_PHYS
+**Selected Path:** 10 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasIntent]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Intent  
+**Justification:** The signatory is likely related to the procedure or report, and associating the signatory as an intent or responsible agent is reasonable. Alternatively, if there's a specific property for signatory, it could be used; but given available paths, `hasIntent` is acceptable.  
+**Transformation:** Literal string.
+
+---
+
+### Column: DATE
+**Selected Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> x (xsd:dateTime)  
+**Justification:** The date of the record is mapped directly to the procedure's date property.  
+**Transformation:** Convert to xsd:dateTime.
+
+---
+
+### Column: DIAGNOSE
+**Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> x  
+**Justification:** The diagnosis is textual information, best mapped as free text associated with the procedure or clinical note.  
+**Transformation:** String literal.
+
+---
+
+### Column: GEN_SEX
+**Selected Path:** 1 or 13, mapped to Patient's gender property, e.g., `hasGender`  
+**Justification:** Gender is an attribute of the Patient. Since the main entity is Patient, directly associating gender via a property like `hasGender` is appropriate.  
+**Transformation:** String ('M', 'F', etc.).
+
+---
+
+### Column: BR_PR_BL_LATERALTIY
+**Selected Path:** 5 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite]-> https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite  
+**Justification:** Laterality and location pertain to body sites, which are linked to the procedure.  
+**Transformation:** String describing the site.
+
+---
+
+### Column: BR_LES_ID
+**Selected Path:** 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier  
+**Justification:** The lesion ID is a pseudo-identifier for the lesion or tumor, linked to the procedure.  
+**Transformation:** String literal.
+
+---
+
+### Column: TUMOUR_SIZE
+**Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> x  
+OR, if available, a property like `hasTumorSize` (not explicitly listed).  
+**Justification:** The size is a measurement; if no specific property exists, map as free text or create a custom property.  
+**Transformation:** Numeric (float), with unit if applicable.
+
+---
+
+### Column: BR_BL_LATERALTIY
+**Selected Path:** Same as BR_PR_BL_LATERALTIY, mapping to BodySite or a specific laterality property if available.  
+**Justification:** Indicates the side of the body involved, mapped as body site info.  
+**Transformation:** String.
+
+---
+
+### Column: GEN_SMOKING
+**Selected Path:** 1 or 13, mapped to Patient or related entity with `hasSmokingStatus` property (assuming).  
+**Justification:** Smoking status is an attribute of the patient.  
+**Transformation:** String ('Yes'/'No') or boolean if available.
+
+---
+
+### Column: GEN_BMI
+**Selected Path:** 1 or 13, mapped to Patient via property `hasBMI` (or similar).  
+**Justification:** BMI is an attribute of the patient.  
+**Transformation:** Numeric float.
+
+---
+
+### Column: BR_BL_DATE_SURG
+**Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> x  
+**Justification:** The date of surgery is associated with the procedure as a datetime property.  
+**Transformation:** xsd:date.
+
+---
+
+### Column: BR_BL_TYPE_SURG
+**Selected Path:** 4 or 17, mapped to procedure's free text or a specific property like `hasSurgicalType`.  
+**Justification:** The type of surgery is textual, best mapped as free text unless a specific property exists.  
+**Transformation:** String.
+
+---
+
+### Column: BR_BL_RE_RESEC
+**Selected Path:** 17 or a custom boolean property if available, e.g., `hasResectionStatus`  
+**Justification:** Indicates resection status, which can be mapped as boolean or text.  
+**Transformation:** Boolean or string.
+
+---
+
+### Column: BR_BL_RE_RESEC_DATE
+**Selected Path:** 17 or a date property; if not explicitly available, map as free text or create custom property.  
+**Justification:** Resective date as date, if available.  
+**Transformation:** xsd:date.
+
+---
+
+### Column: BR_BL_RE_REC
+**Selected Path:** 17 or a boolean property indicating resection recurrence status.  
+**Justification:** Similar to above, indicates recurrence status.  
+**Transformation:** Boolean or string.
+
+---
+
+### Column: BR_BL_RE_REC_DATE
+**Selected Path:** 17 or date property if available.  
+**Justification:** Recurrence date as date.  
+**Transformation:** xsd:date.
+
+---
+
+### Column: BR_AX_LN_DISSECT
+**Selected Path:** 17 or boolean property like `hasLymphNodeDissection`.  
+**Justification:** Indicates dissection performed, mapped as boolean.  
+**Transformation:** Boolean.
+
+---
+
+### Column: BR_AX_LN_DISSECT_DATE
+**Selected Path:** 17 or date property.  
+**Justification:** Date of dissection.  
+**Transformation:** xsd:date.
+
+---
+
+### Column: BR_RT
+**Selected Path:** 17 or boolean property, e.g., `hasRadiotherapy`.  
+**Justification:** Radiation therapy performed status.  
+**Transformation:** Boolean.
+
+---
+
+### Column: BR_RT_START_DATE
+**Selected Path:** 17 or date property.  
+**Justification:** Date when radiotherapy started.  
+**Transformation:** xsd:date.
+
+---
+
+### Column: GEN_RT_ADJ
+**Selected Path:** 17 or boolean property, e.g., `hasRadiotherapyAdjustment`.  
+**Justification:** Indicates whether radiotherapy was adjusted.  
+**Transformation:** Boolean.
+
+---
+
+## Summary
+- Emphasis on mapping core patient attributes directly to the Patient entity where appropriate.
+- Procedure-related data mapped through the procedure node, leveraging properties such as `hasDateTime`, `hasBodySite`, etc.
+- Textual and date data stored as literals with proper datatype conversions.
+- For attributes not explicitly covered by listed properties, use `hasFreeText` or custom properties if ontology permits.
+
+---
+
+If further refinement or specific property URIs are needed, please specify.

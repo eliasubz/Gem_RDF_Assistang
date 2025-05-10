@@ -1,0 +1,1 @@
+Certainly! Please provide the CSV column headers and sample data if available, so I can perform a detailed mapping analysis, including reasoning, path selection, and transformation considerations.

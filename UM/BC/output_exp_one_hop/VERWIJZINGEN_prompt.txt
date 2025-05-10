@@ -7,9 +7,8 @@ You are a specialized RDF mapping expert with extensive knowledge of semantic we
 Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 1-hop relationships extending from the main entity represented by each row.
 
 ## Input
-1. Target Class: https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
-2. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
-3. Available Paths:
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+2. Available Paths:
 1. 1. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 2. 2. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
 3. 3. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Substance
@@ -29,28 +28,38 @@ Transform a CSV dataset into RDF triples by mapping each column to the most appr
 17. 17. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string
 18. 18. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
 
-4. CSV Data:
+3. CSV Data:
+Column header names -> Column values
 GEN_IDNUMBER -> P0023919393932
-TABLE_IDENTIFIER -> P0023919393932_2023-11-15_00v2
+TABLE_IDENTIFIER -> P0023919393932_2023-11-28_00v2
 FIRST_NAME -> Klaas
 LAST_NAME -> Van Hooijdonk
 BIRTH_DATE -> 1968-05-06
 HOSPITAL_NAME -> Maastro Clinic
-SIGN_PHYS -> Lieke Boersma
-REFERRAL_HOSPITAL_NAME -> Zuyderland
-DOCUMENT_DATE -> 2023-11-15
+REFERRAL_HOSPITAL_NAME -> L. Boersma
+DOCUMENT_DATE -> 2023-11-28
 DOCUMENT_VERSION -> 00v2
-BRTUM_REGIO_REC -> Yes
-BRTUM_DATE_REGIOREC -> 2023-12-15
-BRTUM_DIST_METS -> bekend met gemetastaseerd mamma carcinoom
-BRTUM_DATE_DISTMETS -> 2023-12-15
-BR_MDT_POST -> No
-BR_MDT_PREOP -> Yes
-BR_SCR -> Yes
-BR_TR_INTENT -> Yes
-BR_PAT_CL_TR -> Yes
-PROGESTERON_RECEPTOR -> Positive
-MIBL_MIBL -> 5% resectie microsatelliet 1
+SIGN_PHYS -> L. Boersma 2
+DATE -> 2023-11-28
+DIAGNOSE -> Breast Malignant neoplasms
+GEN_SEX -> M
+BR_PR_BL_LATERALTIY -> mammaca rechts centraal
+BR_LES_ID -> Malignant neoplasm of lower-inner quadrant of female breast
+TUMOUR_SIZE -> 2.5mm
+BR_BL_LATERALTIY -> Malignant neoplasm of upper-inner quadrant of female breast
+GEN_SMOKING -> Yes
+GEN_BMI -> 21
+BR_BL_DATE_SURG -> 2022-11-19
+BR_BL_TYPE_SURG -> Mastectomie
+BR_BL_RE_RESEC -> No
+BR_BL_RE_RESEC_DATE -> 
+BR_BL_RE_REC -> Yes
+BR_BL_RE_REC_DATE -> 2023-03-11
+BR_AX_LN_DISSECT -> Yes
+BR_AX_LN_DISSECT_DATE -> 2023-03-11
+BR_RT -> Yes
+BR_RT_START_DATE -> 2023-04-09
+GEN_RT_ADJ -> Yes
 
 ## Requirements
 For each CSV column:

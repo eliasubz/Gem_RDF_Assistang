@@ -1,0 +1,33 @@
+Column: GEN_IDNUMBER  
+Path: 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasDateTime  
+Justification: The column contains an identifier (GEN_IDNUMBER), which most logically maps to a datetime or identifier property. Since the property "hasDateTime" expects a date/time value, and the value resembles a unique identifier, a better alternative is to map this to a pseudo-identifier property. However, given the available paths, none explicitly mention an identifier; thus, "hasDateTime" is selected under the assumption it may serve as a unique timestamp or ID.  
+Transformation: No transformation needed if used as a string; if treated as an ID, ensure it is stored as a string literal.
+
+---
+
+Column: TABLE_IDENTIFIER  
+Path: 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasSubjectPseudoIdentifier  
+Justification: The column represents a unique table-specific identifier, which aligns with the concept of a pseudo-identifier for the subject or procedure. The property "hasSubjectPseudoIdentifier" directly indicates a pseudo-ID linked to the procedure.  
+Transformation: No transformation needed; store as string.
+
+---
+
+Column: ALLERGIES_DATE  
+Path: 16 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasEndDateTime  
+Justification: This column contains a date value, likely indicating when the allergy information was recorded or ended. "hasEndDateTime" is appropriate if the date signifies the conclusion of a relevant period. If it signifies the start, "hasStartDateTime" (path 18) could be considered; however, "ALLERGIES_DATE" suggests a specific date, so either start or end date could be relevant. Here, choosing "hasEndDateTime" as a default.  
+Transformation: Convert the date string into an xsd:dateTime format (e.g., "2020-05-18" → "2020-05-18T00:00:00").
+
+---
+
+Column: ALLERGIES_TYPE  
+Path: 17 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasFreeText  
+Justification: The column contains a textual description of the allergy type, which aligns with the "hasFreeText" property designed for unstructured textual data.  
+Transformation: No transformation needed; store as a string literal.
+
+---
+
+**Summary of reasoning:**  
+- For ID-like data, pseudo-identifier properties are preferred, but in their absence, date-time properties are used if appropriate.  
+- Dates are mapped to relevant dateTime properties, with formatting adjustments.  
+- Categorical or descriptive text maps directly to free text properties to preserve semantic richness.  
+- Path choices prioritize semantic relevance, with a focus on accurately representing the data within the ontology's structure.

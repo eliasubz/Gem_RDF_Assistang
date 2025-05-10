@@ -1,0 +1,141 @@
+Column: GEN_IDNUMBER  
+Path: 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient  
+Justification: The GEN_IDNUMBER uniquely identifies a patient and directly links to the Patient entity via the hasPatient property, making this the most semantically precise path.  
+Transformation: None needed; assign GEN_IDNUMBER to a patient identifier property if available, or as an attribute of Patient.
+
+---
+
+Column: TABLE_IDENTIFIER  
+Path: 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product  
+Justification: This column appears to be a unique session or report identifier associated with a Procedure, which is linked to a Product (e.g., a report or document). Alternatively, if it identifies a procedure or context, it could be mapped directly elsewhere, but given the data, linking via usingSubstance to Product captures the identifier's contextual role.  
+Transformation: Use as a string literal to annotate the Procedure or Product entity as an identifier.
+
+---
+
+Column: FIRST_NAME  
+Path: 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasGivenName]-> http://schema.org/givenName (if extending schema) or custom property.  
+Justification: The patient's first name is an attribute of the Patient entity; mapping through hasPatient ensures correct association.  
+Transformation: Map to a string literal; no transformation needed.
+
+---
+
+Column: LAST_NAME  
+Path: Same as FIRST_NAME, with property: hasFamilyName or equivalent.  
+Justification: Similar to FIRST_NAME, last name is an attribute of Patient.  
+Transformation: String literal.
+
+---
+
+Column: BIRTH_DATE  
+Path: 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasBirthDate]-> http://schema.org/birthDate (or custom property).  
+Justification: Birth date is an attribute of the Patient, linked via hasPatient.  
+Transformation: Convert to xsd:date literal.
+
+---
+
+Column: HOSPITAL_NAME  
+Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#locatedAt]-> http://schema.org/Organization or custom hospital entity.  
+Justification: The hospital name is associated with the administrative case, which indicates where the procedure was performed.  
+Transformation: Map hospital name string to a hospital entity; link via locatedAt.
+
+---
+
+Column: SIGN_PHYS  
+Path: 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSignPhysician]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Physician (if exists), or via hasPerformedBy property.  
+Justification: The sign physician is involved in the procedure; mapping through hasSignPhysician links to the Physician entity.  
+Transformation: Map name to a Physician individual, or as a literal if no individual exists.
+
+---
+
+Column: REFERRAL_HOSPITAL_NAME  
+Path: 4 as above, or possibly as part of the AdministrativeCase: AdministrativeCase -[https://biomedit.ch/rdf/sphn-ontology/sphn#referralHospital]-> http://schema.org/Organization.  
+Justification: The referring hospital is associated with the administrative process, possibly linked via referralHospital property.  
+Transformation: Map string to hospital entity.
+
+---
+
+Column: DOCUMENT_DATE  
+Path: 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime]-> xsd:dateTime  
+Justification: A date associated with coding or documentation, linked to the Procedure, with datatype conversion.  
+Transformation: Convert to xsd:dateTime literal.
+
+---
+
+Column: DOCUMENT_VERSION  
+Path: 17 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string  
+Justification: Version info as free text linked to the Procedure; or as an attribute if available.  
+Transformation: Map as string literal.
+
+---
+
+Column: BRTUM_REGIO_REC  
+Path: 4 or 5, depending on context, or as attribute of AdministrativeCase or Procedure.  
+Justification: Indicates whether regional recording is done; can be mapped as a boolean or string attribute.  
+Transformation: Map to boolean or string literal.
+
+---
+
+Column: BRTUM_DATE_REGIOREC  
+Path: 14 or 15, linked to AdministrativeCase or Procedure, with dateTime datatype.  
+Justification: Date of regional record; mapped with proper datatype.  
+Transformation: Convert to xsd:dateTime.
+
+---
+
+Column: BRTUM_DIST_METS  
+Path: 4 or 5, or as attribute of AdministrativeCase, describing metastasis status.  
+Justification: Describes disease status; mapped as string or coded concept.  
+Transformation: String literal.
+
+---
+
+Column: BRTUM_DATE_DISTMETS  
+Path: 14 or 15, with dateTime datatype, associated with AdministrativeCase.  
+Justification: Date of metastasis detection, mapped accordingly.  
+Transformation: xsd:dateTime literal.
+
+---
+
+Column: BR_MDT_POST  
+Path: 4 or 5, as part of AdministrativeCase or Procedure, indicating post-operative MDT decision.  
+Justification: Boolean or coded indicator; map as boolean literal.
+
+---
+
+Column: BR_MDT_PREOP  
+Same as above, preoperative MDT status.
+
+---
+
+Column: BR_SCR  
+Path: 4 or 5, indicating screening status; map as boolean or string.
+
+---
+
+Column: BR_TR_INTENT  
+Indicates treatment intent; map as boolean or coded string.
+
+---
+
+Column: BR_PAT_CL_TR  
+Path: 4 or 5, related to patient care plan; map as boolean or string.
+
+---
+
+Column: PROGESTERON_RECEPTOR  
+Path: The receptor status is a clinical attribute of the Patient or associated specimen.  
+Possible path: Patient -[hasReceptorStatus]-> "Positive" or via a clinical specimen entity if detailed.  
+Justification: Receptor status is a clinical attribute; mapping directly to Patient or a related clinical observation.  
+Transformation: Map as string literal, potentially as a coded term.
+
+---
+
+Column: MIBL_MIBL  
+Path: 3 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile]-> https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile or related entity.  
+Justification: The value appears to be a measurement or result, potentially stored as data in a DataFile or as an attribute.  
+Transformation: Store as string, or link to a data entity representing the measurement.
+
+---
+
+**Summary:**  
+Each mapping was chosen based on the semantic role of the data, aligning with the main entity (Patient or Procedure) and utilizing the most precise, meaningful paths available in the ontology. Data types are converted to standard XML Schema datatypes where appropriate, ensuring compatibility and semantic clarity.

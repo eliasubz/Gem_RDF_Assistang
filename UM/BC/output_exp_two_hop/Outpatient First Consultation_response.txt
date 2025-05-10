@@ -1,0 +1,1 @@
+Certainly! Please provide the CSV column headers and sample data values so I can analyze and determine the most appropriate RDF mappings for each column based on the available complex paths in your ontology.

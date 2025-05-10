@@ -1,0 +1,98 @@
+**Mapping of CSV Columns to Ontological Paths with Justifications and Data Transformations**
+
+---
+
+### Column: GEN_IDNUMBER
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** The column appears to contain a unique identifier for a patient, which logically maps to the "Patient" entity linked via the "hasPatient" property within the context of a Procedure. This provides a patient-centered identifier, aligning with the ontology's structure.
+- **Transformation:** No data transformation needed; the value (e.g., P0023919393932) can be directly assigned as the patient’s identifier or pseudo-identifier if needed.
+
+---
+
+### Column: TABLE_IDENTIFIER
+- **Path:** 13 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** The TABLE_IDENTIFIER likely functions as a pseudo-identifier for the subject or dataset, fitting well with the "hasSubjectPseudoIdentifier" property for the Procedure entity.
+- **Transformation:** Use the table identifier as a string literal assigned to the SubjectPseudoIdentifier property.
+
+---
+
+### Column: BR_DERMATITIS
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** The presence of a "Yes"/"No" value indicates an administrative or clinical case attribute. Mapping to "AdministrativeCase" through "hasAdministrativeCase" captures this aspect as a related entity.
+- **Transformation:** Create an AdministrativeCase instance per procedure; include a boolean or coded property (e.g., "hasDiagnosisResult") with a boolean value (true for Yes, false for No).
+
+---
+
+### Column: BR_LYMPHEDEMA
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Same reasoning as above; this indicates a clinical condition linked to the procedure via an administrative case.
+- **Transformation:** As above, model as a related AdministrativeCase with a boolean or coded attribute.
+
+---
+
+### Column: BR_RIBFRACT1
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Similar to previous condition indicators; map as an AdministrativeCase property.
+- **Transformation:** Same as above, encode "No" as false or absence of a particular condition.
+
+---
+
+### Column: BR_HEART_FAIL
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Consistent with other clinical condition indicators; map similarly.
+- **Transformation:** Boolean or coded attribute within AdministrativeCase.
+
+---
+
+### Column: BR_RAD_PNEUM
+- **Path:** 14 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** The value "2" suggests a coded or enumerated value, potentially representing a radiology code or severity. However, since the property "hasCodingDateTime" expects a dateTime, this indicates a mismatch.
+  
+  **Alternative Consideration:**  
+  - If "BR_RAD_PNEUM" is a code or severity, it might better map to "hasCode" or "hasDataFile" or a dedicated attribute such as "hasRadiologySeverity" (not explicitly listed).  
+  - Since the explicit path options do not include a direct code property, the best fit is to associate this with a "hasCode" property linked to a code entity (not provided here).  
+  - Alternatively, if the value is a count or severity level, it could be modeled as a literal property of the Procedure.
+
+- **Selected Path:** 6 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+- **Justification:** "hasCode" directly links a procedure to a code entity, fitting for a numeric or coded indicator like "BR_RAD_PNEUM."
+- **Transformation:** Convert "2" into an instance of "Code" with a literal code value or attribute.
+
+---
+
+### Column: BR_HYPERTENSION
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Similar to other conditions, map as an administrative case property indicating hypertension status.
+- **Transformation:** Boolean or coded property within AdministrativeCase.
+
+---
+
+### Column: BR_DM
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Same as above; map as an attribute within AdministrativeCase.
+- **Transformation:** Boolean or coded value.
+
+---
+
+### Summary of Path Choices:
+| Column | Selected Path Number | Path (Ontology Notation) | Justification | Data Transformation |
+|---------|------------------------|--------------------------|-----------------|---------------------|
+| GEN_IDNUMBER | 1 | Procedure/hasPatient/Patient | Patient ID, domain-specific identifier | Direct literal assignment |
+| TABLE_IDENTIFIER | 13 | Procedure/sphn#hasSubjectPseudoIdentifier/sphn#SubjectPseudoIdentifier | Unique dataset/subject identifier | Literal string |
+| BR_DERMATITIS | 4 | Procedure/sphn#hasAdministrativeCase/sphn#AdministrativeCase | Clinical condition indicator | Boolean or coded property |
+| BR_LYMPHEDEMA | 4 | Same as above | Same reasoning | Same as above |
+| BR_RIBFRACT1 | 4 | Same as above | Same reasoning | Same as above |
+| BR_HEART_FAIL | 4 | Same as above | Same reasoning | Same as above |
+| BR_RAD_PNEUM | 6 | Procedure/sphn#hasCode/sphn#Code | Coded indicator, fits code relation | Encode value as code literal |
+| BR_HYPERTENSION | 4 | Same as above | Condition indicator | Boolean/coded |
+| BR_DM | 4 | Same as above | Condition indicator | Boolean/coded |
+
+---
+
+### **Notes:**
+- For the condition columns, representing the "Yes"/"No" as boolean values (true/false) is the most semantically meaningful.
+- For coded or severity data like "BR_RAD_PNEUM," modeling as a "Code" entity with literal attributes is appropriate.
+- If more detailed modeling is required, additional properties or subclasses can be introduced, but based on provided options, this mapping maximizes semantic accuracy.
+
+---
+
+**Let me know if you'd like further elaboration or assistance with RDF serialization!**

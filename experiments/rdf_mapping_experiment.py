@@ -2,6 +2,14 @@ import os
 import csv
 from pathlib import Path
 from typing import Dict, List, Tuple
+from openai import OpenAI
+from dotenv import load_dotenv
+from llm_assistant_hack_main.exportable_find_paths import find_paths
+
+
+# Load environment variables
+load_dotenv()
+LLM_API_KEY = os.getenv("POPENAI_API_KEY")
 
 
 def read_paths_from_output(output_file: str) -> List[str]:
@@ -29,7 +37,6 @@ def read_csv_columns(csv_file: str) -> Tuple[List[str], List[str]]:
 
 
 def generate_prompt(
-    target_class: str,
     hop_count: int,
     paths: List[str],
     main_entity: str,
@@ -46,12 +53,12 @@ You are a specialized RDF mapping expert with extensive knowledge of semantic we
 Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex {hop_count}-hop relationships extending from the main entity represented by each row.
 
 ## Input
-1. Target Class: {target_class}
-2. Main Entity Type: {main_entity}
-3. Available Paths:
+1. Main Entity Type: {main_entity}
+2. Available Paths:
 {chr(10).join(f"{i+1}. {path}" for i, path in enumerate(paths))}
 
-4. CSV Data:
+3. CSV Data:
+Column header names -> Column values
 {chr(10).join(f"{col} -> {val}" for col, val in zip(columns, values))}
 
 ## Requirements
@@ -83,20 +90,41 @@ Transformation: [Any required data processing]
     return prompt
 
 
+def send_to_openai(prompt: str) -> str:
+    """Send prompt to OpenAI and return the response."""
+    client = OpenAI(api_key=LLM_API_KEY)
+
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4.1-nano",  # or your preferred model
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies.",
+                },
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.7,
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        print(f"Error calling OpenAI API: {e}")
+        return ""
+
+
 def process_experiment(
-    target_class: str,
     hop_count: int,
     output_file: str = "output.txt",
     analysis_dir: str = "UM/BC/analysis",
     csv_dir: str = "UM/BC/csv",
-    output_dir: str = "UM/BC/output_exp1",
+    output_dir: str = "UM/BC/output_exp_two_hop",
+    send_to_llm: bool = False,
 ) -> None:
     """Process the experiment for all files in the analysis directory."""
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
 
     # Read paths from output.txt
-    paths = read_paths_from_output(output_file)
 
     # Process each analysis file
     for analysis_file in Path(analysis_dir).glob("*_analysis.txt"):
@@ -112,6 +140,11 @@ def process_experiment(
             print(f"Warning: Could not find main entity type in {analysis_file}")
             continue
 
+        # Create and read paths
+        if main_entity:
+            paths = find_paths(hop_count, main_entity)
+        paths = read_paths_from_output(output_file)
+
         # Read CSV columns
         try:
             columns, values = read_csv_columns(str(csv_file))
@@ -121,7 +154,6 @@ def process_experiment(
 
         # Generate prompt
         prompt = generate_prompt(
-            target_class=target_class,
             hop_count=hop_count,
             paths=paths,
             main_entity=main_entity,
@@ -137,9 +169,18 @@ def process_experiment(
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(prompt)
 
+        # If send_to_llm is True, send to OpenAI and save response
+        if send_to_llm:
+            response = send_to_openai(prompt)
+            if response:
+                response_file = (
+                    Path(output_dir)
+                    / f"{analysis_file.stem.replace('_analysis', '')}_response.txt"
+                )
+                with open(response_file, "w", encoding="utf-8") as f:
+                    f.write(response)
+
 
 if __name__ == "__main__":
     # Example usage
-    process_experiment(
-        target_class="https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure", hop_count=1
-    )
+    process_experiment(hop_count=2, send_to_llm=False)

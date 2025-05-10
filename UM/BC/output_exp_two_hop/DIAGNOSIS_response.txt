@@ -1,0 +1,36 @@
+**Column: GEN_IDNUMBER**  
+**Path:** 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier  
+**Justification:** The column appears to contain a patient or subject identifier, which aligns with the property `hasSubjectPseudoIdentifier` connected via `Procedure` to identify individual subjects in the ontology. Alternative paths involve related entities like Patient or Product, but here, the pseudo-identifier directly relates to the procedure's subject.  
+**Transformation:** No complex transformation; ensure the ID is treated as a string or identifier literal.
+
+---
+
+**Column: TABLE_IDENTIFIER**  
+**Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient  
+**Justification:** The TABLE_IDENTIFIER likely corresponds to a unique code for each procedure or data record, which in this context can be mapped as a patient identifier through the `hasPatient` property, assuming the identifier references the patient involved in the procedure. Alternatively, it could also be linked directly to a procedure's code if such exists, but given the list, connecting via `hasPatient` is conceptually consistent.  
+**Transformation:** No transformation; treat as string or identifier.
+
+---
+
+**Column: DIAGNOSE_DATE**  
+**Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime  
+**Justification:** The diagnosis date is a datetime value associated with the procedure, fitting well with the `hasDateTime` property, which expects datetime literals. This maps the date to the procedure's relevant timestamp.  
+**Transformation:** Convert to ISO 8601 datetime string if necessary (e.g., "2023-10-01T00:00:00Z").
+
+---
+
+**Column: GEN_AGE_DIAGN**  
+**Path:** 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime  
+**Justification:** Although `hasCodingDateTime` is primarily for timestamp data, it is the closest property that links a datetime to the procedure, which may indirectly reflect the age at diagnosis if interpreted contextually. However, this is not ideal as it doesn't directly encode age.  
+*Alternative consideration:* Since no direct property for age exists in the provided paths, the most accurate approach would be to calculate age from the date of diagnosis (`DIAGNOSE_DATE`) and the patient's birth date if available.  
+**Transformation:** Given no birth date info, no direct mapping; if available, compute age as a datatype literal (integer). Otherwise, store as a string or leave unlinked.
+
+---
+
+**Summary of reasoning and considerations:**
+- The diagnosis date maps naturally to `hasDateTime`.
+- The subject identifier aligns with `hasSubjectPseudoIdentifier`.
+- The table identifier, presumed to be linked to the patient, maps via `hasPatient`.
+- The age at diagnosis lacks a direct property; in practice, one would compute it externally or extend the ontology. Without additional info, treat as a literal or omit the mapping.
+
+Let me know if you'd like further elaboration or mappings for other columns!

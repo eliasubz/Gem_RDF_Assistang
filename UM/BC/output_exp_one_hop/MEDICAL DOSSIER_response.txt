@@ -1,0 +1,38 @@
+**Column: GEN_IDNUMBER**  
+**Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient  
+**Justification:** The "IDNUMBER" likely represents a patient's identifier, which is connected via the "hasPatient" property from a procedure, assuming the context involves identifying patients involved in a procedure.  
+**Transformation:** No special transformation needed; ensure the value is a string or identifier format consistent with ontology conventions.
+
+---
+
+**Column: TABLE_IDENTIFIER**  
+**Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product  
+**Justification:** The "TABLE_IDENTIFIER" appears to be a unique code associated with the data table, which could correspond to a product or substance used in a procedure. Using the "usingSubstance" property to connect to a Product aligns with representing this identifier as part of procedural data involving substances.  
+**Transformation:** No transformation required; format as string.
+
+---
+
+**Column: ALLERGIES_TYPE**  
+**Path:** 3 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite]-> https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite  
+**Justification:** While "ALLERGIES_TYPE" describes allergy information, within the context of procedural data, allergies are often associated with body sites affected. "hasBodySite" can semantically link allergy types to specific body sites, representing the allergy context.  
+**Transformation:** Map allergy type string directly; optionally, could create a custom allergy class if ontology supports.
+
+---
+
+**Column: ALLERGIES_DATE**  
+**Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime  
+**Justification:** The date of an allergy event naturally maps to a dateTime property; "hasDateTime" from the Procedure class is suitable for recording the allergy occurrence date.  
+**Transformation:** Convert date string to xsd:dateTime format (e.g., "2020-05-18" → "2020-05-18T00:00:00Z").
+
+---
+
+**Summary of choices:**
+
+| Column            | Path (Number & Path) | Justification | Transformation Needed |
+|-------------------|----------------------|-----------------|------------------------|
+| GEN_IDNUMBER      | 1 Procedure/hasPatient | Patient ID linked via procedure | None |
+| TABLE_IDENTIFIER  | 2 Procedure/usingSubstance | Associating table ID with used substance | None |
+| ALLERGIES_TYPE    | 6 Procedure/hasBodySite | Representing allergy type via body site | None |
+| ALLERGIES_DATE    | 15 Procedure/hasDateTime | Recording date as dateTime | Convert to xsd:dateTime |
+
+**Note:** The mappings are selected to reflect the most semantically meaningful relationships based on the provided ontology paths, prioritizing domain and range compatibility, and aligning with typical clinical data modeling conventions.

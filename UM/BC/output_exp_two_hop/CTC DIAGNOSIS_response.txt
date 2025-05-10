@@ -1,0 +1,140 @@
+Certainly! Below is a detailed mapping analysis for each CSV column, including the selected ontology path, justification, and any necessary data transformations.
+
+---
+
+### Column: **BR_BL_CTSTAGE_PREFIX**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** This column appears to contain a prefix related to staging, which is likely associated with the patient’s clinical data. The path linking a procedure to a patient via `hasPatient` aligns with capturing patient-specific details. Alternatively, since the property pertains to staging, it could be associated with a `Procedure` or `BodySite`, but `hasPatient` provides a clear, direct connection to the patient entity for contextualization.
+- **Transformation:** None needed; the value 'c' can be stored as a string literal or as part of a staging code if further semantic parsing is performed.
+
+---
+
+### Column: **BR_BL_CTSTAGE_SUFFIX**
+- **Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- **Justification:** The suffix complements the prefix to describe a complete staging code. Mapping via `usingSubstance` to a `Product` or `Substance` related to the procedure can encode this staging detail, especially if the suffix describes a specific component or subtype.
+- **Transformation:** String concatenation with prefix, or store separately as string literals.
+
+---
+
+### Column: **BR_BL_CNSTAGE_PREFIX**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** Similar to `CTSTAGE_PREFIX`, this likely relates to another staging aspect associated with the patient, best represented through the patient node connected via `hasPatient`.
+- **Transformation:** None; store as string or combine with suffix if appropriate.
+
+---
+
+### Column: **BR_BL_CNSTAGE_SUFFIX**
+- **Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- **Justification:** As with the previous suffix, this complements the prefix, indicating detailed categorization or staging information.
+- **Transformation:** String handling as above.
+
+---
+
+### Column: **BR_BL_CMSTAGE_PREFIX**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** Consistent with previous staging prefix columns; linked via `hasPatient` to the patient entity.
+- **Transformation:** String literal.
+
+---
+
+### Column: **BR_BL_CMSTAGE_SUFFIX**
+- **Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- **Justification:** Complements the prefix for detailed staging info.
+- **Transformation:** String literal.
+
+---
+
+### Column: **GEN_IDNUMBER**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** The ID number uniquely identifies the subject (patient). The property `hasSubjectPseudoIdentifier` semantically captures pseudonymous identifiers linked to the subject.
+- **Transformation:** Store as string literal; consider data privacy implications.
+
+---
+
+### Column: **TABLE_IDENTIFIER**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile]-> https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile
+- **Justification:** The table identifier likely references a data file or dataset, which aligns with the `DataFile` class via `hasDataFile`.
+- **Transformation:** String literal representing the identifier; optionally create a DataFile entity with this as an identifier.
+
+---
+
+### Column: **FIRST_NAME**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** To associate the patient's first name, connect via `hasSubjectPseudoIdentifier` to the subject, then annotate with a `foaf:givenName` or similar property.
+- **Transformation:** Store as string literal; may require creating a `Person` or `Patient` node with `foaf:givenName`.
+
+---
+
+### Column: **LAST_NAME**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** Similar to FIRST_NAME, connects via subject pseudonym to annotate `foaf:familyName`.
+- **Transformation:** String literal.
+
+---
+
+### Column: **BIRTH_DATE**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** To specify the patient's birth date, associate with the subject node.
+- **Transformation:** Convert to `xsd:date` format if needed.
+
+---
+
+### Column: **DOCUMENT_DATE**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** Represents the date of document or procedure; directly mapped via `hasDateTime`.
+- **Transformation:** Convert to `xsd:dateTime`.
+
+---
+
+### Column: **SIGN_PHYS**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute]-> https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute
+- **Justification:** The signatory physician, likely an individual, linked via `hasDataProviderInstitute` could be refined, but more accurately, perhaps via a `signedBy` property if available. Since this property isn't explicitly listed, an alternative is to annotate the procedure with `dc:creator` or custom property.
+- **Transformation:** Store as string literal or create an individual for the physician with `foaf:name`.
+
+---
+
+### Column: **HOSPITAL_NAME**
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** The hospital name can be linked via administrative case or directly annotated as a property of the procedure or administrative case.
+- **Transformation:** Create an `AdministrativeCase` entity with label `HOSPITAL_NAME`.
+
+---
+
+### Column: **REFERRAL_HOSPITAL_NAME**
+- **Path:** Similar to `HOSPITAL_NAME`, can be modeled as an associated entity or property.
+- **Justification:** To reflect referral details, linked through `AdministrativeCase` or as a property of the procedure or a `Referral` entity.
+- **Transformation:** Create a `Referral` node with hospital name property.
+
+---
+
+### Column: **BR_BL_NODES_RESEC**
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+- **Justification:** The number of nodes resections could be represented as a code or count associated with a `Code` entity.
+- **Transformation:** Store as integer literal; optionally link to a `Code` entity with a value property.
+
+---
+
+## Summary Table
+
+| Column             | Path Description | Justification | Transformation |
+|---------------------|--------------------|-----------------|----------------|
+| BR_BL_CTSTAGE_PREFIX | Path 1: Procedure → hasPatient → Patient | Connects staging prefix to patient for clinical context | String literal |
+| BR_BL_CTSTAGE_SUFFIX | Path 2: Procedure → usingSubstance → Product/Substance | Encodes staging suffix details | String literal |
+| BR_BL_CNSTAGE_PREFIX | Path 1 | Similar to first, associated with patient | String literal |
+| BR_BL_CNSTAGE_SUFFIX | Path 2 | Complements prefix | String literal |
+| BR_BL_CMSTAGE_PREFIX | Path 1 | Patient-related staging info | String literal |
+| BR_BL_CMSTAGE_SUFFIX | Path 2 | Complements previous | String literal |
+| GEN_IDNUMBER | SubjectPseudoIdentifier | Unique patient identifier | String literal |
+| TABLE_IDENTIFIER | DataFile | links to dataset | String literal |
+| FIRST_NAME | SubjectPseudoIdentifier → foaf:givenName | Patient’s first name | String literal |
+| LAST_NAME | Same as above, `foaf:familyName` | Patient’s last name | String literal |
+| BIRTH_DATE | Same as above, `xsd:date` | Patient’s birth date | Date format |
+| DOCUMENT_DATE | Procedure → hasDateTime | Date of document/procedure | `xsd:dateTime` |
+| SIGN_PHYS | Procedure → signedBy (if exists), else literal | Signatory physician | String or entity |
+| HOSPITAL_NAME | AdministrativeCase | Hospital details | String literal or entity |
+| REFERRAL_HOSPITAL_NAME | Referral entity or property | Referral info | String literal |
+| BR_BL_NODES_RESEC | Code property of Code entity | Number of resections | Integer literal |
+
+---
+
+If you need RDF Turtle snippets or specific SPARQL mappings, I can generate those as well.

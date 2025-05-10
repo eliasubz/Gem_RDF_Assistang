@@ -1,0 +1,141 @@
+Certainly! Below is a detailed mapping analysis for each CSV column, including the selected path, justification, and any necessary data transformations. The focus is on semantic appropriateness, respecting domain and range constraints, and handling nested relationships.
+
+---
+
+### Column: BR_BL_CTSTAGE_PREFIX
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** Since this is a prefix related to tumor staging, it logically pertains to the patient's clinical information. Using the `hasPatient` property from a Procedure (or similar context) to Patient aligns with typical clinical data modeling.
+- **Transformation:** No special transformation; the value 'c' is a string and can be stored as-is or linked to a coded concept if available.
+
+---
+
+### Column: BR_BL_CTSTAGE_SUFFIX
+- **Path:** 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** This suffix likely indicates a date or temporal marker associated with the staging, which fits the `hasCodingDateTime` property. Although the value is '2', which suggests a code, if the suffix is a temporal marker, this path applies.
+- **Transformation:** Convert the suffix into a dateTime if it represents a date; if it is a code, link to a coded concept or annotate as a string.
+
+---
+
+### Column: BR_BL_CNSTAGE_PREFIX
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** Similar to CT stage prefix, this likely pertains to the patient's tumor classification, thus associating with the Patient entity via `hasPatient`.
+- **Transformation:** As a string representing a prefix, store as-is or link to a controlled vocabulary if available.
+
+---
+
+### Column: BR_BL_CNSTAGE_SUFFIX
+- **Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** The suffix may denote a date or temporal marker for the classification; `hasDateTime` is suitable for temporal data.
+- **Transformation:** Convert to datetime if appropriate; otherwise, store as a string.
+
+---
+
+### Column: BR_BL_CMSTAGE_PREFIX
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** As with other staging prefixes, this relates to the patient's clinical status.
+- **Transformation:** Store as string or link to a controlled vocabulary.
+
+---
+
+### Column: BR_BL_CMSTAGE_SUFFIX
+- **Path:** 16 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasEndDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** The suffix appears to be a date indicating the end of a classification period, suitable for `hasEndDateTime`.
+- **Transformation:** Convert to dateTime format.
+
+---
+
+### Column: GEN_IDNUMBER
+- **Path:** 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** The ID number is a pseudo-identifier for the subject, fitting the `hasSubjectPseudoIdentifier` property.
+- **Transformation:** Store as a string literal within the `SubjectPseudoIdentifier` concept.
+
+---
+
+### Column: TABLE_IDENTIFIER
+- **Path:** 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** As an identifier with appended date, it can be associated with coding dateTime; but since it's an identifier, it could also be modeled as a string literal.
+- **Transformation:** Parse date component if available; otherwise, store as string.
+
+---
+
+### Column: FIRST_NAME
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** Personal name information pertains to the Patient entity.
+- **Transformation:** Store as string literal; optionally, split into givenName and familyName if ontology supports.
+
+---
+
+### Column: LAST_NAME
+- **Path:** Same as FIRST_NAME
+- **Justification:** Same reasoning.
+- **Transformation:** Store as string literal.
+
+---
+
+### Column: BIRTH_DATE
+- **Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
+- **Justification:** The birth date relates to patient identification; using `hasDateTime` for birth date is appropriate.
+- **Transformation:** Convert to dateTime.
+
+---
+
+### Column: DOCUMENT_DATE
+- **Path:** 15 as above, or alternatively, a specific property like `hasDocumentDate` if exists.
+- **Justification:** Since only the path 15 is available, use `hasDateTime`.
+- **Transformation:** Convert to dateTime.
+
+---
+
+### Column: SIGN_PHYS
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** The signatory is related to the procedure or document, but since no specific property for author/signature exists, this could be modeled as a related Person or as a property of Procedure.
+- **Alternative:** Use a custom property like `hasSignPhysician` if available.
+- **Transformation:** Store as string, or link to a Person entity if ontology supports.
+
+---
+
+### Column: HOSPITAL_NAME
+- **Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Hospital name relates to the administrative case or facility involved.
+- **Transformation:** Store as string literal, or link to a Hospital entity if available.
+
+---
+
+### Column: REFERRAL_HOSPITAL_NAME
+- **Path:** Same as HOSPITAL_NAME, via AdministrativeCase
+- **Justification:** Similar reasoning; could be modeled as a property of AdministrativeCase.
+- **Transformation:** String literal.
+
+---
+
+### Column: BR_BL_NODES_RESEC
+- **Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- **Justification:** This numeric value could denote a count or status related to resection nodes; if it indicates a count, link as an integer literal.
+- **Transformation:** Store as integer literal.
+
+---
+
+## Summary Table
+
+| Column Name | Path | Justification | Transformation |
+|--------------|-------|-----------------|----------------|
+| BR_BL_CTSTAGE_PREFIX | Path 1 | Clinical staging info related to patient | String literal |
+| BR_BL_CTSTAGE_SUFFIX | Path 14 | Temporal info, possibly date/time | Convert to dateTime or string |
+| BR_BL_CNSTAGE_PREFIX | Path 1 | Classification info, linked to patient | String literal |
+| BR_BL_CNSTAGE_SUFFIX | Path 15 | Date/time info, temporal marker | Convert to dateTime or string |
+| BR_BL_CMSTAGE_PREFIX | Path 1 | Clinical status, linked to patient | String literal |
+| BR_BL_CMSTAGE_SUFFIX | Path 16 | Date/time, end of classification | Convert to dateTime |
+| GEN_IDNUMBER | Path 13 | Subject pseudo-identifier | String literal |
+| TABLE_IDENTIFIER | Path 14 | Identifier with date | Parse date if possible, else string |
+| FIRST_NAME | Path 1 | Patient's first name | String literal |
+| LAST_NAME | Path 1 | Patient's last name | String literal |
+| BIRTH_DATE | Path 15 | Patient's birth date | dateTime |
+| DOCUMENT_DATE | Path 15 | Document date | dateTime |
+| SIGN_PHYS | Path 1 | Signatory info, related to Procedure | String or linked Person |
+| HOSPITAL_NAME | Path 4 | Hospital involved | String literal |
+| REFERRAL_HOSPITAL_NAME | Path (via AdminCase) | Referral hospital | String literal |
+| BR_BL_NODES_RESEC | Path 1 | Numeric count | Integer literal |
+
+---
+
+If further refinement is needed, such as defining specific classes or properties for persons, hospitals, or coded concepts, those can be incorporated to improve semantic richness.

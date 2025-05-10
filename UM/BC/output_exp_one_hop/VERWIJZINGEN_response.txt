@@ -1,0 +1,242 @@
+Let's analyze each CSV column in detail, select the most appropriate path from the provided options, justify the choice, and specify any necessary data transformations.
+
+---
+
+### Column: GEN_IDNUMBER
+- **Possible Path:** Path 1
+  - Path: 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** The ID number uniquely identifies a patient, and the "hasPatient" relationship links procedures to the patient. Assigning the ID to the patient node aligns with representing patient identity.
+- **Transformation:** No transformation needed; store as string or identifier.
+
+---
+
+### Column: TABLE_IDENTIFIER
+- **Possible Path:** Path 2 (or 3), but Path 2 is more precise for identifiers
+  - Path: 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- **Justification:** Since TABLE_IDENTIFIER is a unique dataset ID, it could be associated with the procedure or product. However, in absence of more specific product info, it might be best modeled as an attribute of the procedure.
+- **Transformation:** Store as string literal.
+
+---
+
+### Column: FIRST_NAME
+- **Possible Path:** Path 1
+  - Path: 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- **Justification:** First name is a patient attribute; it can be linked via the "hasPatient" relationship to the Patient node, with an attribute "firstName" (assuming such data property exists).
+- **Transformation:** Map to a data property "firstName" on the Patient individual.
+
+---
+
+### Column: LAST_NAME
+- **Same reasoning as FIRST_NAME**
+- **Path:** Same as above, with "lastName"
+- **Transformation:** Map to "lastName" data property.
+
+---
+
+### Column: BIRTH_DATE
+- **Path:** same as above
+- **Transformation:** Convert to xsd:date format.
+
+---
+
+### Column: HOSPITAL_NAME
+- **Possible Path:** Path 4
+  - Path: 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- **Justification:** Hospital information pertains to the administrative context of the procedure, making "hasAdministrativeCase" suitable to link to an AdministrativeCase resource, which can hold hospital data.
+- **Transformation:** Create an AdministrativeCase individual with a "hospitalName" data property.
+
+---
+
+### Column: REFERRAL_HOSPITAL_NAME
+- **Path:** same as above
+- **Transformation:** As above, model as a property of AdministrativeCase or a related entity.
+
+---
+
+### Column: DOCUMENT_DATE
+- **Path:** Path 15
+  - "hasDateTime" property, likely attached to a Document individual.
+- **Justification:** Document date is a datetime attribute; associate with a Document individual linked to the Procedure.
+- **Transformation:** Convert to xsd:dateTime.
+
+---
+
+### Column: DOCUMENT_VERSION
+- **Path:** Path 17 or 18, depending on data type
+- **Justification:** Version info as string; can be modeled as a property of the Document individual.
+- **Transformation:** String literal.
+
+---
+
+### Column: SIGN_PHYS
+- **Path:** Path 1
+  - "hasPatient" links to Patient, but SIGN_PHYS refers to the signatory (physician). Likely better modeled as a property of Procedure or as a linked Person individual.
+- **Alternative Path:** If "signPhysician" property exists, it can be directly mapped.
+- **Justification:** Best represented as a data property "signedBy" on the Procedure or an associated Person individual.
+- **Transformation:** Map to string.
+
+---
+
+### Column: DATE
+- **Path:** Path 15 or 16
+  - "hasDateTime" or "hasEndDateTime" (for end date)
+- **Justification:** Procedure date; associate with Procedure individual.
+- **Transformation:** Convert to xsd:dateTime.
+
+---
+
+### Column: DIAGNOSE
+- **Path:** Path 7
+  - Use "hasCode" or "hasDataFile" is less relevant. More suitable is a new data property "diagnosis" on Procedure or Patient.
+- **Justification:** Semantic accuracy favors adding a "diagnosis" data property directly.
+- **Transformation:** String literal.
+
+---
+
+### Column: GEN_SEX
+- **Path:** Path 1
+  - "hasPatient" links to Patient; "gender" as a data property fits.
+- **Transformation:** Map to string ("M"/"F") or controlled vocabulary.
+
+---
+
+### Column: BR_PR_BL_LATERALTIY
+- **Path:** Path 5
+  - "hasBodySite" property.
+- **Justification:** Represents tumor location; link to BodySite individual or as a literal.
+- **Transformation:** String or create BodySite individual.
+
+---
+
+### Column: BR_LES_ID
+- **Path:** Path 13
+  - "hasSubjectPseudoIdentifier"
+- **Justification:** The lesion ID is a pseudo-identifier for the lesion; model as a property of the lesion or as a pseudoID property.
+- **Transformation:** String literal.
+
+---
+
+### Column: TUMOUR_SIZE
+- **Path:** Path 17 (assuming size is stored as a string or float)
+- **Justification:** Tumor size as a numerical value; can be modeled as a data property "tumorSize".
+- **Transformation:** Convert to float.
+
+---
+
+### Column: BR_BL_LATERALTIY
+- **Same as BR_PR_BL_LATERALTIY**
+- **Path:** Path 5
+- **Transformation:** String or BodySite individual.
+
+---
+
+### Column: GEN_SMOKING
+- **Path:** Path 1
+  - "hasPatient" -> Patient; add "smokingStatus" property
+- **Transformation:** Boolean or string.
+
+---
+
+### Column: GEN_BMI
+- **Path:** Path 1
+  - Add "BMI" data property to Patient
+- **Transformation:** Convert to float.
+
+---
+
+### Column: BR_BL_DATE_SURG
+- **Path:** Path 14 or 16
+  - "hasDateTime"
+- **Transformation:** xsd:date.
+
+---
+
+### Column: BR_BL_TYPE_SURG
+- **Path:** Path 17
+  - Type of surgery as string property.
+- **Transformation:** String literal.
+
+---
+
+### Column: BR_BL_RE_RESEC
+- **Path:** Path 1
+  - Add boolean property "reResection" to relevant resource.
+
+### Columns with empty or missing data such as `BR_BL_RE_RESEC_DATE`, `BR_BL_RE_REC_DATE`, `BR_AX_LN_DISSECT_DATE`, `BR_RT_START_DATE`:
+- Map as date properties where data exists; omit if empty.
+
+---
+
+### Column: BR_BL_RE_REC
+- **Path:** Path 1
+- **Transformation:** Boolean.
+
+---
+
+### Column: BR_AX_LN_DISSECT
+- **Path:** Path 1
+- **Transformation:** Boolean.
+
+---
+
+### Column: BR_RT
+- **Path:** Path 1
+- **Transformation:** Boolean.
+
+---
+
+### Column: BR_RT_START_DATE
+- **Path:** Path 16
+- **Transformation:** xsd:date.
+
+---
+
+### Column: GEN_SMOKING
+- **Path:** Path 1
+- **Transformation:** Boolean or string.
+
+---
+
+## Summary of Selected Mappings
+
+| Column                        | Path Number & Path                                                                                 | Justification                                              | Transformation                           |
+|------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------------------------|------------------------------------------|
+| GEN_IDNUMBER                | 1: `hasPatient` (from Procedure to Patient)                                                      | Unique patient ID linked via procedure                     | String                                   |
+| TABLE_IDENTIFIER            | 2: `usingSubstance` (dataset ID as related property)                                              | As dataset identifier linked to procedure or product     | String                                   |
+| FIRST_NAME                  | 1: `hasPatient` -> `firstName`                                                                     | Patient's first name attribute                             | String                                   |
+| LAST_NAME                   | same as FIRST_NAME                                                                                 | Patient's last name attribute                              | String                                   |
+| BIRTH_DATE                  | same as above, with datatype conversion                                                             | Date of birth                                              | xsd:date                               |
+| HOSPITAL_NAME               | 4: `hasAdministrativeCase` -> `hospitalName`                                                       | Hospital info linked via administrative case             | String                                   |
+| REFERRAL_HOSPITAL_NAME      | same as above                                                                                      | Referral hospital info                                    | String                                   |
+| DOCUMENT_DATE                 | 15: `hasDateTime` (associated with Document or Procedure)                                         | Document date as datetime                                   | xsd:dateTime                          |
+| DOCUMENT_VERSION              | 17: String literal or as property if exists                                                          | Document version as string                                  | String                                   |
+| SIGN_PHYS                   | linked as a property `signedBy` (or similar) directly on Procedure if exists                     | Signatory info                                              | String                                   |
+| DATE                        | 15/16: `hasDateTime` / `hasEndDateTime`                                                             | Procedure date or end date                                  | xsd:dateTime                          |
+| DIAGNOSE                    | custom property `diagnosis` (not in paths, but semantically appropriate)                          | Diagnosis info                                              | String                                   |
+| GEN_SEX                     | 1: `hasPatient` -> `gender`                                                                         | Patient sex attribute                                       | String                                   |
+| BR_PR_BL_LATERALTIY        | 5: `hasBodySite`                                                                                    | Tumor location                                              | String or BodySite individual |
+| BR_LES_ID                   | 13: `hasSubjectPseudoIdentifier`                                                                     | Lesion pseudo-ID                                            | String                                   |
+| TUMOUR_SIZE                 | 17: `hasDataFile` (or custom property) - assuming size as float                                    | Tumor size as numeric                                       | float                                    |
+| BR_BL_LATERALTIY            | 5: `hasBodySite`                                                                                    | Location of lesion                                          | String or BodySite individual |
+| GEN_SMOKING                 | 1: `hasPatient` -> `smokingStatus` or boolean                                                      | Smoking status                                              | Boolean or String                        |
+| GEN_BMI                     | 1: `hasPatient` -> `BMI`                                                                               | BMI value                                                   | float                                    |
+| BR_BL_DATE_SURG            | 14: `hasDateTime` (surgery date)                                                                     | Surgery date                                                 | xsd:date                               |
+| BR_BL_TYPE_SURG            | 17: `hasFreeText` or custom property                                                                  | Surgery type                                                 | String                                   |
+| BR_BL_RE_RESEC            | 1: `hasResection` boolean property                                                                   | Resection status                                              | Boolean                                   |
+| BR_BL_RE_RESEC_DATE        | 16: `hasEndDateTime` (resection date)                                                                | Date of resection                                            | xsd:date                                |
+| BR_BL_RE_REC              | 1: `hasRecurrence` boolean property                                                                   | Recurrence info                                              | Boolean                                   |
+| BR_BL_RE_REC_DATE          | 16: `hasEndDateTime` (recurrence date)                                                                | Date of recurrence                                           | xsd:date                                |
+| BR_AX_LN_DISSECT           | 1: `hasLymphDissection` boolean                                                                       | Axillary lymph node dissection status                        | Boolean                                   |
+| BR_AX_LN_DISSECT_DATE       | 16: `hasEndDateTime` (dissection date)                                                                  | Date of lymph node dissection                                | xsd:date                                |
+| BR_RT                     | 1: `hasRadiotherapy` boolean                                                                       | Radiotherapy status                                         | Boolean                                   |
+| BR_RT_START_DATE           | 16: `hasStartDateTime`                                                                               | Radiotherapy start date                                      | xsd:date                                |
+| GEN_RT_ADJ                | 1: `hasAdjunctTherapy` boolean                                                                       | Radiotherapy adjustment info                                | Boolean                                   |
+
+---
+
+## Final notes:
+- For properties not explicitly provided in the input paths, it is advisable to define custom data properties aligned with the domain.
+- Use appropriate datatype conversions for date and numerical fields.
+- Map boolean fields as true/false literals or as controlled vocabulary if available.
+
+If further refinement or specific ontology class assignments are needed, please specify.

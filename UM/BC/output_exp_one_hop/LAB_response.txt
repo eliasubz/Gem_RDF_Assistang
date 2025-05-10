@@ -1,0 +1,152 @@
+Certainly! Below is a detailed analysis and mapping plan for each CSV column based on the provided ontology paths, including justifications and data transformations where applicable.
+
+---
+
+**Column: GEN_IDNUMBER**  
+**Path:** 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasSubjectPseudoIdentifier  
+**Justification:** The column appears to contain a unique patient identifier, which aligns with the `SubjectPseudoIdentifier` concept, often used to anonymize or pseudonymize patient IDs in medical data. Since the path connects a `Procedure` (or main entity) to a pseudo-identifier, it is the most semantically relevant.  
+**Transformation:** No transformation needed; treat as a string.
+
+---
+
+**Column: TABLE_IDENTIFIER**  
+**Path:** Not directly available among the provided paths.  
+**Justification:** This is likely a dataset-specific identifier, not an ontological property. It could be mapped as a custom annotation or metadata, or potentially as an `rdfs:label` or `dcterms:identifier` if extending the ontology.  
+**Transformation:** Map as a `dcterms:identifier` or `rdfs:label` for record-keeping.
+
+---
+
+**Column: FIRST_NAME**  
+**Path:** Not directly mapped in the provided paths.  
+**Justification:** Personal name is not included in the current paths; it could be mapped as an `foaf:givenName` or `schema:givenName` if extending the ontology.  
+**Transformation:** Map as `foaf:givenName` or `schema:givenName`.
+
+---
+
+**Column: LAST_NAME**  
+**Path:** Same as above; no direct path provided.  
+**Justification:** Similar reasoning; map as `foaf:familyName` or `schema:familyName`.  
+**Transformation:** Map as `foaf:familyName` or `schema:familyName`.
+
+---
+
+**Column: GLUCOSE_GLUCOSE** (value: "7.8 mmol/l")  
+**Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/usingSubstance -> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product  
+**Justification:** This value indicates a measurement related to glucose, which can be associated with a `Product` (e.g., a reagent or test substance used). Alternatively, if representing a test result, it could be modeled as an observation linked to the procedure. However, given the available paths, mapping to a `Product` (such as a glucose test reagent) is suitable.  
+**Transformation:** Extract numeric value and unit; represent as a measurement with proper datatype (e.g., xsd:float) and unit annotation.
+
+---
+
+**Column: HEMOLYTISCH_HEMOLYTISCH** (value: "Licht")  
+**Path:** Not explicitly available; possibly related to a qualitative observation.  
+**Justification:** If the value indicates the degree of hemolysis ("Licht" = "Light"), it could be modeled as a `hasFreeText` property or as a coded observation if such a property exists. Since no direct path, map as `hasFreeText` attached to the procedure or observation.  
+**Transformation:** Map text directly; no special processing.
+
+---
+
+**Column: HEMOGLOBINE_HEMOGLOBINE** ("7.2 mmol/l")  
+**Path:** 2 or 3 (usingSubstance)  
+**Justification:** Hemoglobin measurement is a lab test result, which can be linked via `usingSubstance` to the test substance (hemoglobin reagent) or as a result of an observation. Since the value is a quantitative measurement, the best fit is to model as a `DataFile` or a `Measurement` if available. Given the current paths, link to `Product` or `Substance` with measurement data as an annotation.  
+**Transformation:** Numeric value with unit as float; associate with the relevant substance.
+
+---
+
+**Column: HEMATOCRIET_L** ("0.35 l/l")  
+**Path:** Similar to above, probably via `usingSubstance` or as a measurement.  
+**Justification:** Same reasoning as hemoglobin; model as a measurement linked to a `Substance` or `Product`.  
+**Transformation:** Numeric float, unit annotation.
+
+---
+
+**Column: KALIUM_L** ("4.2 mmol/l")  
+**Path:** Same as above; `usingSubstance` or measurement.  
+**Justification:** Potassium measurement; similar modeling as previous lab values.  
+**Transformation:** Numeric float, unit.
+
+---
+
+**Column: EGFR_M2** (">90 ml/min/1.73m2")  
+**Path:** 14 or 15 (hasDataFile or hasDataProviderInstitute)  
+**Justification:** EGFR is a calculated value; it could be modeled as a data point or observation. Since no direct path for measurement, it can be attached as a `hasFreeText` or as a specific measurement if extended. Alternatively, model as an annotation.  
+**Transformation:** Extract numeric value (e.g., 90), possibly ignore the '>' sign; annotate units.
+
+---
+
+**Column: ERY'S_UL** ("3 /ul")  
+**Path:** Same as previous lab measurements or as a measurement.  
+**Justification:** Red blood cell count; model as measurement linked to a `Product` or as an observation.  
+**Transformation:** Numeric float with unit.
+
+---
+
+**Column: LEUCOCYTEN_UL** ("5.1 x 10^9/1")  
+**Path:** Similar to above; use `usingSubstance` or measurement property.  
+**Justification:** Leukocyte count; model as a measurement with value and unit.  
+**Transformation:** Numeric float, unit annotation.
+
+---
+
+**Column: KREATININE_L** ("43 umol/l")  
+**Path:** Same as other lab tests, via `usingSubstance` or as a measurement.  
+**Justification:** Creatinine level; model as a measurement with numeric value and unit.  
+**Transformation:** Numeric float, unit.
+
+---
+
+**Column: LDH_L** ("318 U/l")  
+**Path:** Same approach as above.  
+**Justification:** LDH enzyme level; model as measurement linked to relevant `Product` or as an observation.  
+**Transformation:** Numeric float, unit.
+
+---
+
+**Column: CALCIUM_L** ("2.31 mmol/l")  
+**Path:** Similar to other lab measurements.  
+**Justification:** Calcium level; modeled as measurement.  
+**Transformation:** Numeric float, unit.
+
+---
+
+**Column: CHLORIDE_L** ("105 mmol/l")  
+**Path:** Same as above.  
+**Justification:** Chloride measurement; modeled as measurement.  
+**Transformation:** Numeric float, unit.
+
+---
+
+**Column: LYMPHOcyten_L** ("9.0 %")  
+**Path:** 3 (usingSubstance) or as a measurement.  
+**Justification:** Lymphocyte percentage; could be modeled as a measurement property or annotation.  
+**Transformation:** Numeric float, with percent unit.
+
+---
+
+**Column: ERYTROCYTEN_I** ("3.85 x10^12/I")  
+**Path:** Same as other cell counts, via `usingSubstance`.  
+**Justification:** Erythrocyte count; modeled as measurement with numeric value and unit.  
+**Transformation:** Numeric float, unit.
+
+---
+
+**Column: FOSFAAT_L** ("0.8 mmol/l")  
+**Path:** Similar to other lab tests; measurement linked to `usingSubstance`.  
+**Justification:** Phosphate level; modeled as measurement.  
+**Transformation:** Numeric float, unit.
+
+---
+
+**Column: GGT_L** ("141 U/l")  
+**Path:** Same as above.  
+**Justification:** GGT enzyme level; modeled as measurement.  
+**Transformation:** Numeric float, unit.
+
+---
+
+### Summary of Key Points:
+- For identifiers and personal info (GEN_IDNUMBER, FIRST_NAME, LAST_NAME): use standard vocabularies (`dcterms:identifier`, `foaf:givenName`, `foaf:familyName`).
+- For lab measurements: use `usingSubstance` paths if representing the reagent or substance tested, or attach as measurement annotations.
+- For qualitative observations (e.g., Hemolysis): map to `hasFreeText`.
+- For quantitative lab results: extract numeric value, store as `xsd:float` with unit annotations.
+- For unrepresented direct properties, consider extending the ontology or mapping via annotations.
+
+Please let me know if you'd like me to generate RDF triples or SPARQL mapping snippets based on this plan!

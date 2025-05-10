@@ -4,12 +4,11 @@
 You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies, ontology engineering, and data transformation. Your expertise includes understanding complex, multi-hop relationships between entities in knowledge graphs.
 
 ## Task
-Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 1-hop relationships extending from the main entity represented by each row.
+Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 2-hop relationships extending from the main entity represented by each row.
 
 ## Input
-1. Target Class: https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
-2. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
-3. Available Paths:
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+2. Available Paths:
 1. 1. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 2. 2. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
 3. 3. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Substance
@@ -29,11 +28,21 @@ Transform a CSV dataset into RDF triples by mapping each column to the most appr
 17. 17. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string
 18. 18. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
 
-4. CSV Data:
+3. CSV Data:
+Column header names -> Column values
 GEN_IDNUMBER -> P0023919393932
-TABLE_IDENTIFIER -> P0023919393932_2020-05-18
-ALLERGIES_TYPE -> food allergy
-ALLERGIES_DATE -> 2020-05-18
+TABLE_IDENTIFIER -> P0023919393932_L3360_v006
+ANXILLARY_INFECTION -> Nee
+HEMATOMA -> Ja
+SEROMA -> Ja
+DYSPHAGIA -> Ja
+PAIN -> 2
+EDEMA -> Onbekend
+WHO_PS -> 2
+MENOPAUSAL -> Pre-menopausal
+COPD -> Nee
+PAIN_MEDICATIE -> Ja
+PAIN_MEDICATIE_STATUS -> 385658003
 
 ## Requirements
 For each CSV column:

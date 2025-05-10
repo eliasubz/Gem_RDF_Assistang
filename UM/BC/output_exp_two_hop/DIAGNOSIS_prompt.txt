@@ -4,12 +4,11 @@
 You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies, ontology engineering, and data transformation. Your expertise includes understanding complex, multi-hop relationships between entities in knowledge graphs.
 
 ## Task
-Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 1-hop relationships extending from the main entity represented by each row.
+Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 2-hop relationships extending from the main entity represented by each row.
 
 ## Input
-1. Target Class: https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
-2. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
-3. Available Paths:
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+2. Available Paths:
 1. 1. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 2. 2. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
 3. 3. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Substance
@@ -29,49 +28,12 @@ Transform a CSV dataset into RDF triples by mapping each column to the most appr
 17. 17. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string
 18. 18. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
 
-4. CSV Data:
+3. CSV Data:
+Column header names -> Column values
 GEN_IDNUMBER -> P0023919393932
-TABLE_IDENTIFIER -> P0023919393932_L3300_v006
-BR_BL_NODES_INVOLV -> 3
-BR_BL_NODES_MAP -> Free
-BR_BL_DATE_DIAG -> 2022-01-11
-BR_BL_INV_HISTO -> Ductal carcinoma
-BR_BL_IVN_SIZE -> 1mm
-BR_BL_TUM_LOC -> links mamma
-BR_BL_INV_GRADE_DIFF -> Cell type not determined
-BR_BL_MIN_RES_MARG_INV -> 5mm
-BR_BL_PROGESTRONE -> Ja
-BR_BL_OESTROGEN -> Nee
-BR_BL_HER2 -> Nee
-BR_BL_SITU_HISTO -> LCIS
-BR_BL_SITU_GRADE_DIFF -> Poorly differentiated
-BR_BL_SIZE_DCIS -> 1.02 mm
-BR_BL_RES_MARG_SITU -> 1.22 mm
-BR_BL_PTSTAGE_PREFIX -> p
-BR_BL_PTSTAGE_SUFFIX -> 1
-BR_BL_YPTSTAGE_PREFIX -> yp
-BR_BL_YPTSTAGE_SUFFIX -> 1
-BR_BL_PNSTAGE_PREFIX -> p
-BR_BL_PNSTAGE_SUFFIX -> 0
-BR_BL_YPNSTAGE_PREFIX -> yp
-BR_BL_YPNSTAGE_SUFFIX -> 0
-BR_BL_PMSTAGE_PREFIX -> p
-BR_BL_PMSTAGE_SUFFIX -> 1
-BR_CHEMO -> Chemo
-BR_CHEMO_START_DATE -> 2014-04-30
-BR_CHEMO_ADJ -> Adj chemotherapie
-BR_CHEMO_ADJ_START_DATE -> 2015-02-01
-BR_END_TR -> Endocr therapie
-BR_END_TR_DATE -> 2021-01-03
-BR_END_TR_ADJ_DATE -> 
-BR_END_TR_ADJ -> Nee
-BR_END_TR_ADJ_STATUS -> 385660001
-BR_HER2_ADJ -> Nee
-BR_HER2_ADJ_STATUS -> 385660001
-BR_HER2_ADJ_DATE -> 
-BR_ANTI_HER2_ADJ_DATE -> 
-BR_ANTI_HER2_ADJ -> Nee
-BR_ANTI_HER2_ADJ_STATUS -> 385660001
+TABLE_IDENTIFIER -> P0023919393932_2023-10-01
+DIAGNOSE_DATE -> 2023-10-01
+GEN_AGE_DIAGN -> 53
 
 ## Requirements
 For each CSV column:

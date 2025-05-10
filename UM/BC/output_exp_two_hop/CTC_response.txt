@@ -1,0 +1,122 @@
+Certainly! Below is a detailed mapping of each CSV column to a specific path in the provided ontology, including the reasoning behind each choice, potential alternatives considered, and any data transformations needed.
+
+---
+
+### Column: GEN_IDNUMBER
+**Path:** 1 AIDAVA/hasPatient
+
+**Justification:**  
+The column appears to contain a unique identifier associated with the patient. Since Path 1 connects a Procedure to a Patient via `hasPatient`, it is semantically appropriate to link the ID to the Patient entity related to the procedure.
+
+**Transformation:**  
+Extract the ID string and assign it to the `sphn#SubjectPseudoIdentifier` property of the Patient.
+
+---
+
+### Column: TABLE_IDENTIFIER
+**Path:** 1 AIDAVA/hasPatient (or directly to Procedure via an identifier property, but none provided)  
+**Selected Path:** 1 - following the main context, associating the table ID with the Patient through the Procedure.
+
+**Justification:**  
+This identifier likely relates to the dataset or record, which can be associated with the Patient or Procedure. Given the existing paths, linking it via the Patient makes sense. Alternatively, it could be mapped as an external identifier of the Patient.
+
+**Transformation:**  
+Assign as a string to a custom property such as `ex:tableIdentifier` or as a pseudo-identifier of the Patient if such property exists.
+
+---
+
+### Column: BR_DERMATITIS
+**Path:** 13 sphn#Procedure -[hasSubjectPseudoIdentifier]-> sphn#SubjectPseudoIdentifier
+
+**Justification:**  
+This column indicates a clinical observation (presence of dermatitis). Since the data is a boolean or categorical about the patient's condition, it can be mapped to the SubjectPseudoIdentifier or a related observation property if available. Given no explicit observation entity, the most straightforward is to record it as a property of the Patient.
+
+Alternatively, mapping it as an attribute of the Patient (via a custom property) would be suitable, but with current paths, linking to SubjectPseudoIdentifier is consistent.
+
+**Transformation:**  
+Convert 'Yes'/'No' to boolean or string, and store as `ex:hasDermatitis` property attached to Patient entity.
+
+---
+
+### Column: BR_LYMPHEDEMA
+**Path:** 13 sphn#Procedure -[hasSubjectPseudoIdentifier]-> sphn#SubjectPseudoIdentifier
+
+**Justification:**  
+Same reasoning as BR_DERMATITIS. It reflects a health condition of the patient, suitable for mapping as a property of the Patient.
+
+**Transformation:**  
+As above, convert 'Yes'/'No' to boolean or string and assign as `ex:hasLymphedema`.
+
+---
+
+### Column: BR_RIBFRACT1
+**Path:** 13 sphn#Procedure -[hasSubjectPseudoIdentifier]-> sphn#SubjectPseudoIdentifier
+
+**Justification:**  
+Similar to previous health conditions, mapping this as a property of the patient is appropriate.
+
+**Transformation:**  
+Convert to boolean/string and assign as `ex:hasRibFracture`.
+
+---
+
+### Column: BR_HEART_FAIL
+**Path:** 13 sphn#Procedure -[hasSubjectPseudoIdentifier]-> sphn#SubjectPseudoIdentifier
+
+**Justification:**  
+Remains consistent—represent patient health status via a property.
+
+**Transformation:**  
+Convert 'Yes'/'No' accordingly; assign as `ex:hasHeartFailure`.
+
+---
+
+### Column: BR_RAD_PNEUM
+**Path:** 13 sphn#Procedure -[hasSubjectPseudoIdentifier]-> sphn#SubjectPseudoIdentifier
+
+**Justification:**  
+Quantitative data representing the number of pneumonias; best mapped as a numerical property of the patient.
+
+**Transformation:**  
+Convert to integer and assign as `ex:numberOfPneumonias`.
+
+---
+
+### Column: BR_HYPERTENSION
+**Path:** 13 sphn#Procedure -[hasSubjectPseudoIdentifier]-> sphn#SubjectPseudoIdentifier
+
+**Justification:**  
+Another health condition; mapped similarly as a property of the patient.
+
+**Transformation:**  
+Convert 'Yes'/'No' to boolean/string; assign as `ex:hasHypertension`.
+
+---
+
+### Column: BR_DM
+**Path:** 13 sphn#Procedure -[hasSubjectPseudoIdentifier]-> sphn#SubjectPseudoIdentifier
+
+**Justification:**  
+Diabetes status, suitable as a patient attribute.
+
+**Transformation:**  
+Convert 'Yes'/'No' accordingly; assign as `ex:hasDiabetes`.
+
+---
+
+## Summary of Reasoning:
+- **Primary focus:** Establishing patient-related data via the `hasPatient` link (Path 1).
+- **Health conditions:** Mapped as properties directly associated with the patient entity, using their pseudo-identifier.
+- **Data types:** Converted categorical responses to booleans or strings; numerical data to integers.
+- **Flexibility:** For identifiers, custom properties like `ex:tableIdentifier` are recommended if not specified in the ontology.
+
+---
+
+## Final Notes:
+- If the dataset permits, consider creating explicit Observation or Condition entities linked to the Patient for better semantic granularity.
+- Custom namespace `ex:` used for non-ontology properties; replace with actual namespace as needed.
+- For complex scenarios or additional data, multi-hop paths can be employed, but based on current data, direct property mappings are most appropriate.
+
+---
+
+Let me know if you'd like a formal RDF mapping script or further elaboration!

@@ -1,0 +1,37 @@
+**Column: GEN_IDNUMBER**  
+**Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient  
+**Justification:** The ID number likely pertains to the patient, which is linked via the 'hasPatient' property from the Procedure, and then to the Patient entity, making this path semantically appropriate.  
+**Transformation:** None needed; assume the value is a string identifier.
+
+---
+
+**Column: TABLE_IDENTIFIER**  
+**Path:** 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product  
+**Justification:** The table identifier appears to be a unique code associated with the procedure or its component, which aligns with the 'usingSubstance' relation pointing to a Product. Alternatively, it could relate directly to the procedure or code but given the options, linking via 'usingSubstance' to a Product is most semantically relevant.  
+**Transformation:** None needed; treat as a string.
+
+---
+
+**Column: DIAGNOSE_DATE**  
+**Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime  
+**Justification:** The diagnosis date naturally maps to a date-time property linked to the procedure, capturing when the diagnosis was made.  
+**Transformation:** Convert date string (e.g., "2023-10-01") into XML Schema dateTime format (e.g., "2023-10-01T00:00:00Z") if needed.
+
+---
+
+**Column: GEN_AGE_DIAGN**  
+**Path:** 3 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier]-> https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier  
+**Justification:** The patient's age at diagnosis can be represented as a pseudo-identifier or attribute associated with the subject (patient), which is linked via 'hasSubjectPseudoIdentifier'. Alternatively, if age is a demographic detail, a more direct path could be considered; but given the provided paths, this is the most appropriate.  
+**Transformation:** Numeric value; no transformation if stored as integer. If needed, cast as integer.
+
+---
+
+### Summary
+| Column             | Path Number & Path                                                                 | Justification                                                  | Transformation                                              |
+|--------------------|-------------------------------------------------------------------------------------|------------------------------------------------------------------|--------------------------------------------------------------|
+| GEN_IDNUMBER       | 1: Procedure/hasPatient/Patient                                                   | Links to the patient entity via procedure; suitable for ID.    | None                                                          |
+| TABLE_IDENTIFIER   | 2: Procedure/usingSubstance/Product                                                | Represents the substance or component related to the procedure. | None                                                          |
+| DIAGNOSE_DATE      | 15: Procedure/hasDateTime                                                          | Captures the date of diagnosis, mapped as dateTime.             | Format as XML dateTime if necessary                          |
+| GEN_AGE_DIAGN     | 3: Procedure/hasSubjectPseudoIdentifier                                           | Represents patient's age or identifier; linked via subject.    | Convert to integer if needed                                |
+
+**Note:** This mapping emphasizes semantic relevance, utilizing the provided paths, and considering domain/range constraints. For data transformations, ensure date-time formatting and numeric conversions are handled appropriately during data ingestion.

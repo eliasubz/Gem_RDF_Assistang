@@ -1,0 +1,123 @@
+Let's analyze each CSV column systematically, selecting the most appropriate 2-hop path in the ontology that aligns semantically with the data. I'll provide reasoning, chosen path, and data transformation considerations.
+
+---
+
+**Column: GEN_IDNUMBER**  
+**Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient (Path 1)  
+**Justification:** Since GEN_IDNUMBER uniquely identifies a patient, linking a procedure to the patient via `hasPatient` directly relates the ID to the patient entity. This is semantically accurate for patient identification.  
+**Transformation:** Ensure the GEN_IDNUMBER is formatted as a string literal, e.g., `"P0023919393932"`.
+
+---
+
+**Column: TABLE_IDENTIFIER**  
+**Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient (Path 1)  
+**Justification:** The TABLE_IDENTIFIER appears to be a unique identifier for a record or procedure, which can be linked to the procedure entity. Alternatively, it could be linked directly to the Procedure, but given the main entity is Patient, associating through Procedure maintains semantic consistency.  
+**Transformation:** Format as string literal, e.g., `"P0023919393932_2023-08-15_00v1"`.
+
+---
+
+**Column: FIRST_NAME**  
+**Selected Path:** 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient (Path 1)  
+**Justification:** The patient's first name is an attribute of the Patient entity; thus, linking via the Patient node is appropriate.  
+**Transformation:** Map as string literal, e.g., `"Klaas"`.
+
+---
+
+**Column: LAST_NAME**  
+**Selected Path:** Same as FIRST_NAME, Path 1  
+**Justification & Transformation:** Same reasoning and processing as FIRST_NAME.
+
+---
+
+**Column: BIRTH_DATE**  
+**Selected Path:** 1 Path 1  
+**Justification:** Birth date is a property of the Patient, so connecting through the Patient node is appropriate.  
+**Transformation:** Convert to ISO date string `"1968-05-06"` with datatype `xsd:date`.
+
+---
+
+**Column: HOSPITAL_NAME**  
+**Selected Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase]-> https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase  
+**Justification:** The hospital where the procedure or administrative case is recorded aligns with AdministrativeCase, which is linked to the procedure.  
+**Transformation:** Map as string literal `"Maastro Clinic"`.
+
+---
+
+**Column: REFERRAL_HOSPITAL_NAME**  
+**Selected Path:** 4 same as above (AdministrativeCase)  
+**Justification:** The referral hospital is relevant at the AdministrativeCase level, representing the hospital involved in the administrative process.  
+**Transformation:** String literal `"Zuyderland"`.
+
+---
+
+**Column: DOCUMENT_DATE**  
+**Selected Path:** 15 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime  
+**Justification:** Document date aligns with the date/time properties of the procedure, suitable for mapping via `hasDateTime`.  
+**Transformation:** Convert to ISO datetime string `"2023-08-15T00:00:00"` with datatype `xsd:dateTime`.
+
+---
+
+**Column: DOCUMENT_VERSION**  
+**Selected Path:** 17 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string  
+**Justification:** Version info as free text fits the `hasFreeText` property.  
+**Transformation:** String literal, `"00v1"`.
+
+---
+
+**Column: SIGN_PHYS**  
+**Selected Path:** 1 Path 1 (Patient) -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> Patient  
+**However,** since SIGN_PHYS is a signature of the physician, it could be associated with the Procedure or the Physician entity if available.  
+**But given data,** mapping to Patient via the main entity is acceptable if the signature is of the patient or the physician associated with the patient.  
+**Alternatively,** if a property for physician signature exists, it might be more precise.  
+**In absence of such,** map to Patient for simplicity.  
+**Transformation:** String literal `"Lieke Boersma"`.
+
+---
+
+**Column: BR_BREAST**  
+**Selected Path:** 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime  
+**However,** this property relates to coding date/time, not measurement.  
+**Better alternative:**  
+Use a custom property like `hasBreastDose` if it exists; if not, model as a free text or as an attribute of the Procedure.  
+**Given the available paths,** as no explicit property for breast dose exists, map as a free text or custom property.  
+**Transformation:** String literal `"25 Gy"`.
+
+---
+
+**Column: BR_PART_BREAST**  
+**Selected Path:** Same as above, or as a free text attribute.  
+**Transformation:** `"21 Gy"`.
+
+---
+
+**Column: BR_CHEST_WALL**  
+**Selected Path:** Same as above, representing a dose.  
+**Transformation:** `"30 Gy"`.
+
+---
+
+### Summary Table
+
+| Column | Path Number & Path | Justification | Transformation |
+|---------|-----------------------|----------------|----------------|
+| GEN_IDNUMBER | 1 Path 1 | Links patient ID to Patient entity, semantically accurate | `"P0023919393932"` (string literal) |
+| TABLE_IDENTIFIER | 1 Path 1 | Unique record ID linked through Procedure | `"P0023919393932_2023-08-15_00v1"` (string literal) |
+| FIRST_NAME | 1 Path 1 | Patient's first name, attribute of Patient | `"Klaas"` (string literal) |
+| LAST_NAME | 1 Path 1 | Same as FIRST_NAME | `"Van Hooijdonk"` |
+| BIRTH_DATE | 1 Path 1 | Patient's birth date, attribute of Patient | `"1968-05-06"` (xsd:date) |
+| HOSPITAL_NAME | 4 | AdministrativeCase involved hospital | `"Maastro Clinic"` (string literal) |
+| REFERRAL_HOSPITAL_NAME | 4 | Referral hospital at AdministrativeCase level | `"Zuyderland"` |
+| DOCUMENT_DATE | 15 | Procedure date/time | `"2023-08-15T00:00:00"` (xsd:dateTime) |
+| DOCUMENT_VERSION | 17 | Procedure version info | `"00v1"` (string literal) |
+| SIGN_PHYS | 1 Path 1 | Signature of the physician, mapped to Patient for simplicity | `"Lieke Boersma"` |
+| BR_BREAST | Custom property / free text | Dose measurement, no explicit path; mapped as string | `"25 Gy"` |
+| BR_PART_BREAST | Same as above | `"21 Gy"` | |
+| BR_CHEST_WALL | Same as above | `"30 Gy"` | |
+
+---
+
+**Note:**  
+- For measurement data (BREAST doses), ideally, dedicated properties should be defined, but given the provided paths, modeling as free text is acceptable.  
+- If the ontology has specific properties for dose measurements, those should be used for more semantic accuracy.
+
+Let me know if you need the explicit RDF triples or SPARQL mapping syntax based on this analysis!

@@ -1,0 +1,104 @@
+Certainly! Below is a detailed mapping plan for each CSV column, including the selected path, justification, and any data transformations needed.
+
+---
+
+**Column: GEN_IDNUMBER**  
+**Path:** 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasSubjectPseudoIdentifier  
+**Justification:** The `hasSubjectPseudoIdentifier` property logically connects a procedure to a pseudo-identifier representing the subject (patient). Since the main entity is a Patient, this identifier uniquely links to the patient within procedural context.  
+**Transformation:** No transformation needed; value can be directly assigned as a string.
+
+---
+
+**Column: TABLE_IDENTIFIER**  
+**Path:** 13 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/hasSubjectPseudoIdentifier  
+**Justification:** Although it appears similar to GEN_IDNUMBER, `TABLE_IDENTIFIER` likely serves as a unique record or dataset identifier, which can be mapped similarly to the pseudo-identifier in the context of procedures.  
+**Transformation:** No transformation; treat as string.
+
+---
+
+**Column: ANXILLARY_INFECTION**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode (with code from `ANXILLARY_INFECTION`)  
+**Justification:** The presence of an administrative case linked to a procedure can include codes denoting specific conditions like infections. Using `hasCode` from `AdministrativeCase` captures this condition.  
+**Transformation:** Map "Nee"/"Ja" to boolean or specific code: e.g., "Nee" = false, "Ja" = true, or use standardized codes if available.
+
+---
+
+**Column: HEMATOMA**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Similar reasoning as ANXILLARY_INFECTION, linking to `AdministrativeCase` with appropriate code.  
+**Transformation:** Map "Nee"/"Ja" to boolean or coded value.
+
+---
+
+**Column: SEROMA**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Same as previous, representing the occurrence via codes within an administrative case.  
+**Transformation:** Same as above.
+
+---
+
+**Column: DYSPHAGIA**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Consistent application; administrative case codes can encode symptoms or conditions.  
+**Transformation:** Map "Ja"/"Nee" accordingly.
+
+---
+
+**Column: PAIN**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Pain severity or presence could be encoded as codes or numeric values within an administrative case.  
+**Transformation:** Numeric value ("2") retained; may need to map to standardized pain codes if available.
+
+---
+
+**Column: EDEMA**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Similar to other conditions, likely represented via codes within an administrative case.  
+**Transformation:** Map "Onbekend" to a special code indicating unknown.
+
+---
+
+**Column: WHO_PS**  
+**Path:** 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasCodingDateTime  
+**Justification:** The `WHO_PS` appears to be a coding or classification score; associating it with a coding date/time makes sense, especially if temporal context is relevant.  
+**Transformation:** Keep as integer or string; ensure standardized datatype.
+
+---
+
+**Column: MENOPAUSAL**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Menopausal status can be encoded as a code within an administrative case, capturing the status for clinical record keeping.  
+**Transformation:** Map "Pre-menopausal" to a standardized code if available; else store as string.
+
+---
+
+**Column: COPD**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Encodes presence/absence of COPD as a code within administrative case.  
+**Transformation:** Map "Nee"/"Ja" accordingly.
+
+---
+
+**Column: PAIN_MEDICATIE**  
+**Path:** 4 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasAdministrativeCase/sphn#hasCode  
+**Justification:** Use administrative case codes to denote whether pain medication is administered.  
+**Transformation:** Map "Ja"/"Nee" to boolean or standard code.
+
+---
+
+**Column: PAIN_MEDICATIE_STATUS**  
+**Path:** 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/sphn#hasCodingDateTime  
+**Justification:** The status of medication can be associated with a coding date/time, indicating when the status was recorded.  
+**Transformation:** Keep as date-time string or convert to XML Schema dateTime format.
+
+---
+
+### Summary
+- **Primary mapping approach:** Most conditions and categorical data are mapped via `hasCode` within `AdministrativeCase`, aligning with the provided relationships.
+- **Temporal data:** Mapped to `hasCodingDateTime` with proper date-time formatting.
+- **Identifiers and pseudo-identifiers:** Mapped via `hasSubjectPseudoIdentifier`.
+- **Transformations:** Mostly straightforward string or boolean conversions, with date/time formatted as per XML Schema standards.
+
+---
+
+If further refinement or specific code standards are needed, please advise!

@@ -1,0 +1,39 @@
+Column: GEN_IDNUMBER  
+Path: 1 Procedure:[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] / Patient  
+Justification: The GEN_IDNUMBER likely serves as an identifier for the patient, so mapping it through the 'hasPatient' relationship from Procedure to Patient aligns with the ontology's structure.  
+Transformation: None required; the ID can be used as a literal or as an rdfs:label or skos:notation for the Patient entity.
+
+---
+
+Column: TABLE_IDENTIFIER  
+Path: 2 Procedure:[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance] / Product (or Substance) — but since it's an identifier, a more straightforward approach is to assign it directly to the Procedure or as a code.  
+Alternative: Since TABLE_IDENTIFIER appears to be a unique record ID, it might be best mapped as a 'code' or 'identifier' property directly on the Procedure.  
+Selected Path: 6 Procedure:[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] / sphn#Code  
+Justification: The TABLE_IDENTIFIER functions as a unique code for the record, fitting naturally with the 'hasCode' property of the Procedure.  
+Transformation: Map the value as a string literal.
+
+---
+
+Column: ALLERGIES_TYPE  
+Path: 4 Procedure:[https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] / AdministrativeCase — but this seems indirect.  
+Alternative: Consider mapping to the 'hasSubjectPseudoIdentifier' or directly to the 'hasFreeText' property if representing a descriptive allergy type.  
+Selected Path: 18 Procedure:[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText] / xsd:string  
+Justification: 'ALLERGIES_TYPE' describes the type of allergy, which can be represented as free text attached directly to the Procedure or related AdministrativeCase. Since the ontology supports 'hasFreeText', it's suitable here.  
+Transformation: Map as string literal.
+
+---
+
+Column: ALLERGIES_DATE  
+Path: 15 Procedure:[https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime] / xsd:dateTime  
+Justification: This date signifies when the allergy was recorded or observed; mapping it to 'hasDateTime' on the Procedure captures this temporal information meaningfully.  
+Transformation: Convert the date to xsd:dateTime format if necessary (e.g., "2020-05-18" as "2020-05-18T00:00:00").
+
+---
+
+**Summary:**
+- GEN_IDNUMBER maps through 'hasPatient' to identify the patient.
+- TABLE_IDENTIFIER maps to 'hasCode' on Procedure as a unique record identifier.
+- ALLERGIES_TYPE is best represented as free text attached directly to the Procedure.
+- ALLERGIES_DATE maps to 'hasDateTime' on Procedure with proper datatype formatting.
+
+If further nested relationships or specific domain considerations are required, additional context or ontology constraints should be examined.

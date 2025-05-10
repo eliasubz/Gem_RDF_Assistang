@@ -1,0 +1,31 @@
+Column: GEN_IDNUMBER  
+Path: 1 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient  
+Justification: The GEN_IDNUMBER appears to be a unique identifier for a patient, which logically maps to the Patient entity connected via the hasPatient relation from Procedure. Since the main entity is ProblemCondition, this path allows capturing patient-specific identifiers linked through the procedure context.  
+Transformation: No special transformation needed; ensure string formatting as per ontology requirements.
+
+Column: TABLE_IDENTIFIER  
+Path: 2 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product  
+Justification: The TABLE_IDENTIFIER appears to be a unique identifier for a data record or a specific procedure instance; mapping it to the Product via the usingSubstance relation may not be directly appropriate. Alternatively, considering an identifier directly attached to Procedure, the best fit is to treat it as an identifier for the Procedure itself. Since no direct path to Procedure is listed, and the ontology does not specify a direct identifier property, we can consider creating a custom property or associate it at the Procedure level (not in provided options).  
+Transformation: If mapping directly, store as a string; may involve creating a custom property if necessary.
+
+**Note:** Since the provided paths do not include a direct identifier for Procedure, and the main entity is ProblemCondition, an alternative is to assign TABLE_IDENTIFIER as an annotation or label to the main entity itself, bypassing complex pathing.
+
+Column: ALLERGIES_DATE  
+Path: 14 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime  
+Justification: The date of allergy is best represented through a datetime property associated with the Procedure, which in turn relates to the ProblemCondition. The hasCodingDateTime path directly links a dateTime value to the procedure, making it suitable for recording allergies date.  
+Transformation: Convert the date string (e.g., 2020-05-18) into xsd:dateTime format, e.g., "2020-05-18T00:00:00".
+
+Column: ALLERGIES_TYPE  
+Path: 17 https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string  
+Justification: The allergy type is a textual description, best stored as free text linked via hasFreeText property from the Procedure, which is the main entity related to the problem condition.  
+Transformation: Ensure the string is properly escaped and stored as an xsd:string literal.
+
+---
+
+**Summary:**  
+- For GEN_IDNUMBER, the path through the Patient entity captures patient identifiers.  
+- For TABLE_IDENTIFIER, due to lack of a direct identifier property, consider attaching it directly to the main entity or choosing the closest relevant path.  
+- For ALLERGIES_DATE, use the hasCodingDateTime property with datetime formatting.  
+- For ALLERGIES_TYPE, employ hasFreeText with string literal.  
+
+Please note that some columns may require custom properties if the ontology does not directly support the data as intended; in such cases, extension or annotation properties are recommended.

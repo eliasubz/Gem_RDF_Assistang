@@ -4,12 +4,11 @@
 You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies, ontology engineering, and data transformation. Your expertise includes understanding complex, multi-hop relationships between entities in knowledge graphs.
 
 ## Task
-Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 1-hop relationships extending from the main entity represented by each row.
+Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 2-hop relationships extending from the main entity represented by each row.
 
 ## Input
-1. Target Class: https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
-2. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
-3. Available Paths:
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+2. Available Paths:
 1. 1. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 2. 2. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
 3. 3. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance]-> https://biomedit.ch/rdf/sphn-ontology/sphn#Substance
@@ -29,20 +28,29 @@ Transform a CSV dataset into RDF triples by mapping each column to the most appr
 17. 17. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText]-> http://www.w3.org/2001/XMLSchema#string
 18. 18. https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure -[https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime]-> http://www.w3.org/2001/XMLSchema#dateTime
 
-4. CSV Data:
+3. CSV Data:
+Column header names -> Column values
 GEN_IDNUMBER -> P0023919393932
-TABLE_IDENTIFIER -> P0023919393932_2023-08-15_00v1
+TABLE_IDENTIFIER -> P0023919393932_2023-11-15_00v2
 FIRST_NAME -> Klaas
 LAST_NAME -> Van Hooijdonk
 BIRTH_DATE -> 1968-05-06
 HOSPITAL_NAME -> Maastro Clinic
-REFERRAL_HOSPITAL_NAME -> Zuyderland
-DOCUMENT_DATE -> 2023-08-15
-DOCUMENT_VERSION -> 00v1
 SIGN_PHYS -> Lieke Boersma
-BR_BREAST -> 25 Gy
-BR_PART_BREAST -> 21 Gy
-BR_CHEST_WALL -> 30 Gy
+REFERRAL_HOSPITAL_NAME -> Zuyderland
+DOCUMENT_DATE -> 2023-11-15
+DOCUMENT_VERSION -> 00v2
+BRTUM_REGIO_REC -> Yes
+BRTUM_DATE_REGIOREC -> 2023-12-15
+BRTUM_DIST_METS -> bekend met gemetastaseerd mamma carcinoom
+BRTUM_DATE_DISTMETS -> 2023-12-15
+BR_MDT_POST -> No
+BR_MDT_PREOP -> Yes
+BR_SCR -> Yes
+BR_TR_INTENT -> Yes
+BR_PAT_CL_TR -> Yes
+PROGESTERON_RECEPTOR -> Positive
+MIBL_MIBL -> 5% resectie microsatelliet 1
 
 ## Requirements
 For each CSV column:

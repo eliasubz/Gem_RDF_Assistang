@@ -1,0 +1,54 @@
+Column: GEN_IDNUMBER
+Path: 13  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier
+Justification: The column appears to contain a unique identifier for the subject/patient involved in the procedure, which aligns with the "hasSubjectPseudoIdentifier" property.
+Transformation: No data transformation needed; use the string as-is.
+
+---
+
+Column: TABLE_IDENTIFIER
+Path: 14  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime
+Justification: Although the column is labeled as "TABLE_IDENTIFIER," the value resembles a unique code or version identifier, which fits the "hasCodingDateTime" property if interpreted as a coding timestamp; alternatively, if this is a version or label, mapping may need reconsideration. Since no explicit property matches "table identifier," and "hasCodingDateTime" expects a dateTime, this may need custom handling.
+Transformation: If intended as a timestamp or version code, may require creating a custom property or storing as a string. Otherwise, map to a string property, possibly "hasFreeText" with datatype string.
+
+---
+
+Column: BRTUM_DATE_LASTFU
+Path: 15  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime
+Justification: The column contains a date, which aligns with "hasDateTime," capturing the last follow-up date.
+Transformation: Convert value to xsd:dateTime format if necessary (e.g., "2024-12-01" → "2024-12-01T00:00:00").
+
+---
+
+Column: BRTUM_STATUS_LASTFU
+Path: 11  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode
+Justification: The value appears to be a coded status indicator; "hasStatusCode" is appropriate to represent status information.
+Transformation: Map code to an instance of sphn:Code or sphn:Terminology if available; otherwise, store as a string literal.
+
+---
+
+Column: BRTUM_LOCAL_REC
+Path: 18  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime
+Justification: The column indicates a local recording indicator, which might be better mapped to a boolean or string. Since the property "hasStartDateTime" expects a dateTime, this suggests a mismatch; perhaps "hasFreeText" is more suitable.
+Alternative: Since the property "hasFreeText" is available, it might be better to use that, unless "local record" is interpreted as a date/time.
+Transformation: Map "Ja" to boolean (true) or string "Ja" depending on data model; if date, then convert accordingly.
+
+---
+
+Column: BRTUM_DATE_LOCALREC
+Path: 16  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasEndDateTime
+Justification: The date indicates when the local record was made, fitting "hasEndDateTime" or "hasDateTime." Given the semantic, "hasEndDateTime" is appropriate.
+Transformation: Convert to xsd:dateTime format.
+
+---
+
+Column: BRTUM_REGIO_REC
+Path: 6  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
+Justification: The value seems to be a code indicating a region or location. "hasCode" is suitable for representing coded regional info.
+Transformation: Map code to sphn:Code or store as a string literal.
+
+---
+
+**Summary:**
+- Prioritized semantic accuracy, matching columns with properties that best reflect their intended meaning.
+- Used "hasSubjectPseudoIdentifier" for patient ID, "hasDateTime"/"hasEndDateTime" for dates, "hasStatusCode" for status indicators, and "hasCode" for coded info.
+- Adjusted data formats to conform with expected datatypes (e.g., dateTime, string, boolean).
