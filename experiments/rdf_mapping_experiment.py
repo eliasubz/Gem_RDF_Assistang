@@ -4,12 +4,18 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 from openai import OpenAI
 from dotenv import load_dotenv
-from llm_assistant_hack_main.exportable_find_paths import find_paths
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from llm_assistant_hack_main.main import PathFinder
 
 
 # Load environment variables
 load_dotenv()
 LLM_API_KEY = os.getenv("POPENAI_API_KEY")
+pathfinder = PathFinder(ttl_file="aidava-sphn.ttl")
 
 
 def read_paths_from_output(output_file: str) -> List[str]:
@@ -140,11 +146,9 @@ def process_experiment(
             print(f"Warning: Could not find main entity type in {analysis_file}")
             continue
 
-        # Create and read paths
         if main_entity:
-            paths = find_paths(hop_count, main_entity)
-        paths = read_paths_from_output(output_file)
-
+            paths = pathfinder.find_paths(hop_count=hop_count, target_class=main_entity)
+        # paths = ""
         # Read CSV columns
         try:
             columns, values = read_csv_columns(str(csv_file))

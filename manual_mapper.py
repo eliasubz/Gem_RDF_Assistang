@@ -267,12 +267,6 @@ def main():
     print("\n=== Final Schema Representation ===")
     print(json.dumps(final_schema_representation, indent=2))
 
-    # You could now save this schema to a file (JSON, YAML),
-    # use it to generate code, configure a database, etc.
-    # with open('final_schema.json', 'w') as f:
-    #     json.dump(final_schema_representation, f, indent=2)
-    # print("\nSchema saved to final_schema.json")
-
 
 if __name__ == "__main__":
     main()

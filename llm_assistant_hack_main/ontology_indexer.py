@@ -3,8 +3,7 @@ from typing import cast
 from rdflib import Graph, Literal
 from rdflib.query import ResultRow
 
-import models as ontology
-
+from . import models as ontology
 
 
 class OntologyIndexer:
