@@ -1,13 +1,13 @@
 You are an expert in semantic web data integration.
 Given a list of CSV column headers and a list of RDF ontology entities, suggest:
 1. Is there one overarching entity outside of all the columns, that all columns could be linked to? If yes, which entity out of the RDF Entities could that be?
-2. Give me 15 candidate entities in an array.
+2. Give me 15 ranked candidate entities in an json output.
 
 CSV file with three example values:
 patient_id -> 129342KW
-id -> L3376, L3380, L3375
-9594 -> 49436004, 840580004, 13645005
-7335 -> 2023-08-12T16:20:59.0000, 2023-08-14T11:59:59.0000, 2023-08-07T20:05:17.0000
+id -> L3378, L3379, L3383
+9594 -> 840580004, 49436004, 13645005
+7335 -> 2023-08-07T11:11:44.0000, 2023-08-07T20:05:17.0000, 2023-08-11T23:41:08.0000
 
 RDF Entities:
 - http://purl.org/dc/elements/1.1/description

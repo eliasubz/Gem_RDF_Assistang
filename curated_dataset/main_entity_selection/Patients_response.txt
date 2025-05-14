@@ -1,87 +1,19 @@
-Let's approach your questions step by step.
-
----
-
-**1. Overarching Entity for All Columns**
-
-Examining the CSV columns:
-
-- patient_id (ID for the patient)
-- id (can be admission/encounter or patient)
-- birthdate
-- gender_code_snomed
-- department (hospital department)
-- doctor
-- admission_date
-- discharge_date
-- admission_reason
-- given_name
-- family_name
-
-This is mostly about a **hospital admission/encounter of a patient**, with attributes of the patient (identifiers, birthdate, gender, name) and of the hospital visit (admission date, discharge, doctor, department).
-
-From your ontology entities, the **overarching entity** that all of these columns could be linked to is:
-
-> **https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter**  
-> This reflects the hospitalization event, which can have properties linking to Patient, Admission/Discharge, Reason, Department, Doctor, etc.
-
-**Alternative:**  
-If you want to focus on the patient as the subject (rare for event-centric structures),  
-> **https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient**
-
-But, usually, the encounter (visit/admission) is the entity to which all others are attached.
-
----
-
-**2. 15 Candidate Entities (as an Array)**
-
-Here’s an array of candidate entities (mixing event-centric and person-centric ones, as well as property candidates for columns):
-
-```json
-[
-  "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
-  "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
-  "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName",
-  "https://biomedit.ch/rdf/sphn-ontology/sphn#Department",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
-  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport"
-]
-```
-*__Note:__* *"Department" is not directly in your RDF list but would typically be modeled as a class or an object property—substitute as needed.*
-
----
-
-**Summary Table**
-
-| CSV Column             | Candidate RDF Entities                                                      |
-|------------------------|----------------------------------------------------------------------------|
-| patient_id, id         | AIDAVA/PatientIdentifier, hasPatientIdentifier, Patient                    |
-| birthdate              | hasBirthDate, BirthDate                                                    |
-| gender_code_snomed     | hasAdministrativeGender, AdministrativeGender                              |
-| department             | Department (model as new class/object), maybe value of encounter property  |
-| doctor                 | Add as a property, could link to Person or Practitioner class if available |
-| admission_date         | HealthcareEncounter, admissionDate property (not directly in provided list)|
-| discharge_date         | HealthcareEncounter, dischargeDate property                                |
-| admission_reason       | Condition, DiagnosticReport, or Encounter Reason                           |
-| given_name, family_name| hasGivenName, hasFamilyName, SubjectName                                   |
-
----
-
-**Summary Answers**
-
-1. **Overarching entity:**  
-   **https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter**
-
-2. **15 candidate entities:**  
-   *(see array above)*
-
-If you want entity suggestions for each column, let me know!
+{
+  "spanning_entity_candidates": [
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Encounter",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/MedicalRecord",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ClinicalEvent",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthInformation",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Subject",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Resource",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Diagnosis",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Service",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Entity",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Item",
+    "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Record"
+  ]
+}
