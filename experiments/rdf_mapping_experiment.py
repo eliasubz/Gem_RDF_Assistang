@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import sys
 import os
 
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from llm_assistant_hack_main.main import PathFinder
@@ -146,9 +147,9 @@ def process_experiment(
             print(f"Warning: Could not find main entity type in {analysis_file}")
             continue
 
+        paths = ""
         if main_entity:
             paths = pathfinder.find_paths(hop_count=hop_count, target_class=main_entity)
-        # paths = ""
         # Read CSV columns
         try:
             columns, values = read_csv_columns(str(csv_file))

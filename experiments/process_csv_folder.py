@@ -186,7 +186,9 @@ def process_csv_folder(csv_folder, rdf_folder, output_folder):
 
 if __name__ == "__main__":
     # Example usage
-    csv_folder = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/UM/BC/csv"
+    csv_folder = (
+        "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset"
+    )
     rdf_folder = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/UM/BC/rdf"
     output_folder = (
         "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/UM/BC/analysis"

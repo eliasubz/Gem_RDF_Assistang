@@ -1,0 +1,55 @@
+Let’s analyze the mapping of CSV columns to the provided RDF entities for **data integration**.
+
+**CSV columns and example values:**
+- `patient_id`: 129342KW
+- `id`: L3326, L3330, L3329 (looks like a record/observation ID)
+- `0467`: 780837001, 416766001, 788479004 (likely a code, possibly LOINC or SNOMED; could be a test code)
+- `3651`: 145, 17.2, 200 (likely result/value)
+- `2287`: gperdL, mmolperL, mgperdL (unit)
+- `6935`: 2023-08-05T12:00:00.0000 (timestamp/datetime)
+
+## 1. Is there one overarching entity outside of all the columns, that all columns could be linked to?  
+**Yes, there is an overarching entity that all columns could be linked to.**  
+The data represent *measurements, test results, or observations associated with a patient*, with identifier, code, value, unit, and time.
+
+### Best fit in provided RDF entities:
+- [`https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation`](https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation)
+
+**Rationale:**  
+- The `Observation` entity is a broad concept commonly used in clinical/biomedical ontologies (e.g., FHIR Observation), and covers the idea of a measured/tested value with patient, code, value, unit, and time.
+- All columns make sense as properties of an `Observation` instance.
+
+## 2. Give me 15 candidate entities in an array.
+
+Below are 15 candidate RDF entities relevant to the data table. These include overarching (Observation), supporting, and specific property-value entities that relate to the columns:
+
+```json
+[
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure",
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory",
+  "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+  "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+  "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+  "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+  "http://www.w3.org/2001/XMLSchema#dateTime"
+]
+```
+---
+
+### **Summary of mapping by column:**
+- `patient_id` ⇒ Patient/PatientIdentifier
+- `id` ⇒ Observation identifier
+- `0467` ⇒ Measurement code/system/test code (hasSystem, Observation.hasCode, ...)
+- `3651` ⇒ Value/quantity (Quantity, Measurement)
+- `2287` ⇒ Unit (Unit)
+- `6935` ⇒ Timestamp (`dateTime`)
+
+Let me know if you want a **mapping** for each individual column to the most appropriate entity/property!

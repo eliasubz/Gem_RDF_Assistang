@@ -1,0 +1,72 @@
+Given the CSV columns and RDF Entities, **here’s an expert semantic web data integration mapping:**
+
+---
+
+### **CSV Columns and Example Values**
+
+| Column         | Example Values                                             |
+|----------------|----------------------------------------------------------|
+| patient_id     | 129342KW                                                 |
+| id             | L3376, L3380, L3375                                      |
+| code_snomed    | Coronary arteriosclerosis, Atrial fibrillation, Renal dialysis |
+| date           | 2023-08-12T16:20:59.0000, ...                            |
+
+#### **Assumed Meaning**:
+- A row represents a medical record concerning a patient, probably an interaction, event, observation, diagnosis, or procedure, with multiple conditions (via code_snomed).
+- `patient_id` links to a patient.
+- `id` is likely a record, event, or observation identifier.
+- `code_snomed` are clinical concepts (SNOMED CT codes or labels).
+- `date` indicates when the observation/event took place.
+
+---
+
+## **1. Is there one overarching entity outside of all the columns? If yes, which entity?**
+
+**Yes.**  
+The best overarching entity, given these columns (representing an event/observation linked to a patient and a clinical code at a time), is:
+
+### ⇒ [`https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation`](https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation)
+
+**Rationale:**
+- Each row is an observation/diagnosis/event about a patient, at a time, with a code.
+- SPHN/AIDAVA `Observation` is designed to be the central entity connecting patient, code, and date.
+- Alternative: [`/Condition`](https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition), if you know all codes are conditions. But "Observation" is more general and safely encompasses both diagnoses and other coded events.
+
+---
+
+## **2. 15 Candidate Entities (as array; preference to most relevant for mapping the columns):**
+
+```json
+[
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",           // central event/observation
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",               // patient reference
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",     // for patient_id
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",  // property linking obs to patientID
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",            // property linking obs to patient
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode",      // property for code_snomed
+  "http://www.w3.org/2001/XMLSchema#dateTime",                          // for date datatype
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",             // possible code targets
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory",           // link to broader category if exists
+  "http://www.w3.org/2001/XMLSchema#string",                            // for string properties
+  "http://purl.org/dc/elements/1.1/description",                       // description if needed
+  "http://purl.org/dc/elements/1.1/title",                             // title/net description
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",      // broader context, if report not single observation
+  "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",        // condition/diagnosis representation
+  "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement"         // if there are measurement values in the record
+]
+```hits metric
+ask for structured outputs with openai package return json
+
+---
+
+### **How the mapping could look:**
+- Each row is an instance of `AIDAVA:Observation`.
+- `hasPatient` links to a `Patient`.
+- `hasPatientIdentifier` links to a `PatientIdentifier` whose value is `patient_id`.
+- `hasConditionCode` or `hasCategory` links to a `Condition`/code, with value from `code_snomed`.
+- `id` is probably `rdf:ID` or a local instance identifier.
+- `date` represented with `xsd:dateTime`.
+
+---
+
+**Let me know if you want example RDF triples or a more detailed mapping proposal!**
