@@ -1,0 +1,47 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> a owl:Class ;
+    rdfs:label "Patient" ;
+    rdfs:comment "Individual receiving health care services" ;
+    rdfs:subClassOf [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ;
+    skos:definition "Individual receiving health care services" .
+

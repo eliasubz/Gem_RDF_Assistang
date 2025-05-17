@@ -1,1 +1,79 @@
-{"spanning_entity_candidates": ["https://biomedit.ch/rdf/sphn-ontology/aidava-ontology", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen", "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology", "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/2024/1", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier", "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode"]}
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event or period of care in a healthcare setting involving a patient, including patient identifiers, encounter type, dates, and responsible clinicians."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual who receives or is registered to receive healthcare services, uniquely identified by patient IDs."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient to uniquely distinguish them within healthcare systems."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "A clinical assessment that identifies a disease or medical condition in a patient, often linked to diagnosis codes and dates."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical or surgical action taken in the course of healthcare delivery, may be associated with encounter and patient IDs."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The name or identifier related to the subject or patient involved in healthcare encounters."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Clinical findings or measurements recorded during a healthcare encounter."
+        },
+        {
+            "label": "MedicalOncology",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalOncology",
+            "description": "A clinical specialty related to cancer diagnosis and treatment, possibly related to diagnosis or encounter data."
+        },
+        {
+            "label": "Emergency",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "An encounter class representing emergency healthcare services, matching the encounter type value provided."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report summarizing diagnostic findings related to a patient, possibly linked to admission dates and diagnoses."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An administrative record of a healthcare case or encounter involving a patient."
+        },
+        {
+            "label": "TherapeuticArea",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea",
+            "description": "The medical specialty or field relevant to the encounter or diagnosis."
+        },
+        {
+            "label": "DateTime",
+            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "A datatype for recording times and dates related to the encounter or events."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "A pseudonymized identifier for patient privacy in healthcare datasets."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis associated with the patient during the encounter."
+        }
+    ]
+}

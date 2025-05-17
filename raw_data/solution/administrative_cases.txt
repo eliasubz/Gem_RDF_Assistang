@@ -1,0 +1,1 @@
+https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase

@@ -1,0 +1,48 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 2
+            },
+            "justification": "The 'patient_id' logically maps to the Patient entity related to the ProblemCondition via the 'hasPatient' property, aligning with the domain of patient identifiers.",
+            "transformation": "No transformation needed."
+        },
+        {
+            "column_name": "id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 11
+            },
+            "justification": "This column likely contains unique identifiers for the ProblemCondition, which maps directly to the 'hasIdentifier' property of the main entity.",
+            "transformation": "No transformation needed."
+        },
+        {
+            "column_name": "code_snomed",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 15
+            },
+            "justification": "The SNOMED code description corresponds to a coding concept, best represented through the 'hasCode' property associated with the main entity.",
+            "transformation": "No transformation needed."
+        },
+        {
+            "column_name": "date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "path_id": 10
+            },
+            "justification": "The date column contains datetime strings that should be formatted as xsd:dateTime literals to accurately represent temporal data.",
+            "transformation": "Format date strings to comply with ISO 8601 datetime standard and cast as xsd:dateTime literals."
+        }
+    ]
+}

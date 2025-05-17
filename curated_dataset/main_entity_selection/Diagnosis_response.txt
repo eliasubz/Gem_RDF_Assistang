@@ -1,1 +1,79 @@
-{"spanning_entity_candidates": ["https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient"]}
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or disease affecting a patient."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving healthcare services or assessments."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An act or event of observing or measuring clinical or related data."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A clinical report summarizing diagnostic findings for a patient."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "A condition recognized as a health problem or diagnosis."
+        },
+        {
+            "label": "SocialHistory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/SocialHistory",
+            "description": "Observation category representing social or lifestyle information such as smoking status."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns",
+            "description": "Observation category representing vital physiological measurements."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient for accurate reference."
+        },
+        {
+            "label": "DateTime",
+            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "A datatype representing date and time."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A coded representation of clinical concepts such as diagnoses."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "A clinical evaluation and identification of a disease or condition."
+        },
+        {
+            "label": "ClinicalMedicine",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneralMedicine",
+            "description": "The general field covering conditions and treatments relevant for the patient."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction or event involving a patient and healthcare services."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A category grouping different clinical observations."
+        },
+        {
+            "label": "SystemicArterialBloodPressure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SystemicArterialBloodPressure",
+            "description": "A vital sign representing blood pressure of systemic arteries."
+        }
+    ]
+}

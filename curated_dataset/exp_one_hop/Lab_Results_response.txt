@@ -1,0 +1,125 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 5
+            },
+            "justification": "The 'patient_id' corresponds to a patient identifier, which is best mapped to the 'hasPatientIdentifier' property under the Patient entity, capturing patient-specific identifiers.",
+            "transformation": "No transformation needed; value is already a string suitable for identifier."
+        },
+        {
+            "column_name": "id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 11
+            },
+            "justification": "The 'id' appears to be a unique identifier for the measurement, fitting naturally as a property 'hasIdentifier' under the Measurement entity.",
+            "transformation": "No transformation; value is a string."
+        },
+        {
+            "column_name": "3945",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCollectionDateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCollectionDateTime",
+                "path_id": 83
+            },
+            "justification": "The value resembles a datetime stamp and aligns with 'hasCollectionDateTime', indicating when the sample or measurement was collected.",
+            "transformation": "Convert to xsd:dateTime format if necessary."
+        },
+        {
+            "column_name": "2956",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 48
+            },
+            "justification": "The value is a code (e.g., 248153007) that naturally fits as a coded value under 'hasCode', representing some standardized code or concept.",
+            "transformation": "No transformation needed; treat as string or code datatype."
+        },
+        {
+            "column_name": "1054",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasName",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasName",
+                "path_id": 43
+            },
+            "justification": "The value 'Emergency' appears as a descriptive label, best mapped to 'hasName' to capture textual descriptions.",
+            "transformation": "No transformation; store as string."
+        },
+        {
+            "column_name": "5828",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 86
+            },
+            "justification": "The value 'A. Boarsma' seems to be a pseudonymous identifier or a subject label, fitting for 'hasSubjectPseudoIdentifier'.",
+            "transformation": "No transformation; treat as string."
+        },
+        {
+            "column_name": "1856",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 84
+            },
+            "justification": "The value is a datetime string, suitable for 'hasDateTime' property indicating when the measurement or sample was taken.",
+            "transformation": "Convert to xsd:dateTime format."
+        },
+        {
+            "column_name": "0583",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCollectionDateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCollectionDateTime",
+                "path_id": 83
+            },
+            "justification": "The value is a datetime and aligns with collection time, mapped to 'hasCollectionDateTime'.",
+            "transformation": "Convert to xsd:dateTime."
+        },
+        {
+            "column_name": "6832",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 48
+            },
+            "justification": "The value 'MI' appears as a code or abbreviation, appropriate for 'hasCode' property.",
+            "transformation": "No transformation needed."
+        },
+        {
+            "column_name": "8563",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 86
+            },
+            "justification": "The value 'Roen' appears as a pseudonymous subject label, suitable for 'hasSubjectPseudoIdentifier'.",
+            "transformation": "No transformation; treat as string."
+        },
+        {
+            "column_name": "9537",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 86
+            },
+            "justification": "The value 'Thijk' seems to be a pseudonymous identifier, mapped to 'hasSubjectPseudoIdentifier'.",
+            "transformation": "No transformation."
+        }
+    ]
+}

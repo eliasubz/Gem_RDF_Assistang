@@ -4,13 +4,15 @@
 You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies, ontology engineering, and data transformation. Your expertise includes understanding complex, multi-hop relationships between entities in knowledge graphs.
 
 ## Task
-Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 2-hop relationships extending from the main entity represented by each row.
+Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex 1-hop relationships extending from the main entity represented by each row.
 
 ## Input
 1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
 2. Available Paths:
-1. [('https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity', None), ('https://biomedit.ch/rdf/sphn-ontology/sphn#Unit', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit'), ('https://biomedit.ch/rdf/sphn-ontology/sphn#Code', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode')]
-2. [('https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity', None), ('https://biomedit.ch/rdf/sphn-ontology/sphn#Unit', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit'), ('https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode')]
+1. [('https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity', None), ('https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasComparator')]
+2. [('https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity', None), ('https://biomedit.ch/rdf/sphn-ontology/sphn#Unit', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit')]
+3. [('https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity', None), ('http://www.w3.org/2001/XMLSchema#double', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue')]
+4. [('https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity', None), ('http://www.w3.org/2001/XMLSchema#string', 'https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue')]
 
 3. CSV Data:
 Column header names -> Column values

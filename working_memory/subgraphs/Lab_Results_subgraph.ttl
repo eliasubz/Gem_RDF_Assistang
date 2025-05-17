@@ -1,0 +1,112 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://snomed.info/id/308335008> owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> ;
+    rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> .
+
+<https://biomedit.ch/rdf/sphn-ontology/aidava-ontology> a owl:Ontology ;
+    dc:description "The RDF schema data elements defined in AIDAVA dataset and aligned with IPS.",
+        "The RDF schema describing concepts defined in the official SPHN dataset" ;
+    dc:rights "© Copyright 2023, Personalized Health Informatics Group (PHI), SIB Swiss Institute of Bioinformatics" ;
+    dc:title "The AIDAVA Reference Ontology RDF Schema",
+        "The SPHN RDF Schema" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:imports <https://biomedit.ch/rdf/sphn-resource/atc/2023/1>,
+        <https://biomedit.ch/rdf/sphn-resource/chop/2023/4>,
+        <https://biomedit.ch/rdf/sphn-resource/geno/20220810>,
+        <https://biomedit.ch/rdf/sphn-resource/hgnc/20221107>,
+        <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/2023/3>,
+        <https://biomedit.ch/rdf/sphn-resource/loinc/2.74/1>,
+        <https://biomedit.ch/rdf/sphn-resource/so/20211122>,
+        <https://biomedit.ch/rdf/sphn-resource/ucum/2023/1> ;
+    owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/sphn/2022/2> ;
+    owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/2024/1> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasCurrentLocation> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasEndDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>,
+        <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasLocation> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasOriginLocation> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasTargetLocation> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#hasTherapeuticArea> rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> a owl:Class ;
+    rdfs:label "Patient" ;
+    rdfs:comment "Individual receiving health care services" ;
+    rdfs:subClassOf [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ;
+    skos:definition "Individual receiving health care services" .
+
+<https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter> a owl:Class ;
+    rdfs:label "Healthcare Encounter" ;
+    rdfs:comment "an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual" ;
+    rdfs:subClassOf [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ;
+    skos:definition "an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual" .
+

@@ -6,6 +6,41 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import sys
 import os
+from pydantic import BaseModel
+from typing import List
+import json
+from collections import defaultdict
+
+
+# JSON output schema
+class SemanticPath(BaseModel):
+    source_entity: str  # e.g., "Measurement"
+    target_entity: str  # e.g., "AIDAVA/Patient"
+    predicate: str  # e.g., "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient"
+    path_id: int  # e.g., 1 for "Path 1"
+
+
+class ColumnSemanticMapping(BaseModel):
+    column_name: str  # e.g., "patient_id"
+    path: SemanticPath  # semantic path info
+    justification: str  # explanation of path choice
+    transformation: str  # transformation rule for data values
+
+
+class ColumnPathSelectionOutput(BaseModel):
+    column_mappings: List[ColumnSemanticMapping]
+
+
+# This is the second variation of output so that we have more of a chain of though output
+class ColumnReasoning(BaseModel):
+    column_name: str
+    justification: str  # Step-by-step reasoning for path selection
+    transformation: str  # Optional: data preprocessing step
+    selected_path: str  # Final path identifier (e.g., "Path 1")
+
+
+class ColumnReasoningOutput(BaseModel):
+    column_paths: list[ColumnReasoning]
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -17,6 +52,7 @@ from llm_assistant_hack_main.main import PathFinder
 load_dotenv()
 LLM_API_KEY = os.getenv("POPENAI_API_KEY")
 pathfinder = PathFinder(ttl_file="aidava-sphn.ttl")
+CSV_COMMA_DELIMITER = False
 
 
 def read_paths_from_output(output_file: str) -> List[str]:
@@ -43,12 +79,50 @@ def read_csv_columns(csv_file: str) -> Tuple[List[str], List[str]]:
         return headers, first_row
 
 
+def extract_column_examples_as_string(csv_path, num_examples=3):
+    """
+    Extracts up to `num_examples` unique non-empty values per column from a CSV file
+    and returns a formatted string like:
+    column_name -> value1, value2, value3
+
+    Adds a blank line between each entry.
+    """
+    column_examples = defaultdict(set)
+
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        if CSV_COMMA_DELIMITER:
+            delim = ","
+        else:
+            delim = ";"
+        reader = csv.DictReader(f, delimiter=delim)
+
+        for row in reader:
+            for col, val in row.items():
+                if isinstance(val, list):
+                    val = ", ".join(str(v) for v in val)
+                elif not isinstance(val, str):
+                    val = str(val)
+                val = val.strip()
+                if val:
+                    column_examples[col].add(val)
+
+            if all(len(v) >= num_examples for v in column_examples.values()):
+                break
+
+    # Build the formatted string
+    lines = []
+    for col, vals in column_examples.items():
+        examples = list(vals)[:num_examples]
+        lines.append(f"Analyze this column: {col} -> {', '.join(examples)}")
+
+    return "\n".join(lines)
+
+
 def generate_prompt(
     hop_count: int,
     paths: List[str],
     main_entity: str,
-    columns: List[str],
-    values: List[str],
+    csv_path: str,
 ) -> str:
     """Generate the RDF mapping prompt."""
     prompt = f"""# RDF Mapping Assistant for Complex Ontological Relationships
@@ -62,11 +136,11 @@ Transform a CSV dataset into RDF triples by mapping each column to the most appr
 ## Input
 1. Main Entity Type: {main_entity}
 2. Available Paths:
-{chr(10).join(f"{i+1}. {path}" for i, path in enumerate(paths))}
 
+{chr(10).join(f"{i+1}. {path}" for i, path in enumerate(paths))}
 3. CSV Data:
 Column header names -> Column values
-{chr(10).join(f"{col} -> {val}" for col, val in zip(columns, values))}
+{extract_column_examples_as_string(csv_path, 3)}
 
 ## Requirements
 For each CSV column:
@@ -102,26 +176,32 @@ def send_to_openai(prompt: str) -> str:
     client = OpenAI(api_key=LLM_API_KEY)
 
     try:
-        response = client.chat.completions.create(
+        response = client.responses.parse(
             model="gpt-4.1-nano",  # or your preferred model
-            messages=[
+            temperature=0.7,
+            input=[
                 {
                     "role": "system",
-                    "content": "You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies.",
+                    "content": "Imagine you are a specialized RDF mapping expert with extensive knowledge of semantic web technologies.",
                 },
                 {"role": "user", "content": prompt},
             ],
-            temperature=0.7,
+            text_format=ColumnPathSelectionOutput,
         )
-        return response.choices[0].message.content
+        return response
     except Exception as e:
         print(f"Error calling OpenAI API: {e}")
         return ""
 
 
+def save_json(response, filepath):
+    raw_json = json.loads(response.output_text)
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(raw_json, f, indent=4, ensure_ascii=False)
+
+
 def process_experiment(
     hop_count: int,
-    output_file: str = "output.txt",
     analysis_dir: str = "UM/BC/analysis",
     csv_dir: str = "UM/BC/csv",
     output_dir: str = "UM/BC/output_exp_two_hop",
@@ -150,20 +230,10 @@ def process_experiment(
         paths = ""
         if main_entity:
             paths = pathfinder.find_paths(hop_count=hop_count, target_class=main_entity)
-        # Read CSV columns
-        try:
-            columns, values = read_csv_columns(str(csv_file))
-        except Exception as e:
-            print(f"Error reading CSV file {csv_file}: {e}")
-            continue
 
         # Generate prompt
         prompt = generate_prompt(
-            hop_count=hop_count,
-            paths=paths,
-            main_entity=main_entity,
-            columns=columns,
-            values=values,
+            hop_count=hop_count, paths=paths, main_entity=main_entity, csv_path=csv_file
         )
 
         # Save prompt to output file
@@ -182,10 +252,20 @@ def process_experiment(
                     Path(output_dir)
                     / f"{analysis_file.stem.replace('_analysis', '')}_response.txt"
                 )
-                with open(response_file, "w", encoding="utf-8") as f:
-                    f.write(response)
+                save_json(response, response_file)
 
 
 if __name__ == "__main__":
     # Example usage
-    process_experiment(hop_count=2, send_to_llm=False)
+    csv_dir = (
+        f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset"
+    )
+    analysis_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/analysis"
+    output_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/exp_one_hop"
+    process_experiment(
+        hop_count=2,
+        send_to_llm=True,
+        analysis_dir=analysis_dir,
+        csv_dir=csv_dir,
+        output_dir=output_dir,
+    )

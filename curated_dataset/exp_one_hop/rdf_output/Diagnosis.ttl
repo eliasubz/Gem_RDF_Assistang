@@ -1,0 +1,4 @@
+@prefix aidava: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix sphn: <https://biomedit.ch/rdf/sphn-ontology/sphn#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
