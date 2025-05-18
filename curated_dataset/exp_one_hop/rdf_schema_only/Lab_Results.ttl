@@ -1,0 +1,27 @@
+@prefix aidava: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix sphn: <https://biomedit.ch/rdf/sphn-ontology/sphn#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sphn:Measurement aidava:hasPatient [ a aidava:Patient ;
+            sphn:hasIdentifier [ a xsd:string ] ],
+        [ a aidava:Patient ;
+            aidava:hasPatientIdentifier [ a aidava:PatientIdentifier ] ] ;
+    sphn:hasDataFile [ a sphn:DataFile ;
+            sphn:hasName [ a xsd:string ] ] ;
+    sphn:hasLabTest [ a sphn:LabTest ;
+            sphn:hasCode [ a sphn:Code ] ],
+        [ a sphn:LabTest ;
+            sphn:hasCode [ a sphn:Code ] ] ;
+    sphn:hasSample [ a sphn:Sample ;
+            sphn:hasCollectionDateTime [ a xsd:dateTime ] ],
+        [ a sphn:Sample ;
+            sphn:hasDateTime [ a xsd:dateTime ] ],
+        [ a sphn:Sample ;
+            sphn:hasCollectionDateTime [ a xsd:dateTime ] ] ;
+    sphn:hasSubjectPseudoIdentifier [ a sphn:SubjectPseudoIdentifier ;
+            sphn:hasDataProviderInstitute [ a sphn:DataProviderInstitute ] ],
+        [ a sphn:SubjectPseudoIdentifier ;
+            sphn:hasDataProviderInstitute [ a sphn:DataProviderInstitute ] ],
+        [ a sphn:SubjectPseudoIdentifier ;
+            sphn:hasDataProviderInstitute [ a sphn:DataProviderInstitute ] ] .
+

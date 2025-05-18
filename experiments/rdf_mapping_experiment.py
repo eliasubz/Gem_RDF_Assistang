@@ -11,6 +11,10 @@ from typing import List
 import json
 from collections import defaultdict
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from llm_assistant_hack_main.main import PathFinder
+
 
 # JSON output schema
 class SemanticPath(BaseModel):
@@ -41,11 +45,6 @@ class ColumnReasoning(BaseModel):
 
 class ColumnReasoningOutput(BaseModel):
     column_paths: list[ColumnReasoning]
-
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from llm_assistant_hack_main.main import PathFinder
 
 
 # Load environment variables

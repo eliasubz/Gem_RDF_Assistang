@@ -1,0 +1,27 @@
+@prefix aidava: <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/> .
+@prefix sphn: <https://biomedit.ch/rdf/sphn-ontology/sphn#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aidava:Patient aidava:hasAdministrativeGender [ a sphn:AdministrativeGender ;
+            sphn:hasCode [ a sphn:Code ] ] ;
+    aidava:hasBirthDate [ a sphn:BirthDate ;
+            sphn:hasComparator [ a sphn:SPHNConcept ] ] ;
+    aidava:hasDrugAdministrationEvent [ a sphn:DrugAdministrationEvent ;
+            sphn:hasDateTime [ a xsd:dateTime ] ],
+        [ a sphn:DrugAdministrationEvent ;
+            sphn:hasEndDateTime [ a xsd:dateTime ] ] ;
+    aidava:hasDrugPrescription [ a sphn:DrugPrescription ;
+            sphn:hasIndicationToStart [ a sphn:Diagnosis ] ] ;
+    aidava:hasPatientIdentifier [ a aidava:PatientIdentifier ;
+            sphn:hasIdentifier [ a xsd:string ] ],
+        [ a aidava:PatientIdentifier ;
+            sphn:hasIdentifier [ a xsd:string ] ] ;
+    aidava:hasProblemCondition [ a sphn:ProblemCondition ;
+            aidava:interprets [ a sphn:Measurement ] ] ;
+    aidava:hasSubjectName [ a aidava:SubjectName ;
+            aidava:hasFamilyName [ a xsd:string ] ],
+        [ a aidava:SubjectName ;
+            aidava:hasFamilyName [ a xsd:string ] ],
+        [ a aidava:SubjectName ;
+            aidava:hasFamilyName [ a xsd:string ] ] .
+

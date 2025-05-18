@@ -1,28 +1,27 @@
 import os
 import json
-import pandas as pd
-from rdflib import Graph, URIRef, BNode, Literal, Namespace
-from rdflib.namespace import RDF, XSD
+from rdflib import Graph, URIRef, BNode, Namespace
+from rdflib.namespace import RDF
+import sys
+
+# === SETUP ===
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from llm_assistant_hack_main.main import PathFinder
 
-
-# Define input/output directories
 output_dir = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/exp_one_hop"
 csv_dir = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset"
 analysis_dir = (
     "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/analysis"
 )
-hop_count = 2
-output_ttl_dir = os.path.join(output_dir, "rdf_output")
+output_ttl_dir = os.path.join(output_dir, "rdf_schema_only")
 os.makedirs(output_ttl_dir, exist_ok=True)
 
-# SPHN namespace
 SPHN = Namespace("https://biomedit.ch/rdf/sphn-ontology/sphn#")
 AIDAVA = Namespace("https://biomedit.ch/rdf/sphn-ontology/AIDAVA/")
 
 
+# === HELPERS ===
 def get_main_entity_type(analysis_file: str) -> str:
-    """Extract main entity type from analysis file."""
     with open(analysis_file, "r", encoding="utf-8") as f:
         first_line = f.readline().strip()
         if first_line.startswith("Main Entity Type:"):
@@ -30,7 +29,7 @@ def get_main_entity_type(analysis_file: str) -> str:
     return ""
 
 
-# Process each response file
+# === MAIN LOOP ===
 for file in os.listdir(output_dir):
     if not file.endswith("_response.txt"):
         continue
@@ -39,57 +38,53 @@ for file in os.listdir(output_dir):
     json_path = os.path.join(output_dir, file)
     csv_path = os.path.join(csv_dir, f"{base_name}.csv")
 
-    pathfinder = PathFinder(ttl_file="aidava-sphn.ttl")
-    analysis_file = os.path.join(analysis_dir, f"{base_name}_analysis.txt")
-    main_entity = get_main_entity_type(str(analysis_file))
-    if not main_entity:
-        print(f"Warning: Could not find main entity type in {analysis_file}")
-        continue
-
-    paths = ""
-    if main_entity:
-        paths = pathfinder.find_paths(hop_count=hop_count, target_class=main_entity)
-    print(paths)
     if not os.path.exists(csv_path):
-        print(f"CSV for {base_name} not found. Skipping.")
+        print(f"[!] No CSV for {base_name}, skipping.")
         continue
 
-    # Load JSON mapping and CSV
-    with open(json_path, encoding="utf-8") as f:
-        print(json_path)
-        json_data = json.load(f)
+    # Load analysis file and get main entity
+    analysis_file = os.path.join(analysis_dir, f"{base_name}_analysis.txt")
+    main_entity = get_main_entity_type(analysis_file)
+    if not main_entity:
+        print(f"[!] Could not determine main entity from {analysis_file}, skipping.")
+        continue
 
-    column_mappings = json_data.get("column_mappings", [])
+    # Get paths from PathFinder
+    pathfinder = PathFinder(ttl_file="aidava-sphn.ttl")
+    paths = pathfinder.find_paths(hop_count=2, target_class=main_entity)
 
-    df = pd.read_csv(csv_path, sep=";")
+    # Load mapping JSON
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    column_mappings = data.get("column_mappings", [])
 
+    # Build schema graph
     g = Graph()
     g.bind("sphn", SPHN)
     g.bind("aidava", AIDAVA)
 
-    for idx, row in df.iterrows():
-        subj = BNode()  # Could be URIRef if you have a subject ID
-        for mapping in column_mappings:
-            col = mapping["column_name"]
-            path = mapping["path"]
-            predicate = URIRef(path["predicate"])
-            value = row[col]
+    for mapping in column_mappings:
+        path_id = mapping["path"]["path_id"] - 1  # Convert from 1-indexed
+        if path_id >= len(paths):
+            print(f"[!] Path ID {path_id+1} out of range for {base_name}")
+            continue
 
-            target = path["target_entity"]
+        path = paths[path_id]
 
-            if target.startswith("http://www.w3.org/2001/XMLSchema#"):
-                # Treat as literal
-                dtype = getattr(XSD, target.split("#")[-1], XSD.string)
-                g.add((subj, predicate, Literal(value, datatype=dtype)))
-            else:
-                # Treat as resource
-                obj_uri = URIRef(f"https://biomedit.ch/resource/{col}/{value}")
-                g.add((subj, predicate, obj_uri))
-                g.add((obj_uri, RDF.type, URIRef(target)))
+        # Example path:
+        # [('ClassA', None), ('ClassB', 'hasSomething'), ('ClassC', 'hasElse')]
+        prev_node = URIRef(path[0][0])
+        for class_uri, predicate in path[1:]:
+            pred = URIRef(predicate)
+            bnode = BNode()
+            g.add((prev_node, pred, bnode))
+            g.add((bnode, RDF.type, URIRef(class_uri)))
+            prev_node = bnode
 
-        g.add((subj, RDF.type, URIRef(path["source_entity"])))
-
-    # Output to Turtle file
+    # Save Turtle
     ttl_path = os.path.join(output_ttl_dir, f"{base_name}.ttl")
     g.serialize(destination=ttl_path, format="turtle")
-    print(f"Generated: {ttl_path}")
+    print(f"[✓] Schema written to: {ttl_path}")
+    nt_path = os.path.join(output_ttl_dir, f"{base_name}.nt")
+    g.serialize(destination=nt_path, format="nt")
+    print(f"[✓] Triples also written to: {nt_path}")
