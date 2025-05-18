@@ -6,6 +6,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from collections import defaultdict
 from pydantic import BaseModel
+from get_subgraph import summarize_entity_subgraphs
 
 
 load_dotenv()
@@ -24,7 +25,6 @@ INPUT_CSV_FOLDER = (
 
 
 TOP_K_LIST = [5, 15]
-INCLUDE_GT = False  # Toggle to True to include ground truth in candidate list
 
 
 from rdflib import Graph, URIRef
@@ -164,11 +164,12 @@ def main():
         solution_path = os.path.join(INPUT_CSV_FOLDER, "solution", f"{base_name}.txt")
         ground_truth_entities = load_solution_entities(solution_path)
         candidates = data.get("spanning_entity_candidates", [])
+        iris = [entry["iri"] for entry in candidates]
 
         for top_k in TOP_K_LIST:
-            selected = candidates[:top_k]
-
-            subgraph_lines = extract_subgraph(selected, RDF_TTL_PATH)
+            selected = iris[:top_k]
+            print(selected, "\nI hope this orked!!!")
+            subgraph_lines = summarize_entity_subgraphs(RDF_TTL_PATH, selected)
             prompt = build_prompt(csv_path, rdf_entities, subgraph_lines)
             try:
                 llm_response = call_llm(prompt)

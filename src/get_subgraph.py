@@ -1,41 +1,55 @@
-from rdflib import Graph, URIRef
+from rdflib import Graph, URIRef, Namespace
+from rdflib.namespace import RDF, RDFS, XSD
+
+SPHN = Namespace("https://biomedit.ch/rdf/sphn-ontology/sphn#")
+AIDAVA = Namespace("https://biomedit.ch/rdf/sphn-ontology/AIDAVA#")
 
 
-def extract_entity_subgraph(input_ttl_path, entity_uris):
-    """
-    Extracts all triples where the given entity appears as subject or object,
-    and writes them to a new TTL file.
-
-    Parameters:
-        input_ttl_path (str): Path to the input Turtle (.ttl) file.
-        entity_uri (str): URI of the entity to extract the subgraph for.
-        output_ttl_path (str): Path to save the extracted subgraph TTL file.
-    """
-    output_ttl_path = "working_memory/subgraph.ttl"
+def summarize_entity_subgraphs(input_ttl_path, entity_uris):
     g = Graph()
     g.parse(input_ttl_path, format="ttl")
 
-    subgraph = Graph()
+    summary = []
 
-    for entity_uri in entity_uris:
-        entity = URIRef(entity_uri)
+    for uri in entity_uris:
+        entity = URIRef(uri)
+        entity_label = uri.split("#")[-1] if "#" in uri else uri.split("/")[-1]
+        entity_section = [f"### Entity: {entity_label}"]
 
         # Triples where entity is subject
-        for s, p, o in g.triples((entity, None, None)):
-            subgraph.add((s, p, o))
+        subject_triples = list(g.triples((entity, None, None)))
+        if subject_triples:
+            entity_section.append("- As subject:")
+            for _, p, o in subject_triples:
+                entity_section.append(f"  • {entity_label} {shorten(p)} {shorten(o)}")
 
         # Triples where entity is object
-        for s, p, o in g.triples((None, None, entity)):
-            subgraph.add((s, p, o))
+        object_triples = list(g.triples((None, None, entity)))
+        if object_triples:
+            entity_section.append("- As object:")
+            for s, p, _ in object_triples:
+                entity_section.append(f"  • {shorten(s)} {shorten(p)} {entity_label}")
 
-        # Optionally: Add labels or related resources if needed
+        summary.append("\n".join(entity_section))
 
-    # Serialize to TTL
-    subgraph.serialize(destination=output_ttl_path, format="turtle")
-    print(f"Subgraph with entity '{entity_uris}' written to '{output_ttl_path}'")
+    return "\n\n".join(summary)
 
 
-extract_entity_subgraph(
+def shorten(uri):
+    """Shortens full URIs into prefixed names if possible."""
+    if isinstance(uri, URIRef):
+        uri = str(uri)
+    if uri.startswith(SPHN):
+        return f"sphn:{uri.replace(SPHN, '')}"
+    elif uri.startswith(AIDAVA):
+        return f"aidava:{uri.replace(AIDAVA, '')}"
+    elif uri.startswith(str(XSD)):
+        return f"xsd:{uri.replace(str(XSD), '')}"
+    return f"<{uri}>"
+
+
+# Example usage:
+text_summary = summarize_entity_subgraphs(
     input_ttl_path="aidava-sphn-flat.ttl",
     entity_uris=[
         "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
@@ -43,3 +57,5 @@ extract_entity_subgraph(
         "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
     ],
 )
+
+print(text_summary)
