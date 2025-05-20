@@ -6,6 +6,11 @@
             "description": "An entity representing an individual person receiving healthcare."
         },
         {
+            "label": "Problem Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "An entity representing an individual person receiving healthcare."
+        },
+        {
             "label": "PatientIdentifier",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
             "description": "Identifier assigned to a patient for unique identification within healthcare systems."

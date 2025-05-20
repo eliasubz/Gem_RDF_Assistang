@@ -21,6 +21,11 @@
             "description": "An individual receiving healthcare services, who can be identified by patient IDs."
         },
         {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Measurement",
+            "description": "An individual receiving healthcare services, who can be identified by patient IDs."
+        },
+        {
             "label": "PatientIdentifier",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
             "description": "An identifier assigned to a patient to uniquely identify them in healthcare data."

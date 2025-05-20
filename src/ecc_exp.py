@@ -6,7 +6,7 @@ from collections import defaultdict
 from pydantic import BaseModel
 import csv
 import json
-from examples import EXAMPLE1
+from examples import EXAMPLE_CREATION
 
 
 # Load environment variables
@@ -28,22 +28,45 @@ class Spanning_entity_output(BaseModel):
     spanning_entity_candidates: list[entity]
 
 
+# === Prerequisite ===
+# base/solution folder that holds the correct entity
+
 # === Configuration ===
 INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\curated_dataset"
 )
-# INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"
-# Is the delimiter of the csvs a comma or something else?
-CSV_COMMA_DELIMITER = True
-OUTPUT_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\curated_dataset\main_entity_selection"
-# OUTPUT_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data\main_entity_selection"
-ENTITY_FILE = "working_memory/clean_entities.txt"
+# Change this depending on the model
+OUTPUT_FOLDER = os.path.join(INPUT_CSV_FOLDER, "main_entity_candidate_creation/nano")
 SEND_TO_API = False  # Change to True if you want to get responses from OpenAI
+ENTITY_FILE = "working_memory/clean_entities.txt"
+# INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"ENTITY_FILE = "working_memory/clean_entities.txt"
+
+
+# Create the folder if it doesn't exist
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+print(f"Output will be saved to: {OUTPUT_FOLDER}")
+
 
 # Initialize client
-client = OpenAI(api_key=LLM_API_KEY)
+client = OpenAI(api_key=LLM_API_KEY) if SEND_TO_API else None
 
 # ====== BUILDING PROMP ==========
+
+
+def detect_csv_delimiter(file_path, num_lines=5):
+    """
+    Detect whether the CSV file uses ';' or ',' as delimiter.
+    Checks the first `num_lines` of the file.
+    """
+    with open(file_path, newline="", encoding="utf-8") as csvfile:
+        sample = [csvfile.readline() for _ in range(num_lines)]
+        semicolon_count = sum(line.count(";") for line in sample)
+        comma_count = sum(line.count(",") for line in sample)
+
+        if semicolon_count > comma_count:
+            return ";"
+        else:
+            return ","
 
 
 def extract_column_examples_as_string(csv_path, num_examples=3):
@@ -57,10 +80,8 @@ def extract_column_examples_as_string(csv_path, num_examples=3):
     column_examples = defaultdict(set)
 
     with open(csv_path, newline="", encoding="utf-8") as f:
-        if CSV_COMMA_DELIMITER:
-            delim = ","
-        else:
-            delim = ";"
+
+        delim = detect_csv_delimiter(csv_path)
         reader = csv.DictReader(f, delimiter=delim)
 
         for row in reader:
@@ -109,7 +130,7 @@ def build_prompt(csv_path, entities):
     )
     prompt += (
         "\nHere is one example with only one candidate. I want you to return 15 of those candidates\n<Example>\n"
-        + EXAMPLE1
+        + EXAMPLE_CREATION
         + "\n</Example>\n"
     )
     return prompt

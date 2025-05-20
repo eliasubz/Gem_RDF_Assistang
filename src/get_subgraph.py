@@ -21,6 +21,9 @@ def summarize_entity_subgraphs(input_ttl_path, entity_uris):
         if subject_triples:
             entity_section.append("- As subject:")
             for _, p, o in subject_triples:
+                if str(p) == "http://www.w3.org/2000/01/rdf-schema#subClassOf":
+                    continue
+
                 entity_section.append(f"  • {entity_label} {shorten(p)} {shorten(o)}")
 
         # Triples where entity is object
@@ -48,14 +51,14 @@ def shorten(uri):
     return f"<{uri}>"
 
 
-# Example usage:
-text_summary = summarize_entity_subgraphs(
-    input_ttl_path="aidava-sphn-flat.ttl",
-    entity_uris=[
-        "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
-        "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
-        "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
-    ],
-)
+# # Example usage:
+# text_summary = summarize_entity_subgraphs(
+#     input_ttl_path="aidava-sphn-flat.ttl",
+#     entity_uris=[
+#         "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+#         "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+#         "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+#     ],
+# )
 
-print(text_summary)
+# print(text_summary)

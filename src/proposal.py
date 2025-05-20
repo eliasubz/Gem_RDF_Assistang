@@ -3,7 +3,7 @@ from pathlib import Path
 from openai import OpenAI
 import logging
 from typing import Optional
-from examples import EXAMPLE1
+from examples import EXAMPLE_CREATION
 
 
 from config import (
@@ -63,7 +63,7 @@ def build_prompt(csv_path: Path, entities: list[str]) -> str:
         "2. Give me 15 ranked candidate entities (OAEs) in an json output.\n</Task>\n"
     )
     prompt += "\nHere is one example with only one candidate. I want you to return 15 of those candidates\n<Example>\n"
-    prompt += EXAMPLE1
+    prompt += EXAMPLE_CREATION
     prompt += "\n</Example>\n"
     return prompt
 

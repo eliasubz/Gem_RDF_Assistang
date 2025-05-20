@@ -11,6 +11,11 @@
             "description": "The individual who is the subject of medical data or healthcare events, identified by patient_id."
         },
         {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Measurement",
+            "description": "An individual receiving healthcare services, who can be identified by patient IDs."
+        },
+        {
             "label": "PatientIdentifier",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
             "description": "An identifier for a patient or subject, such as patient_id or id."
