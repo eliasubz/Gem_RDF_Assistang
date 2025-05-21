@@ -36,7 +36,7 @@ INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\curated_dataset"
 )
 # Change this depending on the model
-OUTPUT_FOLDER = os.path.join(INPUT_CSV_FOLDER, "main_entity_candidate_creation/nano")
+OUTPUT_FOLDER = os.path.join(INPUT_CSV_FOLDER, "main_entity_candidate_creation")
 SEND_TO_API = False  # Change to True if you want to get responses from OpenAI
 ENTITY_FILE = "working_memory/clean_entities.txt"
 # INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"ENTITY_FILE = "working_memory/clean_entities.txt"

@@ -21,7 +21,7 @@ INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\curated_dataset"
 )
 # Raw data
-INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"
+# INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"
 # Change this depending on the model
 experiment = "/nano"
 experiment = ""

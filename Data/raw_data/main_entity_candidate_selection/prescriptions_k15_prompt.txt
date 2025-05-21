@@ -5,19 +5,29 @@ Candidates for the main entity:
 Subgraph with the direct relationships of all candidates:
 Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood.So if all the columns fit into the relations it is a vrey good fitCSV Columns:
 
-row_id -> 2, 1, 4
-patient_id -> PAT00005, PAT00003, PAT00001
-medication_atc_code -> J01AA01, C03DA01, R03AC02
-diagnosis_code -> 456789, 345678, 901234
-creation_date -> 2022-09-08 00:00:00, 2021-04-25 00:00:00, 2021-09-12 00:00:00
-times_a_day -> 4, 3, 5
-dosage -> 1 capsule, 2 drop, 2 teaspoon
+row_id -> 2, 1, 3
+patient_id -> PAT00003, PAT00004, PAT00002
+medication_atc_code -> C03DA01, J01AA01, R03AC02
+diagnosis_code -> 012345, 456789, 789012
+creation_date -> 2021-01-01 00:00:00, 2022-09-08 00:00:00, 2021-09-12 00:00:00
+times_a_day -> 4, 5, 3
+dosage -> 1 ampule, 1 capsule, 2 teaspoon
 
 All entities you can choose from: - https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
 - https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
+- http://www.w3.org/2001/XMLSchema#dateTime
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
 
 Their respective subgraphs:### Entity: DrugPrescription
 - As subject:
@@ -25,26 +35,6 @@ Their respective subgraphs:### Entity: DrugPrescription
   • DrugPrescription <http://www.w3.org/2000/01/rdf-schema#comment> <plan that defines at which frequency a drug should be administered to a patient with a given quantity; at every frequency time point a drug administration event should occur>
   • DrugPrescription <http://www.w3.org/2000/01/rdf-schema#label> <Drug Prescription>
   • DrugPrescription <http://www.w3.org/2004/02/skos/core#definition> <plan that defines at which frequency a drug should be administered to a patient with a given quantity; at every frequency time point a drug administration event should occur>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> <http://www.w3.org/2000/01/rdf-schema#range> DrugPrescription
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasAdministrationRouteCode <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasAdministrativeCase <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasCode <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasDataFile <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasDataProviderInstitute <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasDrug <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasDrugQuantity <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasFrequency <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasIndicationToStart <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasIntent <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasQuantity <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasSubjectPseudoIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasTimePattern <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasDateTime <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasFirstAdministrationDateTime <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • sphn:hasLastAdministrationDateTime <http://www.w3.org/2000/01/rdf-schema#domain> DrugPrescription
-  • <http://snomed.info/id/33633005> <http://www.w3.org/2002/07/owl#equivalentClass> DrugPrescription
 
 ### Entity: Medication
 - As subject:
@@ -58,31 +48,12 @@ Their respective subgraphs:### Entity: DrugPrescription
   • Patient <http://www.w3.org/2000/01/rdf-schema#comment> <Individual receiving health care services>
   • Patient <http://www.w3.org/2000/01/rdf-schema#label> <Patient>
   • Patient <http://www.w3.org/2004/02/skos/core#definition> <Individual receiving health care services>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#range> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • sphn:hasIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> Patient
 
 ### Entity: Condition
 - As subject:
   • Condition <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
   • Condition <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Condition in FHIR IPS implementation>
   • Condition <http://www.w3.org/2000/01/rdf-schema#label> <Condition>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> <http://www.w3.org/2000/01/rdf-schema#domain> Condition
-  • sphn:hasFreeText <http://www.w3.org/2000/01/rdf-schema#domain> Condition
-  • sphn:hasOnsetDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Condition
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HistologyInvasiveBreastCancer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> Condition
 
 ### Entity: Diagnosis
 - As subject:
@@ -92,23 +63,70 @@ Their respective subgraphs:### Entity: DrugPrescription
   • Diagnosis <http://www.w3.org/2002/07/owl#deprecated> <true>
   • Diagnosis <http://www.w3.org/2004/02/skos/core#definition> <determination of the presence of a disease, condition, or injury from expressed signs and symptoms and assessments such as physical examination, laboratory test, or the like>
   • Diagnosis <http://www.w3.org/2004/02/skos/core#note> <sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasAdministrativeCase <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasBodySite <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasCode <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasDataProviderInstitute <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasIndicationToStart <http://www.w3.org/2000/01/rdf-schema#range> Diagnosis
-  • sphn:hasSubjectAge <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasSubjectPseudoIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasCodingDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasRecordDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • <http://snomed.info/id/439401001> <http://www.w3.org/2002/07/owl#equivalentClass> Diagnosis
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
-  • sphn:FOPHDiagnosis <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
-  • sphn:ICDODiagnosis <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
-  • sphn:NursingDiagnosis <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
+
+### Entity: DrugAdministrationEvent
+- As subject:
+  • DrugAdministrationEvent <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • DrugAdministrationEvent <http://www.w3.org/2000/01/rdf-schema#comment> <single event at which a drug was administered to the patient; this could be a single time point in case of a pill/cream or a duration in case of a single infusion pack or a single patch; one or many drug administration events are initiated by a drug prescription depending on the frequency stated in the prescription>
+  • DrugAdministrationEvent <http://www.w3.org/2000/01/rdf-schema#label> <Drug Administration Event>
+  • DrugAdministrationEvent <http://www.w3.org/2004/02/skos/core#definition> <single event at which a drug was administered to the patient; this could be a single time point in case of a pill/cream or a duration in case of a single infusion pack or a single patch; one or many drug administration events are initiated by a drug prescription depending on the frequency stated in the prescription>
+  • DrugAdministrationEvent <http://www.w3.org/2004/02/skos/core#scopeNote> <sphn:hasReasonToStopCode no subclasses allowed>
+
+### Entity: Observation
+- As subject:
+  • Observation <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Observation <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Observation in FHIR IPS implementation>
+  • Observation <http://www.w3.org/2000/01/rdf-schema#label> <Observation>
+
+### Entity: HealthcareEncounter
+- As subject:
+  • HealthcareEncounter <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • HealthcareEncounter <http://www.w3.org/2000/01/rdf-schema#comment> <an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual>
+  • HealthcareEncounter <http://www.w3.org/2000/01/rdf-schema#label> <Healthcare Encounter>
+  • HealthcareEncounter <http://www.w3.org/2004/02/skos/core#definition> <an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual>
+
+### Entity: Code
+- As subject:
+  • Code <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Code <http://www.w3.org/2000/01/rdf-schema#comment> <symbols and/or expressions defined in a coding system>
+  • Code <http://www.w3.org/2000/01/rdf-schema#label> <Code>
+  • Code <http://www.w3.org/2004/02/skos/core#definition> <symbols and/or expressions defined in a coding system>
+
+### Entity: PatientIdentifier
+- As subject:
+  • PatientIdentifier <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • PatientIdentifier <http://www.w3.org/2000/01/rdf-schema#label> <Patient Identifier>
+  • PatientIdentifier <http://www.w3.org/2004/02/skos/core#definition> <Identifier of the patient in a specific system>
+
+### Entity: dateTime
+
+### Entity: Quantity
+- As subject:
+  • Quantity <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Quantity <http://www.w3.org/2000/01/rdf-schema#comment> <an amount or a number of something>
+  • Quantity <http://www.w3.org/2000/01/rdf-schema#label> <Quantity>
+  • Quantity <http://www.w3.org/2004/02/skos/core#definition> <an amount or a number of something>
+
+### Entity: TimePattern
+- As subject:
+  • TimePattern <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • TimePattern <http://www.w3.org/2000/01/rdf-schema#comment> <type of time period during which a treatment was given or an assessment was performed; this can be single time points or a continuous event>
+  • TimePattern <http://www.w3.org/2000/01/rdf-schema#label> <Time Pattern>
+  • TimePattern <http://www.w3.org/2004/02/skos/core#definition> <type of time period during which a treatment was given or an assessment was performed; this can be single time points or a continuous event>
+  • TimePattern <http://www.w3.org/2004/02/skos/core#scopeNote> <sphn:hasTypeCode no subclasses allowed>
+
+### Entity: Product
+- As subject:
+  • Product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Product <http://www.w3.org/2000/01/rdf-schema#comment> <a pharmaceutical or biologic product>
+  • Product <http://www.w3.org/2000/01/rdf-schema#label> <Product>
+  • Product <http://www.w3.org/2004/02/skos/core#definition> <a pharmaceutical or biologic product>
+
+### Entity: DiagnosticReport
+- As subject:
+  • DiagnosticReport <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • DiagnosticReport <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Diagnostic report in FHIR IPS implementation>
+  • DiagnosticReport <http://www.w3.org/2000/01/rdf-schema#label> <Diagnostic report>
 Here is one example with only one candidate. I want you to return 15 of those candidates
 <Example>
 

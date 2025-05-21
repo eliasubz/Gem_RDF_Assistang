@@ -5,29 +5,34 @@ Candidates for the main entity:
 Subgraph with the direct relationships of all candidates:
 Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood.So if all the columns fit into the relations it is a vrey good fitCSV Columns:
 
-row_id -> 2, 1, 4
-patient_id -> PAT00005, PAT00006, PAT00003
+row_id -> 2, 1, 3
+patient_id -> PAT00003, PAT00004, PAT00002
 diagnosis_code -> 901234, 345678, 567890
-created_at -> 2022-11-27 00:00:00, 2023-03-13 00:00:00, 2022-12-29 00:00:00
-org_code -> ORG002, ORG001, ORG005
-org_name -> Care Center, Green Valley Hospital, Health Clinic A
+created_at -> 2022-11-27 00:00:00, 2023-04-30 00:00:00, 2023-03-13 00:00:00
+org_code -> ORG002, ORG005, ORG001
+org_name -> Health Clinic A, Care Center, Green Valley Hospital
 
 All entities you can choose from: - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
 - https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
 - https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+- https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis
+- http://terminology.hl7.org/ValueSet/encounter-class
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute
+- http://www.w3.org/2001/XMLSchema#dateTime
 
 Their respective subgraphs:### Entity: Condition
 - As subject:
   • Condition <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
   • Condition <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Condition in FHIR IPS implementation>
   • Condition <http://www.w3.org/2000/01/rdf-schema#label> <Condition>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> <http://www.w3.org/2000/01/rdf-schema#domain> Condition
-  • sphn:hasFreeText <http://www.w3.org/2000/01/rdf-schema#domain> Condition
-  • sphn:hasOnsetDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Condition
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HistologyInvasiveBreastCancer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> Condition
 
 ### Entity: Diagnosis
 - As subject:
@@ -37,23 +42,6 @@ Their respective subgraphs:### Entity: Condition
   • Diagnosis <http://www.w3.org/2002/07/owl#deprecated> <true>
   • Diagnosis <http://www.w3.org/2004/02/skos/core#definition> <determination of the presence of a disease, condition, or injury from expressed signs and symptoms and assessments such as physical examination, laboratory test, or the like>
   • Diagnosis <http://www.w3.org/2004/02/skos/core#note> <sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasAdministrativeCase <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasBodySite <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasCode <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasDataProviderInstitute <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasIndicationToStart <http://www.w3.org/2000/01/rdf-schema#range> Diagnosis
-  • sphn:hasSubjectAge <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasSubjectPseudoIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasCodingDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • sphn:hasRecordDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Diagnosis
-  • <http://snomed.info/id/439401001> <http://www.w3.org/2002/07/owl#equivalentClass> Diagnosis
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
-  • sphn:FOPHDiagnosis <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
-  • sphn:ICDODiagnosis <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
-  • sphn:NursingDiagnosis <http://www.w3.org/2000/01/rdf-schema#subClassOf> Diagnosis
 
 ### Entity: ProblemCondition
 - As subject:
@@ -63,23 +51,6 @@ Their respective subgraphs:### Entity: Condition
   • ProblemCondition <http://www.w3.org/2000/01/rdf-schema#label> <Problem Condition>
   • ProblemCondition <http://www.w3.org/2004/02/skos/core#definition> <clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern>
   • ProblemCondition <http://www.w3.org/2004/02/skos/core#note> <sphn:hasCode allowed coding system: ICPC or other>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> <http://www.w3.org/2000/01/rdf-schema#range> ProblemCondition
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasAdministrativeCase <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasBodySite <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasCode <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasDataFile <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasDataProviderInstitute <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasRelativeTemporalityCode <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasStatusCode <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasSubjectPseudoIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • sphn:hasDateTime <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • <neb981f34e40c40c7b35fcf270732bc8eb5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> ProblemCondition
-  • <neb981f34e40c40c7b35fcf270732bc8eb10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> ProblemCondition
-  • sphn:hasRecordDateTime <http://www.w3.org/2000/01/rdf-schema#domain> ProblemCondition
-  • <http://snomed.info/id/404684003> <http://www.w3.org/2002/07/owl#equivalentClass> ProblemCondition
 
 ### Entity: Patient
 - As subject:
@@ -87,30 +58,80 @@ Their respective subgraphs:### Entity: Condition
   • Patient <http://www.w3.org/2000/01/rdf-schema#comment> <Individual receiving health care services>
   • Patient <http://www.w3.org/2000/01/rdf-schema#label> <Patient>
   • Patient <http://www.w3.org/2004/02/skos/core#definition> <Individual receiving health care services>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#range> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • sphn:hasIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> Patient
 
 ### Entity: PatientIdentifier
 - As subject:
   • PatientIdentifier <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
   • PatientIdentifier <http://www.w3.org/2000/01/rdf-schema#label> <Patient Identifier>
   • PatientIdentifier <http://www.w3.org/2004/02/skos/core#definition> <Identifier of the patient in a specific system>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> PatientIdentifier
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> <http://www.w3.org/2000/01/rdf-schema#domain> PatientIdentifier
-  • sphn:hasIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> PatientIdentifier
+
+### Entity: DiagnosticReport
+- As subject:
+  • DiagnosticReport <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • DiagnosticReport <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Diagnostic report in FHIR IPS implementation>
+  • DiagnosticReport <http://www.w3.org/2000/01/rdf-schema#label> <Diagnostic report>
+
+### Entity: OncologyDiagnosis
+- As subject:
+  • OncologyDiagnosis <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • OncologyDiagnosis <http://www.w3.org/2000/01/rdf-schema#comment> <determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like>
+  • OncologyDiagnosis <http://www.w3.org/2000/01/rdf-schema#label> <Oncology Diagnosis>
+  • OncologyDiagnosis <http://www.w3.org/2002/07/owl#deprecated> <true>
+  • OncologyDiagnosis <http://www.w3.org/2004/02/skos/core#definition> <determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like>
+  • OncologyDiagnosis <http://www.w3.org/2004/02/skos/core#note> <sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other>
+
+### Entity: HealthcareEncounter
+- As subject:
+  • HealthcareEncounter <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • HealthcareEncounter <http://www.w3.org/2000/01/rdf-schema#comment> <an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual>
+  • HealthcareEncounter <http://www.w3.org/2000/01/rdf-schema#label> <Healthcare Encounter>
+  • HealthcareEncounter <http://www.w3.org/2004/02/skos/core#definition> <an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual>
+
+### Entity: Code
+- As subject:
+  • Code <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Code <http://www.w3.org/2000/01/rdf-schema#comment> <symbols and/or expressions defined in a coding system>
+  • Code <http://www.w3.org/2000/01/rdf-schema#label> <Code>
+  • Code <http://www.w3.org/2004/02/skos/core#definition> <symbols and/or expressions defined in a coding system>
+
+### Entity: FOPHDiagnosis
+- As subject:
+  • FOPHDiagnosis <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • FOPHDiagnosis <http://www.w3.org/2002/07/owl#equivalentClass> <https://loinc.org/rdf/38999-9>
+  • FOPHDiagnosis <http://www.w3.org/2000/01/rdf-schema#comment> <discharge diagnosis given respecting the rules of FOPH and used for building the DRGs, e.g. K35 acute appendicitis>
+  • FOPHDiagnosis <http://www.w3.org/2000/01/rdf-schema#label> <FOPH Diagnosis>
+  • FOPHDiagnosis <http://www.w3.org/2002/07/owl#deprecated> <true>
+  • FOPHDiagnosis <http://www.w3.org/2004/02/skos/core#definition> <discharge diagnosis given respecting the rules of FOPH and used for building the DRGs, e.g. K35 acute appendicitis>
+
+### Entity: encounter-class
+- As subject:
+  • encounter-class <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • encounter-class <http://www.w3.org/2000/01/rdf-schema#comment> <This value set defines a set of codes that can be used to indicate the class of encounter: a specific code indicating class of service provided.>
+  • encounter-class <http://www.w3.org/2000/01/rdf-schema#label> <Encounter Class>
+
+### Entity: Observation
+- As subject:
+  • Observation <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Observation <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Observation in FHIR IPS implementation>
+  • Observation <http://www.w3.org/2000/01/rdf-schema#label> <Observation>
+
+### Entity: SubjectPseudoIdentifier
+- As subject:
+  • SubjectPseudoIdentifier <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • SubjectPseudoIdentifier <http://www.w3.org/2000/01/rdf-schema#comment> <a pseudo code assigned as unique identifier to an individual by a data provider institute>
+  • SubjectPseudoIdentifier <http://www.w3.org/2000/01/rdf-schema#label> <Subject Pseudo Identifier>
+  • SubjectPseudoIdentifier <http://www.w3.org/2002/07/owl#deprecated> <true>
+  • SubjectPseudoIdentifier <http://www.w3.org/2004/02/skos/core#definition> <a pseudo code assigned as unique identifier to an individual by a data provider institute>
+
+### Entity: DataProviderInstitute
+- As subject:
+  • DataProviderInstitute <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • DataProviderInstitute <http://www.w3.org/2000/01/rdf-schema#comment> <institute providing the data>
+  • DataProviderInstitute <http://www.w3.org/2000/01/rdf-schema#label> <Data Provider Institute>
+  • DataProviderInstitute <http://www.w3.org/2004/02/skos/core#definition> <institute providing the data>
+  • DataProviderInstitute <http://www.w3.org/2004/02/skos/core#note> <sphn:hasCode allowed coding system: UID>
+
+### Entity: dateTime
 Here is one example with only one candidate. I want you to return 15 of those candidates
 <Example>
 

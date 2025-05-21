@@ -5,69 +5,42 @@ Candidates for the main entity:
 Subgraph with the direct relationships of all candidates:
 Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood.So if all the columns fit into the relations it is a vrey good fitCSV Columns:
 
-row_id -> 2, 1, 4
-patient_id -> PAT00003, PAT00002, PAT00001
-measurement_code -> R50.9, E11.9, R00.0
-measurement_value -> 78.52, 81.12, 56.48
-measurement_unit -> mm[Hg], /minn, mg/dL
-measurement_date -> 2025-02-19, 2025-02-17, 2025-01-27
+row_id -> 2, 1, 3
+patient_id -> PAT00003, PAT00004, PAT00002
+diagnosis_code -> 901234, 345678, 567890
+created_at -> 2022-11-27 00:00:00, 2023-04-30 00:00:00, 2023-03-13 00:00:00
+org_code -> ORG002, ORG005, ORG001
+org_name -> Health Clinic A, Care Center, Green Valley Hospital
 
-All entities you can choose from: - https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
-- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
-- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns
+All entities you can choose from: - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
 
-Their respective subgraphs:### Entity: Measurement
+Their respective subgraphs:### Entity: Condition
 - As subject:
-  • Measurement <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
-  • Measurement <http://www.w3.org/2000/01/rdf-schema#comment> <annotation used to indicate the size or magnitude of something that was determined by comparison to a standard>
-  • Measurement <http://www.w3.org/2000/01/rdf-schema#label> <Measurement>
-  • Measurement <http://www.w3.org/2004/02/skos/core#definition> <annotation used to indicate the size or magnitude of something that was determined by comparison to a standard>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#range> Measurement
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> <http://www.w3.org/2000/01/rdf-schema#range> Measurement
-  • sphn:hasAdministrativeCase <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasBodySite <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasCode <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasDataDetermination <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasDataFile <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasDataProviderInstitute <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasLabTest <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasMeasurementMethod <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasMedicalDevice <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasQualitativeResultCode <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasQuantity <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasReferenceRange <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasSample <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasSubjectPseudoIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • <nd4d2671f11b9464da43e76ccfbe63d9cb4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> Measurement
-  • sphn:hasMeasurementDateTime <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • sphn:hasQualitativeResult <http://www.w3.org/2000/01/rdf-schema#domain> Measurement
-  • <http://snomed.info/id/363787002> <http://www.w3.org/2002/07/owl#equivalentClass> Measurement
-  • sphn:BloodPressure <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:BodyHeight <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:BodyTemperature <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:BodyWeight <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:CardiacOutput <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:CircumferenceMeasure <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:HeartRate <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:InhaledOxygenConcentration <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
-  • sphn:OxygenSaturation <http://www.w3.org/2000/01/rdf-schema#subClassOf> Measurement
+  • Condition <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Condition <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Condition in FHIR IPS implementation>
+  • Condition <http://www.w3.org/2000/01/rdf-schema#label> <Condition>
 
-### Entity: Observation
+### Entity: Diagnosis
 - As subject:
-  • Observation <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
-  • Observation <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Observation in FHIR IPS implementation>
-  • Observation <http://www.w3.org/2000/01/rdf-schema#label> <Observation>
+  • Diagnosis <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • Diagnosis <http://www.w3.org/2000/01/rdf-schema#comment> <determination of the presence of a disease, condition, or injury from expressed signs and symptoms and assessments such as physical examination, laboratory test, or the like>
+  • Diagnosis <http://www.w3.org/2000/01/rdf-schema#label> <Diagnosis>
+  • Diagnosis <http://www.w3.org/2002/07/owl#deprecated> <true>
+  • Diagnosis <http://www.w3.org/2004/02/skos/core#definition> <determination of the presence of a disease, condition, or injury from expressed signs and symptoms and assessments such as physical examination, laboratory test, or the like>
+  • Diagnosis <http://www.w3.org/2004/02/skos/core#note> <sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other>
 
-### Entity: VitalSigns
+### Entity: ProblemCondition
 - As subject:
-  • VitalSigns <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
-  • VitalSigns <http://www.w3.org/2000/01/rdf-schema#comment> <Class representing Vital signs in FHIR IPS implementation>
-  • VitalSigns <http://www.w3.org/2000/01/rdf-schema#label> <Vital signs>
+  • ProblemCondition <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
+  • ProblemCondition <http://www.w3.org/2002/07/owl#equivalentClass> <https://loinc.org/rdf/75321-0>
+  • ProblemCondition <http://www.w3.org/2000/01/rdf-schema#comment> <clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern>
+  • ProblemCondition <http://www.w3.org/2000/01/rdf-schema#label> <Problem Condition>
+  • ProblemCondition <http://www.w3.org/2004/02/skos/core#definition> <clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern>
+  • ProblemCondition <http://www.w3.org/2004/02/skos/core#note> <sphn:hasCode allowed coding system: ICPC or other>
 
 ### Entity: Patient
 - As subject:
@@ -75,30 +48,12 @@ Their respective subgraphs:### Entity: Measurement
   • Patient <http://www.w3.org/2000/01/rdf-schema#comment> <Individual receiving health care services>
   • Patient <http://www.w3.org/2000/01/rdf-schema#label> <Patient>
   • Patient <http://www.w3.org/2004/02/skos/core#definition> <Individual receiving health care services>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <http://www.w3.org/2000/01/rdf-schema#range> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> <http://www.w3.org/2000/01/rdf-schema#domain> Patient
-  • sphn:hasIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> Patient
 
 ### Entity: PatientIdentifier
 - As subject:
   • PatientIdentifier <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>
   • PatientIdentifier <http://www.w3.org/2000/01/rdf-schema#label> <Patient Identifier>
   • PatientIdentifier <http://www.w3.org/2004/02/skos/core#definition> <Identifier of the patient in a specific system>
-- As object:
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> PatientIdentifier
-  • <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> <http://www.w3.org/2000/01/rdf-schema#domain> PatientIdentifier
-  • sphn:hasIdentifier <http://www.w3.org/2000/01/rdf-schema#domain> PatientIdentifier
 Here is one example with only one candidate. I want you to return 15 of those candidates
 <Example>
 

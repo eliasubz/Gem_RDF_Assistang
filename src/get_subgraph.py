@@ -26,12 +26,12 @@ def summarize_entity_subgraphs(input_ttl_path, entity_uris):
 
                 entity_section.append(f"  • {entity_label} {shorten(p)} {shorten(o)}")
 
-        # Triples where entity is object
-        object_triples = list(g.triples((None, None, entity)))
-        if object_triples:
-            entity_section.append("- As object:")
-            for s, p, _ in object_triples:
-                entity_section.append(f"  • {shorten(s)} {shorten(p)} {entity_label}")
+        # # Triples where entity is object
+        # object_triples = list(g.triples((None, None, entity)))
+        # if object_triples:
+        #     entity_section.append("- As object:")
+        #     for s, p, _ in object_triples:
+        #         entity_section.append(f"  • {shorten(s)} {shorten(p)} {entity_label}")
 
         summary.append("\n".join(entity_section))
 

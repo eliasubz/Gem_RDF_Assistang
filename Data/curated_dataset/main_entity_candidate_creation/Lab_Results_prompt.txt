@@ -3,7 +3,17 @@ Imagine you are an expert in semantic web data integration.
 <data>
 Find candidate OAEs according to the following table:column_name -> value1, value2, value3
 <csv columns>
-Analyze this column: patient_id;id;9594;7335 -> 129342KW;L3375;77176002;2023-08-04T08:13:34.0000, 129342KW;L3376;38341003;2023-08-06T19:56:03.0000, 129342KW;L3377;13645005;2023-08-07T11:11:44.0000
+Analyze this column: patient_id -> 129342KW
+Analyze this column: id -> L3335
+Analyze this column: 3945 -> 1963-08-13T00:00:00.0000
+Analyze this column: 2956 -> 248153007
+Analyze this column: 1054 -> Emergency
+Analyze this column: 5828 -> A. Boarsma
+Analyze this column: 1856 -> 2023-08-01T23:00:12.0000
+Analyze this column: 0583 -> 2023-08-18T14:00:00.0000
+Analyze this column: 6832 -> MI
+Analyze this column: 8563 -> Roen
+Analyze this column: 9537 -> Thijk
 </csv columns>
 
 RDF Entities:
