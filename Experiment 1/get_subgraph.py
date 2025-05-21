@@ -1,5 +1,5 @@
 from rdflib import Graph, URIRef, Namespace
-from rdflib.namespace import RDF, RDFS, XSD
+from rdflib.namespace import XSD
 
 SPHN = Namespace("https://biomedit.ch/rdf/sphn-ontology/sphn#")
 AIDAVA = Namespace("https://biomedit.ch/rdf/sphn-ontology/AIDAVA#")
