@@ -13,7 +13,7 @@ from collections import defaultdict
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from llm_assistant_hack_main.main import PathFinder
+from Path_Finding_Logic.main import PathFinder
 
 
 # JSON output schema
@@ -135,8 +135,7 @@ Transform a CSV dataset into RDF triples by mapping each column to the most appr
 ## Input
 1. Main Entity Type: {main_entity}
 2. Available Paths:
-
-{chr(10).join(f"{i+1}. {path}" for i, path in enumerate(paths))}
+{paths}
 3. CSV Data:
 Column header names -> Column values
 {extract_column_examples_as_string(csv_path, 3)}
@@ -257,10 +256,10 @@ def process_experiment(
 if __name__ == "__main__":
     # Example usage
     csv_dir = (
-        f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset"
+        f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset"
     )
-    analysis_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/analysis"
-    output_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/exp_one_hop"
+    analysis_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset/analysis"
+    output_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset/exp_two_hop"
     process_experiment(
         hop_count=2,
         send_to_llm=True,

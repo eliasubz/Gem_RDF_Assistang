@@ -6,7 +6,7 @@ import sys
 
 # === SETUP ===
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from llm_assistant_hack_main.main import PathFinder
+from Path_Finding_Logic.main import PathFinder
 
 output_dir = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/exp_one_hop"
 csv_dir = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset"

@@ -1,0 +1,125 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 6
+            },
+            "justification": "The 'patient_id' uniquely identifies the patient and naturally maps to the PatientIdentifier entity, which holds identifiers. This path accurately captures the identifier within the ontology.",
+            "transformation": "No transformation needed."
+        },
+        {
+            "column_name": "id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 6
+            },
+            "justification": "Same reasoning as 'patient_id'; it maps to the PatientIdentifier entity, which is the dedicated place for patient IDs.",
+            "transformation": "No transformation needed."
+        },
+        {
+            "column_name": "birthdate",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate",
+                "path_id": 2
+            },
+            "justification": "The 'birthdate' directly maps to the BirthDate property of the Patient entity, which is the most straightforward and semantically accurate mapping.",
+            "transformation": "Convert to xsd:date if not already in ISO date format."
+        },
+        {
+            "column_name": "gender_code_snomed",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender",
+                "path_id": 1
+            },
+            "justification": "The 'gender_code_snomed' corresponds to the AdministrativeGender property, which is linked to a coding system, making this path appropriate.",
+            "transformation": "Map the SNOMED code (e.g., 248153007) into the code property, possibly as a string or coded value."
+        },
+        {
+            "column_name": "department",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress",
+                "path_id": 10
+            },
+            "justification": "'department' indicates the patient's department, which can be represented as an address or location string; the simplest mapping is to a string datatype.",
+            "transformation": "Use the department name as a string, no special formatting needed."
+        },
+        {
+            "column_name": "doctor",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName",
+                "path_id": 9
+            },
+            "justification": "The 'doctor' name can be mapped as a subject name or string, with no complex nested relationship required.",
+            "transformation": "Use the doctor's name as a string."
+        },
+        {
+            "column_name": "admission_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime",
+                "path_id": 11
+            },
+            "justification": "'admission_date' is a dateTime property indicating when the patient was admitted, so mapping to 'hasBirthDateTime' or a similar dateTime property is appropriate.",
+            "transformation": "Format the date string into xsd:dateTime."
+        },
+        {
+            "column_name": "discharge_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime",
+                "path_id": 11
+            },
+            "justification": "Similarly, 'discharge_date' maps to a dateTime property indicating discharge or end time, suitable for the same property as 'admission_date' or a specific 'dischargeDateTime' if available.",
+            "transformation": "Format as xsd:dateTime."
+        },
+        {
+            "column_name": "admission_reason",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition",
+                "path_id": 7
+            },
+            "justification": "The 'admission_reason' relates to the problem or condition leading to admission, mapped to 'ProblemCondition' which can include diagnosis or reason.",
+            "transformation": "Map reason as a string or controlled vocabulary if available."
+        },
+        {
+            "column_name": "given_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName",
+                "path_id": 9
+            },
+            "justification": "Given name is a part of the subject's name, mapped to 'SubjectName' with a focus on given name.",
+            "transformation": "Use the given name string directly."
+        },
+        {
+            "column_name": "family_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName",
+                "path_id": 121
+            },
+            "justification": "Family name maps directly to 'hasFamilyName' under 'SubjectName', providing a clear semantic link.",
+            "transformation": "Use the family name string directly."
+        }
+    ]
+}

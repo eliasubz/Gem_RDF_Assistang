@@ -1,0 +1,125 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "This column appears to contain patient identifiers, which logically map to the Patient entity through the 'hasPatient' relationship from Measurement.",
+            "transformation": "No transformation needed; value is a string identifier."
+        },
+        {
+            "column_name": "id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText",
+                "path_id": 19
+            },
+            "justification": "The 'id' is a unique measurement identifier, suitable for a free-text string as per the property 'hasFreeText' which accepts string data.",
+            "transformation": "Convert to string if needed; no complex formatting."
+        },
+        {
+            "column_name": "3945",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "This value appears to be a date-time stamp for the measurement, matching the 'hasMeasurementDateTime' property range.",
+            "transformation": "Format to ISO 8601 dateTime if necessary."
+        },
+        {
+            "column_name": "2956",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "This numerical code likely represents a standardized code for some measurement aspect, mapped via 'hasCode' to the Code entity.",
+            "transformation": "Convert to string if needed, as codes are often textual."
+        },
+        {
+            "column_name": "1054",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText",
+                "path_id": 19
+            },
+            "justification": "This could be a qualitative comment or description related to the measurement, suitable for a string property.",
+            "transformation": "No special formatting, ensure string type."
+        },
+        {
+            "column_name": "5828",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "Contains patient name or identifier, best mapped through 'hasPatient' from Measurement.",
+            "transformation": "No transformation; treat as string."
+        },
+        {
+            "column_name": "1856",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 18
+            },
+            "justification": "This value is a date-time, fitting directly into 'hasDateTime' property range.",
+            "transformation": "Format to ISO 8601 dateTime."
+        },
+        {
+            "column_name": "0583",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "Represents a measurement timestamp, mapped to 'hasMeasurementDateTime'.",
+            "transformation": "Format as ISO 8601 dateTime."
+        },
+        {
+            "column_name": "6832",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod",
+                "path_id": 10
+            },
+            "justification": "Likely indicates the method used for measurement, best mapped through 'hasMeasurementMethod'.",
+            "transformation": "No transformation needed."
+        },
+        {
+            "column_name": "8563",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectName",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectName",
+                "path_id": 29
+            },
+            "justification": "Appears to be a subject or patient name, mapped to 'hasSubjectName' for clarity.",
+            "transformation": "No transformation; treat as string."
+        },
+        {
+            "column_name": "9537",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText",
+                "path_id": 19
+            },
+            "justification": "Likely additional free text comments, suitable for 'hasFreeText'.",
+            "transformation": "Ensure string format."
+        }
+    ]
+}
