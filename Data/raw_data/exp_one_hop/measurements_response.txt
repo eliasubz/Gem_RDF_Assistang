@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "Although 'row_id' is a unique identifier, it is not directly represented in the ontology. The closest relevant property is 'hasMeasurementDateTime', which relates to temporal data; alternatively, a custom identifier property could be used if available. Here, we select 'hasMeasurementDateTime' as it is a standard property for temporal data associated with measurements.",
+            "transformation": "Format the 'row_id' as a string if necessary, or treat it as an internal identifier."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' directly maps to the 'hasPatient' relationship from Measurement to Patient, providing clear semantic linkage between measurement and patient data.",
+            "transformation": "No special transformation needed; assign patient_id as a literal or create a URI for the Patient if available."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "Measurement codes are best represented by linking to the 'Code' entity via 'hasCode', aligning with ontological definitions for coded data.",
+            "transformation": "Map measurement_code as a string literal; optionally create or reference a URI for the Code entity."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Measurement values are numerical quantities; linking via 'hasQuantity' to a Quantity entity allows capturing both value and unit if modeled accordingly.",
+            "transformation": "Convert measurement_value to a numerical datatype (e.g., float)."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Units are associated with quantities; including measurement_unit as part of Quantity annotation provides semantic clarity.",
+            "transformation": "Attach measurement_unit as a string literal to the Quantity entity or use a standardized unit URI if available."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "Measurement date is best mapped directly to 'hasMeasurementDateTime' with datatype dateTime, capturing the temporal aspect precisely.",
+            "transformation": "Format date as ISO 8601 string compatible with xsd:dateTime."
+        }
+    ]
+}

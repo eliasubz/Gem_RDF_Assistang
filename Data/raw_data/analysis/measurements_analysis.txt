@@ -1,0 +1,1 @@
+Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement

@@ -51,7 +51,6 @@ class ColumnReasoningOutput(BaseModel):
 load_dotenv()
 LLM_API_KEY = os.getenv("POPENAI_API_KEY")
 pathfinder = PathFinder(ttl_file="aidava-sphn.ttl")
-CSV_COMMA_DELIMITER = False
 
 
 def read_paths_from_output(output_file: str) -> List[str]:
@@ -78,6 +77,22 @@ def read_csv_columns(csv_file: str) -> Tuple[List[str], List[str]]:
         return headers, first_row
 
 
+def detect_csv_delimiter(file_path, num_lines=5):
+    """
+    Detect whether the CSV file uses ';' or ',' as delimiter.
+    Checks the first `num_lines` of the file.
+    """
+    with open(file_path, newline="", encoding="utf-8") as csvfile:
+        sample = [csvfile.readline() for _ in range(num_lines)]
+        semicolon_count = sum(line.count(";") for line in sample)
+        comma_count = sum(line.count(",") for line in sample)
+
+        if semicolon_count > comma_count:
+            return ";"
+        else:
+            return ","
+
+
 def extract_column_examples_as_string(csv_path, num_examples=3):
     """
     Extracts up to `num_examples` unique non-empty values per column from a CSV file
@@ -89,10 +104,8 @@ def extract_column_examples_as_string(csv_path, num_examples=3):
     column_examples = defaultdict(set)
 
     with open(csv_path, newline="", encoding="utf-8") as f:
-        if CSV_COMMA_DELIMITER:
-            delim = ","
-        else:
-            delim = ";"
+        delim = detect_csv_delimiter(csv_path)
+
         reader = csv.DictReader(f, delimiter=delim)
 
         for row in reader:
@@ -258,10 +271,12 @@ if __name__ == "__main__":
     csv_dir = (
         f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset"
     )
+    csv_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/raw_data"
     analysis_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset/analysis"
-    output_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset/exp_two_hop"
+    analysis_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/raw_data/analysis"
+    output_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/raw_data/exp_one_hop"
     process_experiment(
-        hop_count=2,
+        hop_count=1,
         send_to_llm=True,
         analysis_dir=analysis_dir,
         csv_dir=csv_dir,

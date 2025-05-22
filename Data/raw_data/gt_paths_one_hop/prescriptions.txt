@@ -1,0 +1,1 @@
+row_id,patient_id,medication_atc_code,diagnosis_code,creation_date,times_a_day,dosage

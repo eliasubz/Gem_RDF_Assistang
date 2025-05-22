@@ -1,0 +1,6 @@
+row_id 0
+patient_id 1
+measurement_code 4
+measurement_value 14
+measurement_unit 14
+measurement_date 20
