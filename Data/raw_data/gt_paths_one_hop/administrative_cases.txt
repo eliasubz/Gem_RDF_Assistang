@@ -1,6 +1,6 @@
-row_id 0 
+row_id 1    
 patient_id 13
 diagnosis_code 2
-created_at 0
-org_code 0
-org_name 0
+created_at 1
+org_code 1
+org_name 1

@@ -240,7 +240,9 @@ def process_experiment(
 
         paths = ""
         if main_entity:
-            paths = pathfinder.find_paths(hop_count=hop_count, target_class=main_entity)
+            paths = pathfinder.find_string_paths(
+                hop_count=hop_count, target_class=main_entity
+            )
 
         # Generate prompt
         prompt = generate_prompt(

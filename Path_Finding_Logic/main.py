@@ -54,29 +54,21 @@ class PathFinder:
                                 queue.append((neighbor, path + [(neighbor, predicate)]))
             return all_paths
 
-        # final_path = ""
-        # for hops in range(hop_count):
-        #     hops += 1
-        #     paths = bfs_paths_with_n_hops(self.graph_dict, target_class, hops)
-
-        #     path_string = ""
-        #     for i, path in enumerate(paths, 1):
-        #         output = f"{i}. "
-        #         for _, (node, pred) in enumerate(path):
-        #             if pred is not None:
-        #                 output += f" => [{pred}] => "
-        #             output += f"({node})"
-        #         path_string += "\n" + output
-        #     final_path += "\n" + path_string
-
-        final_path = ""
-        global_counter = 1  # Persistent counter across all hops
-
+        all_paths = []
         for hops in range(1, hop_count + 1):  # cleaner: start at 1
             paths = bfs_paths_with_n_hops(self.graph_dict, target_class, hops)
+            all_paths += paths
+        return all_paths
 
-            path_string = ""
-            for path in paths:
+    def find_string_paths(
+        self, hop_count: int, target_class: str, save_to_file: bool = False
+    ):
+        final_path = ""
+        global_counter = 0
+        all_paths = self.find_paths(hop_count, target_class, save_to_file)
+        path_string = ""
+        for n_hop_paths in all_paths:
+            for path in n_hop_paths:
                 output = f"{global_counter}. "
                 for idx, (node, pred) in enumerate(path):
                     if pred is not None:
@@ -85,7 +77,7 @@ class PathFinder:
                 path_string += "\n" + output
                 global_counter += 1  # Increment after each full path
 
-            final_path += "\n" + path_string
+        final_path += "\n" + path_string
 
         if save_to_file:
             with open("output.txt", "w", encoding="utf-8") as f:

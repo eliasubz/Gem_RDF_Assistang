@@ -1,1 +1,7 @@
-row_id,patient_id,medication_atc_code,diagnosis_code,creation_date,times_a_day,dosage
+row_id 0 
+patient_id 1
+medication_atc_code 5
+diagnosis_code 12
+creation_date 19
+times_a_day 17
+dosage 10

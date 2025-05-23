@@ -51,7 +51,7 @@ for file in os.listdir(output_dir):
 
     # Get paths from PathFinder
     pathfinder = PathFinder(ttl_file="aidava-sphn.ttl")
-    paths = pathfinder.find_paths(hop_count=2, target_class=main_entity)
+    paths = pathfinder.find_string_paths(hop_count=2, target_class=main_entity)
 
     # Load mapping JSON
     with open(json_path, "r", encoding="utf-8") as f:
