@@ -4,10 +4,10 @@ Imagine you are an expert in semantic web data integration.
 Find candidate OAEs according to the following table:column_name -> value1, value2, value3
 <csv columns>
 Analyze this column: patient_id -> 129342KW
-Analyze this column: id -> L3328, L3326, L3331
-Analyze this column: 0467 -> 780836005, 416766001, 788479004
-Analyze this column: 3651 -> 145, 200, 17.2
-Analyze this column: 2287 -> meqperL, mgperdL, mmolperL
+Analyze this column: id -> L3328, L3326, L3329
+Analyze this column: 0467 -> 788479004, 416766001, 780836005
+Analyze this column: 3651 -> 100, 17.2, 60
+Analyze this column: 2287 -> gperdL, mmolperL, mgperdL
 Analyze this column: 6935 -> 2023-08-05T12:00:00.0000
 </csv columns>
 

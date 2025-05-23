@@ -32,12 +32,15 @@ class Spanning_entity_output(BaseModel):
 # base/solution folder that holds the correct entity
 
 # === Configuration ===
+experiment = "\\nano"
 INPUT_CSV_FOLDER = (
-    r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\curated_dataset"
+    r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\curated_dataset"
 )
 # Change this depending on the model
-OUTPUT_FOLDER = os.path.join(INPUT_CSV_FOLDER, "main_entity_candidate_creation")
-SEND_TO_API = False  # Change to True if you want to get responses from OpenAI
+OUTPUT_FOLDER = os.path.join(
+    INPUT_CSV_FOLDER, "main_entity_candidate_creation" + experiment
+)
+SEND_TO_API = True  # Change to True if you want to get responses from OpenAI
 ENTITY_FILE = "working_memory/clean_entities.txt"
 # INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"ENTITY_FILE = "working_memory/clean_entities.txt"
 

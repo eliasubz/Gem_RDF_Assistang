@@ -6,8 +6,10 @@
                 "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
                 "target_entity": "http://www.w3.org/2001/XMLSchema#integer",
                 "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+
                 "path_id": 5
             },
+            
             "justification": "The 'row_id' uniquely identifies each prescription and maps directly to the 'hasCode' property, which is linked to codes in the ontology, making it a suitable identifier.",
             "transformation": "Convert to integer."
         },

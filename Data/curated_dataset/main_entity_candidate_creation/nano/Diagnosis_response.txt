@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis related to a patient, covering diseases and disorders."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving or registered to receive healthcare services."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "A clinical problem or condition affecting a patient, potentially chronic or acute."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction between a patient and health services that could result in medical records."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A clinical observation or measurement made on a patient."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report summarizing diagnostic findings including coded conditions."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical or surgical procedure performed on a patient."
+        },
+        {
+            "label": "AdverseEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "description": "An unwanted or harmful event experienced by a patient during healthcare."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier associated uniquely with a patient entity."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A coded concept or terminology entry representing diseases or clinical terms."
+        },
+        {
+            "label": "DateTime",
+            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "An XML Schema datatype representing a combined date and time."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A management grouping often linking patients, diagnoses, and procedures."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "A clinical diagnosis possibly represented by coded terms such as SNOMED."
+        },
+        {
+            "label": "MedicalCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#CongenitalAbnormality",
+            "description": "Represents a kind of medical condition, especially congenital types, potentially linked to conditions like peripheral arterial disease."
+        },
+        {
+            "label": "PatientRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A comprehensive entity representing data related to a patient including identifiers, conditions, and dates."
+        }
+    ]
+}

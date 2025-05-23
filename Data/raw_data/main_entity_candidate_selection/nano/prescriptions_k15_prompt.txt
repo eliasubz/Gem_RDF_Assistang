@@ -1,0 +1,173 @@
+You are an expert in semantic web data integration.
+Given a list of CSV column headers and a list of RDF ontology entities, and top candidates:
+1. Which of the following entities could best describe the tabular data provided in the CSV file?
+Candidates for the main entity:
+Subgraph with the direct relationships of all candidates:
+Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood.So if all the columns fit into the relations it is a vrey good fitCSV Columns:
+
+row_id -> 3, 2, 1
+patient_id -> PAT00002, PAT00005, PAT00001
+medication_atc_code -> R03AC02, J01AA01, C03DA01
+diagnosis_code -> 456789, 345678, 901234
+creation_date -> 2021-04-25 00:00:00, 2022-09-08 00:00:00, 2021-09-12 00:00:00
+times_a_day -> 4, 5, 3
+dosage -> 1 ampule, 1 capsule, 2 drop
+
+All URIs that you can choose from. Use these as the output: - https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
+- http://www.w3.org/2001/XMLSchema#dateTime
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
+
+Their respective properties:### Entity: DrugPrescription
+- As subject:
+  • DrugPrescription <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • DrugPrescription sphn:hasAdministrationRouteCode sphn:Code
+  • DrugPrescription sphn:hasAdministrationRouteCode sphn:Terminology
+  • DrugPrescription sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • DrugPrescription sphn:hasCode sphn:Code
+  • DrugPrescription sphn:hasCode sphn:Terminology
+  • DrugPrescription sphn:hasDataFile sphn:DataFile
+  • DrugPrescription sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • DrugPrescription sphn:hasDrug sphn:Drug
+  • DrugPrescription sphn:hasDrugQuantity sphn:Quantity
+  • DrugPrescription sphn:hasFrequency sphn:Quantity
+  • DrugPrescription sphn:hasIndicationToStart sphn:Diagnosis
+  • DrugPrescription sphn:hasIndicationToStart sphn:Intent
+  • DrugPrescription sphn:hasIntent sphn:Intent
+  • DrugPrescription sphn:hasQuantity sphn:Quantity
+  • DrugPrescription sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • DrugPrescription sphn:hasTimePattern sphn:TimePattern
+  • DrugPrescription sphn:hasDateTime xsd:dateTime
+  • DrugPrescription sphn:hasFirstAdministrationDateTime xsd:dateTime
+  • DrugPrescription sphn:hasLastAdministrationDateTime xsd:dateTime
+
+### Entity: Medication
+
+### Entity: Patient
+- As subject:
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> sphn:AdministrativeGender
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> sphn:BirthDate
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> sphn:DrugAdministrationEvent
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> sphn:DrugPrescription
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> sphn:Measurement
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> sphn:ProblemCondition
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> sphn:Procedure
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> xsd:string
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> xsd:dateTime
+  • Patient sphn:hasIdentifier xsd:string
+
+### Entity: Condition
+- As subject:
+  • Condition <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> sphn:Code
+  • Condition sphn:hasFreeText xsd:string
+  • Condition sphn:hasOnsetDateTime xsd:dateTime
+
+### Entity: Diagnosis
+- As subject:
+  • Diagnosis <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • Diagnosis sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • Diagnosis sphn:hasBodySite sphn:BodySite
+  • Diagnosis sphn:hasCode sphn:Code
+  • Diagnosis sphn:hasCode sphn:Terminology
+  • Diagnosis sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • Diagnosis sphn:hasSubjectAge sphn:Age
+  • Diagnosis sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • Diagnosis sphn:hasCodingDateTime xsd:dateTime
+  • Diagnosis sphn:hasDateTime xsd:dateTime
+  • Diagnosis sphn:hasRecordDateTime xsd:dateTime
+
+### Entity: DrugAdministrationEvent
+- As subject:
+  • DrugAdministrationEvent <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • DrugAdministrationEvent sphn:hasAdministrationRouteCode sphn:Code
+  • DrugAdministrationEvent sphn:hasAdministrationRouteCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • DrugAdministrationEvent sphn:hasCode sphn:Code
+  • DrugAdministrationEvent sphn:hasCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasDataFile sphn:DataFile
+  • DrugAdministrationEvent sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • DrugAdministrationEvent sphn:hasDrug sphn:Drug
+  • DrugAdministrationEvent sphn:hasDrugQuantity sphn:Quantity
+  • DrugAdministrationEvent sphn:hasDuration sphn:Quantity
+  • DrugAdministrationEvent sphn:hasQuantity sphn:Quantity
+  • DrugAdministrationEvent sphn:hasReasonToStopCode sphn:Code
+  • DrugAdministrationEvent sphn:hasReasonToStopCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasStatusCode sphn:Code
+  • DrugAdministrationEvent sphn:hasStatusCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • DrugAdministrationEvent sphn:hasTimePattern sphn:TimePattern
+  • DrugAdministrationEvent <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> xsd:string
+  • DrugAdministrationEvent sphn:hasDateTime xsd:dateTime
+  • DrugAdministrationEvent sphn:hasEndDateTime xsd:dateTime
+  • DrugAdministrationEvent sphn:hasStartDateTime xsd:dateTime
+
+### Entity: Observation
+
+### Entity: HealthcareEncounter
+- As subject:
+  • HealthcareEncounter <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • HealthcareEncounter sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • HealthcareEncounter sphn:hasCurrentLocation sphn:Location
+  • HealthcareEncounter sphn:hasDataFile sphn:DataFile
+  • HealthcareEncounter sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • HealthcareEncounter sphn:hasLocation sphn:Location
+  • HealthcareEncounter sphn:hasOriginLocation sphn:Location
+  • HealthcareEncounter sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • HealthcareEncounter sphn:hasTargetLocation sphn:Location
+  • HealthcareEncounter sphn:hasTherapeuticArea sphn:TherapeuticArea
+  • HealthcareEncounter sphn:hasDateTime xsd:dateTime
+  • HealthcareEncounter sphn:hasEndDateTime xsd:dateTime
+  • HealthcareEncounter sphn:hasIdentifier xsd:string
+  • HealthcareEncounter sphn:hasStartDateTime xsd:dateTime
+
+### Entity: Code
+- As subject:
+  • Code sphn:hasCodingSystemAndVersion xsd:string
+  • Code sphn:hasIdentifier xsd:string
+  • Code sphn:hasName xsd:string
+
+### Entity: PatientIdentifier
+- As subject:
+  • PatientIdentifier <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> xsd:string
+  • PatientIdentifier sphn:hasIdentifier xsd:string
+
+### Entity: dateTime
+
+### Entity: Quantity
+- As subject:
+  • Quantity sphn:hasComparator sphn:SPHNConcept
+  • Quantity sphn:hasUnit sphn:Unit
+  • Quantity sphn:hasValue <n23da094f399c4ffb869a0c4a073ec1ebb11>
+
+### Entity: TimePattern
+- As subject:
+  • TimePattern sphn:hasCode sphn:Code
+  • TimePattern sphn:hasCode sphn:Terminology
+  • TimePattern sphn:hasTypeCode sphn:Code
+  • TimePattern sphn:hasTypeCode sphn:Terminology
+
+### Entity: Product
+- As subject:
+  • Product sphn:hasCode sphn:Code
+  • Product sphn:hasCode sphn:Terminology
+
+### Entity: DiagnosticReport
+Here is one example Output. USE THE EXACT URI that was giveen in the beginning.
+<Example>
+<output>
+{"overarching_spanning_entity":"https://example.com#Foo"}
+</output>
+</Example>

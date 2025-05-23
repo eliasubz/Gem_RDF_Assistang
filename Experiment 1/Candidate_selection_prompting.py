@@ -18,32 +18,33 @@ LLM_API_KEY = os.getenv("POPENAI_API_KEY")
 # === Configuration ===
 # Folder for curated dataset
 INPUT_CSV_FOLDER = (
-    r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\curated_dataset"
+    r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\curated_dataset"
 )
 # Raw data
-# INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"
+# INPUT_CSV_FOLDER = (
+#     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\raw_data"
+# )
 # Change this depending on the model
 experiment = "/nano"
-experiment = ""
 OUTPUT_FOLDER = os.path.join(
     INPUT_CSV_FOLDER, "main_entity_candidate_selection" + experiment
 )
-SEND_TO_API = False  # Change to True if you want to get responses from OpenAI
+SEND_TO_API = True  # Change to True if you want to get responses from OpenAI
 # INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"ENTITY_FILE = "working_memory/clean_entities.txt"
 CANDIDATE_CREATION_RESPONSES_FOLDER = os.path.join(
-    INPUT_CSV_FOLDER, "main_entity_candidate_creation" + experiment
+    INPUT_CSV_FOLDER, "main_entity_candidate_creation"  # + experiment
 )
 
 
 # Create the folder if it doesn't exist
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
-print(f"Output will not be saved to: {OUTPUT_FOLDER}\n")
+print(f"Output will be saved to: {OUTPUT_FOLDER}\n")
 
 
 # GROUND_TRUTH_PATH = "curated_dataset/solution"
 
 RDF_TTL_PATH = "aidava-sphn-flat.ttl"
-TOP_K_LIST = [5, 15]
+TOP_K_LIST = [5, 10, 15]
 
 # Initialize client
 client = OpenAI(api_key=LLM_API_KEY) if SEND_TO_API else None
@@ -124,14 +125,14 @@ def build_prompt(csv_path, rdf_candidates, subgraph_lines):
     )
     prompt += "CSV Columns:\n"
     prompt += "\n" + extract_column_examples_as_string(csv_path, 3) + "\n\n"
-    prompt += "All entities you can choose from: "
+    prompt += "All URIs that you can choose from. Use these as the output: "
     prompt += "\n".join(f"- {e}" for e in rdf_candidates)
-    prompt += "\n\nTheir respective subgraphs:"
+    prompt += "\n\nTheir respective properties:"
     prompt += subgraph_lines
     prompt += (
-        "\nHere is one example with only one candidate. I want you to return 15 of those candidates\n<Example>\n"
+        "\nHere is one example Output. USE THE EXACT URI that was giveen in the beginning.\n<Example>"
         + EXAMPLE_SELECTION
-        + "\n</Example>\n"
+        + "</Example>"
     )
 
     return prompt
@@ -225,7 +226,7 @@ def main():
                 with open(response_file, encoding="utf-8") as f:
                     data = json.load(f)
                     llm_response = data.get("overarching_spanning_entity", [])
-                print(f"[{filename} | top_k={top_k}] \n LLM pred.: {llm_response}\n")
+                print(f"[{filename} | top_k={top_k}] \nLLM pred.: {llm_response}\n")
                 results[top_k].append(
                     {
                         "llm_prediction": llm_response,

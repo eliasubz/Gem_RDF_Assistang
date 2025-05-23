@@ -12,7 +12,7 @@
         },
         {
             "label": "Patient",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
             "description": "An individual receiving healthcare services, who can be identified by patient IDs."
         },
         {

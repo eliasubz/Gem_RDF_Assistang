@@ -1,5 +1,7 @@
 from rdflib import Graph, URIRef, Namespace
 from rdflib.namespace import XSD
+from rdflib import Graph, RDF, RDFS, OWL, Namespace
+
 
 SPHN = Namespace("https://biomedit.ch/rdf/sphn-ontology/sphn#")
 AIDAVA = Namespace("https://biomedit.ch/rdf/sphn-ontology/AIDAVA#")
@@ -17,21 +19,15 @@ def summarize_entity_subgraphs(input_ttl_path, entity_uris):
         entity_section = [f"### Entity: {entity_label}"]
 
         # Triples where entity is subject
-        subject_triples = list(g.triples((entity, None, None)))
-        if subject_triples:
+        predicates = list(g.triples((None, RDFS.domain, entity)))
+        if predicates:
             entity_section.append("- As subject:")
-            for _, p, o in subject_triples:
-                if str(p) == "http://www.w3.org/2000/01/rdf-schema#subClassOf":
-                    continue
-
-                entity_section.append(f"  • {entity_label} {shorten(p)} {shorten(o)}")
-
-        # # Triples where entity is object
-        # object_triples = list(g.triples((None, None, entity)))
-        # if object_triples:
-        #     entity_section.append("- As object:")
-        #     for s, p, _ in object_triples:
-        #         entity_section.append(f"  • {shorten(s)} {shorten(p)} {entity_label}")
+            for predicate, _, _ in predicates:
+                objects = list(g.triples((predicate, RDFS.range, None)))
+                for _, _, obj in objects:
+                    entity_section.append(
+                        f"  • {entity_label} {shorten(predicate)} {shorten(obj)}"
+                    )
 
         summary.append("\n".join(entity_section))
 

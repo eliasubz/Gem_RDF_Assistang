@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A clinical or laboratory observation made on a patient, encompassing patient measurements, test results, or identifiers."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "The individual receiving healthcare, identified by unique patient identifiers."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient for the purpose of unique identification."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report detailing diagnostic test results including laboratory observations referenced by patient and test codes."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "A biological sample collected from a patient for laboratory testing or observation."
+        },
+        {
+            "label": "ObservationCategory/Laboratory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory",
+            "description": "The category of observations that includes laboratory test results and measurements."
+        },
+        {
+            "label": "ValueSet",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ValueSet",
+            "description": "A collection of coded concepts such as identifiers and measurement units used in observations."
+        },
+        {
+            "label": "Unit",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+            "description": "A standardized unit of measurement used in reporting quantitative values."
+        },
+        {
+            "label": "Quantity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "description": "A numerical value with an associated unit, such as a laboratory measurement."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "A pattern or timestamp indicating when an observation or measurement was taken."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A classification grouping of observations, useful to subsume different clinical measures."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "The result of a laboratory test, typically including value, units, and codes."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A coded representation of concepts such as test identifiers used in observations."
+        },
+        {
+            "label": "DataFile",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile",
+            "description": "A digital file or record that contains structured data elements such as patient IDs and measurements."
+        },
+        {
+            "label": "ObservationCategory/VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns",
+            "description": "A category of observations pertaining to vital sign measurements, possibly related to some measurement columns"
+        }
+    ]
+}

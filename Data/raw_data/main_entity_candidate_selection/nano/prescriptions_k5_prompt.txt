@@ -1,0 +1,86 @@
+You are an expert in semantic web data integration.
+Given a list of CSV column headers and a list of RDF ontology entities, and top candidates:
+1. Which of the following entities could best describe the tabular data provided in the CSV file?
+Candidates for the main entity:
+Subgraph with the direct relationships of all candidates:
+Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood.So if all the columns fit into the relations it is a vrey good fitCSV Columns:
+
+row_id -> 3, 2, 1
+patient_id -> PAT00002, PAT00005, PAT00001
+medication_atc_code -> R03AC02, J01AA01, C03DA01
+diagnosis_code -> 456789, 345678, 901234
+creation_date -> 2021-04-25 00:00:00, 2022-09-08 00:00:00, 2021-09-12 00:00:00
+times_a_day -> 4, 5, 3
+dosage -> 1 ampule, 1 capsule, 2 drop
+
+All URIs that you can choose from. Use these as the output: - https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
+
+Their respective properties:### Entity: DrugPrescription
+- As subject:
+  • DrugPrescription <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • DrugPrescription sphn:hasAdministrationRouteCode sphn:Code
+  • DrugPrescription sphn:hasAdministrationRouteCode sphn:Terminology
+  • DrugPrescription sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • DrugPrescription sphn:hasCode sphn:Code
+  • DrugPrescription sphn:hasCode sphn:Terminology
+  • DrugPrescription sphn:hasDataFile sphn:DataFile
+  • DrugPrescription sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • DrugPrescription sphn:hasDrug sphn:Drug
+  • DrugPrescription sphn:hasDrugQuantity sphn:Quantity
+  • DrugPrescription sphn:hasFrequency sphn:Quantity
+  • DrugPrescription sphn:hasIndicationToStart sphn:Diagnosis
+  • DrugPrescription sphn:hasIndicationToStart sphn:Intent
+  • DrugPrescription sphn:hasIntent sphn:Intent
+  • DrugPrescription sphn:hasQuantity sphn:Quantity
+  • DrugPrescription sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • DrugPrescription sphn:hasTimePattern sphn:TimePattern
+  • DrugPrescription sphn:hasDateTime xsd:dateTime
+  • DrugPrescription sphn:hasFirstAdministrationDateTime xsd:dateTime
+  • DrugPrescription sphn:hasLastAdministrationDateTime xsd:dateTime
+
+### Entity: Medication
+
+### Entity: Patient
+- As subject:
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> sphn:AdministrativeGender
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> sphn:BirthDate
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> sphn:DrugAdministrationEvent
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> sphn:DrugPrescription
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> sphn:Measurement
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> sphn:ProblemCondition
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> sphn:Procedure
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> xsd:string
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> xsd:dateTime
+  • Patient sphn:hasIdentifier xsd:string
+
+### Entity: Condition
+- As subject:
+  • Condition <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> sphn:Code
+  • Condition sphn:hasFreeText xsd:string
+  • Condition sphn:hasOnsetDateTime xsd:dateTime
+
+### Entity: Diagnosis
+- As subject:
+  • Diagnosis <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • Diagnosis sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • Diagnosis sphn:hasBodySite sphn:BodySite
+  • Diagnosis sphn:hasCode sphn:Code
+  • Diagnosis sphn:hasCode sphn:Terminology
+  • Diagnosis sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • Diagnosis sphn:hasSubjectAge sphn:Age
+  • Diagnosis sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • Diagnosis sphn:hasCodingDateTime xsd:dateTime
+  • Diagnosis sphn:hasDateTime xsd:dateTime
+  • Diagnosis sphn:hasRecordDateTime xsd:dateTime
+Here is one example Output. USE THE EXACT URI that was giveen in the beginning.
+<Example>
+<output>
+{"overarching_spanning_entity":"https://example.com#Foo"}
+</output>
+</Example>

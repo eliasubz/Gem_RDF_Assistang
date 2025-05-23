@@ -1,0 +1,14 @@
+ Accuracy with top-5 entity subgraphs: 66.67%
+
+✅ Accuracy with top-10 entity subgraphs: 33.33%
+
+✅ Accuracy with top-15 entity subgraphs: 50.00%
+
+Even more because for some reason 
+
+[Lab_Results_Masked_response.txt | top_k=10] 
+LLM pred.: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Measurement
+although https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+it is written as sphn instead of aidava so 
+
+✅ Accuracy with top-10 entity subgraphs: 50.00% with proper parsement

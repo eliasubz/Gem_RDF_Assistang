@@ -1,0 +1,108 @@
+You are an expert in semantic web data integration.
+Given a list of CSV column headers and a list of RDF ontology entities, and top candidates:
+1. Which of the following entities could best describe the tabular data provided in the CSV file?
+Candidates for the main entity:
+Subgraph with the direct relationships of all candidates:
+Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood.So if all the columns fit into the relations it is a vrey good fitCSV Columns:
+
+patient_id -> 129342KW
+id -> L3327, L3326, L3329
+0467 -> 1148504005, 780834008, 780837001
+3651 -> 100, 5.0, 17.2
+2287 -> gperdL, meqperL, mgperdL
+6935 -> 2023-08-05T12:00:00.0000
+
+All URIs that you can choose from. Use these as the output: - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Measurement
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Unit
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen
+
+Their respective properties:### Entity: Observation
+
+### Entity: Measurement
+- As subject:
+  • Measurement <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • Measurement sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • Measurement sphn:hasBodySite sphn:BodySite
+  • Measurement sphn:hasCode sphn:Code
+  • Measurement sphn:hasCode sphn:Terminology
+  • Measurement sphn:hasDataDetermination sphn:DataDetermination
+  • Measurement sphn:hasDataFile sphn:DataFile
+  • Measurement sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • Measurement sphn:hasLabTest sphn:LabTest
+  • Measurement sphn:hasMeasurementMethod sphn:MeasurementMethod
+  • Measurement sphn:hasMedicalDevice sphn:MedicalDevice
+  • Measurement sphn:hasQualitativeResultCode sphn:Code
+  • Measurement sphn:hasQualitativeResultCode sphn:Terminology
+  • Measurement sphn:hasQuantity sphn:Quantity
+  • Measurement sphn:hasReferenceRange sphn:ReferenceRange
+  • Measurement sphn:hasSample sphn:Sample
+  • Measurement sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • Measurement sphn:hasDateTime xsd:dateTime
+  • Measurement sphn:hasMeasurementDateTime xsd:dateTime
+  • Measurement sphn:hasQualitativeResult xsd:string
+
+### Entity: LabResult
+- As subject:
+  • LabResult <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • LabResult sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • LabResult sphn:hasCode sphn:Code
+  • LabResult sphn:hasCode sphn:Terminology
+  • LabResult sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • LabResult sphn:hasLabTest sphn:LabTest
+  • LabResult sphn:hasQualitativeResultCode sphn:Code
+  • LabResult sphn:hasQualitativeResultCode sphn:Terminology
+  • LabResult sphn:hasQuantitativeResult sphn:Quantity
+  • LabResult sphn:hasQuantity sphn:Quantity
+  • LabResult sphn:hasReferenceRange sphn:ReferenceRange
+  • LabResult sphn:hasSample sphn:Sample
+  • LabResult sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • LabResult sphn:hasComment xsd:string
+  • LabResult sphn:hasDateTime xsd:dateTime
+  • LabResult sphn:hasQualitativeResult xsd:string
+  • LabResult sphn:hasReportDateTime xsd:dateTime
+
+### Entity: Patient
+- As subject:
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> sphn:AdministrativeGender
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> sphn:BirthDate
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> sphn:DrugAdministrationEvent
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> sphn:DrugPrescription
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> sphn:Measurement
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> sphn:ProblemCondition
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> sphn:Procedure
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> xsd:string
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> xsd:dateTime
+  • Patient sphn:hasIdentifier xsd:string
+
+### Entity: Measurement
+
+### Entity: PatientIdentifier
+- As subject:
+  • PatientIdentifier <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> xsd:string
+  • PatientIdentifier sphn:hasIdentifier xsd:string
+
+### Entity: Laboratory
+
+### Entity: Unit
+- As subject:
+  • Unit sphn:hasCode sphn:Code
+  • Unit sphn:hasCode sphn:Terminology
+
+### Entity: DiagnosticReport
+
+### Entity: Specimen
+Here is one example Output. USE THE EXACT URI that was giveen in the beginning.
+<Example>
+<output>
+{"overarching_spanning_entity":"https://example.com#Foo"}
+</output>
+</Example>

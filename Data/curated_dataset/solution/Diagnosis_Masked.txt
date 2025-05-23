@@ -1,1 +1,2 @@
 https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient

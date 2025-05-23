@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person who is the subject of healthcare services or medical data."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient to uniquely identify them in medical contexts."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction between a patient and healthcare provider during which healthcare service is provided."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical procedure conducted on a patient, such as diagnosis or treatment."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "The identification of a disease or condition in a patient."
+        },
+        {
+            "label": "AdverseEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "description": "An undesirable experience associated with the use of a medical intervention."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The name or designation of a subject or patient."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A detailed clinical state or diagnosis affecting a patient."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A measurement or assessment recorded about a patient."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A category grouping for types of clinical observations."
+        },
+        {
+            "label": "EmergencyEncounter",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "An encounter class representing emergency situations in healthcare."
+        },
+        {
+            "label": "MedicalEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A healthcare encounter covering any medical services including emergency and routine."
+        },
+        {
+            "label": "DateTime",
+            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "A datatype representing dates and times, useful for timestamps related to clinical events."
+        },
+        {
+            "label": "MedicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report summarizing diagnostic and clinical information about a patient."
+        },
+        {
+            "label": "Person",
+            "iri": "http://www.w3.org/2002/07/owl#Class",
+            "description": "A general concept of an individual human being."
+        }
+    ]
+}

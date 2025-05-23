@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event of interaction between a patient and healthcare system, including admission and discharge details."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual who receives or is registered to receive healthcare."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier used uniquely for identifying a patient."
+        },
+        {
+            "label": "BirthDate",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
+            "description": "The birth date of a patient or subject."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Classification for gender or sex used administratively in healthcare systems."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "A clinical condition identified or diagnosed in a patient."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A clinical or medical procedure carried out during healthcare."
+        },
+        {
+            "label": "Doctor",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Principal",
+            "description": "Person or agent responsible for healthcare intervention (interpreted here as doctor)."
+        },
+        {
+            "label": "AdmissionDate",
+            "iri": "https://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "Date and time when patient was admitted for treatment."
+        },
+        {
+            "label": "DischargeDate",
+            "iri": "https://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "Date and time when patient was discharged after treatment."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Name of a healthcare subject or patient."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A specific health-related condition affecting a patient."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An observation or measurement related to a patient."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Category grouping observations, useful for admission reasons or vital signs."
+        },
+        {
+            "label": "Department",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea",
+            "description": "Medical or therapeutic department responsible for patient care."
+        }
+    ]
+}

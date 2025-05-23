@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event of interaction between patient and healthcare provider, encompassing admissions, visits, and treatments."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person who is the subject of healthcare services or medical records."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier used to uniquely identify a patient across datasets or systems."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition, diagnosis, or disease associated with the patient."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A clinical or medical procedure performed during a healthcare encounter."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report that presents diagnostic findings related to a patient."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A clinical observation or measurement recorded for a patient."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "A diagnosis specific to oncological conditions, potentially tied to codes like MI (myocardial infarction) for context."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An administrative record representing a healthcare case or episode."
+        },
+        {
+            "label": "AdverseEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "description": "An adverse event occurring during or caused by healthcare delivery."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The recorded name of a patient or person."
+        },
+        {
+            "label": "EncounterClass",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "A value set describing the class/type of encounter (e.g. Emergency class)."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "A temporal data entity for recording timestamps such as admission and discharge dates."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A coded concept representing diagnoses, procedures, or classifications (e.g. SNOMED CT codes)."
+        },
+        {
+            "label": "Person",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Principal",
+            "description": "An individual involved in healthcare, e.g. personnel like A. Boarsma or patient identifiers."
+        }
+    ]
+}

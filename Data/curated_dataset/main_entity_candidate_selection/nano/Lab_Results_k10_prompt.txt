@@ -1,0 +1,127 @@
+You are an expert in semantic web data integration.
+Given a list of CSV column headers and a list of RDF ontology entities, and top candidates:
+1. Which of the following entities could best describe the tabular data provided in the CSV file?
+Candidates for the main entity:
+Subgraph with the direct relationships of all candidates:
+Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood.So if all the columns fit into the relations it is a vrey good fitCSV Columns:
+
+patient_id -> 129342KW
+id -> L3335
+3945 -> 1963-08-13T00:00:00.0000
+2956 -> 248153007
+1054 -> Emergency
+5828 -> A. Boarsma
+1856 -> 2023-08-01T23:00:12.0000
+0583 -> 2023-08-18T14:00:00.0000
+6832 -> MI
+8563 -> Roen
+9537 -> Thijk
+
+All URIs that you can choose from. Use these as the output: - https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+
+Their respective properties:### Entity: HealthcareEncounter
+- As subject:
+  • HealthcareEncounter <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • HealthcareEncounter sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • HealthcareEncounter sphn:hasCurrentLocation sphn:Location
+  • HealthcareEncounter sphn:hasDataFile sphn:DataFile
+  • HealthcareEncounter sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • HealthcareEncounter sphn:hasLocation sphn:Location
+  • HealthcareEncounter sphn:hasOriginLocation sphn:Location
+  • HealthcareEncounter sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • HealthcareEncounter sphn:hasTargetLocation sphn:Location
+  • HealthcareEncounter sphn:hasTherapeuticArea sphn:TherapeuticArea
+  • HealthcareEncounter sphn:hasDateTime xsd:dateTime
+  • HealthcareEncounter sphn:hasEndDateTime xsd:dateTime
+  • HealthcareEncounter sphn:hasIdentifier xsd:string
+  • HealthcareEncounter sphn:hasStartDateTime xsd:dateTime
+
+### Entity: Patient
+- As subject:
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> sphn:AdministrativeGender
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> sphn:BirthDate
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> sphn:DrugAdministrationEvent
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> sphn:DrugPrescription
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> sphn:Measurement
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> sphn:ProblemCondition
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> sphn:Procedure
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> xsd:string
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> xsd:dateTime
+  • Patient sphn:hasIdentifier xsd:string
+
+### Entity: Measurement
+- As subject:
+  • Measurement <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • Measurement sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • Measurement sphn:hasBodySite sphn:BodySite
+  • Measurement sphn:hasCode sphn:Code
+  • Measurement sphn:hasCode sphn:Terminology
+  • Measurement sphn:hasDataDetermination sphn:DataDetermination
+  • Measurement sphn:hasDataFile sphn:DataFile
+  • Measurement sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • Measurement sphn:hasLabTest sphn:LabTest
+  • Measurement sphn:hasMeasurementMethod sphn:MeasurementMethod
+  • Measurement sphn:hasMedicalDevice sphn:MedicalDevice
+  • Measurement sphn:hasQualitativeResultCode sphn:Code
+  • Measurement sphn:hasQualitativeResultCode sphn:Terminology
+  • Measurement sphn:hasQuantity sphn:Quantity
+  • Measurement sphn:hasReferenceRange sphn:ReferenceRange
+  • Measurement sphn:hasSample sphn:Sample
+  • Measurement sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • Measurement sphn:hasDateTime xsd:dateTime
+  • Measurement sphn:hasMeasurementDateTime xsd:dateTime
+  • Measurement sphn:hasQualitativeResult xsd:string
+
+### Entity: PatientIdentifier
+- As subject:
+  • PatientIdentifier <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> xsd:string
+  • PatientIdentifier sphn:hasIdentifier xsd:string
+
+### Entity: AdministrativeCase
+- As subject:
+  • AdministrativeCase <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • AdministrativeCase sphn:hasCareHandling sphn:CareHandling
+  • AdministrativeCase sphn:hasDataFile sphn:DataFile
+  • AdministrativeCase sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • AdministrativeCase sphn:hasDischargeLocation sphn:Location
+  • AdministrativeCase sphn:hasLocation sphn:Location
+  • AdministrativeCase sphn:hasOriginLocation sphn:Location
+  • AdministrativeCase sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • AdministrativeCase sphn:hasAdmissionDateTime xsd:dateTime
+  • AdministrativeCase sphn:hasDateTime xsd:dateTime
+  • AdministrativeCase sphn:hasDischargeDateTime xsd:dateTime
+  • AdministrativeCase sphn:hasIdentifier xsd:string
+
+### Entity: Condition
+- As subject:
+  • Condition <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> sphn:Code
+  • Condition sphn:hasFreeText xsd:string
+  • Condition sphn:hasOnsetDateTime xsd:dateTime
+
+### Entity: Procedure
+
+### Entity: Observation
+
+### Entity: DiagnosticReport
+
+### Entity: SubjectName
+- As subject:
+  • SubjectName <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> xsd:string
+  • SubjectName <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName> xsd:string
+Here is one example Output. USE THE EXACT URI that was giveen in the beginning.
+<Example>
+<output>
+{"overarching_spanning_entity":"https://example.com#Foo"}
+</output>
+</Example>
