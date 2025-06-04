@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Healthcare Encounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an instance of a patient's encounter with healthcare services, encompassing various observations, procedures, conditions, and identifiers related to the visit."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Denotes an individual receiving healthcare services, representing personal and identifying information relevant to medical data."
+        },
+        {
+            "label": "Administrative Case",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Represents an administrative grouping of healthcare related events such as encounters or admissions for a patient for billing and administrative purposes."
+        },
+        {
+            "label": "Diagnostic Report",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Aggregates findings of a diagnostic procedure, linking observations, procedures, and conditions within a healthcare encounter context."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents measurements or assertions made about a patient during healthcare activities, such as vital signs or lab results."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Clinical conditions or diagnoses documented about a patient during healthcare activities."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Medical procedures or interventions performed on a patient, part of healthcare workflows."
+        },
+        {
+            "label": "Patient Identifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifiers associated with a patient, such as patient_id or other unique codes."
+        },
+        {
+            "label": "Subject Name",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Names corresponding to a patient or subject, representing personal identification information."
+        },
+        {
+            "label": "Encounter Class",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Classifies the type of healthcare encounter, e.g., emergency, outpatient, important for context of data collection."
+        },
+        {
+            "label": "Vital Signs",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Specific observations related to physiological measurements such as heart rate or blood pressure."
+        },
+        {
+            "label": "Observation Category",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categorizes observations into types such as laboratory, social history or vital signs."
+        },
+        {
+            "label": "Oncology Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specific diagnostic entities related to oncology, relevant if data includes cancer diagnoses like MI (myocardial infarction misinterpreted or cancer type)."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medications prescribed or administered to a patient during an encounter."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological samples collected from patients for laboratory analysis."
+        }
+    ]
+}

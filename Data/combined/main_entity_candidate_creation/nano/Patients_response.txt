@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a patient in the healthcare context, encompassing personal and medical information."
+        },
+        {
+            "label": "Encounter",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Represents an interaction or episode of care involving a patient, such as admissions or visits."
+        },
+        {
+            "label": "MedicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A broader entity capturing diagnostic reports, medical assessments, and related documentation."
+        },
+        {
+            "label": "ClinicalEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sphn#AccessDevicePresence",
+            "description": "An overarching class for clinical occurrences or events, such as admissions, procedures, or treatments."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents measurements, findings, or assessments taken during clinical encounters."
+        },
+        {
+            "label": "SpecimenSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Entity encompassing biological samples, tissue specimens, or laboratory samples."
+        },
+        {
+            "label": "MedicationUsage",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Captures medication prescriptions, administrations, and related therapeutic actions."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures, interventions, or surgeries performed."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents disease states, conditions, or diagnoses identified in patients."
+        },
+        {
+            "label": "CareEpisode",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "A higher-level entity capturing a series of related healthcare activities or events for a patient."
+        },
+        {
+            "label": "BiologicalSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Biosample",
+            "description": "General class for biological or tissue samples used in research or diagnostics."
+        },
+        {
+            "label": "GenomicData",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/GenomicPosition",
+            "description": "Entity representing genetic or genomic information related to patient samples."
+        },
+        {
+            "label": "RadiologyExam",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/DiagnosticRadiologicExamination",
+            "description": "Represents radiological imaging studies and their results."
+        },
+        {
+            "label": "Treatment",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/OncologyTreatmentAssessment",
+            "description": "Represents ongoing or completed treatments, especially in oncology contexts."
+        },
+        {
+            "label": "ResearchSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sample",
+            "description": "A comprehensive entity that could include various sample types collected for research or diagnostics."
+        }
+    ]
+}

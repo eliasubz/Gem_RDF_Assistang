@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "DrugAdministrationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "description": "An event representing the administration of a medication or drug to a patient, encompassing details such as patient, medication, dosage, timing, and administration route. This fits the columns (patient_id, medication code, dose, units, timestamp) and is a strong overarching entity candidate."
+        },
+        {
+            "label": "DrugPrescription",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "description": "A prescription record for a medication, mapping well to a table documenting drugs given or prescribed, with references to patient, product, dose, timing, and perhaps reason for prescription."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "The class representing a specified medication, often used in context with patients, prescriptions, administrations, and pharmaceutical details. Could serve as a main entity if each row is a record about a medication for a patient."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "description": "A broad class for performed actions involving a patient, including therapeutic or diagnostic interventions, which in certain data models generalizes to acts like drug administration."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An observational event, such as a measurement or assessment. If the data is about a measurement related to medication or its effects, this could serve as the OAE."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "A result from a laboratory analysis, suitable if the dataset focuses on measurements or outcomes related to medications."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A period of care or interaction with a healthcare provider, able to subsume events like drug prescriptions, administrations, or observations concerning a patient."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "A physical specimen or sample, which could be relevant if the dataset refers to laboratory or drug samples associated with patients."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving healthcare. While extremely general, it may serve as an overarching entity if each row is fundamentally about a specific patient."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A category grouping various types of clinical observations, useful if the main content is assessments/measurements related to medication or treatment."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "A manufactured product such as a medication or pharmaceutical, suitable if the dataset is fundamentally about the properties or dispensation of drug products."
+        },
+        {
+            "label": "Biobanksample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "description": "A specimen stored in a biobank, encompassing rich metadata, but may be too specific unless the data is about sample handling or storage."
+        },
+        {
+            "label": "Procedure (AIDAVA)",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A broad class for any healthcare-related actions involving a patient, possibly more specific to medication procedures in this context."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "A data entity representing a quantifiable attribute observed or measured, relevant if the focus is dosage and administration quantity."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "A sample taken from a patient for analysis, possibly relevant if, for example, administered medications are tracked with associated lab specimens."
+        }
+    ]
+}

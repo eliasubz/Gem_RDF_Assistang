@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents an individual receiving healthcare, central to linking identifiers, personal data, and clinical observations."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an instance of care or medical encounter, connecting patient data, encounter class, dates, and observations."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Encapsulates results of diagnostics performed, linking observations, specimen data, and patient details."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents a clinical condition or diagnosis that can be associated with a patient and their clinical record."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Denotes a performed clinical intervention or procedure related to the patient and their encounters."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents clinical observations, vital signs, or measurements linked to patients and encounters."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Entity for unique patient identifiers used to link records and ensure patient identity."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Represents the personal names of a patient, connecting identity with clinical data."
+        },
+        {
+            "label": "EncounterClass",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Classifies the type of healthcare encounter, e.g., Emergency, relevant for encounter context."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Group of measurements recording the patient's physiological state during encounters."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents medications administered or prescribed to a patient during healthcare events."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological samples collected from patients, linked to diagnostic reports and procedures."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specific diagnosis related to oncology, relevant if cancer-related data present."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Represents organizational context or case management linked to patient encounters."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Concept for representing time-based patterns or timestamps associated with observations or encounters."
+        }
+    ]
+}

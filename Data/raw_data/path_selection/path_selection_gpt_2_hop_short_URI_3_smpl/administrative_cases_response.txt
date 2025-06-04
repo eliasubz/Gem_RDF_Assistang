@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "row_id (no direct ontology mapping)",
+                "path_id": -1
+            },
+            "justification": "There is no direct path for an internal row identifier. Since 'row_id' is likely a technical/auxiliary field for data provenance or indexing, it does not correspond to a modeled SPHN ontology property. If it needs to be mapped for provenance, it could be added as a custom annotation or ignored in strict RDF transformation.",
+            "transformation": "If retained, ensure the value is string-typed and optionally map as a rdfs:label or custom annotation property. Otherwise, exclude from RDF output."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 23
+            },
+            "justification": "The 'patient_id' is best mapped via the 2-hop path: ProblemCondition → hasPatient → hasPatientIdentifier. This is preferred over the 1-hop path to Patient (path 1) because it directly targets the identifier, which matches the CSV content. Alternative 2-hop paths like (28) to sphn:hasIdentifier expect a string, but (23) is more semantically accurate for a patient identifier entity.",
+            "transformation": "No transformation needed if patient_id is a string. Ensure consistent formatting (no extraneous spaces)."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 67
+            },
+            "justification": "The 'diagnosis_code' is optimally mapped as ProblemCondition → hasCode → hasIdentifier, since this captures the code value itself (the numeric/string code). This is preferable to the 1-hop hasCode path (5), which just reaches a Code entity, or 2-hop paths to terminology, which are not specific to code values.",
+            "transformation": "Ensure the value is a string; if the CSV provides numeric codes, convert to string."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime",
+                "path_id": 17
+            },
+            "justification": "The 'created_at' field represents the creation/recording timestamp of the ProblemCondition. 'hasRecordDateTime' directly captures this semantics. No 2-hop path offers a more precise or relevant option for this column.",
+            "transformation": "Convert date-time string to xsd:dateTime format (e.g., '2023-04-30T00:00:00')."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 79
+            },
+            "justification": "The 'org_code' is best mapped via the path: ProblemCondition → hasDataProviderInstitute → hasCode → hasIdentifier, which captures the institute's code as a string. The 1-hop path (8) only reaches the DataProviderInstitute entity, not the code. The 2-hop path (79) specifically targets the code identifier, matching the CSV value.",
+            "transformation": "Ensure the value is a string; if codes are numeric, convert to string."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute/https://biomedit.ch/rdf/sphn-ontology/sphn#hasName",
+                "path_id": 81
+            },
+            "justification": "The 'org_name' corresponds to the name of the DataProviderInstitute. Mapping through ProblemCondition → hasDataProviderInstitute → hasName (path 81) directly assigns the string label to the institute. No deeper or alternative path more specifically targets the institute's name.",
+            "transformation": "No transformation needed; ensure value is a string."
+        }
+    ]
+}

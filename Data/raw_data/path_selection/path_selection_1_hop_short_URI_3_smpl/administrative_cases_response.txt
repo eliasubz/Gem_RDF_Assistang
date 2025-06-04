@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime",
+                "path_id": 17
+            },
+            "justification": "The 'row_id' likely corresponds to a record identifier; using 'hasRecordDateTime' is a placeholder. However, since none of the paths directly indicate an ID, this is an approximation. Alternatively, a dedicated identifier property would be ideal if available.",
+            "transformation": "Ensure the ID is formatted as a string or URI as needed."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 13
+            },
+            "justification": "Patient identifiers are best linked through 'hasSubjectPseudoIdentifier', which connects the problem condition to the patient pseudonym, reflecting patient identity.",
+            "transformation": "Format patient IDs as strings; consider URI encoding if necessary."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 22
+            },
+            "justification": "Diagnosis codes are best mapped through 'hasCode', directly linking the problem condition to its coding concept.",
+            "transformation": "Ensure code is represented as a string and match coding system if available."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 14
+            },
+            "justification": "Timestamp data naturally maps to 'hasDateTime', capturing the creation or relevant date of the record.",
+            "transformation": "Convert date-time strings to ISO 8601 format compatible with XMLSchema#dateTime."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+                "path_id": 25
+            },
+            "justification": "Organizational code can be associated with the data provider institute, indicating the source or managing organization.",
+            "transformation": "Retain as string; consider encoding if used as URI fragment."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+                "path_id": 25
+            },
+            "justification": "Organization name complements the organization code, providing descriptive detail linked via 'hasDataProviderInstitute'.",
+            "transformation": "Use string format; encode special characters if necessary."
+        }
+    ]
+}

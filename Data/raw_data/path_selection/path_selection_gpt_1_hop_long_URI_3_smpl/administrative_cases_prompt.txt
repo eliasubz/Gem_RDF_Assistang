@@ -1,0 +1,80 @@
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of ontology paths rooted in a main entity class, map each column to the most semantically appropriate ontology path, producing RDF triples for later use.
+
+## Ontology Metadata
+- **Main Entity Type**: `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Input
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+2. Available Paths:
+
+
+1. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient)
+2. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement)
+3. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase)
+4. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite)
+5. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+6. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+7. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile)
+8. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute)
+9. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasRelativeTemporalityCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+10. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasRelativeTemporalityCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+11. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+12. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+13. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier)
+14. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+15. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText] => (http://www.w3.org/2001/XMLSchema#string)
+16. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasOnsetDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+17. (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+3. CSV Data:
+
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| row_id | 1, 5, 4 |
+| patient_id | PAT00006, PAT00001, PAT00005 |
+| diagnosis_code | 345678, 567890, 901234 |
+| created_at | 2023-04-30 00:00:00, 2022-11-27 00:00:00, 2023-03-13 00:00:00 |
+| org_code | ORG005, ORG001, ORG002 |
+| org_name | Green Valley Hospital, Care Center, Health Clinic A |
+
+## Requirements
+For each CSV column:
+1. Identify the most semantically appropriate path from the main entity through the ontology
+2. Select exactly one optimal path for each column
+3. Document your reasoning for choosing each path, including any alternatives considered
+4. Handle nested relationships and complex datatypes appropriately
+
+## Expected Output
+For each column, provide:
+1. Column number/name
+2. The complete selected path using proper ontology notation (e.g., entity:property1/property2/property3) and the number of the path that is provided also in the input
+3. Brief justification for the selected mapping (1-2 sentences)
+4. Any data transformation required (datatype conversion, formatting, etc.)
+
+
+
+## Example Format
+"column_mappings": [
+    {
+        "column_name": "entity_id",
+        "path": {
+            "path_id": 1
+        },
+        "justification": "The 'entity_id' field represents a unique identifier associated with the main observation, making this path semantically appropriate.",
+        "transformation": "Ensure the ID format matches URI requirements (e.g., prefix or encode)."
+    },
+]
+
+### Specific Instructions
+Before selecting a 1-hop path, first check if any 2-hop paths that begin from the same end node as that 1-hop path offer a better option. If not, explain why they aren't better before proceeding with the 1-hop path.
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options

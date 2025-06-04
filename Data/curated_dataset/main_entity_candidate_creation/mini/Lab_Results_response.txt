@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents an individual receiving medical care."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Unique identifier for a patient."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an encounter or visit involving healthcare services."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis associated with a patient."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Clinical procedures performed during a healthcare encounter."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report containing diagnostic data for a patient."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Cancer-related diagnosis information."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Clinical observations measured or noted for a patient."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categorization of clinical observations."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Represents the name details of a patient or subject."
+        },
+        {
+            "label": "EncounterClass",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Classification of the healthcare encounter type."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Vital parameters measured during patient assessment."
+        },
+        {
+            "label": "HospitalisationOrProlongation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HospitalisationOrProlongation",
+            "description": "Information about hospital admissions or extended care."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Record of administrative case details for a patient."
+        },
+        {
+            "label": "MedicalOncology",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalOncology",
+            "description": "Medical specialty related to cancer treatment."
+        }
+    ]
+}

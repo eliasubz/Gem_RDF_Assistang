@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a patient in the dataset, likely encompassing personal and clinical information."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "Represents a healthcare encounter or visit, suitable for connecting various observations and procedures."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sample",
+            "description": "Represents biological samples collected from patients, central to many clinical and research datasets."
+        },
+        {
+            "label": "ClinicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A general entity for comprehensive clinical documentation, integrating various observations, diagnoses, and procedures."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents clinical or laboratory observations, suitable for connecting diverse measurement data."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Refers to biological specimens, linking sample collection to diagnosis and analysis."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Encapsulates medical procedures or interventions, acting as a connective entity."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents prescribed or administered medications, connected to patient and clinical events."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Captures clinical diagnoses, relevant for linking to health status and outcomes."
+        },
+        {
+            "label": "Treatment",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sphn",
+            "description": "A broad entity that could encompass various therapeutic or intervention activities."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categorizes different types of observations, enabling structured grouping."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Links specific identifiers to patients, avoiding multiple column complexity."
+        },
+        {
+            "label": "SpecimenFixation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Cancelable entity linking specimen collection and processing details."
+        },
+        {
+            "label": "ObservationValue",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Connects specific measurement values to observations, for detailed analysis."
+        },
+        {
+            "label": "TreatmentOutcome",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents the result or impact of a treatment or intervention."
+        }
+    ]
+}

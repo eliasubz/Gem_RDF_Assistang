@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents an individual receiving healthcare services, central to many medical datasets."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "Represents an event where health services are provided, encompassing patient interactions."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Encapsulates health conditions or diagnoses associated with patients."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Samples or specimens collected from patients for analysis."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Clinical sensory or measurement data observed in a patient."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Pharmaceutical substances administered to patients."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Medical or diagnostic procedures performed on or for patients."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Products used or produced during healthcare processes."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Unique identifiers assigned to patients for data linking."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specific diagnosis related to cancer or tumors."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Physiological measurements like blood pressure, heart rate, temperature."
+        },
+        {
+            "label": "DataFile",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "Data artifacts or files associated with patient records."
+        },
+        {
+            "label": "Organism",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Organism",
+            "description": "Biological entities, possibly related to specimens or genetic data."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Sample",
+            "description": "Samples or test material collected for laboratory analysis."
+        },
+        {
+            "label": "SystemicArterialBloodPressure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SystemicArterialBloodPressure",
+            "description": "A specific vital sign measurement indicating blood pressure."
+        }
+    ]
+}

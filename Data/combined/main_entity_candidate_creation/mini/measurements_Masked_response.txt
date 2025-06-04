@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A healthcare encounter representing a clinical event or visit, serving as an overarching event linking patient, conditions, observations, and procedures."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report compiling diagnostic information related to a patient, which can integrate observations, conditions, and measurements."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person who is the subject of healthcare data, potentially serving as the central entity linking patient identifiers, diagnoses, and observations."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A clinical observation made about a patient, such as vital signs or laboratory results."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis relevant to a patient."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient, linking patient-specific data across datasets."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Measurements related to the vital signs of a patient, such as heart rate or blood pressure."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A category grouping observations by type, useful for classification of observational data."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A healthcare procedure performed on the patient during the encounter."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "A sample taken from the patient for analysis, linked to observations or diagnostic reports."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "A specialized diagnosis related to oncology, mapping clinical concepts to cancer-related records."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medications given to the patient, potentially related to conditions and procedures."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An administrative record for an encounter or case, potentially linking patient and event data."
+        },
+        {
+            "label": "ObservationCategory/Laboratory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory",
+            "description": "Observation category for laboratory measurements, relevant for numeric or coded lab results."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "An entity for time-related attributes, such as dates of observation or measurement."
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "predicate": "synthetic:row_id",
+                "path_id": 0
+            },
+            "justification": "The 'row_id' is a synthetic identifier for the CSV row and does not correspond to an ontology property. It should be used for internal reference and provenance, not mapped to the domain ontology.",
+            "transformation": "Treat as a local identifier for joining or provenance; do not map as an RDF triple relating to the domain ontology."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' links the prescription to a patient. Two-hop options from Patient (e.g., administrative gender, birthdate, etc.) (paths 21-31) don't match the column's actual content, which is an identifier for the patient entity, not an attribute of the patient. Therefore, the direct link to Patient (path 1) is optimal.",
+            "transformation": "Ensure patient_id values are converted to URIs or blank nodes as required by the RDF model for patient resources."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Drug",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrug",
+                "path_id": 9
+            },
+            "justification": "The 'medication_atc_code' is an identifier for the prescribed drug. Downstream options from Drug (paths 63-70) include active/inactive ingredients, dose form, and codes. Of these, path 64 (hasDrug/hasCode) is more specific for codes, but given the ATC is a coding system for drugs, path 64 is the most semantically precise. However, the direct link (path 9) is used as the first hop, and the actual value should be mapped via the two-hop path in a full RDF model. For this mapping, use the path to Drug entity (path 9); downstream mapping to Code would be handled in nested triple generation.",
+            "transformation": "Ensure the ATC code is used for the correct nested Code instance under Drug, or create a nested mapping structure if the full RDF is generated."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIndicationToStart",
+                "path_id": 12
+            },
+            "justification": "The 'diagnosis_code' represents the coded indication for the prescription. Downstream hops from Diagnosis (e.g., path 81: hasIndicationToStart/hasCode) allow for precise code mapping, but since the column is a code for the diagnosis, path 81 is optimal as it lands directly on the code. Thus, select path 81: DrugPrescription/hasIndicationToStart/Diagnosis/hasCode/Code.",
+            "transformation": "If possible, nest the code value as an instance of Code under the Diagnosis node. Use a string or URI as appropriate for the code system."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 18
+            },
+            "justification": "The 'creation_date' is the timestamp for the prescription. No 2-hop date/time-related paths from DrugPrescription are more specific than the direct hasDateTime (path 18), as other time-related paths (e.g., paths 19, 20) relate to administration events, not creation of the prescription.",
+            "transformation": "Convert the date string to xsd:dateTime format (YYYY-MM-DDThh:mm:ss)."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFrequency",
+                "path_id": 11
+            },
+            "justification": "The 'times_a_day' column indicates prescription frequency. Downstream from Frequency (paths 74-77), hasValue (76) is the property where the numeric value is stored. Thus, the path DrugPrescription/hasFrequency/Quantity/hasValue (path 76) is most precise.",
+            "transformation": "Convert integer to xsd:double for hasValue property under Frequency (nested mapping)."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrugQuantity",
+                "path_id": 10
+            },
+            "justification": "The 'dosage' column likely encodes both value and unit (e.g., '1 capsule'). Downstream from DrugQuantity (paths 70-73), hasValue (72) and hasUnit (71) could be used for more granular mapping. Ideally, parse the dosage value for quantity and unit and map accordingly: DrugPrescription/hasDrugQuantity/Quantity/hasValue (72) for numeric and hasUnit (71) for the unit.",
+            "transformation": "Parse string into value and unit; map value to hasValue (xsd:double) and unit to hasUnit (Unit resource linked by URI)."
+        }
+    ]
+}

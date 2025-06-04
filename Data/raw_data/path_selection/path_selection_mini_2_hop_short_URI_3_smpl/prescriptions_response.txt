@@ -1,0 +1,67 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasIdentifier",
+                "path_id": 46
+            },
+            "justification": "The CSV does not explicitly show an identifier column matching an ontology path named 'hasIdentifier' directly on DrugPrescription, but 'row_id' is an internal unique row identifier. Since no direct path for row_id exists, the closest semantically appropriate path is 'hasAdministrativeCase/hasIdentifier' (path 46) or 'hasDataFile/hasIdentifier' (path 57). However, these are not ideal because row_id is a CSV internal ID, not an administrative case or data file identifier. Therefore, 'row_id' is best treated as an internal identifier and mapped to no ontology path or to a custom property outside the given ontology. Since no direct mapping exists, it is flagged as unmapped or requiring custom handling.",
+            "transformation": "No transformation; consider generating a unique URI for internal tracking, but no ontology mapping."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/AIDAVA:hasPatient/AIDAVA:hasPatientIdentifier",
+                "path_id": 25
+            },
+            "justification": "The 'patient_id' corresponds to a unique patient identifier. Path 25 leads from DrugPrescription to Patient then to PatientIdentifier, which is the semantically correct place to map patient identifiers. It's more precise than mapping to SubjectPseudoIdentifier (path 16) because PatientIdentifier is explicitly for patient IDs.",
+            "transformation": "No transformation needed; the string values can be used as identifiers or literal values as per ontology requirements."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDrug/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 48
+            },
+            "justification": "The ATC code is a drug classification code. Mapping it to DrugPrescription → hasDrug → hasCode → hasIdentifier (path 48) is semantically appropriate because it links to the drug code identifier, capturing the medication ATC code precisely. A 2-hop path through Drug then Code then Identifier is better than only to Drug or Code alone.",
+            "transformation": "No transformation; the ATC code strings can be used as literals or identifiers according to ontology guidelines."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasIndicationToStart/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 81
+            },
+            "justification": "'diagnosis_code' corresponds to the diagnosis associated with the drug prescription. Path 81 maps DrugPrescription → hasIndicationToStart (a Diagnosis) → hasCode → hasIdentifier, perfectly representing the diagnosis code. This 2-hop path is more precise than mapping to hasIndicationToStart alone or to Terminology.",
+            "transformation": "No transformation; keep code as string literal or identifier per ontology usage."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDateTime",
+                "path_id": 18
+            },
+            "justification": "'creation_date' corresponds to the date/time of the drug prescription creation. Path 18 directly maps DrugPrescription to a dateTime literal, which is a straightforward and semantically accurate mapping. No longer path offers more semantic detail for creation date.",
+            "transformation": "Convert string 'YYYY-MM-DD HH:mm:ss' to xsd:dateTime format (e.g., '2021-04-25T00:00:00')."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasFrequency/sphn:hasValue",
+                "path_id": 76
+            },
+            "justification": "'times_a_day' indicates the frequency of administration per day. Path 76 via hasFrequency (a Quantity) then hasValue (double) is the most semantically appropriate to capture frequency count. The 2-hop path to hasFrequency/hasValue is preferred over just hasFrequency alone as it specifies the numeric value.",
+            "transformation": "Convert integer frequency to xsd:double literal."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDrugQuantity/sphn:hasValue",
+                "path_id": 73
+            },
+            "justification": "'dosage' represents the amount of drug given. Path 73 maps DrugPrescription → hasDrugQuantity (Quantity) → hasValue (string) to capture dosage including value and unit as a string (e.g., '1 capsule'). This is more appropriate than mapping just to hasQuantity or hasDrugQuantity without value, as dosage often includes units in free text form.",
+            "transformation": "No transformation needed; store as string literal including unit and quantity."
+        }
+    ]
+}

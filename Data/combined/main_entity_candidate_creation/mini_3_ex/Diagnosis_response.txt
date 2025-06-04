@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An encounter or visit in a healthcare setting involving a patient; serves as an overarching event encompassing multiple clinical data points."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents an individual receiving healthcare services, linked to identifiers, conditions, and observations."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis affecting the patient, e.g. diseases or disorders."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report documenting results of diagnostics including observations related to a patient encounter."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "General class for clinical observations derived from measurement or assessment."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A healthcare intervention or procedure performed on the patient."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifying information given to the patient, such as patient ID numbers."
+        },
+        {
+            "label": "Date",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Date",
+            "description": "A temporal point or interval representing date/time related to events or observations."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A coded concept, such as clinical codes like SNOMED CT codes representing diagnoses."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specific types of clinical diagnoses related to oncology."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Observations related to vital signs that might be part of patient data."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categories grouping observations, supporting classification of data types."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Name information related to patient or subject entities."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An administrative grouping or case, potentially linking patient events and data."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medicinal products prescribed or administered during healthcare encounters."
+        }
+    ]
+}

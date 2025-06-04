@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents an individual receiving medical care, potentially encompassing associated observations, identifiers, and conditions."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents any measurement, test result, or phenomenon observed or measured for a patient."
+        },
+        {
+            "label": "DataObject",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A broad concept for any data entry or entity in the dataset, serving as a possible umbrella for various clinical and laboratory data."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Denotes a biological sample collected from a patient, which could be linked to measurements or diagnostics."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures or interventions, possibly associated with observations."
+        },
+        {
+            "label": "Encounter",
+            "iri": "https://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Refers to a healthcare encounter or visit, potentially serving as the contextual entity for related data."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Any quantifiable observation or test result, which could be linked to a patient and a specimen."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents a clinical diagnosis, which may connect to observations and patient data."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Sample",
+            "description": "A general entity for any collected sample used in testing or analysis."
+        },
+        {
+            "label": "ClinicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A conceptual entity encompassing all data related to a patient's clinical course."
+        },
+        {
+            "label": "Tissue",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Tissue",
+            "description": "Represents biological tissues involved or examined in clinical procedures."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categories like Laboratory, SocialHistory, VitalSigns, to organize observations."
+        },
+        {
+            "label": "Treatment",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents therapeutic interventions, drugs, or medications administered to the patient."
+        },
+        {
+            "label": "SampleContainer",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Container or vessel used to hold samples."
+        },
+        {
+            "label": "HealthRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A broad entity representing the entire set of data associated with a patient's health history."
+        }
+    ]
+}

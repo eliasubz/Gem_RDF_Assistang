@@ -1,79 +1,74 @@
 {
     "spanning_entity_candidates": [
         {
-            "label": "HealthcareEncounter",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
-            "description": "An event of interaction between a patient and healthcare system, including admission and discharge details."
-        },
-        {
             "label": "Patient",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
-            "description": "An individual who receives or is registered to receive healthcare."
+            "description": "Represents a patient, central to medical datasets involving individual health records."
         },
         {
-            "label": "PatientIdentifier",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
-            "description": "An identifier used uniquely for identifying a patient."
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "Represents a healthcare event or encounter, suitable as a main entity for hospital or clinical datasets."
         },
         {
-            "label": "BirthDate",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
-            "description": "The birth date of a patient or subject."
+            "label": "ClinicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A broad conceptual entity encompassing various clinical and medical data points collected per patient."
         },
         {
-            "label": "AdministrativeGender",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
-            "description": "Classification for gender or sex used administratively in healthcare systems."
-        },
-        {
-            "label": "Diagnosis",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
-            "description": "A clinical condition identified or diagnosed in a patient."
-        },
-        {
-            "label": "Procedure",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
-            "description": "A clinical or medical procedure carried out during healthcare."
-        },
-        {
-            "label": "Doctor",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Principal",
-            "description": "Person or agent responsible for healthcare intervention (interpreted here as doctor)."
-        },
-        {
-            "label": "AdmissionDate",
-            "iri": "https://www.w3.org/2001/XMLSchema#dateTime",
-            "description": "Date and time when patient was admitted for treatment."
-        },
-        {
-            "label": "DischargeDate",
-            "iri": "https://www.w3.org/2001/XMLSchema#dateTime",
-            "description": "Date and time when patient was discharged after treatment."
-        },
-        {
-            "label": "SubjectName",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
-            "description": "Name of a healthcare subject or patient."
-        },
-        {
-            "label": "Condition",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
-            "description": "A specific health-related condition affecting a patient."
+            "label": "MedicalEpisode",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "Denotes a discrete instance of medical care or health-related event involving a patient."
         },
         {
             "label": "Observation",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
-            "description": "An observation or measurement related to a patient."
+            "description": "A generic entity representing measured or recorded medical data, applicable as a core feature of health records."
         },
         {
-            "label": "ObservationCategory",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
-            "description": "Category grouping observations, useful for admission reasons or vital signs."
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Refers to medical procedures performed, possibly serving as a main entity for procedural datasets."
         },
         {
-            "label": "Department",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea",
-            "description": "Medical or therapeutic department responsible for patient care."
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents a medical diagnosis, suitable for datasets centered around health conditions."
+        },
+        {
+            "label": "SampleSet",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sample",
+            "description": "An entity representing biological or clinical samples associated with a patient or procedure."
+        },
+        {
+            "label": "StudySubject",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A conceptual overarching entity for subjects in research or clinical studies, including patients."
+        },
+        {
+            "label": "MedicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A broad entity encompassing comprehensive patient health data documented during care."
+        },
+        {
+            "label": "ClinicalSession",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "Refers to individual clinical visits or sessions, serving as a main entity in encounter-focused datasets."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents diagnostic reports, useful in datasets emphasizing test results and diagnostics."
+        },
+        {
+            "label": "TreatmentEpisode",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "An overarching entity for a treatment course, including medications, procedures, and outcomes."
+        },
+        {
+            "label": "HealthInteraction",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "General entity denoting any interaction with healthcare services involving data collection."
         }
     ]
 }

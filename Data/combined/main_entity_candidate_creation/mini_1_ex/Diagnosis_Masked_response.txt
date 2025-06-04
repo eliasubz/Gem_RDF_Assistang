@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person who is the subject of healthcare, which can be identified by patient_id and related observations and procedures."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An act of observing a patient which can relate to measurements, codes, and timestamps."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report detailing diagnostic findings, potentially linked to observations and dates."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction between a patient and healthcare system, linking patient, procedures, and observations."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Performed medical procedures related to a patient, corresponding to IDs and dates."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifier assigned to a patient, such as patient_id or other ID columns."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categories organizing observations that can be related to codes and timestamps."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological sample related to observations or diagnostic reports with timestamps."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medications administered or prescribed, possibly linked to patient and procedures."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A medical problem or diagnosis affecting the patient, can be identified by codes."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specific diagnosis related to oncology, suitable if dataset involves cancer conditions."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Measurements of vital parameters associated with a patient at specific times."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Name or label for the subject, potentially linking patient identifiers."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Temporal patterns or timestamps relevant for linking events and observations."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An administrative record of a clinical case, linking patient, encounter, and events."
+        }
+    ]
+}

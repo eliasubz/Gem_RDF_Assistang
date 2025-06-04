@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an encounter or event involving a patient with a healthcare provider, encompassing identifiers, dates, organizations, and clinical data."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A specific administrative record or case involving a patient, used to aggregate related data like identifiers and organizational info."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A clinical document that records the results of diagnostic tests or examinations, linking patient, date, and organization."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving healthcare, central to linking identifiers, demographic data, and clinical records."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical procedure or intervention performed on a patient, linking to date, organization, and patient info."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Measurements or assessments made regarding the patient during an encounter, tied to dates and identifiers."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Clinical conditions or diagnoses associated with the patient, which relate to identifiers and encounter information."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifiers assigned to a patient used for linking records across systems."
+        },
+        {
+            "label": "Organization",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+            "description": "Institutions providing healthcare services or data, corresponding to the organization columns."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The name or designation of the patient or subject, potentially linking to identifiers."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Temporal information such as dates associated with observations or procedures."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological samples related to patients during encounters, linked by identifiers and dates."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specific diagnosis type relevant in oncology, associable with patient data and encounter details."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Drug or medication related instances during patient care events."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Demographic feature of the patient, often associated with main patient or encounter entities."
+        }
+    ]
+}

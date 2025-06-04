@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a person receiving medical care or be involved in clinical data, likely encompassing identifiers, demographics, and health records."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event representing a patient's interaction with healthcare services, which could encompass various clinical activities and observations."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A measurement or clinical data point linked to a patient, such as vitals or test results, serving as a core component for many clinical features."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents a disease or health condition diagnosed or observed, often linked to patient records and clinical reports."
+        },
+        {
+            "label": "Drug",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Drug",
+            "description": "A chemical or biological substance used for treatment, which can relate to medications, prescriptions, or therapy data."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Physical samples collected from a patient for diagnostic or research purposes, central to biological studies."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Any clinical intervention or diagnostic process, potentially covering surgeries, imaging, or other treatments."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Items such as medical devices, reagents, or substances used in procedures or treatments."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medicinal substances prescribed or administered to patients, often linked to treatment plans."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Clinical reports generated from testing or imaging, essential for diagnosis and treatment monitoring."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categories grouping various observations, such as laboratory tests, vital signs, or social history."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Specific observations measuring physiological parameters like blood pressure, heart rate, or temperature."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specifically related to cancer diagnoses, tumor staging, and related clinical findings."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Unique identifiers associated with patients for tracking and data linkage."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Sample",
+            "description": "Biological or clinical samples obtained from patients, linked to specimens and tests."
+        }
+    ]
+}

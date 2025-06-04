@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasSubjectPseudoIdentifier",
+                "path_id": 17
+            },
+            "justification": "Although 'row_id' is a dataset internal identifier, no explicit path for generic row IDs exists. The closest semantic match is 'hasSubjectPseudoIdentifier' as it represents an identifier related to the measurement entity. Other identifier paths like patient or administrative case IDs are less suitable.",
+            "transformation": "Convert integer row_id to string; optionally prefix or encode to form a URI-friendly identifier."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/AIDAVA:hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' clearly maps to the patient related to the measurement; path 1 directly links Measurement to Patient, which is semantically precise and unambiguous.",
+            "transformation": "Convert patient_id values to URIs or identifiers consistent with patient resource representation."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasCode",
+                "path_id": 4
+            },
+            "justification": "Measurement code corresponds to a code describing the measurement, fitting best with the 'hasCode' property (path 4) linking to a Code entity. Although path 5 maps to Terminology, Code is more specific for a code value.",
+            "transformation": "Ensure codes conform to Code entity format; may require datatype normalization or controlled vocabulary mapping."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Measurement values represent quantities, making 'hasQuantity' the most semantically appropriate path, linking Measurement to Quantity entity that can hold numeric value and units.",
+            "transformation": "Split numeric value and unit if combined; convert numeric value to appropriate datatype (e.g. decimal)."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Units are part of the Quantity concept; thus, 'measurement_unit' complements 'measurement_value' under the Quantity entity rather than being a separate path.",
+            "transformation": "Combine unit with measurement_value to form complete Quantity entity representation; normalize unit strings to standard unit codes if possible."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "Measurement date corresponds directly to the measurement event's date and time, best mapped to 'hasMeasurementDateTime' property with xsd:dateTime datatype.",
+            "transformation": "Convert date strings (e.g., '2025-01-27') to xsd:dateTime format (e.g., '2025-01-27T00:00:00')."
+        }
+    ]
+}

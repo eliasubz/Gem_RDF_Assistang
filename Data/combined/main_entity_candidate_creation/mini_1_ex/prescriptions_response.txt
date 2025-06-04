@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents a healthcare encounter or event involving a patient, encompassing clinical acts such as diagnosis, medication, and observations, serving as an overarching entity for related data."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents the patient individual; appropriate if the data rows focus primarily on patient-centric details and identifiers."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents medication entities; relevant due to medication_atc_code and dosage columns."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents health conditions or diagnoses, corresponding to diagnosis_code column."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents diagnostic reports that might aggregate conditions and observations."
+        },
+        {
+            "label": "DrugPrescription",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "description": "Represents the prescription event or order for medication, connecting patient, medication, dosage, and administration timing."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents clinical observations, potentially including diagnosis and medication effects; can relate to times_a_day and dosage as observational attributes."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents clinical procedures; may be less directly relevant but useful if interventions are included."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Represents patient identifiers; closely linked to patient_id column."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Represents temporal patterns of events or actions, relevant for times_a_day and creation_date columns."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "Generic class representing codes (e.g., medication_atc_code, diagnosis_code) possibly used as datatype or linked entities."
+        },
+        {
+            "label": "DrugAdministrationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "description": "Represents events of drug administration; connects patient, medication, dosage and timing."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Entity representing the unique patient identification codes."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "Represents pseudonymized subject identifiers, possibly matching patient_id with privacy concerns."
+        },
+        {
+            "label": "Quantity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "description": "Represents measured amounts or dosages, relevant for dosage and times_a_day columns as quantities."
+        }
+    ]
+}

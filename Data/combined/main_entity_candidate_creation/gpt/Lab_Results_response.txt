@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event involving a patient interacting with the healthcare system; a strong candidate since the table includes identifiers, dates, encounter class, and diagnostic context."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A record of an administrative episode, suitable when data is primarily episode-administrative in context (with identifiers, patient info, and clinical events)."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents the patient as a whole. If the data are per-patient, with multiple attributes belonging to the patient, this is highly relevant."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "A pseudo-identifier for the subject; applicable if most columns are identifiers or demographic values."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A clinical report; relevant if the row captures the results of a diagnostic process."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An observation or measurement made about a patient, fits for rows representing point-in-time clinical data collections."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Any clinical condition or diagnosis; applicable if the main purpose is diagnostic."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Medical procedures performed, relevant if context is around interventional/clinical acts."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifier assigned to a patient for cross-context data linking; good for identifier-heavy tables."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Structured patient name, if the row uniquely represents an individual and their attributes."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "Result of a laboratory test, if the dataset's values relate to measured results."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "A biological or administrative sample, pertinent if IDs/dates represent samples rather than persons/encounters."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Any measured entity; flexible for data rows focused on vital signs, quantitative or qualitative results."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "If a major part of the table is focused on demographic categorization."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A highly generic class for any concept, reserved for when no more specific superclass can unify the columns."
+        }
+    ]
+}

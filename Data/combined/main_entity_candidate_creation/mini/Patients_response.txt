@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A healthcare related event or visit, typically encompassing patient admission and discharge data, the setting and attending staff."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving or registered for healthcare services; core entity for patient details."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Represents an administrative record or case related to a patient in a healthcare setting, potentially linking demographics and encounter data."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis related to the patient, such as admission_reason (like MI)."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Report summarizing diagnostic findings that could relate to admission reasons and observations."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical procedure performed during the healthcare encounter, possibly linked to admission data or observations."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Represents names such as given_name and family_name of the patient."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifier related to the patient, e.g., patient_id or id from the dataset."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Sex or gender code of the patient, matching gender_code_snomed."
+        },
+        {
+            "label": "BirthDate",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
+            "description": "Date of birth of the patient, corresponding to birthdate column."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Clinical observations or vital signs which might be associated indirectly to admission or discharge events."
+        },
+        {
+            "label": "Encounter-class",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Classifying the type of encounter, e.g., emergency department as department field."
+        },
+        {
+            "label": "Doctor",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Principal",
+            "description": "Role or entity representing the doctor attending or responsible for the patient during the encounter."
+        },
+        {
+            "label": "AdmissionEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Specific healthcare encounter instance with admission_date and discharge_date as attributes."
+        },
+        {
+            "label": "Location",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Location",
+            "description": "Physical or organizational location of the department where care is provided."
+        }
+    ]
+}

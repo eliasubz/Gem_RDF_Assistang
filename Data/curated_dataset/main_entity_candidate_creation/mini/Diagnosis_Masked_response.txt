@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person receiving medical care or treatment."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient, uniquely distinguishing them within a system."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A measurement or assertion about a patient or specimen, such as laboratory results or vital signs."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A clinical report containing the results of diagnostic tests and observations."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition, problem, diagnosis or other health state of a patient."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "An action or treatment performed on or for a patient."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction between a patient and healthcare provider for the purpose of providing healthcare service."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Sample taken from a patient for medical examination."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A category grouping of observations, e.g. Laboratory or Vital Signs."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "A pseudonymized identifier for a subject or patient, used to protect privacy."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "A pattern or representation of time, useful for timestamps and durations."
+        },
+        {
+            "label": "DateTime",
+            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "An XML schema datatype representing date and time."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Entity representing unique patient identifying information."
+        },
+        {
+            "label": "ClinicalDocument",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Representing structured clinical documentation of patient data."
+        },
+        {
+            "label": "ObservationCategoryLaboratory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory",
+            "description": "Category specifically for laboratory observations."
+        }
+    ]
+}

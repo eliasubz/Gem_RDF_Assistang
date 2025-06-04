@@ -1,0 +1,67 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "path_id": 0
+            },
+            "justification": "The 'row_id' is a CSV internal identifier for the data row and does not correspond to any ontology property or related entity; thus, it maps directly to the main entity as an identifier placeholder.",
+            "transformation": "Convert to string or URI fragment as needed to create unique identifiers for RDF subjects."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/AIDAVA:hasPatient",
+                "path_id": 1
+            },
+            "justification": "'patient_id' clearly relates to the patient entity linked via the property AIDAVA:hasPatient from DrugPrescription; although no deeper path is provided, no 2-hop paths from Patient are listed, so this 1-hop path is optimal.",
+            "transformation": "Convert patient_id to a URI or literal consistent with patient identifier format in RDF."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDrug",
+                "path_id": 9
+            },
+            "justification": "The ATC code relates to the prescribed medication, best modeled by linking to the sphn:Drug entity via sphn:hasDrug; while no 2-hop path from Drug is given, this path semantically fits medication identification better than any code or terminology property directly on DrugPrescription.",
+            "transformation": "Extract or encode ATC code as a property or identifier of the Drug entity."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasIndicationToStart",
+                "path_id": 12
+            },
+            "justification": "The diagnosis_code corresponds to the indication to start the drug, modeled as a sphn:Diagnosis entity linked via sphn:hasIndicationToStart; although there is an alternative path to sphn:Intent, Diagnosis is more appropriate for a clinical diagnosis code.",
+            "transformation": "Transform diagnosis_code to appropriate code literal or URI within the Diagnosis entity."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDateTime",
+                "path_id": 18
+            },
+            "justification": "The creation_date is best represented by the property sphn:hasDateTime of type xsd:dateTime on DrugPrescription; no deeper 2-hop paths provide a better semantic fit for this timestamp.",
+            "transformation": "Convert string to xsd:dateTime datatype."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasFrequency",
+                "path_id": 11
+            },
+            "justification": "The 'times_a_day' column represents frequency of administration, directly matching sphn:hasFrequency with range Quantity; no further 2-hop paths offer better context, so this 1-hop path is optimal.",
+            "transformation": "Convert integer to Quantity datatype or literal consistent with ontology requirements."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasQuantity",
+                "path_id": 15
+            },
+            "justification": "'Dosage' corresponds to the prescribed quantity of the drug, best mapped to sphn:hasQuantity which points to a Quantity entity; no 2-hop paths offer better detail, so this direct path is selected.",
+            "transformation": "Parse dosage text (e.g., '1 capsule') into structured Quantity components (value, unit) as per ontology."
+        }
+    ]
+}

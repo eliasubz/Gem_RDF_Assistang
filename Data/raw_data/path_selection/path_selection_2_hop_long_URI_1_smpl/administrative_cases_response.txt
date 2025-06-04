@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 61
+            },
+            "justification": "The 'row_id' serves as a unique identifier for each problem condition, making 'hasIdentifier' the most appropriate property for mapping.",
+            "transformation": "Ensure the ID is formatted as a string suitable for RDF literals."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' corresponds to the patient linked to the problem condition; 'hasPatient' clearly models this relationship.",
+            "transformation": "Map patient_id as a string to the Patient resource."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 5
+            },
+            "justification": "The diagnosis_code aligns with coding systems represented by 'Code', making this property appropriate.",
+            "transformation": "Convert diagnosis_code to string if necessary for RDF literal."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 14
+            },
+            "justification": "The 'created_at' timestamp naturally maps to the 'hasDateTime' property with datatype dateTime.",
+            "transformation": "Format the timestamp to ISO 8601 dateTime string."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "The 'org_code' specifies the organizational provider, fitting well with 'hasDataProviderInstitute'.",
+            "transformation": "Map as string representing the organization code."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasName",
+                "path_id": 81
+            },
+            "justification": "The 'org_name' is a descriptive label, best mapped to 'hasName'.",
+            "transformation": "Literal string value."
+        }
+    ]
+}

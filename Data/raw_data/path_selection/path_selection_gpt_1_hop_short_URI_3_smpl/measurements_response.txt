@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "",
+                "path_id": 0
+            },
+            "justification": "No direct ontology path for a technical row identifier; treat 'row_id' as an internal identifier for the dataset rather than an RDF-mapped property. If an identifier is needed in RDF, generate a local URI or blank node using this value.",
+            "transformation": "Use as local identifier for RDF resources; may be encoded as part of a URI."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "The patient identifier maps directly to the Measurement's link to a Patient via 'AIDAVA:hasPatient'. No 2-hop path exists from AIDAVA:Patient, so this 1-hop path is optimal.",
+            "transformation": "Format as URI or literal as required by the target system; ensure identifier uniqueness."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "Measurement codes are best mapped via 'sphn:hasCode' to a Code entity. A 2-hop alternative exists via Terminology (path 5), but unless the dataset includes terminology metadata, direct mapping to Code is more precise.",
+            "transformation": "No transformation unless code requires URI expansion or normalization."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Quantitative measurement values are represented as Quantity in the ontology. No 2-hop path from Quantity is available, so direct mapping is semantically optimal.",
+            "transformation": "Convert to appropriate numeric datatype (e.g., xsd:decimal) if necessary."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Measurement units are attributes of the Quantity entity. Since the ontology links to Quantity, and units are typically modeled as a property of Quantity, this is the most appropriate path; no 2-hop path offers a superior mapping.",
+            "transformation": "Handled as a property of Quantity (e.g., unit literal or URI); may require mapping to ontology units."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "'measurement_date' is best mapped to 'hasMeasurementDateTime' which links to an xsd:dateTime. There is no more specific 2-hop path from dateTime, so this is optimal.",
+            "transformation": "Parse and convert to xsd:dateTime format if not already in ISO 8601."
+        }
+    ]
+}

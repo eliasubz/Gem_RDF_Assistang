@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "A general class for any act or observation that yields a quantitative or qualitative result. This class fits tabular datasets of clinical or diagnostic measures collected for patients, capturing attributes such as value, unit, code, and date."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A broad class corresponding to any observation or measurement made about a subject. Suited for datasets representing diverse clinical events."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "A sub-type of Observation specific to laboratory results. If all measurements are lab-derived, this is a strong candidate."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "A type of observation specific to vital sign measurements like blood pressure, heart rate, etc. Relevant if measurements are vital signs."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A high-level entity encompassing collections or summaries of diagnostic measurements and observations."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "If the table rows are associated with clinical encounters (i.e., measurements linked to visits/events), this could be the main entity."
+        },
+        {
+            "label": "LabTest",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest",
+            "description": "Represents the test itself, each row as an instance of a performed lab test—use if the dataset is primarily about tests rather than results."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Covers generic medical procedures, which may include the act of measuring or sampling."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "Could be used if rows represent subject-level instances keyed by patient_id or anonymous identifiers."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A generalized class for all SPHN ontology concepts—can be used as a very broad fallback."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "Relevant if the table primarily captures diagnosis conditions (e.g., measurement_code is used diagnostically)."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A FHIR-aligned clinical condition or problem, useful if codes refer to diagnoses and observations are secondary."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Best if table rows pertain to administrative records of clinical or diagnostic activities."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "For tables where each row represents a biospecimen or sample taken for measurement."
+        },
+        {
+            "label": "SPHNAttributeObject",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject",
+            "description": "A flexible SPHN object for attribute-value modeling; use as last resort when others do not fit."
+        }
+    ]
+}

@@ -18,9 +18,10 @@ from Path_Finding_Logic.main import PathFinder
 
 # JSON output schema
 class SemanticPath(BaseModel):
-    source_entity: str  # e.g., "Measurement"
-    target_entity: str  # e.g., "AIDAVA/Patient"
-    predicate: str  # e.g., "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient"
+
+    source_entity: str
+    target_entity: str
+    predicate: str
     path_id: int  # e.g., 1 for "Path 1"
 
 
@@ -93,6 +94,47 @@ def detect_csv_delimiter(file_path, num_lines=5):
             return ","
 
 
+def extract_column_values_as_string(csv_path, num_examples=3):
+    """
+    Extracts up to `num_examples` unique non-empty values per column from a CSV file
+    and returns a Markdown table string:
+
+    ### CSV Data (Preview)
+
+    | Column Name | Example Values          |
+    |-------------|-------------------------|
+    | patient_id  | 129342KW, 98765XY, ...  |
+    | id          | L3335, L3336, L3337     |
+    | ...         | ...                     |
+    """
+    column_examples = defaultdict(set)
+
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        delim = detect_csv_delimiter(csv_path)
+        reader = csv.DictReader(f, delimiter=delim)
+
+        for row in reader:
+            for col, val in row.items():
+                if val and val.strip():
+                    column_examples[col].add(val.strip())
+            # Stop if we have enough examples for all columns
+            if all(len(v) >= num_examples for v in column_examples.values()):
+                break
+
+    # Build markdown table string
+    lines = []
+    lines.append("### CSV Data (Preview)\n")
+    lines.append("| Column Name | Example Values |")
+    lines.append("|-------------|----------------|")
+
+    for col, vals in column_examples.items():
+        examples = list(vals)[:num_examples]
+        example_str = ", ".join(examples)
+        lines.append(f"| {col} | {example_str} |")
+
+    return "\n".join(lines)
+
+
 def extract_column_examples_as_string(csv_path, num_examples=3):
     """
     Extracts up to `num_examples` unique non-empty values per column from a CSV file
@@ -135,23 +177,25 @@ def generate_prompt(
     paths: List[str],
     main_entity: str,
     csv_path: str,
+    num_examples: int,
 ) -> str:
     """Generate the RDF mapping prompt."""
     prompt = f"""# RDF Mapping Assistant for Complex Ontological Relationships
 
-## Context
-You are a specialized RDF mapping expert with extensive knowledge of semantic web technologies, ontology engineering, and data transformation. Your expertise includes understanding complex, multi-hop relationships between entities in knowledge graphs.
+## Objective
+Given a CSV dataset and a set of ontology paths rooted in a main entity class, map each column to the most semantically appropriate ontology path, producing RDF triples for later use.
 
-## Task
-Transform a CSV dataset into RDF triples by mapping each column to the most appropriate path in an existing ontology. The ontology contains complex {hop_count}-hop relationships extending from the main entity represented by each row.
+## Ontology Metadata
+- **Main Entity Type**: `{main_entity}`
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
 
 ## Input
 1. Main Entity Type: {main_entity}
 2. Available Paths:
 {paths}
 3. CSV Data:
-Column header names -> Column values
-{extract_column_examples_as_string(csv_path, 3)}
+
+{extract_column_values_as_string(csv_path, num_examples)}
 
 ## Requirements
 For each CSV column:
@@ -167,11 +211,23 @@ For each column, provide:
 3. Brief justification for the selected mapping (1-2 sentences)
 4. Any data transformation required (datatype conversion, formatting, etc.)
 
+
+"""
+    prompt += """
 ## Example Format
-Column: [column_name]
-Path: [Number] [entity]:[property1]/[property2]/[property3]
-Justification: [Brief explanation of why this path is appropriate]
-Transformation: [Any required data processing]
+"column_mappings": [
+    {
+        "column_name": "entity_id",
+        "path": {
+            "path_id": 1
+        },
+        "justification": "The 'entity_id' field represents a unique identifier associated with the main observation, making this path semantically appropriate.",
+        "transformation": "Ensure the ID format matches URI requirements (e.g., prefix or encode)."
+    },
+]
+
+### Specific Instructions
+Before selecting a 1-hop path, first check if any 2-hop paths that begin from the same end node as that 1-hop path offer a better option. If not, explain why they aren't better before proceeding with the 1-hop path.
 
 ## Additional Notes
 - Prioritize semantic accuracy over path length
@@ -188,7 +244,7 @@ def send_to_openai(prompt: str) -> str:
 
     try:
         response = client.responses.parse(
-            model="gpt-4.1-nano",  # or your preferred model
+            model="gpt-4.1",  # or your preferred model
             temperature=0.7,
             input=[
                 {
@@ -217,6 +273,8 @@ def process_experiment(
     csv_dir: str = "UM/BC/csv",
     output_dir: str = "UM/BC/output_exp_two_hop",
     send_to_llm: bool = False,
+    use_shortened_URI=True,
+    num_examples=3,
 ) -> None:
     """Process the experiment for all files in the analysis directory."""
     # Create output directory if it doesn't exist
@@ -240,13 +298,22 @@ def process_experiment(
 
         paths = ""
         if main_entity:
-            paths = pathfinder.find_string_paths(
-                hop_count=hop_count, target_class=main_entity
-            )
+            if use_shortened_URI:
+                paths = pathfinder.find_short_string_paths(
+                    hop_count=hop_count, target_class=main_entity
+                )
+            else:
+                paths = pathfinder.find_string_paths(
+                    hop_count=hop_count, target_class=main_entity
+                )
 
         # Generate prompt
         prompt = generate_prompt(
-            hop_count=hop_count, paths=paths, main_entity=main_entity, csv_path=csv_file
+            hop_count=hop_count,
+            paths=paths,
+            main_entity=main_entity,
+            csv_path=csv_file,
+            num_examples=num_examples,
         )
 
         # Save prompt to output file
@@ -269,18 +336,37 @@ def process_experiment(
 
 
 if __name__ == "__main__":
-    # Example usage
-    csv_dir = (
-        f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset"
+    # 1. CSV directory
+    base_csv_dir = (
+        "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/raw_data"
     )
-    csv_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/raw_data"
-    analysis_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/curated_dataset/analysis"
-    analysis_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/raw_data/analysis"
-    output_dir = f"C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/Data/raw_data/exp_one_hop"
-    process_experiment(
-        hop_count=1,
-        send_to_llm=True,
-        analysis_dir=analysis_dir,
-        csv_dir=csv_dir,
-        output_dir=output_dir,
-    )
+    # 2. Analysis directory with OAT groun truths
+    base_analysis_dir = f"{base_csv_dir}/analysis"
+    # 2. base output directory
+    base_output_dir = f"{base_csv_dir}"
+
+    hop_counts = [1, 2]
+    example_counts = [1, 3]
+    uri_combinations = [True, False]  # only one can be True per run
+
+    for hop_count in hop_counts:
+        for num_examples in example_counts:
+            for short_uri in uri_combinations:
+
+                uri_type = "short_URI" if short_uri else "long_URI"
+                output_dir = f"{base_output_dir}/path_selection_gpt_{hop_count}_hop_{uri_type}_{num_examples}_smpl"
+
+                print(
+                    f"Running: hop_count={hop_count}, short_uri={short_uri}, examples={num_examples}"
+                )
+
+                process_experiment(
+                    hop_count=hop_count,
+                    # 4. Check this as true
+                    send_to_llm=False,
+                    analysis_dir=base_analysis_dir,
+                    csv_dir=base_csv_dir,
+                    output_dir=output_dir,
+                    use_shortened_URI=short_uri,
+                    num_examples=num_examples,
+                )

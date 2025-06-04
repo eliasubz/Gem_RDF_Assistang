@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A class representing an encounter or visit of a patient to a healthcare setting, which can aggregate information such as diagnoses, medications, procedures, and observations during a specific time frame."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "A class representing medicinal substances administered to patients, related to codes like medication_atc_code and dosage details."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "The class representing the individual receiving medical care; linked with patient identifiers and demographic information."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A class representing health conditions or diagnoses of the patient, which can be linked to diagnosis codes."
+        },
+        {
+            "label": "DrugPrescription",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "description": "Entity representing the act of prescribing drugs/medications to a patient, connecting medication codes, dosage, and frequency."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A class representing diagnostic assessments including recorded diagnosis codes and dates."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures related to patient care, may interrelate with diagnoses and medications administered."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A class for clinical observations which could include medication administration details, dosages, and timings."
+        },
+        {
+            "label": "DrugAdministrationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "description": "A class capturing the event of a drug being administered, associated with dosage and frequency fields."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Entity representing unique identifiers assigned to patients."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Describes recurring time-based patterns such as dosage schedules (e.g., times_a_day)."
+        },
+        {
+            "label": "DateTime",
+            "iri": "https://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "Datatype for the creation_date column representing date and time information."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A general class for coded data such as medication or diagnosis codes."
+        },
+        {
+            "label": "PharmaceuticalDoseForm",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#PharmaceuticalDoseForm",
+            "description": "Represents the form in which medication is administered, e.g., capsule, ampule."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "General class for healthcare related products including medications and devices."
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+it@1=0, Hit@5=1, Hit@15=1
+Diagnosis_Masked: Hit@1=0, Hit@5=0, Hit@15=1
+Lab_Results: Hit@1=0, Hit@5=0, Hit@15=0
+Lab_Results_Masked: Hit@1=0, Hit@5=1, Hit@15=1
+Patients: Hit@1=0, Hit@5=1, Hit@15=1
+
+Patients_Masked: Hit@1=0, Hit@5=1, Hit@15=1

@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents clinical observations, measurements or assessments, fitting to measurement-related data."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents individuals receiving health services, relevant if the table is patient-centric."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Denotes a specific measurement or test conducted, suitable for measurement_code and measurement_value."
+        },
+        {
+            "label": "ClinicalEncounter",
+            "iri": "https://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Indicates a healthcare encounter or visit, useful if data relates to specific clinical events."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "Represents biospecimens collected from subjects, relevant if the dataset involves sample information."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Refers to medical or laboratory procedures performed, aligns with measurement or testing context."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Denotes physical samples derived from subjects, relevant for sample and specimen columns."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Relates to medical conditions or diagnoses, possibly linked to measurement interpretations."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Defines specific categories of observations, such as laboratory or vital signs, aligning with measurement context."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Cancer diagnoses, relevant if the dataset involves oncology clinical data."
+        },
+        {
+            "label": "MeasurementMethod",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod",
+            "description": "Describes how measurements were obtained, suitable for measurement_method."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Represents vital signs data such as heart rate, blood pressure, fitting for measurement_value columns."
+        },
+        {
+            "label": "Substance",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Substance",
+            "description": "Substances involved in treatments or samples, relevant for measurement units or reagents."
+        },
+        {
+            "label": "TimePoint",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Denotes times or periods, relevant for measurement_date."
+        },
+        {
+            "label": "Entity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A very generic class that could encompass all involved entities, acting as a root class."
+        }
+    ]
+}

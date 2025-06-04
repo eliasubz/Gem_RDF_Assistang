@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A diagnostic report which can encompass patient observations, measurements, and results, connecting identifiers, numeric lab values, units, and timestamps."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Data representing measurements or assessments, suitable to model numeric values, codes, units, and time."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person receiving healthcare; linking identifiers and related health data."
+        },
+        {
+            "label": "ObservationCategory/Laboratory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory",
+            "description": "Laboratory observation category, grouping lab measurements and related entities."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifiers associated with patients."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Sample or specimen related to diagnostic measurements."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Specific quantitative measurements with associated units and timestamps."
+        },
+        {
+            "label": "Unit",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+            "description": "Units of measurement related to numeric values."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Timestamp or time-related data."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Procedures that may relate to measurements or diagnostic reports."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medicinal products possibly linked to patient observations."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Context for the patient's visit or event associated with the data."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Medical condition potentially related to observations and diagnostic data."
+        },
+        {
+            "label": "BodySite",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite",
+            "description": "Anatomical location relevant to observations or specimens."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "General category for types of observations, allowing classification of different clinical data."
+        }
+    ]
+}

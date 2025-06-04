@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "",
+                "path_id": 0
+            },
+            "justification": "There is no explicit path in the ontology for a technical row identifier. This field is likely only for internal tracking and does not correspond to a biomedical concept in the ontology. If needed in RDF, it could be used to generate the URI for each sphn:Measurement instance (as a subject identifier), but it does not map directly to a property.",
+            "transformation": "Use as local identifier for Measurement instance URIs, e.g., as a suffix or fragment in resource URIs."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 26
+            },
+            "justification": "The 'patient_id' column appears to be a pseudonymized identifier for the patient. Path 26 traverses via AIDAVA:hasPatient to AIDAVA:Patient, then uses AIDAVA:hasPatientIdentifier, which is the most specific match for a patient pseudonym. I considered path 17 (hasSubjectPseudoIdentifier), but the explicit patient identifier path is more accurate and specific.",
+            "transformation": "No transformation required unless URI formatting for identifiers is needed."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "The 'measurement_code' column contains a code representing the measurement, such as a LOINC or ICD code. The direct path via sphn:hasCode (path 4) is appropriate, as it links the measurement to a code entity. I considered traversing further (e.g., to sphn:hasCode->sphn:Code->sphn:hasIdentifier, path 50), but unless the CSV supplies system/version or code name, the immediate link to Code is best.",
+            "transformation": "No transformation unless further decomposition of code meaning is needed."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#double",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+                "path_id": 86
+            },
+            "justification": "Measurement values are typically numeric and quantitative. Path 86 (sphn:hasQuantity -> sphn:Quantity -> sphn:hasValue [xsd:double]) is optimal as it models the value as a quantitative property. Paths to sphn:hasValue as string (87) are less accurate for numeric data.",
+            "transformation": "Convert the value to a floating point number (xsd:double) if not already."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit",
+                "path_id": 85
+            },
+            "justification": "Units are semantically part of quantitative values. Path 85 (sphn:hasQuantity -> sphn:Quantity -> sphn:hasUnit [sphn:Unit]) correctly links the measurement’s unit to the ontology. No further 2-hop path exists for a more detailed match.",
+            "transformation": "Standardize unit codes/values to match ontology’s Unit instances if possible."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "Dates of measurements should be mapped using sphn:hasMeasurementDateTime (path 20), which is semantically specific for the time the measurement was made. Considered path 18 (hasDateTime), but hasMeasurementDateTime is more precise for this column’s intent.",
+            "transformation": "Convert date string to xsd:dateTime (e.g., ISO 8601 format: YYYY-MM-DD or with time if available)."
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/hasAdministrativeCase",
+                "path_id": 3
+            },
+            "justification": "'row_id' represents a unique row identifier, best mapped to the administrative case associated with the problem condition, as it likely corresponds to the case record rather than the patient or measurement.",
+            "transformation": "Convert 'row_id' to a string identifier consistent with administrative case IDs."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' directly refers to the patient linked to the problem condition, best mapped via the 'hasPatient' property to the Patient entity (Path 1). A 2-hop path was not available that better specifies the patient identifier.",
+            "transformation": "Ensure patient_id format matches expected URI or identifier format for Patient entity."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/hasCode",
+                "path_id": 5
+            },
+            "justification": "'diagnosis_code' maps semantically to the 'hasCode' property leading to a Code entity representing diagnosis codes. Although 'hasCode' also leads to Terminology (Path 6), Code is more precise for a diagnosis code value.",
+            "transformation": "Validate and format diagnosis_code according to the code system standards."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/hasRecordDateTime",
+                "path_id": 17
+            },
+            "justification": "'created_at' corresponds to the datetime when the record was created, matching 'hasRecordDateTime' property (Path 17). Other datetime properties like 'hasDateTime' or 'hasOnsetDateTime' are less precise for record creation timestamps.",
+            "transformation": "Convert 'created_at' string to xsd:dateTime format (ISO 8601)."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "'org_code' relates to the organization providing data, best mapped to 'hasDataProviderInstitute' leading to DataProviderInstitute (Path 8). No 2-hop paths provide more specific mapping for the organization code.",
+            "transformation": "Format 'org_code' to align with the organization's identifier URI or code system."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "'org_name' is the name of the data provider institute, logically linked to the same 'hasDataProviderInstitute' path as 'org_code'. The institute entity would hold the name as a literal property.",
+            "transformation": "No special transformation; store as xsd:string literal."
+        }
+    ]
+}

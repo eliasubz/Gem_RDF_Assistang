@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a patient or individual receiving healthcare services, linking to clinical observations, conditions, diagnoses, and identifiers."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents a medical condition or diagnosis, encompassing various health issues and their attributes."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A broad entity capturing any medical observation or measurement, applicable across laboratories, vital signs, and clinical reports."
+        },
+        {
+            "label": "Encounter",
+            "iri": "https://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Represents a healthcare encounter or interaction between patient and healthcare provider."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "A biological or clinical sample collected from a patient for testing or research."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Any medical procedure or intervention performed as part of diagnostics or treatment."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Specimens collected for analysis, linked to samples and laboratory testing."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Biomedical products such as drugs, reagents, or devices involved in patient care or testing."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medications prescribed or administered to a patient."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "Identification of a disease or condition, linking diagnostic observations and codes."
+        },
+        {
+            "label": "ImagingReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Reports derived from diagnostic imaging procedures, linked to imaging tests and findings."
+        },
+        {
+            "label": "VitalSign",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Core vital parameters such as heart rate, blood pressure, and temperature."
+        },
+        {
+            "label": "GeneticSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticSample",
+            "description": "Samples used for genetic analysis, related to genomic variation and molecular diagnosis."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categories grouping different types of observations, including laboratory, social history, and vital signs."
+        },
+        {
+            "label": "ClinicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "An overarching entity representing a collection of clinical data or record for an individual or case."
+        }
+    ]
+}

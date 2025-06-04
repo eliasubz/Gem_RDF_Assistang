@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An Observation represents a single measurement or assertion made about a subject, such as a laboratory result or clinical finding. Well-suited as an overarching entity for rows linking subject, analyte, value, unit, and time."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "A LabResult represents the outcome of a laboratory test, including value, unit, and code, generally specific to diagnostic settings."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "A generic measurement entity representing the act or product of quantifying a property; fits cases where the exact biomedical context is unspecified."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A DiagnosticReport collects and organizes results of diagnostic procedures, potentially aggregating multiple Observations."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A HealthcareEncounter is a broader entity representing a set of activities relating to a patient in a health episode, which might bundle the relevant Observations and Diagnoses."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "description": "A healthcare Procedure is an action performed for or on a patient, often linked to Observations and Results."
+        },
+        {
+            "label": "LabTest",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest",
+            "description": "LabTest describes the laboratory analysis conducted, to which a LabResult is typically attributed."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A highly generic umbrella class for any well-defined biomedical concept in SPHN; can embed broad tabular data, but lacks specificity."
+        },
+        {
+            "label": "MeasurementMethod",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod",
+            "description": "An entity describing the method or protocol for generating a measurement; relevant if method-level aggregation is needed."
+        },
+        {
+            "label": "ObservationCategory/Laboratory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory",
+            "description": "A further specification of Observation, representing those within the laboratory domain; may be useful if table is strictly lab data."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An AdministrativeCase encompasses the administrative context for one or more healthcare events; appropriate if the table reflects broader case data."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A Patient as the main entity is highly generic and best when the table represents one record per patient, not per measurement or event."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "A Specimen is a sample from which lab measurements are derived; appropriate if each row is a specimen-centric view."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "An entity for unique subject identifiers; use only if the table is primarily identification or linkage data."
+        },
+        {
+            "label": "DiagnosticRadiologicExamination",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "description": "Represents diagnostic imaging procedures; unlikely for classic lab data but relevant if the table is for imaging-based results."
+        }
+    ]
+}

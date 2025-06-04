@@ -1,0 +1,171 @@
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of ontology paths rooted in a main entity class, map each column to the most semantically appropriate ontology path, producing RDF triples for later use.
+
+## Ontology Metadata
+- **Main Entity Type**: `https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement`
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Input
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+2. Available Paths:
+
+
+1. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient)
+2. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase)
+3. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite)
+4. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+5. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+6. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination)
+7. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile)
+8. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute)
+9. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest] => (https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest)
+10. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod)
+11. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice)
+12. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+13. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+14. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity)
+15. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange] => (https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange)
+16. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample)
+17. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier)
+18. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+19. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText] => (http://www.w3.org/2001/XMLSchema#string)
+20. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+21. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult] => (http://www.w3.org/2001/XMLSchema#string)
+22. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender)
+23. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate)
+24. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent)
+25. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription)
+26. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier)
+27. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition] => (https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition)
+28. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure)
+29. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName)
+30. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress] => (http://www.w3.org/2001/XMLSchema#string)
+31. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+32. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+33. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient)
+34. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCareHandling] => (https://biomedit.ch/rdf/sphn-ontology/sphn#CareHandling)
+35. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile)
+36. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute)
+37. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDischargeLocation] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Location)
+38. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLocation] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Location)
+39. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasOriginLocation] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Location)
+40. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier)
+41. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdmissionDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+42. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+43. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDischargeDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+44. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+45. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+46. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+47. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLaterality] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Laterality)
+48. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText] => (http://www.w3.org/2001/XMLSchema#string)
+49. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingSystemAndVersion] => (http://www.w3.org/2001/XMLSchema#string)
+50. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+51. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasName] => (http://www.w3.org/2001/XMLSchema#string)
+52. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+53. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+54. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMethodCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+55. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMethodCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+56. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient)
+57. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+58. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+59. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute)
+60. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasFormatCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+61. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasFormatCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+62. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier)
+63. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+64. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasName] => (http://www.w3.org/2001/XMLSchema#string)
+65. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasUniformResourceIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+66. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+67. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+68. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasName] => (http://www.w3.org/2001/XMLSchema#string)
+69. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest] => (https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+70. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest] => (https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+71. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest] => (https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasInstrument] => (https://biomedit.ch/rdf/sphn-ontology/sphn#LabAnalyzer)
+72. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest] => (https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasTestKit] => (https://biomedit.ch/rdf/sphn-ontology/sphn#LabAnalyzer)
+73. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+74. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+75. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+76. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+77. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasProductCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+78. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasProductCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+79. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasTypeCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+80. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice] => (https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasTypeCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+81. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingSystemAndVersion] => (http://www.w3.org/2001/XMLSchema#string)
+82. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+83. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasName] => (http://www.w3.org/2001/XMLSchema#string)
+84. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasComparator] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept)
+85. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Unit)
+86. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue] => (http://www.w3.org/2001/XMLSchema#double)
+87. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue] => (http://www.w3.org/2001/XMLSchema#string)
+88. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange] => (https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasLowerLimit] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity)
+89. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange] => (https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity)
+90. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange] => (https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasUpperLimit] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity)
+91. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange] => (https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText] => (http://www.w3.org/2001/XMLSchema#string)
+92. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient] => (https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient)
+93. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase] => (https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase)
+94. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite] => (https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite)
+95. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+96. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+97. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile)
+98. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute)
+99. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasFixationType] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept)
+100. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMaterialTypeCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Code)
+101. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasMaterialTypeCode] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology)
+102. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasPrimaryContainer] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept)
+103. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier)
+104. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasCollectionDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+105. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+106. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample] => (https://biomedit.ch/rdf/sphn-ontology/sphn#Sample) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+107. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute] => (https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute)
+108. (https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier] => (https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier) => [https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier] => (http://www.w3.org/2001/XMLSchema#string)
+3. CSV Data:
+
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| row_id | 4, 1, 3 |
+| patient_id | PAT00004, PAT00003, PAT00001 |
+| measurement_code | R50.9, R00.0, E11.9 |
+| measurement_value | 56.48, 101.93, 81.12 |
+| measurement_unit | mm[Hg], /minn, mg/dL |
+| measurement_date | 2025-01-27, 2025-02-03, 2025-02-17 |
+
+## Requirements
+For each CSV column:
+1. Identify the most semantically appropriate path from the main entity through the ontology
+2. Select exactly one optimal path for each column
+3. Document your reasoning for choosing each path, including any alternatives considered
+4. Handle nested relationships and complex datatypes appropriately
+
+## Expected Output
+For each column, provide:
+1. Column number/name
+2. The complete selected path using proper ontology notation (e.g., entity:property1/property2/property3) and the number of the path that is provided also in the input
+3. Brief justification for the selected mapping (1-2 sentences)
+4. Any data transformation required (datatype conversion, formatting, etc.)
+
+
+
+## Example Format
+"column_mappings": [
+    {
+        "column_name": "entity_id",
+        "path": {
+            "source_entity": "http://example.org/ontology#Observation",
+            "target_entity": "http://example.org/ontology#Entity",
+            "predicate": "http://example.org/ontology#refersToEntity",
+            "path_id": 1
+        },
+        "justification": "The 'entity_id' field represents a unique identifier associated with the main observation, making this path semantically appropriate.",
+        "transformation": "Ensure the ID format matches URI requirements (e.g., prefix or encode)."
+    },
+]
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options

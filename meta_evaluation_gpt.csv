@@ -1,0 +1,17 @@
+Config ID,Hop,URI,#Sample Values,Strict,Accuracy,#Correct,#Total Cases,#Accuracy Administration,#Acc Measurement,#Acc Prescription
+EXP2,1,Short,1,Yes,87.5,14,16,60.0,100.0,100.0
+EXP4,1,Long,1,Yes,87.5,14,16,60.0,100.0,100.0
+EXP6,1,Short,3,Yes,87.5,14,16,60.0,100.0,100.0
+EXP8,1,Long,3,Yes,81.25,13,16,60.0,100.0,83.33
+EXP10,2,Short,1,Yes,62.5,10,16,40.0,100.0,50.0
+EXP12,2,Long,1,Yes,25.0,4,16,20.0,60.0,0.0
+EXP14,2,Short,3,Yes,56.25,9,16,40.0,100.0,33.33
+EXP16,2,Long,3,Yes,56.25,9,16,60.0,80.0,33.33
+EXP1,1,Short,1,No,93.75,15,16,80.0,100.0,100.0
+EXP3,1,Long,1,No,93.75,15,16,80.0,100.0,100.0
+EXP5,1,Short,3,No,93.75,15,16,80.0,100.0,100.0
+EXP7,1,Long,3,No,87.5,14,16,80.0,100.0,83.33
+EXP9,2,Short,1,No,68.75,11,16,40.0,100.0,66.67
+EXP11,2,Long,1,No,68.75,11,16,60.0,80.0,66.67
+EXP13,2,Short,3,No,62.5,10,16,40.0,100.0,50.0
+EXP15,2,Long,3,No,75.0,12,16,60.0,80.0,83.33

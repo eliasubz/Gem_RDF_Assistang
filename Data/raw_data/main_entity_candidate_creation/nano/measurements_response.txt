@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "PatientRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Entity representing a patient's comprehensive medical record or encounter."
+        },
+        {
+            "label": "ObservationSet",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Entity encompassing various observations, measurements, and test results for a patient."
+        },
+        {
+            "label": "ClinicalEncounter",
+            "iri": "https://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Entity representing a healthcare encounter or visit, linking patient and observations."
+        },
+        {
+            "label": "MedicalSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Sample",
+            "description": "Entity that groups samples, specimens, and related laboratory data."
+        },
+        {
+            "label": "LaboratoryResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/LabResult",
+            "description": "Entity representing laboratory test outcomes associated with a patient sample."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Measurement",
+            "description": "Entity for specific measurements like blood pressure, enzyme levels, etc."
+        },
+        {
+            "label": "MedicalObservation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "General entity covering observations across clinical, vital signs, or lab categories."
+        },
+        {
+            "label": "DiagnosisRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Entity representing diagnostic conditions or diagnoses linked to the patient."
+        },
+        {
+            "label": "ProcedureEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Entity representing medical procedures or interventions."
+        },
+        {
+            "label": "MedicationInfo",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Entity encapsulating medication prescriptions, administration, and related data."
+        },
+        {
+            "label": "SpecimenInfo",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Entity including sample collection, fixation, and processing details."
+        },
+        {
+            "label": "PatientProfile",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Entity representing a patient with demographic and identification data."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Entity specializing in cancer-related diagnoses."
+        },
+        {
+            "label": "VitalSignsRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Entity capturing vital signs like blood pressure, heart rate, temperature."
+        },
+        {
+            "label": "GeneticAnalysis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "Entity for genetic or genomic data, variations, and related tests."
+        }
+    ]
+}

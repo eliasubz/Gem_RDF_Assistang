@@ -8,8 +8,11 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from Path_Finding_Logic.main import PathFinder
 
+# 1. Setup output dir
 output_dir = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/exp_one_hop"
+# 2. Setup CSV dir
 csv_dir = "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset"
+# 3. Setup analasis holding the groundtruth OAT
 analysis_dir = (
     "C:/Users/elias/Documents/ANI/Bachelor_Baby/llm_assistant/curated_dataset/analysis"
 )

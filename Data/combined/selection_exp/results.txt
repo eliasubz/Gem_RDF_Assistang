@@ -1,0 +1,21 @@
+
+gpt 
+Accuracy with top-5 entity subgraphs: 16.67%
+
+✅ Accuracy with top-10 entity subgraphs: 16.67%
+
+✅ Accuracy with top-15 entity subgraphs: 33.33%
+
+mini 
+Accuracy with top-5 entity subgraphs16.67%
+
+✅ Accuracy with top-10 entity subgraphs: 16.67%
+
+✅ Accuracy with top-15 entity subgraphs: 16.67%
+
+nano
+✅ Accuracy with top-5 entity subgraphs: 16.67%
+
+✅ Accuracy with top-10 entity subgraphs: 0.00%
+
+✅ Accuracy with top-15 entity subgraphs: 0.00%

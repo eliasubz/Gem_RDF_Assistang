@@ -1,0 +1,111 @@
+prefixes:
+  aidava-resource: https://rdf.aidava.eu/resource/
+  aidava: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
+  sphn: https://biomedit.ch/rdf/sphn-ontology/sphn#
+  aidava-sphn: https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/
+  ucum: https://biomedit.ch/rdf/sphn-resource/ucum/
+  sphn-loinc: https://biomedit.ch/rdf/sphn-resource/loinc/
+  snomed: http://snomed.info/id/
+  sphn-chop: https://biomedit.ch/rdf/sphn-resource/chop/
+  atc: https://www.whocc.no/atc_ddd_index/?code=
+  hgnc: https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/
+  sphn-icd-10: https://biomedit.ch/rdf/sphn-resource/icd-10-gm/
+sources:
+  data:
+    access: C:\Users\elias\rdfcraft\temp\b9cf13d9b5304700aa3ed9d5719efcd5.csv
+    referenceFormulation: csv
+mappings:
+  b22bf906-6c44-40d1-b822-85249738b4e3:
+    source: data
+    s: aidava-resource:Patient/$(patient_id)
+    po:
+    - predicate: a
+      object: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+      type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender
+      object:
+        value: aidava-resource:Patient/AdministrativeGender/$(patient_id)
+        type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName
+      object:
+        value: aidava-resource:Patient/SubjectName/$(patient_id)
+        type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+      object:
+        value: $(patient_id)
+        datatype: http://www.w3.org/2001/XMLSchema#string
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime
+      object:
+        value: $(birthdate)
+        datatype: http://www.w3.org/2001/XMLSchema#dateTime
+  d847da16-27f9-4f15-8ac1-f3e1a2213e41:
+    source: data
+    s: aidava-resource:Patient/AdministrativeGender/$(patient_id)
+    po:
+    - predicate: a
+      object: https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender
+      type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
+      object:
+        value: snomed:$(gender_code_snomed)
+        type: iri
+  ca4747e9-72bb-4a9e-8490-00fa3743fa93:
+    source: data
+    s: snomed:$(gender_code_snomed)
+    po:
+    - predicate: a
+      object: https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology
+      type: iri
+  afb01f4e-2571-40ec-8a1e-d724d60ffaf5:
+    source: data
+    s: aidava-resource:Patient/SubjectName/$(patient_id)
+    po:
+    - predicate: a
+      object: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+      type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+      object:
+        value: $(family_name)
+        datatype: http://www.w3.org/2001/XMLSchema#string
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+      object:
+        value: $(given_name)
+        datatype: http://www.w3.org/2001/XMLSchema#string
+  982c43cc-c928-4c61-9c96-42b871f52687:
+    source: data
+    s: aidava-resource:AdministrativeCase/$(id)
+    po:
+    - predicate: a
+      object: https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+      type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
+      object:
+        value: aidava-resource:Patient/$(patient_id)
+        type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasOriginLocation
+      object:
+        value: aidava-resource:AdministrativeCase/OriginLocation/$(id)
+        type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdmissionDateTime
+      object:
+        value: $(admission_date)
+        datatype: http://www.w3.org/2001/XMLSchema#dateTime
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasDischargeDateTime
+      object:
+        value: $(discharge_date)
+        datatype: http://www.w3.org/2001/XMLSchema#dateTime
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+      object:
+        value: $(id)
+        datatype: http://www.w3.org/2001/XMLSchema#string
+  036518cc-dd29-4ccf-85e7-434a55b6b4d0:
+    source: data
+    s: aidava-resource:AdministrativeCase/OriginLocation/$(id)
+    po:
+    - predicate: a
+      object: https://biomedit.ch/rdf/sphn-ontology/sphn#Location
+      type: iri
+    - predicate: https://biomedit.ch/rdf/sphn-ontology/sphn#hasExact
+      object:
+        value: $(department)
+        datatype: http://www.w3.org/2001/XMLSchema#string

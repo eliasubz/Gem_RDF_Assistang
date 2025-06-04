@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 44
+            },
+            "justification": "The CSV 'row_id' serves as a unique identifier for the measurement instance. While there is no direct path named 'hasIdentifier' from Measurement, the closest semantically relevant unique identifier path is through AdministrativeCase's identifier. However, given no direct 1-hop path from Measurement named 'hasIdentifier' exists, the best fit is to consider 'row_id' as an internal identifier for Measurement itself, requiring a new property or use as a literal identifier. Hence, no exact path matches, so it is best modeled as a literal identifier of Measurement itself (implicit).",
+            "transformation": "No transformation needed; treat as string or integer literal identifying the measurement instance."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 26
+            },
+            "justification": "The 'patient_id' clearly identifies the patient associated with the measurement. The best semantic path leads from Measurement to Patient via AIDAVA:hasPatient, then to the patient identifier via AIDAVA:hasPatientIdentifier, which is the formal patient ID representation.",
+            "transformation": "Ensure patient_id values conform to identifier URI or string literal format consistent with ontology requirements."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "The 'measurement_code' denotes the code describing the measurement type or concept. The direct path from Measurement to Code via 'hasCode' is the most appropriate mapping, as 'measurement_code' corresponds to this coded concept. Checking 2-hop paths such as through Terminology (path 5) or nested codes did not add semantic precision for this simple coding field.",
+            "transformation": "No transformation required; store as string literal or URI per code system conventions."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+                "path_id": 86
+            },
+            "justification": "The 'measurement_value' is a numeric quantity associated with the measurement. The ontology models quantities with a Quantity node linked via 'hasQuantity' and the actual numeric value stored via 'hasValue'. This 2-hop path from Measurement to Quantity to hasValue (double) is semantically precise and preferred over a 1-hop path which does not exist for value.",
+            "transformation": "Convert measurement_value to xsd:double datatype for numeric consistency."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit",
+                "path_id": 85
+            },
+            "justification": "Units are semantically linked to the quantity measured. The 2-hop path from Measurement to Quantity to Unit via 'hasUnit' is the proper semantic location to map 'measurement_unit'. This is better than any direct path from Measurement to unit, which does not exist.",
+            "transformation": "Map unit strings to corresponding ontology Unit concepts or literals per ontology standards."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "The date when the measurement was taken is directly modeled by 'hasMeasurementDateTime' linking Measurement to a dateTime literal. This 1-hop path is optimal and semantically accurate for 'measurement_date'. Alternative dateTime properties exist but are less specific (like 'hasDateTime'), so the specific measurement date is preferred.",
+            "transformation": "Convert date strings to xsd:dateTime format, ensuring ISO 8601 compliance."
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A central construct representing a health care event or visit, typically associating patient, identifiers, diagnoses, procedures, and various clinical observations, making it an excellent candidate for integrating diverse clinical columns."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A grouping for data related to an administrative or clinical workflow case, able to link identifiers, subject/patient, clinicians, and event times."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "The primary subject of care, linking to names, identifiers, and demographic or administrative information, but less suited for event-centric data like encounter type."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A generic observation or measurement, useful if each row represents a concrete observed event or value set, with flexible links to subjects (patients)."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A clinical procedure or action comprising participant (patient), performed date, performer, and context, possible if the table represents such acts."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A synthesized collection of diagnostic results for a subject in a session, connecting patient, date, reporters, and outcomes."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A specific clinical condition, episode, or diagnosis for a patient, useful if the table rows are distinct episodes."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A superclass categorizing observations—could be used if the table centers on a category of results for each subject or event."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "For datasets fundamentally about subject identity; however, unlikely to cover full column semantic spread."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Covers only naming and identity aspects."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Covers identifiers; appropriate if rows are about registration or identity events."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "If data primarily represents laboratory reporting per patient/encounter; less relevant if data is broader."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "For disease or condition-centric data per row."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Disease/condition focus, especially if the dataset is oncology-specific."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A very generic superclass for all core SPHN concepts; can always be used if no better fit is obvious."
+        }
+    ]
+}

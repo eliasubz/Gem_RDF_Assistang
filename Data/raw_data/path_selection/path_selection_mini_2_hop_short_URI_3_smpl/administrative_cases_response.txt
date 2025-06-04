@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasSubjectPseudoIdentifier/sphn:hasIdentifier",
+                "path_id": 89
+            },
+            "justification": "The 'row_id' is an internal unique identifier for each row, mapping best to a unique identifier property; path 89 leads from ProblemCondition via hasSubjectPseudoIdentifier to hasIdentifier, which semantically fits a unique string ID. No better 2-hop path offers more semantic accuracy for this internal ID.",
+            "transformation": "Convert numeric row_id to string and ensure uniqueness if used as URI fragment."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/AIDAVA:hasPatient/AIDAVA:hasPatientIdentifier",
+                "path_id": 23
+            },
+            "justification": "The 'patient_id' directly identifies the patient entity, best mapped via the path from ProblemCondition to Patient to PatientIdentifier (path 23), which matches patient identifiers. A 2-hop path beyond PatientIdentifier does not provide a more accurate semantic meaning for a patient ID.",
+            "transformation": "Ensure patient_id strings conform to URI-safe format if used as identifiers."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 67
+            },
+            "justification": "The diagnosis_code corresponds to a clinical code associated with the ProblemCondition; path 67 from ProblemCondition to Code to hasIdentifier is the most semantically precise representation of a diagnosis code. Although path 66 and 68 also relate to Code properties, hasIdentifier is the clearest mapping for a code value.",
+            "transformation": "Normalize codes as strings; preserve leading zeros and numeric format as string."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasDateTime",
+                "path_id": 14
+            },
+            "justification": "The 'created_at' timestamp maps directly to the ProblemCondition's creation date/time. Path 14 provides a direct link with the xsd:dateTime datatype, which fits the CSV datetime format. No 2-hop path offers more semantic specificity for creation date than this direct dateTime property.",
+            "transformation": "Convert string to xsd:dateTime format (ISO 8601) if needed."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasDataProviderInstitute/sphn:hasCode",
+                "path_id": 79
+            },
+            "justification": "The 'org_code' represents a code identifying the data provider organization, best mapped via the DataProviderInstitute entity linked to ProblemCondition and its associated Code (path 79). Although path 80 offers Terminology, Code is more appropriate for org codes. No deeper path improves semantic accuracy for the org code.",
+            "transformation": "Treat as string; ensure code format compliance."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasDataProviderInstitute/sphn:hasName",
+                "path_id": 81
+            },
+            "justification": "The 'org_name' corresponds to the human-readable name of the data provider institution, fitting the path from ProblemCondition to DataProviderInstitute to hasName (path 81). This direct 2-hop path is semantically precise and preferable over any 1-hop alternatives.",
+            "transformation": "Use string as-is; ensure UTF-8 encoding."
+        }
+    ]
+}

@@ -3,77 +3,77 @@
         {
             "label": "Patient",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
-            "description": "A person who is the subject of healthcare services or medical data."
-        },
-        {
-            "label": "PatientIdentifier",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
-            "description": "An identifier assigned to a patient to uniquely identify them in medical contexts."
+            "description": "Represents an individual receiving healthcare services, likely to be the main entity in medical datasets."
         },
         {
             "label": "HealthcareEncounter",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
-            "description": "An interaction between a patient and healthcare provider during which healthcare service is provided."
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "Captures interactions between patients and healthcare providers, potentially overarching medical records."
         },
         {
-            "label": "Procedure",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
-            "description": "A medical procedure conducted on a patient, such as diagnosis or treatment."
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents reports generated from diagnostic tests, central to clinical datasets."
         },
         {
-            "label": "Diagnosis",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
-            "description": "The identification of a disease or condition in a patient."
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "Substance or specimen obtained from a patient, potentially serving as a main entity linking various observations and tests."
         },
         {
-            "label": "AdverseEvent",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
-            "description": "An undesirable experience associated with the use of a medical intervention."
-        },
-        {
-            "label": "SubjectName",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
-            "description": "The name or designation of a subject or patient."
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological material collected for analysis, which could be the primary entity connecting patient data with lab tests."
         },
         {
             "label": "Condition",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
-            "description": "A detailed clinical state or diagnosis affecting a patient."
+            "description": "Represents health conditions or diagnoses, possibly serving as an overarching health state descriptor."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Any intervention or test performed on a patient, could serve as a main workflow entity."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Pharmaceutical substances prescribed or administered to patients, relevant as a main entity in medication-related datasets."
         },
         {
             "label": "Observation",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
-            "description": "A measurement or assessment recorded about a patient."
-        },
-        {
-            "label": "ObservationCategory",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
-            "description": "A category grouping for types of clinical observations."
-        },
-        {
-            "label": "EmergencyEncounter",
-            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
-            "description": "An encounter class representing emergency situations in healthcare."
-        },
-        {
-            "label": "MedicalEncounter",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
-            "description": "A healthcare encounter covering any medical services including emergency and routine."
-        },
-        {
-            "label": "DateTime",
-            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
-            "description": "A datatype representing dates and times, useful for timestamps related to clinical events."
-        },
-        {
-            "label": "MedicalRecord",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
-            "description": "A report summarizing diagnostic and clinical information about a patient."
+            "description": "Measurement or assessment result, often central to clinical data collections."
         },
         {
             "label": "Person",
-            "iri": "http://www.w3.org/2002/07/owl#Class",
-            "description": "A general concept of an individual human being."
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Person",
+            "description": "A general entity representing an individual, potentially serving as an overarching entity in demographic data."
+        },
+        {
+            "label": "Tumor",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Tumor",
+            "description": "Represents neoplastic growths, can be a main entity in oncology datasets."
+        },
+        {
+            "label": "BiobankSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Biosample",
+            "description": "Sample stored in a biobank, central to research datasets involving biological materials."
+        },
+        {
+            "label": "GenomicData",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/GenomicData",
+            "description": "Genomic or molecular level data, possibly serving as a primary entity in genetic studies."
+        },
+        {
+            "label": "HealthRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthRecord",
+            "description": "A comprehensive record of a patient's health data, potentially the overall entity for full datasets."
+        },
+        {
+            "label": "LaboratoryTest",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/LaboratoryTest",
+            "description": "A specific test performed in a laboratory setting, useful as a core entity in lab data."
         }
     ]
 }

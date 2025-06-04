@@ -1,0 +1,67 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 16
+            },
+            "justification": "The 'row_id' uniquely identifies each prescription record and maps best to the SubjectPseudoIdentifier property, which likely serves as an internal or record identifier in the ontology. Although the Patient entity also has identifiers, 'row_id' is at DrugPrescription level, making path 16 optimal.",
+            "transformation": "Convert integer ID to string format matching SubjectPseudoIdentifier conventions if needed."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "sphn:DrugPrescription/AIDAVA#hasPatient/AIDAVA#Patient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' corresponds to the patient related to the drug prescription, best represented by the path from DrugPrescription to Patient via hasPatient. No deeper path provides better semantic resolution for a patient identifier.",
+            "transformation": "Convert patient_id to a URI or identifier format consistent with Patient entity."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn#hasDrug/sphn#hasCode/sphn#Code",
+                "path_id": 5
+            },
+            "justification": "The medication code (ATC code) describes the drug and fits best as a code of the Drug entity. The path through hasDrug to hasCode (Code) is semantically precise. Considering 2-hop alternatives, none surpass this direct semantic fit.",
+            "transformation": "Standardize ATC codes to uppercase and verify code format compliance."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn#hasIndicationToStart/sphn#Diagnosis",
+                "path_id": 12
+            },
+            "justification": "Diagnosis codes indicate the medical reason for the prescription. Mapping to hasIndicationToStart leading to Diagnosis is semantically accurate. Although Intent is an alternative, Diagnosis better captures coded diagnoses.",
+            "transformation": "Normalize diagnosis codes to standard coding system format if applicable."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn#hasDateTime",
+                "path_id": 18
+            },
+            "justification": "Creation date corresponds to the datetime of the prescription event, best matched by the hasDateTime property with xsd:dateTime datatype. No deeper path offers better semantic specificity.",
+            "transformation": "Convert string date-time to xsd:dateTime format (ISO 8601)."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn#hasFrequency/sphn#Quantity",
+                "path_id": 11
+            },
+            "justification": "The frequency of medication intake ('times_a_day') maps best to hasFrequency with a Quantity datatype, capturing how often the drug is taken per day. No suitable 2-hop extension improves semantic precision here.",
+            "transformation": "Convert integer frequency to Quantity datatype, including unit (e.g., times/day)."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn#hasDrugQuantity/sphn#Quantity",
+                "path_id": 10
+            },
+            "justification": "Dosage information corresponds to the amount of drug prescribed, best mapped via hasDrugQuantity leading to Quantity. This path semantically captures the dose including units. Other quantity paths (e.g., hasQuantity) are less specific.",
+            "transformation": "Parse dosage text (e.g., '1 capsule') into structured Quantity with numeric value and unit."
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime",
+                "path_id": 14
+            },
+            "justification": "The 'row_id' serves as a unique record identifier; mapping it to 'hasRecordDateTime' is a placeholder, but ideally a dedicated ID property would be used. Since no specific ID property is available, this is a best fit based on available paths.",
+            "transformation": "Format as a URI or literal string as per system requirements."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 13
+            },
+            "justification": "The 'patient_id' uniquely identifies the patient within the problem condition context, making 'hasSubjectPseudoIdentifier' the most semantically appropriate property.",
+            "transformation": "Ensure the identifier is formatted as a string or URI as required."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 5
+            },
+            "justification": "The 'diagnosis_code' directly corresponds to a coded value, making 'hasCode' with the 'Code' entity an appropriate mapping.",
+            "transformation": "Format as string or code literal, possibly with code system annotation."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime",
+                "path_id": 14
+            },
+            "justification": "The 'created_at' timestamp naturally maps to 'hasRecordDateTime', capturing temporal information about the record creation.",
+            "transformation": "Convert to ISO 8601 dateTime format."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase",
+                "path_id": 3
+            },
+            "justification": "Although 'org_code' is not directly an administrative case, it likely relates to the context where administrative details are stored; choosing 'hasAdministrativeCase' provides a semantic link to administrative data.",
+            "transformation": "Format as string."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase",
+                "path_id": 3
+            },
+            "justification": "Similarly, 'org_name' can be associated with the administrative context via 'hasAdministrativeCase', providing semantic linkage.",
+            "transformation": "Format as string."
+        }
+    ]
+}

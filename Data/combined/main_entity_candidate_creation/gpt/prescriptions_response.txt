@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Drug Administration Event",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "description": "Captures the event of administering a drug/medication to a patient, likely suited because the table describes individual administrations with patient, medication code, dosage, time, and frequency."
+        },
+        {
+            "label": "Drug Prescription",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "description": "Represents the act of prescribing drugs/medications, including which substance, to whom, when, and dosage instructions. Could fit as an OAE for medication administration data."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "A substance or product given to a patient; this could represent each row if the core of the row is a medication-based event."
+        },
+        {
+            "label": "Healthcare Encounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A broader concept that includes any healthcare-related event such as a medication administration, diagnosis, or procedure per patient at a specific time."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Any act of observation or recording in a clinical setting; could work if the table is seen as clinical records for patient-medication-time-diagnosis events."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A set of actions related to patient treatment such as administering a medication, could act as a superordinate entity for medication and dosage administration."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "The entity representing the patient receiving medications and diagnoses; less optimal as a main connector unless all other entities are attributes of the patient record."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A medical condition or diagnosis can be the main axis, connecting medication treatment and prescription as responses to the underlying condition."
+        },
+        {
+            "label": "Diagnostic Report",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "If the context is a summary of diagnostic activities with resulting medication prescriptions, this could be a parent class."
+        },
+        {
+            "label": "Problem Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "Represents clinical problems or diagnoses for which drugs are administered. Could encompass both diagnosis and medication columns."
+        },
+        {
+            "label": "FOPH Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "description": "A coding for Swiss Federal Office of Public Health diagnosis cases; connects diagnosis and potential medication."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "Relevant if the act of recording a row represents a clinical sample event with associated medication/treatment/diagnosis attributes."
+        },
+        {
+            "label": "SPHN Concept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A generic superclass for all SPHN-based entities; can be used as a catch-all superordinate entity for integration, though less specific."
+        },
+        {
+            "label": "Medical Device",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice",
+            "description": "Possible if the administration involves medical devices as part of the process (e.g., ampule, drop containers)."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "If 'times_a_day' and 'dosage' are interpreted as measured attributes/events, each row could be seen as an instance of a clinical measurement record."
+        }
+    ]
+}

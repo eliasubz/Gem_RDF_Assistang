@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person receiving or registered to receive healthcare services."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event where healthcare services are provided to a patient, typically representing a hospital visit or admission."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical diagnosis, disease, or problem affecting a patient."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Clinical measurements, assessments, or recorded information about a patient."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The name details of a patient or subject."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier or code assigned to a patient for identification."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "The recorded gender of a patient used for administrative and clinical purposes."
+        },
+        {
+            "label": "Admission",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Represents an instance of patient admission to a healthcare facility."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical treatment, investigation, or operation performed on a patient."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "The determination of a health condition or disease in a patient."
+        },
+        {
+            "label": "FOPHDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "description": "A diagnosis according to the Federal Office of Public Health coding."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "A cancer-related diagnosis for a patient."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A case record of a patient’s administrative episode such as hospitalization or emergency visit."
+        },
+        {
+            "label": "TherapeuticArea",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea",
+            "description": "Medical specialty area relevant to patient care."
+        },
+        {
+            "label": "Doctor",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#GeneralMedicalPractitioner",
+            "description": "A healthcare provider or physician responsible for patient care."
+        }
+    ]
+}

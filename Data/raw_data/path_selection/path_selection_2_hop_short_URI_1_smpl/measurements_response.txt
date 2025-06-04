@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "http://www.w3.org/2001/XMLSchema#string",
+                "path_id": 19
+            },
+            "justification": "This column contains free text or string identifiers for each measurement, best mapped to the 'hasFreeText' property, which expects an XML Schema string datatype.",
+            "transformation": "Convert data to string format if necessary."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 17
+            },
+            "justification": "Patient identifiers are represented via 'hasSubjectPseudoIdentifier', linking the measurement to a pseudo-identifier for the patient.",
+            "transformation": "Ensure the patient ID is formatted as a string."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "Measurement codes are captured using 'hasCode', which links to a Code entity representing the measurement's code.",
+            "transformation": "Map code as a string if codes are textual."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Measurement values are quantitative and best represented via 'hasQuantity', which includes numerical values and units.",
+            "transformation": "Convert to double or string as appropriate; include unit via 'hasUnit'."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "The unit of measurement is linked via 'hasUnit' within the 'hasQuantity' structure, representing the measurement's unit.",
+            "transformation": "Map unit string directly, ensuring compatibility with ontology."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "Measurement date is captured via 'hasMeasurementDateTime', which expects an XML Schema dateTime datatype.",
+            "transformation": "Format date appropriately to ISO 8601 dateTime string."
+        }
+    ]
+}

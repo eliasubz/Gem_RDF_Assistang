@@ -12,28 +12,34 @@ from examples import EXAMPLE_SELECTION
 
 load_dotenv()
 LLM_API_KEY = os.getenv("POPENAI_API_KEY")
-# === Prerequisite ===
-# base/solution folder that holds the correct entity
+
 
 # === Configuration ===
 # Folder for curated dataset
 INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\curated_dataset"
 )
+INPUT_CSV_FOLDER = (
+    r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\combined"
+)
 # Raw data
 # INPUT_CSV_FOLDER = (
 #     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\raw_data"
 # )
 # Change this depending on the model
-experiment = "/nano"
-OUTPUT_FOLDER = os.path.join(
-    INPUT_CSV_FOLDER, "main_entity_candidate_selection" + experiment
-)
-SEND_TO_API = True  # Change to True if you want to get responses from OpenAI
+experiment = "no_refinement\\nano"
+experiment = "mini_no_refinement"
+experiment = "nano_no_refinement"
+experiment = "gpt_no_refinement"
+experiment = "mini_no_refinement"
+SEND_TO_API = False  # Change to True if you want to get responses from OpenAI
 # INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"ENTITY_FILE = "working_memory/clean_entities.txt"
+
 CANDIDATE_CREATION_RESPONSES_FOLDER = os.path.join(
-    INPUT_CSV_FOLDER, "main_entity_candidate_creation"  # + experiment
+    INPUT_CSV_FOLDER, "selection_exp"  # + experiment
 )
+print(CANDIDATE_CREATION_RESPONSES_FOLDER)
+OUTPUT_FOLDER = os.path.join(CANDIDATE_CREATION_RESPONSES_FOLDER, experiment)
 
 
 # Create the folder if it doesn't exist
@@ -76,6 +82,47 @@ def detect_csv_delimiter(file_path, num_lines=5):
             return ","
 
 
+def extract_column_values_as_string(csv_path, num_examples=3):
+    """
+    Extracts up to `num_examples` unique non-empty values per column from a CSV file
+    and returns a Markdown table string:
+
+    ### CSV Data (Preview)
+
+    | Column Name | Example Values          |
+    |-------------|-------------------------|
+    | patient_id  | 129342KW, 98765XY, ...  |
+    | id          | L3335, L3336, L3337     |
+    | ...         | ...                     |
+    """
+    column_examples = defaultdict(set)
+
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        delim = detect_csv_delimiter(csv_path)
+        reader = csv.DictReader(f, delimiter=delim)
+
+        for row in reader:
+            for col, val in row.items():
+                if val and val.strip():
+                    column_examples[col].add(val.strip())
+            # Stop if we have enough examples for all columns
+            if all(len(v) >= num_examples for v in column_examples.values()):
+                break
+
+    # Build markdown table string
+    lines = []
+    lines.append("### CSV Data (Preview)\n")
+    lines.append("| Column Name | Example Values |")
+    lines.append("|-------------|----------------|")
+
+    for col, vals in column_examples.items():
+        examples = list(vals)[:num_examples]
+        example_str = ", ".join(examples)
+        lines.append(f"| {col} | {example_str} |")
+
+    return "\n".join(lines)
+
+
 def extract_column_examples_as_string(csv_path, num_examples=3):
     """
     Extracts up to `num_examples` unique non-empty values per column from a CSV file
@@ -114,26 +161,60 @@ def extract_column_examples_as_string(csv_path, num_examples=3):
 
 
 def build_prompt(csv_path, rdf_candidates, subgraph_lines):
-    prompt = (
-        "You are an expert in semantic web data integration.\n"
-        "Given a list of CSV column headers and a list of RDF ontology entities, and top candidates:\n"
-        "1. Which of the following entities could best describe the tabular data provided in the CSV file?\n"
-        "Candidates for the main entity:\n"
-        "Subgraph with the direct relationships of all candidates:\n"
-        "Think about all the relations of the candidates and which entity could best fit all columns in their direct neighbourhood."
-        "So if all the columns fit into the relations it is a vrey good fit"
-    )
-    prompt += "CSV Columns:\n"
-    prompt += "\n" + extract_column_examples_as_string(csv_path, 3) + "\n\n"
-    prompt += "All URIs that you can choose from. Use these as the output: "
-    prompt += "\n".join(f"- {e}" for e in rdf_candidates)
-    prompt += "\n\nTheir respective properties:"
-    prompt += subgraph_lines
-    prompt += (
-        "\nHere is one example Output. USE THE EXACT URI that was giveen in the beginning.\n<Example>"
-        + EXAMPLE_SELECTION
-        + "</Example>"
-    )
+
+    prompt = f""" 
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of `rdf_types`, identify and rank 15 candidate entities that could serve as an overarching main entity (OAE) connecting all column-level entities in a coherent semantic structure.
+
+## Ontology Metadata
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Task:
+
+1. **Determine the Overarching Main Entity (OAE):**
+   - Examine the provided column-level entity candidates and their associated RDF subgraph.
+   - Identify whether a single RDF entity could represent the *row* as a whole — that is, an entity for which each column entity can be interpreted as a directly related property, attribute, or part.
+   - The OAE should act as the semantic anchor or subject that binds the information from all columns.
+
+2. **Reasoning Criteria:**
+   - Think about how each column maps to candidate entities in the ontology.
+   - Consider the direct relationships between these candidates and their neighbors in the RDF subgraph.
+   - A strong candidate for the OAE will be one that:
+     - Has direct or clearly inferred relationships with most or all of the column-level entities.
+     - Can semantically contain or contextualize the data represented in the entire row.
+
+3. **Output Format:**
+   - Provide a ranked list of the 15 best-fitting candidate OAEs in descending order of suitability.
+   - For the top 3 candidates, include a brief justification explaining why the entity is a strong semantic fit.
+
+
+## Input
+
+1. CSV Data:
+{extract_column_values_as_string(csv_path, 3)}
+
+2. URIs of Candidate classes you can choose from:
+
+{"\n".join(f"- {e}" for e in rdf_candidates)}
+
+
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options
+
+## Example Format
+{EXAMPLE_SELECTION}
+       
+
+"""
+    # 3. All their respective properties you should base your decision on:
+
+    # {subgraph_lines}
 
     return prompt
 
@@ -143,12 +224,14 @@ class Spanning_entity_output(BaseModel):
 
 
 def call_llm(prompt):
+
     response = client.responses.parse(
-        model="gpt-4.1-nano-2025-04-14",
+        model="gpt-4.1-nano",
         instructions="You are a data integration expert.",
         input=prompt,
         text_format=Spanning_entity_output,
     )
+    print(response.output_text)
     return response.output_text
 
 
@@ -196,11 +279,11 @@ def main():
         # Get solution
         solution_path = os.path.join(INPUT_CSV_FOLDER, "solution", f"{base_name}.txt")
         ground_truth_entity = load_solution_entities(solution_path)
-        print("\nGround Truth: ", ground_truth_entity)
         candidates = data.get("spanning_entity_candidates", [])
         iris = [entry["iri"] for entry in candidates]
 
         for top_k in TOP_K_LIST:
+            print("\nGround Truth: ", ground_truth_entity)
             selected = iris[:top_k]
 
             subgraph_lines = summarize_entity_subgraphs(RDF_TTL_PATH, selected)

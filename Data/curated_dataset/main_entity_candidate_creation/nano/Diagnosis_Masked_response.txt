@@ -3,77 +3,77 @@
         {
             "label": "Patient",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
-            "description": "An individual receiving or registered for healthcare services, identified by a patient identifier."
-        },
-        {
-            "label": "PatientIdentifier",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
-            "description": "Unique identifier assigned to a patient to distinguish them within healthcare systems."
-        },
-        {
-            "label": "DiagnosticReport",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
-            "description": "A clinical document containing diagnostic findings and interpretations."
-        },
-        {
-            "label": "Observation",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
-            "description": "An act of observing, measuring or recording patient-related information such as clinical findings or test results."
-        },
-        {
-            "label": "Procedure",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
-            "description": "An action or process performed on a patient, e.g., diagnostic or therapeutic procedure."
+            "description": "Represents an individual receiving healthcare, which could include patient-specific data in the dataset."
         },
         {
             "label": "HealthcareEncounter",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
-            "description": "An event during which healthcare services are provided to a patient."
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "Captures a healthcare event involving a patient, potentially encompassing data like visit dates and encounter details."
         },
         {
-            "label": "ObservationCategory/Laboratory",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory",
-            "description": "A category of observations related to laboratory testing."
+            "label": "BiologicalSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sample",
+            "description": "Represents a biological specimen collected from a patient, linking to sample-related entities."
         },
         {
-            "label": "ObservationCategory/VitalSigns",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns",
-            "description": "A category of observations related to vital sign measurements."
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Captures health conditions or diagnoses, relevant to patient health records."
         },
         {
-            "label": "ValueSet",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ValueSet",
-            "description": "A set of codes representing concepts used to define values for coded columns such as diagnosis or procedures."
-        },
-        {
-            "label": "Code",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
-            "description": "A coded concept representing a standardized term or identifier such as a diagnosis code."
-        },
-        {
-            "label": "DateTime",
-            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
-            "description": "Standard date and time datatype to represent temporal values of observations or events."
-        },
-        {
-            "label": "PatientIdentifier",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
-            "description": "Unique patient identifier entity connecting patient related records."
-        },
-        {
-            "label": "SubjectPseudoIdentifier",
-            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
-            "description": "An anonymized or pseudonymized identifier for a patient or subject."
+            "label": "MedicalProcedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Procedure",
+            "description": "A generic class for medical procedures undertaken, relevant to procedures like tests or interventions."
         },
         {
             "label": "Medication",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
-            "description": "Information about prescribed or administered medication related to the patient's care."
+            "description": "Represents drugs or treatments administered to a patient."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Any measured or observed data such as lab results, vital signs, or clinical findings."
         },
         {
             "label": "Specimen",
             "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
-            "description": "Material collected for diagnostic examination or research, potentially linked to observations or reports."
+            "description": "Denotes a biological specimen related to the patient, including sample collection details."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Entities representing medical or lab products associated with samples or procedures."
+        },
+        {
+            "label": "Subject",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "An entity related to the individual or entity subjected to medical observation."
+        },
+        {
+            "label": "Tumor",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HistologyInvasiveBreastCancer",
+            "description": "Specific to tumor specimens, representing a class of cancer-related entities."
+        },
+        {
+            "label": "PathologyReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents diagnostic or pathology reports associated with samples or patients."
+        },
+        {
+            "label": "DiagnosticTest",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Laboratory",
+            "description": "Refers to laboratory tests or examinations performed as part of diagnostics."
+        },
+        {
+            "label": "ClinicalFinding",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categories encapsulating various clinical observations like vital signs or social history."
+        },
+        {
+            "label": "Treatment",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyTreatment",
+            "description": "Encompasses therapeutic interventions, especially related to oncology and ongoing treatments."
         }
     ]
 }

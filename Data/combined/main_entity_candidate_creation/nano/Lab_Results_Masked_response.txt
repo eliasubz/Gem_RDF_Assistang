@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents the individual receiving healthcare, central to medical datasets."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Captures measured or collected data points about a patient or sample, suitable as a central entity for diverse clinical data."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Represents biological samples taken from patients, possibly encompassing various sample-specific attributes."
+        },
+        {
+            "label": "MedicalEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Denotes a specific interaction or episode of healthcare provision, linking visits, procedures, and observations."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures or interventions, potentially serving as a central entity in clinical workflows."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Captures diagnostic information, possibly relevant for datasets focusing on disease states."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents treatment components, suitable when the dataset involves drugs or therapies."
+        },
+        {
+            "label": "TumorSpecimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/TumorSpecimen",
+            "description": "Specialized specimen for cancer research, relevant in oncology datasets."
+        },
+        {
+            "label": "Gene",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Gene",
+            "description": "In datasets involving genetic data, serves as a core entity for molecular features."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Sample",
+            "description": "A generic entity for biological samples, applicable in various omics and laboratory datasets."
+        },
+        {
+            "label": "ClinicalData",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A broad, domain-independent class to encapsulate diverse clinical or experimental measurements."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categorizes types of observations, such as laboratory, vital signs, or social history, facilitating data organization."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Unique identifiers for patients, essential for individual data traceability."
+        },
+        {
+            "label": "SampleFixation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample_fixationType",
+            "description": "Specifies how samples are preserved, relevant in sample-processing datasets."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents any measured feature or result, a flexible central point for numerous data types."
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "predicate": "hasIdentifier",
+                "path_id": 47
+            },
+            "justification": "The 'row_id' serves as a unique identifier for each prescription, directly mapping to the 'hasIdentifier' property with an appropriate datatype of string.",
+            "transformation": "Ensure the ID is formatted as a string, encode if necessary."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' links to the patient entity associated with the prescription, making this path semantically appropriate.",
+            "transformation": "Map patient ID values to the Patient entity's identifier, formatted as string."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Drug",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "hasCode",
+                "path_id": 52
+            },
+            "justification": "The ATC code represents a coded classification of the drug, which aligns with the 'hasCode' property of the Code entity.",
+            "transformation": "Ensure the code is formatted as a string, possibly with standard coding system notation."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "hasCode",
+                "path_id": 52
+            },
+            "justification": "Diagnosis codes are represented as coded entities; mapping to 'hasCode' provides semantic clarity.",
+            "transformation": "Format as string, ensure coding system consistency if applicable."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "hasDateTime",
+                "path_id": 18
+            },
+            "justification": "The creation date is a datetime value, directly mapped to the 'hasDateTime' property with datatype dateTime.",
+            "transformation": "Convert date string to xsd:dateTime format, e.g., 'YYYY-MM-DDTHH:MM:SS'."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "hasFrequency",
+                "path_id": 14
+            },
+            "justification": "The 'times_a_day' indicates frequency of administration, which aligns with the 'hasFrequency' property of Quantity.",
+            "transformation": "Map numerical value directly, ensure type is integer or double as appropriate."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Drug",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "hasDrugQuantity",
+                "path_id": 70
+            },
+            "justification": "Dosage specifies the amount administered, best represented by the 'hasDrugQuantity' property.",
+            "transformation": "Map dosage value to Quantity, format as string or numeric as per data."
+        }
+    ]
+}

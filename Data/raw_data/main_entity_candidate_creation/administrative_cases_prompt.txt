@@ -3,12 +3,12 @@ Imagine you are an expert in semantic web data integration.
 <data>
 Find candidate OAEs according to the following table:column_name -> value1, value2, value3
 <csv columns>
-Analyze this column: row_id -> 5, 6, 1
-Analyze this column: patient_id -> PAT00004, PAT00003, PAT00006
-Analyze this column: diagnosis_code -> 345678, 567890, 901234
-Analyze this column: created_at -> 2023-04-30 00:00:00, 2022-11-27 00:00:00, 2020-01-20 00:00:00
-Analyze this column: org_code -> ORG001, ORG005, ORG002
-Analyze this column: org_name -> Green Valley Hospital, Care Center, Health Clinic A
+Analyze this column: row_id -> 2, 6, 5
+Analyze this column: patient_id -> PAT00006, PAT00004, PAT00003
+Analyze this column: diagnosis_code -> 345678, 901234, 567890
+Analyze this column: created_at -> 2023-04-30 00:00:00, 2021-04-24 00:00:00, 2022-11-27 00:00:00
+Analyze this column: org_code -> ORG005, ORG002, ORG001
+Analyze this column: org_name -> Green Valley Hospital, Health Clinic A, Care Center
 </csv columns>
 
 RDF Entities:
@@ -336,55 +336,15 @@ Given a list of CSV column headers and a list of RDF ontology entities, suggest:
 
 Here is one example with only one candidate. I want you to return 15 of those candidates
 <Example>
-An example with a “Measurement” dataset all the rdf_entities were left out
-<input> 
-<csv columns>
-Analyze this column: row_id -> 2, 4, 1
-Analyze this column: patient_id -> PAT00001, PAT00002, PAT00003
-Analyze this column: measurement_code -> Z99.89, E11.9, R50.9
-Analyze this column: measurement_value -> 56.48, 81.12, 101.93
-Analyze this column: measurement_unit -> mm[Hg], mg/dL, /minn
-Analyze this column: measurement_date -> 2025-02-17, 2025-01-27, 2025-02-19
-</csv columns>
-<rdf_entities>
-…
-</rdf_entities>
-<Task>
-Now choose and rank 15 of those rdf_entities that could connect/link/subsume all the columns by beeing an entity that has properties that can link to all columns.
-<Task>
-</input> 
-<internal>
-We are given a tabular dataset and want to map it to a semantic structure.
-The goal is to find one overarching RDF entity (OAE) that connects or subsumes all column values as its attributes or related properties.
-<Table_analysis>
-row_id : Row identifier, internal index (not semantically meaningful)
-Patient_id: eferences a Patient or Subject
-Measurement_code: Code of a measured entity (e.g., blood pressure)
-Measurement_value: The numerical result of a measurement
-Measurement_unit: Unit of the measurement (e.g., mmHg)
-Measurement_date: Time at which measurement occurred
-</Table_analysis>
-<Central Concept>
-measurement_code, measurement_value, measurement_unit, and measurement_date — clearly all part of a measurement.
-patient_id — identifies who the measurement was taken from.
-Therefore, Measurement is the main event or OAE being described.
-<Subgraph Reasoning>
-:measurement_001 a sphn:Measurement ;
-    sphn:hasPatient :patient_001 ;
-    sphn:hasCode :Z99.89 ;
-    sphn:hasValue "56.48"^^xsd:float ;
-    sphn:hasUnit :mmHg ;
-    sphn:hasDate "2025-02-17"^^xsd:date .
-</Subgraph Reasoning>
+
 <output>
 [
   {
-    "label": "Measurement",
-    "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
-    "description": "A quantitative or qualitative measurement made on a subject, typically involving a numeric result."
-  },
+    "label": "Entity",
+    "iri": "https://example.org/ontology#Entity",
+    "description": "A general class representing an item or concept, possibly including attributes or values."
+  }
 ]
-
 </output>
 
 </Example>

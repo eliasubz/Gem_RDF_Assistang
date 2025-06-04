@@ -1,0 +1,74 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "A diagnosis made for a patient, typically associating an identifier, coded concept (like SNOMED), patient reference, and diagnostic date. This is the most central class for a table listing patient diagnoses and their codes/timing."
+        },
+        {
+            "label": "Condition (AIDAVA)",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A medical condition or problem affecting a patient, closely related to Diagnosis, may provide more or less granularity depending on intended use."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "A problem or condition that is recognized or managed in clinical care, with possible mapping to diagnoses, codes and patients."
+        },
+        {
+            "label": "ICDODiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "description": "A diagnosis coded using the ICD-O terminology. Useful for oncology or more specific diagnosis subtypes if relevant SNOMED codes are present."
+        },
+        {
+            "label": "FOPHDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "description": "A diagnosis reported under the Swiss Federal Office of Public Health framework, relevant for national-level reporting datasets."
+        },
+        {
+            "label": "OncologyDiagnosis (AIDAVA)",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specifically for cancer-related diagnoses; can be used if the 'code_snomed' or context indicates oncology."
+        },
+        {
+            "label": "AdverseEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent",
+            "description": "Captures unexpected medical incidents; relevant if dataset includes diagnoses signifying such."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A generic entity for recording results, states, or findings associated with a patient, ID, code, and timestamp."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents the patient as an entity; less ideal as a row entity here, but central for linking other entities."
+        },
+        {
+            "label": "LabTest",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest",
+            "description": "Relevant when 'code_snomed' may refer to tests or procedures as opposed to conditions."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "description": "Can act as an OAE if the codes indicate performed clinical procedures."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A general case record grouping identifiers, patient references, and codeable concepts, possibly at a higher abstraction."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "May link to patient and diagnosis identifiers, more central in de-identified datasets."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A cross-cutting superclass for value or concept-based data; flexible but non-specific."
+        }
+    ]
+}

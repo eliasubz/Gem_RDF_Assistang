@@ -1,0 +1,67 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasSubjectPseudoIdentifier",
+                "path_id": 16
+            },
+            "justification": "'row_id' is a unique identifier for each drug prescription record. The closest ontology path representing a unique identifier associated with the main entity is 'hasSubjectPseudoIdentifier'. No 2-hop paths from this node provide a better semantic match.",
+            "transformation": "Ensure the 'row_id' is formatted as a string or URI-friendly identifier if used as an RDF resource ID."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/AIDAVA:hasPatient",
+                "path_id": 1
+            },
+            "justification": "'patient_id' semantically corresponds to the patient entity related to the drug prescription. The path via 'AIDAVA:hasPatient' directly links the prescription to the patient entity. No deeper (2-hop) path from Patient is provided, so this 1-hop path is optimal.",
+            "transformation": "Convert 'patient_id' into a URI or literal identifier consistent with patient entity representation."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDrug/sphn:hasCode",
+                "path_id": 5
+            },
+            "justification": "The 'medication_atc_code' represents a drug code, which aligns with the drug's code property. Instead of mapping to 'hasDrug' alone, extending to 'hasCode' of the drug provides precise semantic mapping. The 2-hop path through 'hasDrug' then 'hasCode' is better than just 'hasDrug'.",
+            "transformation": "Ensure the ATC code is represented as a string literal; consider datatype or vocabulary alignment if needed."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasIndicationToStart/sphn:hasCode",
+                "path_id": 12
+            },
+            "justification": "The diagnosis code represents the indication to start the drug, which relates to a diagnosis entity. Although only 'hasIndicationToStart' is listed, it can point to either Diagnosis or Intent. The best semantic match is linking to Diagnosis's code via 'hasIndicationToStart'. Since direct 'hasCode' under 'hasIndicationToStart' is not explicitly listed, mapping to 'hasIndicationToStart' (Diagnosis) is chosen as the best available path (path 12).",
+            "transformation": "Format diagnosis code as string literal according to ontology requirements."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDateTime",
+                "path_id": 18
+            },
+            "justification": "Creation date is a datetime related to the drug prescription event. The direct property 'hasDateTime' with datatype xsd:dateTime is the optimal semantic match. No longer path is more precise.",
+            "transformation": "Convert 'creation_date' string to xsd:dateTime format (ISO 8601)."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasFrequency",
+                "path_id": 11
+            },
+            "justification": "'times_a_day' indicates frequency of administration, semantically matching 'hasFrequency' which links to a Quantity entity representing frequency. No deeper 2-hop path is available to improve semantic accuracy.",
+            "transformation": "Extract numeric frequency value and convert to appropriate Quantity representation (e.g., integer literal)."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasQuantity",
+                "path_id": 15
+            },
+            "justification": "'dosage' corresponds to the quantity of drug prescribed. The property 'hasQuantity' linking to Quantity is the correct semantic match. No 2-hop paths offer better specificity.",
+            "transformation": "Parse 'dosage' string to extract numeric value and unit if possible; convert to Quantity datatype or structured value."
+        }
+    ]
+}

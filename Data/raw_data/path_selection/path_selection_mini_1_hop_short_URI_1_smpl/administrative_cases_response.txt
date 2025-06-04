@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasSubjectPseudoIdentifier",
+                "path_id": 13
+            },
+            "justification": "The 'row_id' is a unique identifier for the record, best mapped to the 'hasSubjectPseudoIdentifier' property of ProblemCondition, which captures unique pseudo-identifiers. No longer paths from this property add semantic value for this field.",
+            "transformation": "Convert to string if not already; ensure uniqueness and URI-safe encoding if used as URI fragment."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/AIDAVA:hasPatient/AIDAVA:Patient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' corresponds directly to the patient entity related to the ProblemCondition via 'hasPatient'; this path semantically fits patient identification best. No deeper paths from Patient provided that improve mapping for patient ID.",
+            "transformation": "Use as string identifier; optionally encode as URI fragment or literal."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasCode/sphn:Code",
+                "path_id": 5
+            },
+            "justification": "The 'diagnosis_code' corresponds to a medical code describing the condition; 'hasCode' pointing to 'Code' entity is the most precise semantic match. Alternatives like 'Terminology' exist but 'Code' is more specific and appropriate here.",
+            "transformation": "Ensure code is string; may require normalization to standard code formats."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasRecordDateTime",
+                "path_id": 17
+            },
+            "justification": "The 'created_at' timestamp aligns with the 'hasRecordDateTime' property indicating when the record/condition was recorded, which semantically fits best. Other datetime properties like 'hasDateTime' or 'hasOnsetDateTime' do not accurately describe record creation time.",
+            "transformation": "Convert CSV datetime string to xsd:dateTime format (ISO 8601)."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "The 'org_code' identifies the organization providing data; 'hasDataProviderInstitute' points to the institute entity related to the ProblemCondition, which is semantically appropriate. No deeper path from DataProviderInstitute is provided to refine further.",
+            "transformation": "Use as literal string or identifier within DataProviderInstitute entity."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/sphn:hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "The 'org_name' is an attribute of the data provider institute; mapping it under 'hasDataProviderInstitute' is semantically correct to tie the name to the institute entity. Since no further path for institute name is given, it is assumed as a literal attribute at this node.",
+            "transformation": "Use as xsd:string literal."
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person receiving or registered to receive medical care or health-related services."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition, diagnosis or problem pertaining to a patient."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report containing diagnostic results, observations and interpretations for a patient."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Measurement or assertion made about a patient's health state, clinical examinations or history."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier or record number unique to a patient."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction between a patient and healthcare provider during which services or assessments are provided."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "An action or activity performed on or for a patient, such as a medical, diagnostic or therapeutic intervention."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "General categorization of observations, including laboratory, vital signs, or social history."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "Concepts from terminology systems like SNOMED CT used to code diagnoses, findings or conditions."
+        },
+        {
+            "label": "Date",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Date",
+            "description": "A temporal entity representing points or intervals in time relevant to healthcare data."
+        },
+        {
+            "label": "SocialHistory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/SocialHistory",
+            "description": "A category for observations related to patient's lifestyle or habits."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns",
+            "description": "Category for clinical vital signs such as heart rate, blood pressure etc."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The name or label identifying a subject or patient."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Drugs or substances administered or prescribed to a patient."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Physical or pharmaceutical products related to patient care."
+        }
+    ]
+}

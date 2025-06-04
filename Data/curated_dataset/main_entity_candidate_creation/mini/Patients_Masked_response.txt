@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a patient as the central entity to whom patient_id, birthdate, names, and medical records relate."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an encounter or visit, possibly linking id, emergency classification, attending person, and timestamps."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents medical conditions or diagnoses such as MI (myocardial infarction)."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Represents a person's name, linking names like A. Boarsma, Roen, Thijk."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Represents patient identifiers such as patient_id and related codes."
+        },
+        {
+            "label": "DateTime",
+            "iri": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "description": "Datatype representing dates and times, applicable to birthdate, timestamps, admission and discharge dates."
+        },
+        {
+            "label": "EncounterClass",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Represents the class of encounter, e.g. Emergency."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents reports related to patient conditions, possibly linking diagnostic codes."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures that might be linked indirectly to the patient or encounter."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "Represents coding systems for diagnosis or procedures, e.g. 248153007 (possibly SNOMED CT code)."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Represents oncology-specific diagnosis when applicable."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Represents vital signs data related to the patient during encounters."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Represents categories of observations, possibly lab results or clinical observations."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents clinical observations and measurements related to patient health."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "Represents anonymized or pseudonymized identifiers for a patient in shared datasets."
+        }
+    ]
+}

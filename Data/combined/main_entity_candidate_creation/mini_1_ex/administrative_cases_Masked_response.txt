@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an encounter or visit of a patient with a healthcare provider, suitable to connect patient, organization, time, and identifier information."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a patient or subject of healthcare data, central to linking patient identifiers and clinical data."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Entity representing a formal healthcare case or record, linking identifiers, dates, and involved organizations."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report generated from diagnostic activities, potentially linking patients, specimens, organizations, and dates."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A clinical procedure performed during a healthcare encounter, which can reference patients, time, and location."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A health condition or diagnosis related to the patient, connecting to identifiers and temporal information."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological specimens taken during healthcare that can be linked to patients, collection time, and organizations."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Clinical observations or measurements documented, linking patient, datetime, and potentially organization."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifiers explicitly assigned to a patient for unambiguous referencing across systems."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Potential demographic attribute linked to patient entities."
+        },
+        {
+            "label": "Location",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Location",
+            "description": "Physical place or organization location, linking organization codes and names."
+        },
+        {
+            "label": "Organization",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Represents healthcare provider organizations or clinics referenced by code or name."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "A temporal entity representing date/time values such as encounter or event dates."
+        },
+        {
+            "label": "Encounter",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "A healthcare encounter class representing an interaction between patient and care provider."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "A privacy-preserving unique identifier for subjects, complementing patient_id data."
+        }
+    ]
+}

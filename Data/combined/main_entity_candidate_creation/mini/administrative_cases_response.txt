@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An instance of a healthcare meeting or event involving a patient and one or more healthcare providers, typically representing the context for recording patient data such as diagnoses, procedures, and organizational details."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person receiving healthcare services, uniquely identified by patient identifiers and associated with clinical data such as diagnoses and care events."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A record representing the administrative aspects of patient care, encapsulating encounters, organizational units, and related case identifiers."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A structured clinical report containing diagnostic information including codes, creation date, and organizational context."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition documented for a patient, such as a diagnosis represented by a diagnosis code."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A clinical procedure performed on a patient, linked potentially to the encounter and timestamps."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient used for uniquely identifying the patient within and across healthcare systems."
+        },
+        {
+            "label": "Organization",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+            "description": "An organizational entity such as a healthcare institution responsible for providing data, here representing the organizations identified by org_code and org_name."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Measurements or assessments recorded about a patient during a healthcare encounter, which might be extended to include diagnosis-related observations."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "A specialized diagnosis entity focused on oncology conditions, useful if diagnosis_code relates to cancer diagnoses."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The name of a subject (e.g., patient), useful for annotating patient identity when names are available."
+        },
+        {
+            "label": "ValueSet",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "A controlled vocabulary or classification system for encounters, which might relate to the type of patient encounter."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "A representation of temporal information, potentially used for modeling created_at timestamps in clinical data."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "A property to represent the gender of a patient or individual associated with the healthcare record, relevant if gender data is present or needed."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A general code entity useful for representing diagnosis codes or other coded clinical data within entities such as Condition or DiagnosticReport."
+        }
+    ]
+}

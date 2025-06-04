@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents an individual patient, a central entity in healthcare datasets connecting identifiers, observations, and treatments."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A comprehensive report aggregating diagnostic information, laboratory results, and observations related to a patient."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents measurements or clinical observations, potentially linked to patients and specific conditions."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents prescribed or administered medications, detailing substances and dosages relevant to patient treatment."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "An action performed on or for a patient, such as treatments or diagnostic procedures."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents a clinical encounter or visit, encompassing patient interactions, observations, and procedures."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Entity representing identifiers assigned to patients, such as patient IDs."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Classification of observations, useful for structuring types of clinical measurements."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Specific clinical measurements related to physiological parameters, e.g., heart rate, blood pressure."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological samples taken from patients for analysis related to observations or diagnostics."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Physical products such as medications or pharmaceutical dosage forms."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Entity representing names or identifiers of subjects, potentially patients or other entities."
+        },
+        {
+            "label": "Age",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Age",
+            "description": "Represents the age attribute of a patient, useful demographic information."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Represents temporal aspects or timestamps associated with observations or procedures."
+        },
+        {
+            "label": "Quantity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "description": "Represents measurable quantities such as dosage amounts or test counts in medical contexts."
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn:hasIdentifier",
+                "path_id": 31
+            },
+            "justification": "The 'row_id' represents a unique identifier for the DrugPrescription instance itself. Path 31 directly links DrugPrescription to an identifier string, making it the most semantically accurate and straightforward mapping. No two-hop path improves this as no further nested identifier context is given for the main entity.",
+            "transformation": "Convert integer to string format if needed to conform to xsd:string datatype."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "sphn:DrugPrescription/AIDAVA:hasPatient/AIDAVA:hasPatientIdentifier",
+                "path_id": 25
+            },
+            "justification": "The 'patient_id' corresponds to an identifier for the patient related to the drug prescription. Path 25 traverses from DrugPrescription to Patient and then to PatientIdentifier, directly matching the semantic meaning of patient_id. Two-hop paths beyond this (e.g., to patient's name or birthdate) are less appropriate for an identifier field.",
+            "transformation": "Ensure patient_id is formatted as a string and URI-safe if used as resource identifier."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn:hasDrug/sphn:hasCode",
+                "path_id": 64
+            },
+            "justification": "The ATC code represents a coding of the drug substance. Path 64 leads from DrugPrescription to Drug and then to Code, which semantically fits medication codes. Although there are further nested paths to Terminology or CodingSystem, the direct code property is optimal for the code value itself. More complex paths for terminology are unnecessary here unless additional coding system info is required.",
+            "transformation": "No transformation required; ensure code is string and matches ontology code format."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn:hasIndicationToStart/sphn:hasCode",
+                "path_id": 81
+            },
+            "justification": "Diagnosis_code indicates the reason or condition prompting the prescription. Path 81 goes from DrugPrescription to Diagnosis (IndicationToStart) and then to Code, exactly matching the diagnosis code semantic. Alternatives involving Terminology or nested patient relations are less direct and thus less appropriate for a code column.",
+            "transformation": "Format as string, consistent with code datatype in ontology."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn:hasDateTime",
+                "path_id": 18
+            },
+            "justification": "Creation_date aligns with the timestamp of the DrugPrescription record itself. Path 18 directly maps to a dateTime property on the DrugPrescription entity, making it the best fit. Two-hop paths to AdministrativeCase or Patient dates are unrelated to creation timestamp.",
+            "transformation": "Convert to xsd:dateTime format (e.g., ISO 8601)."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn:hasFrequency/sphn:hasValue",
+                "path_id": 76
+            },
+            "justification": "Times per day is a frequency measure. Path 11 leads to Frequency (a Quantity), and path 76 further accesses the numerical value within that quantity, making it semantically precise. One-hop path to Frequency without accessing Value would be less informative.",
+            "transformation": "Convert integer to xsd:double to match hasValue datatype."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "full_path": "sphn:DrugPrescription/sphn:hasQuantity/sphn:hasValue",
+                "path_id": 97
+            },
+            "justification": "Dosage is a quantity measure describing the drug amount per administration. Path 15 leads to Quantity, and path 97 accesses the value of that quantity, fitting dosage semantics. Alternative paths to DrugQuantity exist but Quantity is more general and suitable unless the dataset distinguishes drug quantity specifically; here dosage is best under Quantity.",
+            "transformation": "Extract numeric part if needed; if dosage includes units or text (e.g., '1 capsule'), consider storing full string or splitting value and unit separately."
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 64
+            },
+            "justification": "The 'row_id' uniquely identifies each measurement record, aligning with 'hasIdentifier' property which is designed for unique identifiers.",
+            "transformation": "Ensure the ID is formatted as a string URI or literal, encoding if necessary."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPatient",
+                "path_id": 1
+            },
+            "justification": "Patient ID directly relates to the patient associated with the measurement, making 'hasPatient' the most appropriate link.",
+            "transformation": "Format as a URI or string literal, ensuring consistent patient identifier representation."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "Measurement code specifies the type of measurement, which is appropriately represented via 'hasCode' linking to a Code entity.",
+            "transformation": "Ensure the code is formatted as a string, possibly normalized to standard coding systems."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Measurement value represents a quantitative result, best represented as a Quantity with associated value and unit.",
+            "transformation": "Convert to a double or string as per ontology's expected datatype; include unit as a separate property if needed."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit",
+                "path_id": 85
+            },
+            "justification": "Unit specifies the measurement's unit, linked via 'hasUnit' to a Unit entity, which provides semantic clarity.",
+            "transformation": "Format as a controlled vocabulary or standardized string representing the unit."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 20
+            },
+            "justification": "Measurement date is a datetime value, directly mapped through 'hasDateTime' property using XML Schema dateTime datatype.",
+            "transformation": "Ensure the date is formatted in ISO 8601 standard for dateTime."
+        }
+    ]
+}

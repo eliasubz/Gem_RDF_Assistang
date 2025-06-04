@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient Record",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An entity representing a patient and their related clinical data, suitable as a main entity for patient-specific datasets."
+        },
+        {
+            "label": "Healthcare Encounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "Represents a clinical encounter or episode, capturing patient interactions and procedures."
+        },
+        {
+            "label": "Subject",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "A general subject or individual, potentially encompassing patients and related entities."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "Represents a biological sample collected from a subject, fundamental in clinical datasets."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Captures disease or condition diagnoses related to the patient or sample."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures or interventions associated with the patient or encounter."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A general entity for various clinical observations and measurements."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Biological specimens collected for diagnostic or research purposes."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Medication entities associated with treatment or intervention."
+        },
+        {
+            "label": "History",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SocialHistory",
+            "description": "Represents social or personal history of the patient, could be related to other health data."
+        },
+        {
+            "label": "Vital Sign",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Physical measurements like blood pressure, temperature, respiratory rate, relevant as features."
+        },
+        {
+            "label": "Oncology Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specialized diagnosis data for cancer-related conditions."
+        },
+        {
+            "label": "Identifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Unique identifiers for patients or entities."
+        },
+        {
+            "label": "Sample Collection Event",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Events or procedures related to the collection of samples."
+        },
+        {
+            "label": "Attribute",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject",
+            "description": "A generic attribute or property applicable to various entities, enabling flexible modeling."
+        }
+    ]
+}

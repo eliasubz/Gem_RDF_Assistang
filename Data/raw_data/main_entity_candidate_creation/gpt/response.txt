@@ -1,0 +1,5 @@
+administrative_cases: Hit@1=0, Hit@5=0, Hit@15=1
+
+measurements: Hit@1=1, Hit@5=1, Hit@15=1
+
+prescriptions: Hit@1=0, Hit@5=1, Hit@15=1

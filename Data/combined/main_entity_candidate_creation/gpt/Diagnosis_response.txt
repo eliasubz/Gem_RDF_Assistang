@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "A clinical statement of a disease or health-related issue identified in a patient."
+        },
+        {
+            "label": "FOPHDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "description": "Diagnosis according to the Federal Office of Public Health in Switzerland, relevant for coding and reporting."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "A concept representing a clinical problem or condition associated with a patient."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "A diagnosis specific to oncology, potentially for use with cancer-related data."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction between a patient and healthcare provider for the purpose of providing healthcare service or assessing the health status."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A clinical assessment, measurement, or assertion made about a patient or specimen."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "The output or result of a laboratory test performed on a specimen from a patient."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A clinical report documenting results and interpretations of diagnostic procedures."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A person who is receiving or registered to receive healthcare services."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A case file or record in an administrative context concerning a patient, which may organize conditions, encounters, and identifiers."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A generic concept class for organizing and grouping clinical and administrative healthcare data."
+        },
+        {
+            "label": "ICDODiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis",
+            "description": "Oncological diagnosis coded using the International Classification of Diseases for Oncology."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "description": "A process carried out on a patient (could cover Renal dialysis or similar interventions referenced in values)."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An entity encapsulating identifiers associated with a patient, possibly linking multiple IDs per patient."
+        }
+    ]
+}

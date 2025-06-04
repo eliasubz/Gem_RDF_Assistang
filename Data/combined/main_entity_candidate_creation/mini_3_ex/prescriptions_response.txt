@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents a medicinal substance or drug product, appropriate for linking ATC codes and dosages."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents the individual receiving care, central for patient-related identifiers and observations."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents clinical conditions or diagnoses, suitable for diagnosis codes."
+        },
+        {
+            "label": "DrugPrescription",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "description": "Represents the event or record of prescribing a drug, linking patient, medication, dosage, and frequency."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents clinical observations or measurements, potentially covering dosage, times a day, and dates."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an interaction event between patient and healthcare, which could aggregate medications, conditions, and dates."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents a report of diagnostic findings, related to diagnosis codes and dates."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures possibly related to treatment or diagnosis."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Represents pharmaceutical or medical products, could associate medication and doses."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Represents identifying names of subjects; may link to patient_id as personal identifiers."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Explicitly denotes patient identifying codes, relevant to patient_id."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Represents temporal patterns such as dosage frequencies (times a day)."
+        },
+        {
+            "label": "Quantity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "description": "Allows representation of amounts, relevant to dosage and frequency."
+        },
+        {
+            "label": "AdministrationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "description": "Represents the event of drug administration, linking patient, medication, dose, and time."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A general coding concept for representing coded values such as ATC or diagnosis codes."
+        }
+    ]
+}

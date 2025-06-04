@@ -1,0 +1,67 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 31
+            },
+            "justification": "Row ID uniquely identifies the drug prescription record itself, so mapping to the DrugPrescription's identifier property is semantically accurate. No 2-hop path provides a better semantic fit for a unique record identifier.",
+            "transformation": "Convert to string datatype; ensure uniqueness and URI-safe formatting if used as URI fragment."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 25
+            },
+            "justification": "Patient ID relates directly to the patient entity linked via hasPatient and is best represented by the PatientIdentifier class, capturing patient identity semantics precisely. The 2-hop path through hasPatient to hasPatientIdentifier is better than a 1-hop direct property as no direct patient ID property exists on DrugPrescription.",
+            "transformation": "No complex transformation; ensure string format consistency."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrug/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 64
+            },
+            "justification": "ATC code identifies the drug prescribed, thus mapping through hasDrug to hasCode captures the drug coding accurately. A 2-hop path from Drug to Code is semantically more precise than assigning code directly at DrugPrescription level.",
+            "transformation": "Ensure code string conforms to coding standards; no datatype change needed."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIndicationToStart/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 81
+            },
+            "justification": "Diagnosis code is best mapped via hasIndicationToStart to the Diagnosis entity, then to its hasCode property, reflecting the clinical reasoning for the prescription. This 2-hop path is more semantically correct than mapping directly on DrugPrescription.",
+            "transformation": "No transformation beyond ensuring the code string matches expected format."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 18
+            },
+            "justification": "Creation date corresponds to the time the prescription was recorded, mapping directly to hasDateTime on DrugPrescription is appropriate. No better 2-hop path provides a more specific time property for creation date.",
+            "transformation": "Convert string to xsd:dateTime datatype."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/https://biomedit.ch/rdf/sphn-ontology/sphn#hasFrequency/https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+                "path_id": 77
+            },
+            "justification": "Times a day is frequency of drug administration, best modeled as a Quantity linked via hasFrequency with its numeric value via hasValue. The 2-hop path captures both the concept and its numeric value precisely.",
+            "transformation": "Convert to numeric (integer or double) as xsd:double."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrugQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+                "path_id": 73
+            },
+            "justification": "Dosage represents the amount prescribed, best mapped via hasDrugQuantity to Quantity and its hasValue property. This 2-hop path semantically models dosage as a measurable quantity rather than free text.",
+            "transformation": "Extract numeric value if possible; otherwise store as string. Convert to xsd:double if numeric."
+        }
+    ]
+}

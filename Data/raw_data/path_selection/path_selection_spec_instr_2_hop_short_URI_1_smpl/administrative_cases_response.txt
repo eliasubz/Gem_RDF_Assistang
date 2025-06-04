@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "http://www.w3.org/2001/XMLSchema#string",
+                "path_id": 14
+            },
+            "justification": "This column appears to be a unique row identifier, best mapped to a string datatype directly associated with the main entity.",
+            "transformation": "No transformation needed; ensure the ID is formatted as a string."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPatient",
+                "path_id": 1
+            },
+            "justification": "Patient ID is directly linked to the ProblemCondition through 'hasPatient', making this the most straightforward and semantically accurate path.",
+            "transformation": "Map patient_id to the corresponding AIDAVA:Patient entity using the hasPatient relation."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 5
+            },
+            "justification": "Diagnosis code most likely refers to a coded concept associated with the condition, fitting best with the 'hasCode' property.",
+            "transformation": "Map to a Code entity; ensure the code value is properly encoded within the Code entity."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 14
+            },
+            "justification": "The creation timestamp directly relates to the main entity, and the dateTime datatype is explicitly defined for temporal data.",
+            "transformation": "Convert the timestamp string to xsd:dateTime format."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase",
+                "path_id": 3
+            },
+            "justification": "Organization code likely pertains to administrative case details, linked via 'hasAdministrativeCase'.",
+            "transformation": "Map to AdministrativeCase entity and include org_code as an identifier or code property."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase",
+                "path_id": 3
+            },
+            "justification": "Organization name complements the organizational code, also associated with AdministrativeCase, providing human-readable info.",
+            "transformation": "Map to AdministrativeCase entity; include org_name as a label or name property."
+        }
+    ]
+}

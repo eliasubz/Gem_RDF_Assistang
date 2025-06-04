@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An act of observing or measuring some characteristic or trait of a patient, generally used for measurements like vital signs or lab tests."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Entity representing the individual receiving care or whose data is recorded."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Compilation of clinical findings and observations from diagnostic procedures."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Category of observations representing key physiological metrics such as heart rate and blood pressure."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Generic concept capturing the act or result of measuring a quantity, value or characteristic."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Category grouping for observations defining types or domains, e.g., Laboratory, VitalSigns."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "Material collected for analysis or measurement purposes."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A process or clinical action performed on or relevant to the patient, potentially linked to measurements."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Clinical status or diagnosis relating to the subject."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identification token or code assigned to a patient."
+        },
+        {
+            "label": "Unit",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+            "description": "Standardized unit of measurement for quantifiable values."
+        },
+        {
+            "label": "DateTime",
+            "iri": "https://www.w3.org/2006/time#DateTimeInterval",
+            "description": "A time or date when an observation or measurement was made."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event or period during which health care services are provided, possibly context for measurements."
+        },
+        {
+            "label": "MeasurementMethod",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod",
+            "description": "The method or technique used to obtain a measurement or observation."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "Coded identifier for medical concepts like measurement_code (e.g., ICD or LOINC codes)."
+        }
+    ]
+}

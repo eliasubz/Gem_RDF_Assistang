@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A central entity for recording measurements, results, or clinical findings (e.g., lab test results, diagnostic codes, dates); well suited for structured row data with diverse column types."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents a clinical report summarizing a diagnostic investigation (e.g., lab panel, set of coded findings and times). May aggregate multiple value types as columns."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "Encapsulates measured results (codes, values, timestamps) in clinical and laboratory contexts; aligns with columns representing codes and times."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Represents an act of measuring or observing (value, reference, time, subject); flexible for structured clinical tabular data."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Captures information about a patient's interaction with the healthcare system, such as admission, assessment, or treatment context."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A process or action performed (e.g., lab test procedure); suitable if the data reflect events or measurements as procedures."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Defines coded clinical conditions or diagnoses; useful if the data reflect discrete clinical events (diagnoses, findings)."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Broad entity for a person receiving healthcare; can serve as table anchor if each row represents a patient's set of attributes or events."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specifically for cancer or tumor diagnoses; use if dataset focuses on cancer-related findings or codes."
+        },
+        {
+            "label": "LabTest",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest",
+            "description": "Encompasses an ordered clinical or laboratory test, result, and context (value, code, time)."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Covering administrative units (cases, episodes); may suit tables summarizing patient episodes."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "Generic identifier anchor; useful as a mainentity if each row is about a deidentified patient-instance."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "Covers coded health problems, diagnoses, or qualifying events."
+        },
+        {
+            "label": "Biobanksample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "description": "If the CSV is sample-centric (lab sample ids, codes, and timestamps), this fits as the overarching sample entity."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Represents a sample or specimen; relevant if the table is structured around biological samples with attributes (codes, times)."
+        }
+    ]
+}

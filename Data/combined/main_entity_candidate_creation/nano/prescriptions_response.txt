@@ -1,0 +1,74 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a patient, which could be the central entity for individual patient records encompassing various medical observations and related data."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents medications, suitable if the table focuses on prescription or treatment data linked to patients."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Encounter",
+            "iri": "https://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Represents a healthcare encounter, which could serve as a main entity connecting patient interactions, diagnoses, and procedures."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Covers various medical procedures; applicable if the table predominantly records procedural data."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents medical conditions, suitable as a main entity if the dataset centers on diagnoses or health conditions."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Diagnosis",
+            "description": "Specifically focuses on diagnostic data; usable if the key concern is diagnostic information."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Tailored for cancer-related diagnoses, appropriate if the dataset emphasizes oncological information."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Serves as a key entity for identifying patients, possibly central if the focus is on tracking patient data."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "Represents products, pharmaceuticals, or biological samples, relevant if the dataset involves such elements."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Sample",
+            "description": "Targets biological samples, suitable for datasets involving specimen collection."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Focuses on specimen data, which could be the main entity when sample studies are central."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Encompasses various observations, measurements, or findings, broad enough to serve as an overarching entity."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ClinicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ClinicalRecord",
+            "description": "A hypothetical class representing a comprehensive medical record, suitable if the dataset aggregates multiple data types."
+        },
+        {
+            "label": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthDataSet",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthDataSet",
+            "description": "A higher-level entity representing a collection of health data elements or records."
+        }
+    ]
+}

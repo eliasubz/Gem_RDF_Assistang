@@ -1,0 +1,91 @@
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of ontology paths rooted in a main entity class, map each column to the most semantically appropriate ontology path, producing RDF triples for later use.
+
+## Ontology Metadata
+- **Main Entity Type**: `https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition`
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Input
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+2. Available Paths:
+
+
+1. (sphn:ProblemCondition) => [AIDAVA:hasPatient] => (AIDAVA:Patient)
+2. (sphn:ProblemCondition) => [AIDAVA:interprets] => (sphn:Measurement)
+3. (sphn:ProblemCondition) => [sphn:hasAdministrativeCase] => (sphn:AdministrativeCase)
+4. (sphn:ProblemCondition) => [sphn:hasBodySite] => (sphn:BodySite)
+5. (sphn:ProblemCondition) => [sphn:hasCode] => (sphn:Code)
+6. (sphn:ProblemCondition) => [sphn:hasCode] => (sphn:Terminology)
+7. (sphn:ProblemCondition) => [sphn:hasDataFile] => (sphn:DataFile)
+8. (sphn:ProblemCondition) => [sphn:hasDataProviderInstitute] => (sphn:DataProviderInstitute)
+9. (sphn:ProblemCondition) => [sphn:hasRelativeTemporalityCode] => (sphn:Code)
+10. (sphn:ProblemCondition) => [sphn:hasRelativeTemporalityCode] => (sphn:Terminology)
+11. (sphn:ProblemCondition) => [sphn:hasStatusCode] => (sphn:Code)
+12. (sphn:ProblemCondition) => [sphn:hasStatusCode] => (sphn:Terminology)
+13. (sphn:ProblemCondition) => [sphn:hasSubjectPseudoIdentifier] => (sphn:SubjectPseudoIdentifier)
+14. (sphn:ProblemCondition) => [sphn:hasDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+15. (sphn:ProblemCondition) => [sphn:hasFreeText] => (http://www.w3.org/2001/XMLSchema#string)
+16. (sphn:ProblemCondition) => [sphn:hasOnsetDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+17. (sphn:ProblemCondition) => [sphn:hasRecordDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+### Prefix Map
+
+- `sphn:` → `https://biomedit.ch/rdf/sphn-ontology/sphn#`
+- `AIDAVA:` → `https://biomedit.ch/rdf/sphn-ontology/AIDAVA/`
+
+### Instructions for output
+
+When producing the final mapping, use **full URIs** for all ontology paths by expanding the prefixes based on the prefix map above.
+
+
+
+3. CSV Data:
+
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| row_id | 1, 5, 4 |
+| patient_id | PAT00006, PAT00001, PAT00005 |
+| diagnosis_code | 345678, 567890, 901234 |
+| created_at | 2023-04-30 00:00:00, 2022-11-27 00:00:00, 2023-03-13 00:00:00 |
+| org_code | ORG005, ORG001, ORG002 |
+| org_name | Green Valley Hospital, Care Center, Health Clinic A |
+
+## Requirements
+For each CSV column:
+1. Identify the most semantically appropriate path from the main entity through the ontology
+2. Select exactly one optimal path for each column
+3. Document your reasoning for choosing each path, including any alternatives considered
+4. Handle nested relationships and complex datatypes appropriately
+
+## Expected Output
+For each column, provide:
+1. Column number/name
+2. The complete selected path using proper ontology notation (e.g., entity:property1/property2/property3) and the number of the path that is provided also in the input
+3. Brief justification for the selected mapping (1-2 sentences)
+4. Any data transformation required (datatype conversion, formatting, etc.)
+
+
+
+## Example Format
+"column_mappings": [
+    {
+        "column_name": "entity_id",
+        "path": {
+            "path_id": 1
+        },
+        "justification": "The 'entity_id' field represents a unique identifier associated with the main observation, making this path semantically appropriate.",
+        "transformation": "Ensure the ID format matches URI requirements (e.g., prefix or encode)."
+    },
+]
+
+### Specific Instructions
+Before selecting a 1-hop path, first check if any 2-hop paths that begin from the same end node as that 1-hop path offer a better option. If not, explain why they aren't better before proceeding with the 1-hop path.
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options

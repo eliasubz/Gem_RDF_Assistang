@@ -1,0 +1,81 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "local identifier (not in ontology, internal use)",
+                "path_id": -1
+            },
+            "justification": "There is no path in the ontology for a simple technical row identifier. This is an internal row index and does not have a conceptual mapping in the provided ontology. It should be treated as an internal identifier for mapping/ETL traceability.",
+            "transformation": "Retain as string for internal mapping only; do not map to RDF unless required for traceability."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 25
+            },
+            "justification": "The 'patient_id' represents a patient identifier. Of available patient paths, path 25 (DrugPrescription → hasPatient → hasPatientIdentifier) is most semantically accurate, as it directly connects a prescription's patient to their unique identifier entity. Other paths (such as 1 or 31) either stop at the patient or use a more generic identifier property not specific to patient entities.",
+            "transformation": "Ensure patient ID is formatted as a string; validate against allowed identifier pattern if specified by the ontology."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrug/https://biomedit.ch/rdf/sphn-ontology/sphn#hasProductCode/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 68
+            },
+            "justification": "An ATC code identifies the prescribed medication, which aligns with the 'hasDrug' → 'hasProductCode' path. Among code-related paths (e.g., 9, 64, 68), path 68 (DrugPrescription → hasDrug → hasProductCode) is best as it specifically references the product code of the drug entity, which is typically where an ATC code would reside. The 2-hop path is preferred over the 1-hop 'hasCode' (path 5) as it targets the drug's product code rather than a generic code.",
+            "transformation": "Extract and ensure the ATC code is a string; if possible, validate against ATC format."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIndicationToStart/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 81
+            },
+            "justification": "The diagnosis code describes the medical indication for the prescription. The optimal path is DrugPrescription → hasIndicationToStart → Diagnosis → hasCode → Code → hasIdentifier, which (by path 81) semantically matches the notion of a diagnosis identified by a code. A 2-hop path is chosen over the 1-hop 'hasIndicationToStart' (12) to ensure the code is linked specifically to the diagnosis entity.",
+            "transformation": "Convert diagnosis code to string; validate against allowed coding system if known."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 18
+            },
+            "justification": "The creation date represents the timestamp for the prescription event. Path 18 (DrugPrescription → hasDateTime) is the most direct and semantically appropriate property for this timestamp. No superior 2-hop paths are available that more precisely represent the creation date of the prescription.",
+            "transformation": "Convert string to xsd:dateTime format (e.g., 'YYYY-MM-DDTHH:MM:SS')."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#double",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFrequency/https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+                "path_id": 76
+            },
+            "justification": "This column indicates the numeric frequency of medication administration. The best fit is the path DrugPrescription → hasFrequency → Quantity → hasValue (double), path 76, which captures a quantitative frequency value. 2-hop paths through Quantity are preferable to the direct 'hasFrequency' (11) as they permit capturing the numeric value explicitly.",
+            "transformation": "Convert value to xsd:double. Handle missing or non-numeric values appropriately."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#string",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrugQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+                "path_id": 73
+            },
+            "justification": "The 'dosage' column contains free-text or unit-appended dosage information (e.g., '1 capsule'). While the Quantity class supports structured value/unit separation, this column is unstructured, so the path DrugPrescription → hasDrugQuantity → Quantity → hasValue (string), path 73, is appropriate. The alternative would be to split value/unit and map value to path 72 (double), but this is not possible with the current data format.",
+            "transformation": "Retain as string; if possible, parse and split into value/unit and map separately in future."
+        }
+    ]
+}

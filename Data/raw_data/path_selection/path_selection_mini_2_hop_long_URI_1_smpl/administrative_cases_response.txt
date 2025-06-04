@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "sphn:ProblemCondition/sphn:hasIdentifier",
+                "path_id": 28
+            },
+            "justification": "The 'row_id' functions as a unique identifier for the ProblemCondition instance. Path 28 links ProblemCondition to an xsd:string identifier, which semantically fits such an ID.",
+            "transformation": "Convert integer to string representation if needed."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "sphn:ProblemCondition/AIDAVA:hasPatient/AIDAVA:hasPatientIdentifier",
+                "path_id": 23
+            },
+            "justification": "The 'patient_id' corresponds to an identifier of the patient related to the problem condition. Path 23 traverses ProblemCondition to Patient and then to PatientIdentifier, which is the most semantically precise path for patient IDs.",
+            "transformation": "Ensure patient_id values conform to the identifier format required by PatientIdentifier entity."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "sphn:ProblemCondition/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 67
+            },
+            "justification": "The 'diagnosis_code' represents a code for the problem condition diagnosis. Path 67 extends from ProblemCondition through hasCode to Code's identifier. This is more precise than just linking to Code or Terminology alone.",
+            "transformation": "Ensure diagnosis_code is formatted as a string matching the code identifier specification."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "full_path": "sphn:ProblemCondition/sphn:hasDateTime",
+                "path_id": 14
+            },
+            "justification": "The 'created_at' column indicates the datetime when the ProblemCondition was recorded. Path 14 directly links ProblemCondition to an xsd:dateTime, matching the timestamp semantics.",
+            "transformation": "Convert date string 'YYYY-MM-DD HH:MM:SS' to xsd:dateTime format 'YYYY-MM-DDTHH:MM:SS'."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "full_path": "sphn:ProblemCondition/sphn:hasDataProviderInstitute/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 79
+            },
+            "justification": "The 'org_code' identifies the code of the data provider institute related to the problem condition. Path 79 goes from ProblemCondition to DataProviderInstitute then to Code and its identifier, best representing an organizational code.",
+            "transformation": "Ensure org_code is a string and matches the expected code identifier format."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "full_path": "sphn:ProblemCondition/sphn:hasDataProviderInstitute/sphn:hasName",
+                "path_id": 81
+            },
+            "justification": "The 'org_name' corresponds to the name of the data provider institute. Path 81 maps from ProblemCondition to DataProviderInstitute and then to its name property as xsd:string, which fits perfectly.",
+            "transformation": "No transformation needed; use string as is."
+        }
+    ]
+}

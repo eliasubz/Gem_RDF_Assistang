@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event in which a patient receives care from a healthcare provider; can connect patient, organization, date/time, and various identifiers. This is most likely the best overarching entity for a table including patient ID, provider, date, and organization."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Represents administrative documentation or record of a patient’s case, often including organization, encounter, and identifiers."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "The person receiving care, often the central entity in biomedical records, but less suited to connect time, organization, and encounter context compared to 'HealthcareEncounter'."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "An identifier assigned to the patient, useful when the table's key focus is identifying patients via pseudonymized data."
+        },
+        {
+            "label": "DataProviderInstitute",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+            "description": "The institute or organization providing the data; can be central if the records are institution-centric."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A generic biomedical observation made about a patient, which could connect patient, provider, and timing, but less administrative in nature."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical procedure or act performed as part of an encounter. If mapped, could unify provider, patient ID, time, and site."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A document summarizing diagnostic findings; could connect patient, provider, time, and observations."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Specific identifier for the patient; central if the whole dataset is simply about mapping identifiers."
+        },
+        {
+            "label": "Location",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Location",
+            "description": "The geographic or organizational site of an event; could be appropriate if the dataset is more location-centric."
+        },
+        {
+            "label": "DataFile",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile",
+            "description": "An entire data file or record could be considered an entity, with columns as metadata; rarely the best fit but sometimes warranted in de-identified EHR data."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Typically attribute-level, but could be central if all rows are gender-stratified aggregations; contextually weaker for this use."
+        },
+        {
+            "label": "CareHandling",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#CareHandling",
+            "description": "Processes of administrating or handling care, which can connect patient, staff, facility, and care events."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "The (possibly de-identified) name of the subject; fits if the dataset is actually about mapping patient names."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A generalization for any concept from the SPHN ontology, can be used in abstract mapping or when structuring unknown tables."
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "A healthcare encounter, such as an emergency or inpatient visit, integrates identifiers, participant names, encounter types, diagnosis/procedure codes, and event dates—matching many columns in your dataset (e.g., patient_id, id, 1054/Emergency, 2956/248153007, and datetime fields)."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Administrative case groups administrative data relating to an individual’s interactions with a healthcare institution; may include identifiers and dates, relevant for clinical and encounter context."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving care; directly links to patient_id, name, and demographic info. If the table is patient-centric, this may serve as the mainentity."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "A specific identifier associated with a patient; relevant if the table is mainly identity-centric, but less overarching compared to Encounter or AdministrativeCase."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "Captures the names of subjects (patients); suitable if the focus is on person-level data."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A collection of clinical data, observations and results; could be a fit if the table contains mostly diagnostic results/time stamps/clinical acts as a report."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Used for measured, asserted or derived data. If columns are diverse results from tests and vital recording, this is relevant."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Procedure performed on, with, or for a patient—may fit if the main focus is coded interventions."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis; suited if the table is primarily diagnosis-oriented."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Relevant if dataset instances focus on oncology-specific diagnostic assertions."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "A specific entry point for vital parameters; useful if the data is mostly vital measurements."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "If the dataset is about gender/sex registration, but unlikely as an OAE for entire table."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A high-level abstract entity that generalizes every domain object in the ontology—very generic, but sometimes a fallback spanning class."
+        },
+        {
+            "label": "Biosample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Biosample",
+            "description": "If the table is a registry of biological samples (less relevant here given `patient_id`, visit, and clinical codes dominate)."
+        },
+        {
+            "label": "DataDetermination",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination",
+            "description": "A generalized data record (meta-class); can span wide context, but more appropriate for provenance tracking than main clinical record."
+        }
+    ]
+}

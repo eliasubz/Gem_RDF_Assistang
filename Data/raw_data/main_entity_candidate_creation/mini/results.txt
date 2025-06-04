@@ -1,0 +1,7 @@
+Before: administrative_cases: Hit@1=0, Hit@5=0, Hit@15=0
+measurements: Hit@1=0, Hit@5=1, Hit@15=1
+prescriptions: Hit@1=0, Hit@5=1, Hit@15=1
+After less candidates and nice csv
+administrative_cases: Hit@1=0, Hit@5=0, Hit@15=0
+measurements: Hit@1=0, Hit@5=1, Hit@15=1
+prescriptions: Hit@1=0, Hit@5=0, Hit@15=1

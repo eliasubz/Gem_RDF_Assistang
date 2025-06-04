@@ -1,13 +1,3 @@
-Diagnosis: Hit@5=1, Hit@15=1
-
-Diagnosis_Masked: Hit@5=0, Hit@15=0
-
-Lab_Results: Hit@5=0, Hit@15=0
-
-Lab_Results_Masked: Hit@5=0, Hit@15=0
-
-Patients: Hit@5=1, Hit@15=1
-
-Patients_Masked: Hit@5=1, Hit@15=1
-
-50% Hitrate
+nano
+Diagnosis: Hit@1=1, Hit@5=1, Hit@15=1
+Diagnosis_Masked: Hit@1=1, Hit@5=1, Hit@15=1

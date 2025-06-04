@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents the individual receiving healthcare services; likely a central entity in medical datasets."
+        },
+        {
+            "label": "MedicalEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "Represents an interaction between a patient and healthcare providers, serving as a core context for clinical data."
+        },
+        {
+            "label": "ClinicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A comprehensive entity encapsulating all data related to a clinical event or patient's health information."
+        },
+        {
+            "label": "StudyParticipant",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "Represents an individual in a research or clinical study, possibly encompassing multiple diagnostic and treatment data points."
+        },
+        {
+            "label": "ObservationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents the occurrence of a measurement or assessment, serving as an overarching entity for various clinical observations."
+        },
+        {
+            "label": "Assessment",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Diagnosis",
+            "description": "Represents a diagnostic or evaluative conclusion, potentially linking related observations and conditions."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sample",
+            "description": "An entity denoting a biological or material sample collected from a subject, linked with laboratory data and diagnosis."
+        },
+        {
+            "label": "ProcedureEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents a medical procedure or intervention, connecting patient treatment data with outcomes."
+        },
+        {
+            "label": "SpecimenCollection",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "An overarching entity for physical samples obtained from subjects for analysis or diagnosis."
+        },
+        {
+            "label": "TreatmentEpisode",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents a course of treatment or medication administration related to a patient or condition."
+        },
+        {
+            "label": "ResearchData",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A general entity capturing research-related data, experiments, and analyses linked to patients or samples."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents a diagnosed disease or health state affecting a patient or subject."
+        },
+        {
+            "label": "GeneVariant",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/SingleNucleotideVariation",
+            "description": "Represents genetic variations identified in samples, relevant for diagnostic and research purposes."
+        },
+        {
+            "label": "Organism",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Organism",
+            "description": "Represents the biological species or individual organism from which samples originate."
+        },
+        {
+            "label": "Attribute",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/SPHNAttributeObject",
+            "description": "A generic entity for various measurable or describable features associated with other entities."
+        }
+    ]
+}

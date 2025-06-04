@@ -1,0 +1,84 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents an individual receiving healthcare services, suitable as a main entity for patient-related data."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event of providing healthcare services, could serve as an overarching context for various clinical data points."
+        },
+        {
+            "label": "Subject",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "A general entity representing the subject of observations or interventions, a broad concept suitable as a main entity."
+        },
+        {
+            "label": "ClinicalRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A generic entity encompassing a collection of clinical data, diagnoses, observations, and procedures."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "Biological sample entity, useful if the dataset primarily concerns biospecimen data."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Represents the diagnostic information, could be a central entity if diagnostic data is core."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Represents treatment entities, suitable if pharmacological data is primary."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents medical conditions or statuses, potentially a central entity in comprehensive health datasets."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A broad category for clinical observations, vital signs, lab results, etc., potentially the main entity for observational data."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Represents biological or clinical specimens, relevant if sample data is focal."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Pertains to medical procedures, useful as a main entity in procedural datasets."
+        },
+        {
+            "label": "Tumor",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/TumorStage",
+            "description": "Specific to cancer datasets, can serve as a focal entity for oncology-related data."
+        },
+        {
+            "label": "System",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SystemicArterialBloodPressure",
+            "description": "A system-level entity representing organized physiological or anatomical systems."
+        },
+        {
+            "label": "BiologicalEntity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A general entity representing biological or anatomical entities, could encompass various specific main entities."
+        },
+        {
+            "label": "ClinicalEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "Represents any clinical occurrence or event, versatile as an overarching entity."
+        },
+        {
+            "label": "MainEntity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "A generic placeholder for the primary entity around which other data is organized; suitable when domain is broad."
+        }
+    ]
+}

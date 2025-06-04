@@ -1,0 +1,143 @@
+ 
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of `rdf_types`, identify and rank 15 candidate entities that could serve as an overarching main entity (OAE) connecting all column-level entities in a coherent semantic structure.
+
+## Ontology Metadata
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Task:
+
+1. **Determine the Overarching Main Entity (OAE):**
+   - Examine the provided column-level entity candidates and their associated RDF subgraph.
+   - Identify whether a single RDF entity could represent the *row* as a whole — that is, an entity for which each column entity can be interpreted as a directly related property, attribute, or part.
+   - The OAE should act as the semantic anchor or subject that binds the information from all columns.
+
+2. **Reasoning Criteria:**
+   - Think about how each column maps to candidate entities in the ontology.
+   - Consider the direct relationships between these candidates and their neighbors in the RDF subgraph.
+   - A strong candidate for the OAE will be one that:
+     - Has direct or clearly inferred relationships with most or all of the column-level entities.
+     - Can semantically contain or contextualize the data represented in the entire row.
+
+3. **Output Format:**
+   - Provide a ranked list of the 15 best-fitting candidate OAEs in descending order of suitability.
+   - For the top 3 candidates, include a brief justification explaining why the entity is a strong semantic fit.
+
+
+## Input
+
+1. CSV Data:
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| row_id | 4, 1, 2 |
+| patient_id | PAT00002, PAT00001, PAT00004 |
+| medication_atc_code | R03AC02, C03DA01, J01AA01 |
+| diagnosis_code | 901234, 456789, 345678 |
+| creation_date | 2021-01-01 00:00:00, 2021-04-25 00:00:00, 2022-09-08 00:00:00 |
+| times_a_day | 4, 3, 5 |
+| dosage | 1 capsule, 1 ampule, 2 teaspoon |
+
+2. URIs of Candidate classes you can choose from:
+
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+
+3. All their respective properties you should base your decision on:
+
+### Entity: DrugAdministrationEvent
+- As subject:
+  • DrugAdministrationEvent <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • DrugAdministrationEvent sphn:hasAdministrationRouteCode sphn:Code
+  • DrugAdministrationEvent sphn:hasAdministrationRouteCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • DrugAdministrationEvent sphn:hasCode sphn:Code
+  • DrugAdministrationEvent sphn:hasCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasDataFile sphn:DataFile
+  • DrugAdministrationEvent sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • DrugAdministrationEvent sphn:hasDrug sphn:Drug
+  • DrugAdministrationEvent sphn:hasDrugQuantity sphn:Quantity
+  • DrugAdministrationEvent sphn:hasDuration sphn:Quantity
+  • DrugAdministrationEvent sphn:hasQuantity sphn:Quantity
+  • DrugAdministrationEvent sphn:hasReasonToStopCode sphn:Code
+  • DrugAdministrationEvent sphn:hasReasonToStopCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasStatusCode sphn:Code
+  • DrugAdministrationEvent sphn:hasStatusCode sphn:Terminology
+  • DrugAdministrationEvent sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • DrugAdministrationEvent sphn:hasTimePattern sphn:TimePattern
+  • DrugAdministrationEvent <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> xsd:string
+  • DrugAdministrationEvent sphn:hasDateTime xsd:dateTime
+  • DrugAdministrationEvent sphn:hasEndDateTime xsd:dateTime
+  • DrugAdministrationEvent sphn:hasStartDateTime xsd:dateTime
+
+### Entity: DrugPrescription
+- As subject:
+  • DrugPrescription <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • DrugPrescription sphn:hasAdministrationRouteCode sphn:Code
+  • DrugPrescription sphn:hasAdministrationRouteCode sphn:Terminology
+  • DrugPrescription sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • DrugPrescription sphn:hasCode sphn:Code
+  • DrugPrescription sphn:hasCode sphn:Terminology
+  • DrugPrescription sphn:hasDataFile sphn:DataFile
+  • DrugPrescription sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • DrugPrescription sphn:hasDrug sphn:Drug
+  • DrugPrescription sphn:hasDrugQuantity sphn:Quantity
+  • DrugPrescription sphn:hasFrequency sphn:Quantity
+  • DrugPrescription sphn:hasIndicationToStart sphn:Diagnosis
+  • DrugPrescription sphn:hasIndicationToStart sphn:Intent
+  • DrugPrescription sphn:hasIntent sphn:Intent
+  • DrugPrescription sphn:hasQuantity sphn:Quantity
+  • DrugPrescription sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • DrugPrescription sphn:hasTimePattern sphn:TimePattern
+  • DrugPrescription sphn:hasDateTime xsd:dateTime
+  • DrugPrescription sphn:hasFirstAdministrationDateTime xsd:dateTime
+  • DrugPrescription sphn:hasLastAdministrationDateTime xsd:dateTime
+
+### Entity: Observation
+
+### Entity: Procedure
+- As subject:
+  • Procedure <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • Procedure <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product>
+  • Procedure <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance> sphn:Substance
+  • Procedure sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • Procedure sphn:hasBodySite sphn:BodySite
+  • Procedure sphn:hasCode sphn:Code
+  • Procedure sphn:hasCode sphn:Terminology
+  • Procedure sphn:hasDataFile sphn:DataFile
+  • Procedure sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • Procedure sphn:hasIntent sphn:Intent
+  • Procedure sphn:hasStatusCode sphn:Code
+  • Procedure sphn:hasStatusCode sphn:Terminology
+  • Procedure sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • Procedure sphn:hasCodingDateTime xsd:dateTime
+  • Procedure sphn:hasDateTime xsd:dateTime
+  • Procedure sphn:hasEndDateTime xsd:dateTime
+  • Procedure sphn:hasStartDateTime xsd:dateTime
+
+### Entity: Condition
+- As subject:
+  • Condition <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> sphn:Code
+  • Condition sphn:hasFreeText xsd:string
+  • Condition sphn:hasOnsetDateTime xsd:dateTime
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options
+
+## Example Format
+
+<output>
+{"overarching_spanning_entity":"https://example.com#Foo"}
+</output>
+
+       
+

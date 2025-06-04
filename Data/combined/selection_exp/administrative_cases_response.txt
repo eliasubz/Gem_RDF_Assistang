@@ -1,0 +1,75 @@
+{
+    "spanning_entity_candidates": [
+       
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An administrative concept that can connect patient, diagnosis, organizational information, and event metadata such as timestamps."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "A medical condition (including diagnoses) associated with a patient and organizational context, relevant for diagnosis_code as a key attribute."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Diagnosis entity with a strong clinical context, often related to organization, patient, and diagnostic code."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report summarizing findings, which references patient, diagnosis, date, and possibly organization of origin."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents clinical interventions; can associate patient, diagnosis, provider/organization, and time."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A core class for representing an individual receiving care; all event information could be seen as attributes of a patient entity (though somewhat less ideal as an OAE than encounter/case)."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Captures clinical facts with links to patient, diagnosis code, organization, and timestamps."
+        },
+        {
+            "label": "DiagnosticRadiologicExamination",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination",
+            "description": "A type of clinical event; relevant if diagnosis_code refers to imaging or diagnostic events."
+        },
+        {
+            "label": "LabTest",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest",
+            "description": "Class representing a laboratory test event with links to patient, org_code, and associated data."
+        },
+        {
+            "label": "DataRelease",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataRelease",
+            "description": "A metadata entity capturing the creation or extraction of records, spanning patient, org, diagnosis, and timestamps."
+        },
+        {
+            "label": "DataProviderInstitute",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+            "description": "Organization supplying the data; a less ideal OAE but connects org_code/name and possibly all events tied to it."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A general clinical condition associated with diagnosis and patient and potentially provided by an organization."
+        },
+        {
+            "label": "FOPHDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis",
+            "description": "Standardized diagnosis event, suitable when diagnosis_code is mapped to official coding schemes."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A generic class for concepts or summary entities in SPHN; can encompass various attributes, but specificity may be sacrificed."
+        }
+    ]
+}

@@ -1,0 +1,190 @@
+ 
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of `rdf_types`, identify and rank 15 candidate entities that could serve as an overarching main entity (OAE) connecting all column-level entities in a coherent semantic structure.
+
+## Ontology Metadata
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Task:
+
+1. **Determine the Overarching Main Entity (OAE):**
+   - Examine the provided column-level entity candidates and their associated RDF subgraph.
+   - Identify whether a single RDF entity could represent the *row* as a whole — that is, an entity for which each column entity can be interpreted as a directly related property, attribute, or part.
+   - The OAE should act as the semantic anchor or subject that binds the information from all columns.
+
+2. **Reasoning Criteria:**
+   - Think about how each column maps to candidate entities in the ontology.
+   - Consider the direct relationships between these candidates and their neighbors in the RDF subgraph.
+   - A strong candidate for the OAE will be one that:
+     - Has direct or clearly inferred relationships with most or all of the column-level entities.
+     - Can semantically contain or contextualize the data represented in the entire row.
+
+3. **Output Format:**
+   - Provide a ranked list of the 15 best-fitting candidate OAEs in descending order of suitability.
+   - For the top 3 candidates, include a brief justification explaining why the entity is a strong semantic fit.
+
+
+## Input
+
+1. CSV Data:
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| patient_id | 129342KW |
+| id | L3379, L3377, L3376 |
+| code_snomed | Hypertensive disorder, systemic arterial, Heart failure, Chronic obstructive pulmonary disease |
+| date | 2023-08-11T23:41:08.0000, 2023-08-08T12:27:23.0000, 2023-08-14T11:59:59.0000 |
+
+2. URIs of Candidate classes you can choose from:
+
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+
+3. All their respective properties you should base your decision on:
+
+### Entity: Diagnosis
+- As subject:
+  • Diagnosis <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • Diagnosis sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • Diagnosis sphn:hasBodySite sphn:BodySite
+  • Diagnosis sphn:hasCode sphn:Code
+  • Diagnosis sphn:hasCode sphn:Terminology
+  • Diagnosis sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • Diagnosis sphn:hasSubjectAge sphn:Age
+  • Diagnosis sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • Diagnosis sphn:hasCodingDateTime xsd:dateTime
+  • Diagnosis sphn:hasDateTime xsd:dateTime
+  • Diagnosis sphn:hasRecordDateTime xsd:dateTime
+
+### Entity: Condition
+- As subject:
+  • Condition <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> sphn:Code
+  • Condition sphn:hasFreeText xsd:string
+  • Condition sphn:hasOnsetDateTime xsd:dateTime
+
+### Entity: ProblemCondition
+- As subject:
+  • ProblemCondition <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • ProblemCondition <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> sphn:Measurement
+  • ProblemCondition sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • ProblemCondition sphn:hasBodySite sphn:BodySite
+  • ProblemCondition sphn:hasCode sphn:Code
+  • ProblemCondition sphn:hasCode sphn:Terminology
+  • ProblemCondition sphn:hasDataFile sphn:DataFile
+  • ProblemCondition sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • ProblemCondition sphn:hasRelativeTemporalityCode sphn:Code
+  • ProblemCondition sphn:hasRelativeTemporalityCode sphn:Terminology
+  • ProblemCondition sphn:hasStatusCode sphn:Code
+  • ProblemCondition sphn:hasStatusCode sphn:Terminology
+  • ProblemCondition sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • ProblemCondition sphn:hasDateTime xsd:dateTime
+  • ProblemCondition sphn:hasRecordDateTime xsd:dateTime
+
+### Entity: ICDODiagnosis
+- As subject:
+  • ICDODiagnosis <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • ICDODiagnosis sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • ICDODiagnosis sphn:hasCode sphn:Code
+  • ICDODiagnosis sphn:hasCode sphn:Terminology
+  • ICDODiagnosis sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • ICDODiagnosis sphn:hasMorphologyCode sphn:Code
+  • ICDODiagnosis sphn:hasMorphologyCode sphn:Terminology
+  • ICDODiagnosis sphn:hasSubjectAge sphn:Age
+  • ICDODiagnosis sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • ICDODiagnosis sphn:hasTopographyCode sphn:Code
+  • ICDODiagnosis sphn:hasTopographyCode sphn:Terminology
+  • ICDODiagnosis sphn:hasCodingDateTime xsd:dateTime
+  • ICDODiagnosis sphn:hasDateTime xsd:dateTime
+  • ICDODiagnosis sphn:hasRecordDateTime xsd:dateTime
+
+### Entity: FOPHDiagnosis
+- As subject:
+  • FOPHDiagnosis <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • FOPHDiagnosis sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • FOPHDiagnosis sphn:hasCode sphn:Code
+  • FOPHDiagnosis sphn:hasCode sphn:Terminology
+  • FOPHDiagnosis sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • FOPHDiagnosis sphn:hasRank sphn:SPHNConcept
+  • FOPHDiagnosis sphn:hasSubjectAge sphn:Age
+  • FOPHDiagnosis sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • FOPHDiagnosis sphn:hasCodingDateTime xsd:dateTime
+  • FOPHDiagnosis sphn:hasDateTime xsd:dateTime
+  • FOPHDiagnosis sphn:hasRecordDateTime xsd:dateTime
+
+### Entity: OncologyDiagnosis
+
+### Entity: HealthcareEncounter
+- As subject:
+  • HealthcareEncounter <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • HealthcareEncounter sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • HealthcareEncounter sphn:hasCurrentLocation sphn:Location
+  • HealthcareEncounter sphn:hasDataFile sphn:DataFile
+  • HealthcareEncounter sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • HealthcareEncounter sphn:hasLocation sphn:Location
+  • HealthcareEncounter sphn:hasOriginLocation sphn:Location
+  • HealthcareEncounter sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • HealthcareEncounter sphn:hasTargetLocation sphn:Location
+  • HealthcareEncounter sphn:hasTherapeuticArea sphn:TherapeuticArea
+  • HealthcareEncounter sphn:hasDateTime xsd:dateTime
+  • HealthcareEncounter sphn:hasEndDateTime xsd:dateTime
+  • HealthcareEncounter sphn:hasIdentifier xsd:string
+  • HealthcareEncounter sphn:hasStartDateTime xsd:dateTime
+
+### Entity: AdverseEvent
+- As subject:
+  • AdverseEvent <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+  • AdverseEvent sphn:hasAdministrativeCase sphn:AdministrativeCase
+  • AdverseEvent sphn:hasCode sphn:Code
+  • AdverseEvent sphn:hasCode sphn:Terminology
+  • AdverseEvent sphn:hasConsequences sphn:SPHNConcept
+  • AdverseEvent sphn:hasDataFile sphn:DataFile
+  • AdverseEvent sphn:hasDataProviderInstitute sphn:DataProviderInstitute
+  • AdverseEvent sphn:hasOutcome sphn:SPHNConcept
+  • AdverseEvent sphn:hasSeverityCode sphn:Code
+  • AdverseEvent sphn:hasSeverityCode sphn:Terminology
+  • AdverseEvent sphn:hasSubjectPseudoIdentifier sphn:SubjectPseudoIdentifier
+  • AdverseEvent sphn:hasDateTime xsd:dateTime
+  • AdverseEvent sphn:hasIntervention xsd:string
+
+### Entity: Observation
+
+### Entity: Patient
+- As subject:
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> sphn:AdministrativeGender
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> sphn:BirthDate
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> sphn:DrugAdministrationEvent
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> sphn:DrugPrescription
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> sphn:Measurement
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> sphn:ProblemCondition
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> sphn:Procedure
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName>
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> xsd:string
+  • Patient <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> xsd:dateTime
+  • Patient sphn:hasIdentifier xsd:string
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options
+
+## Example Format
+
+<output>
+{"overarching_spanning_entity":"https://example.com#Foo"}
+</output>
+
+       
+

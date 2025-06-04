@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An encounter between a patient and healthcare provider, often used as the central event connecting diagnosis, treatment, observations, and procedures."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A clinical diagnostic report, summarizing lab results and observations related to a patient's condition."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An act of recognizing or noting a clinical parameter or measurement, possibly linked to laboratory or vital signs."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "The individual receiving healthcare services; often the root entity for medical datasets but may lack relation to all clinical events and medications."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "A substance or product prescribed or administered to a patient as treatment."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A clinical action performed on a patient, which may include drug administration or diagnostic measures."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "A sample collected from a patient for diagnostic or research purposes."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A category organizing types of observations (e.g., Laboratory, VitalSigns), useful to distinguish observations semantically."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier associated with the patient, such as patient IDs or codes."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "A subclass of Observation representing vital health measurements."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "A specific condition class related to oncology diagnosis, possibly relevant if dataset relates to cancer."
+        },
+        {
+            "label": "Product",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product",
+            "description": "A manufactured item such as medication dosage form or device."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Class for representing time or date related attributes; could relate to dates in dataset like administration or observation dates."
+        },
+        {
+            "label": "Quantity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "description": "A data value for measurable quantities, like doses or measurement values."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "An administrative record representing an event or case within a healthcare system; can act as a central record linking patient, encounters, procedures, medications, and observations."
+        }
+    ]
+}

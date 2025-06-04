@@ -1,0 +1,74 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A class reflecting the administrative documentation of a patient's journey, encapsulating identifiers, dates, staff, and statuses linked to a single health service interaction."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An entity representing an individual receiving care, suitable if the row is centered on patient-centric information."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "A pseudonymized identifier for a subject, potentially serving as an anchor instance for patient-related columns; best if identity and privacy are key."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An entity for various identifiers linked to a patient, possibly a main entry point if data revolves around multiple identities/IDs."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "A class for holding personal name components such as given and family names."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Entity for (coded) gender value within administrative records; relevant for gender_code_snomed."
+        },
+        {
+            "label": "BirthDate",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate",
+            "description": "The class describing birthdate attribute, which may be a key property in some tables if demographics central."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "description": "A process or intervention carried out during a healthcare encounter, could relate to admission_reason or admission context."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Any medical problem recorded at admission, such as 'MI' for admission_reason. May be needed as a linking concept."
+        },
+        {
+            "label": "Department (Location)",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Location",
+            "description": "Used for hospital department units, e.g., 'Emergency'."
+        },
+        {
+            "label": "Doctor (Principal or Staff)",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Principal",
+            "description": "Role or person in charge of care, such as attending physician."
+        },
+        {
+            "label": "Admission and Discharge (TimePattern or EncounterClass)",
+            "iri": "http://terminology.hl7.org/ValueSet/encounter-class",
+            "description": "Valueset that may describe the situational context, e.g., emergency/admission/discharge types."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "Generic encoded attribute for values such as gender_code_snomed; usable if a more precise main entity is unavailable."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A meta-level class enabling encapsulation of several SPHN instances when a table structure is broader than any one domain entity."
+        }
+    ]
+}

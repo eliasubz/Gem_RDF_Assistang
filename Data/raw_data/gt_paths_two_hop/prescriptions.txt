@@ -1,0 +1,7 @@
+row_id 0 
+patient_id 25, 1
+medication_atc_code 64, 5
+diagnosis_code 81, 12
+creation_date 19, 18
+times_a_day 11, 75
+dosage 72, 10

@@ -1,0 +1,2 @@
+https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+

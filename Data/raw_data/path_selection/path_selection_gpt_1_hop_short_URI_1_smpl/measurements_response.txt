@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "rdf:ID",
+                "path_id": 0
+            },
+            "justification": "No explicit path for a row identifier is provided in the given list, but 'row_id' is most likely an internal database or file identifier, not a domain ontology property. It should be used only as an internal key for mapping, not mapped to the ontology.",
+            "transformation": "No mapping to RDF; use as internal CSV key only."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' identifies the patient related to the measurement, which semantically matches the 'hasPatient' property linking Measurement to Patient. No further 2-hop paths are available from AIDAVA:Patient in the given list.",
+            "transformation": "Ensure patient ID format matches the expected Patient identifier (e.g., URI or literal as required by Patient individual)."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "The 'measurement_code' is an external coding, such as ICD or LOINC, describing the type of measurement. The 'hasCode' path to Code best fits this. No direct 2-hop path from Code is offered in the provided list.",
+            "transformation": "String value; verify code system consistency."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "A measurement value is typically a numeric value (with a possible unit), best modeled as a Quantity in clinical ontologies. No 2-hop paths from Quantity are available in the provided list.",
+            "transformation": "Convert to decimal or float as required by the Quantity datatype."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Units are part of the Quantity concept. Since only a 1-hop path to Quantity is available, this column's value should be mapped as part of the Quantity node along with 'measurement_value'. No 2-hop alternatives are provided.",
+            "transformation": "Attach as unit field inside Quantity object (e.g., as UCUM code or string)."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "This column represents the date the measurement was made, matching 'hasMeasurementDateTime' (path 20). No 2-hop paths from dateTime are possible. 'hasDateTime' (path 18) is also possible, but 'hasMeasurementDateTime' is more specific.",
+            "transformation": "Convert to xsd:dateTime format (e.g., 'YYYY-MM-DDThh:mm:ss')."
+        }
+    ]
+}

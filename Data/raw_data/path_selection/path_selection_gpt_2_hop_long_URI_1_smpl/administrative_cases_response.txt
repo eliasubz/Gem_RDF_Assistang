@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "identifier (implicit, not in path list)",
+                "path_id": 0
+            },
+            "justification": "The 'row_id' is an internal row identifier and does not have an explicit semantic match in the ontology. Since no path directly represents such an internal ID, this can be mapped to a local identifier for the RDF resource (e.g., used in URI construction), but it does not directly correspond to any explicit path in the ontology.",
+            "transformation": "Use as a local identifier for RDF subject URIs, ensuring uniqueness and URI-safe formatting."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier",
+                "path_id": 13
+            },
+            "justification": "The 'patient_id' represents a pseudonymous patient identifier, which is exactly modelled by 'hasSubjectPseudoIdentifier'. Two-hop alternatives (e.g., via Patient or PatientIdentifier) exist (paths 1+23, etc.), but they either require further indirection or are not as direct as this 1-hop path, which is specifically intended for a pseudonymized patient ID.",
+            "transformation": "Convert to string if necessary; ensure value is pseudonymized and matches ontology datatype expectations."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 5
+            },
+            "justification": "The 'diagnosis_code' is a clinical code for the problem/condition, which matches 'hasCode' to Code. There are 2-hop options (e.g., path 66–68), allowing further details about the code such as system and name, but the CSV only provides the code itself, not additional subproperties. Thus, the direct 1-hop path is optimal.",
+            "transformation": "Ensure value is a string, and optionally use as the 'hasIdentifier' value for Code in an expanded RDF structure."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime",
+                "path_id": 17
+            },
+            "justification": "The 'created_at' column is the date/time the problem condition record was created, which most directly maps to 'hasRecordDateTime'. Other datetime options (e.g., onset, general datetime) exist (paths 14, 16), but 'hasRecordDateTime' is the semantically closest for record creation.",
+            "transformation": "Convert to xsd:dateTime format (ISO 8601, e.g. 2022-12-29T00:00:00)."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "The 'org_code' represents the code of the data providing institute. The path 'hasDataProviderInstitute' is the only direct path to a DataProviderInstitute. There are 2-hop paths for code within DataProviderInstitute (path 79), but since only the code is given, and not the DataProviderInstitute entity as a whole, the 2-hop path could be used if the code needs to be attached to the Institute, but requires instantiating the DataProviderInstitute. For a simple mapping, the direct path is chosen; for richer RDF, combine with path 79.",
+            "transformation": "If only the code is available, instantiate DataProviderInstitute and attach code as a property (see path 79 for further enrichment); ensure string datatype."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "The 'org_name' is the name of the data providing organization. The direct path is 'hasDataProviderInstitute'; the institute's name property is a 2-hop path (path 81), which could be used if the DataProviderInstitute node is instantiated. The 1-hop path is chosen for the main link, but to include the name, path 81 should be used for the name property of the DataProviderInstitute node.",
+            "transformation": "Instantiate DataProviderInstitute entity and set its name property (via path 81); ensure string datatype."
+        }
+    ]
+}

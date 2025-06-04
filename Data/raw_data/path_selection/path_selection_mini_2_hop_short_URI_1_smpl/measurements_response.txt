@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasIdentifier",
+                "path_id": 44
+            },
+            "justification": "The 'row_id' is a unique identifier for the measurement record; although path 44 is via AdministrativeCase, no direct Measurement identifier path is given, so the closest semantic fit is using AdministrativeCase's identifier. However, since no direct Measurement identifier path is listed, and 'row_id' serves as a unique measurement record ID, using AdministrativeCase's identifier path is the best proxy. Alternatively, if Measurement had a direct identifier property it would be preferred, but none is listed.",
+            "transformation": "Convert integer to string and ensure unique URI generation for the measurement instance."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/AIDAVA:hasPatient/AIDAVA:hasPatientIdentifier",
+                "path_id": 26
+            },
+            "justification": "The 'patient_id' corresponds to the identifier of the patient linked to the measurement. Path 26 directly links Measurement to Patient then to PatientIdentifier, which semantically matches the patient ID column best, as opposed to indirect or string-only identifiers elsewhere.",
+            "transformation": "Ensure patient_id strings conform to the expected format for patient identifiers in the ontology."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 50
+            },
+            "justification": "The 'measurement_code' is a coded value representing the measurement type or concept. Path 50 extends from Measurement to Code entity and then to its identifier property, which is semantically appropriate for coded measurement concepts. The 2-hop path is better than just linking to Code (path 4) because it specifies the identifier attribute, which matches the code value.",
+            "transformation": "No transformation needed; use string as code identifier."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasQuantity/sphn:hasValue",
+                "path_id": 86
+            },
+            "justification": "The 'measurement_value' represents the numeric quantity measured. Path 86 goes from Measurement to Quantity to the numeric value property, which directly captures the numeric measurement data. This 2-hop path is preferred over just attaching a literal value directly to Measurement as it preserves semantic precision and units.",
+            "transformation": "Convert to xsd:double datatype."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasQuantity/sphn:hasUnit",
+                "path_id": 85
+            },
+            "justification": "The 'measurement_unit' specifies the unit of the measured quantity. Path 85 links Measurement via Quantity to the Unit entity, capturing the unit semantics correctly. This 2-hop path is preferred over attaching a string literal directly to Measurement.",
+            "transformation": "Map unit strings to ontology-recognized unit codes or URIs if available; otherwise, retain as string literals."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/sphn:hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "The 'measurement_date' represents the date and time when the measurement was taken. Path 20 directly links Measurement to an xsd:dateTime property specialized for measurement date/time, making it the most semantically appropriate path.",
+            "transformation": "Convert date strings to xsd:dateTime format (e.g., ISO 8601)."
+        }
+    ]
+}

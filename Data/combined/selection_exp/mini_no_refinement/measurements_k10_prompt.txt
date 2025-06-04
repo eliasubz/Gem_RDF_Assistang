@@ -1,0 +1,71 @@
+ 
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of `rdf_types`, identify and rank 15 candidate entities that could serve as an overarching main entity (OAE) connecting all column-level entities in a coherent semantic structure.
+
+## Ontology Metadata
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Task:
+
+1. **Determine the Overarching Main Entity (OAE):**
+   - Examine the provided column-level entity candidates and their associated RDF subgraph.
+   - Identify whether a single RDF entity could represent the *row* as a whole — that is, an entity for which each column entity can be interpreted as a directly related property, attribute, or part.
+   - The OAE should act as the semantic anchor or subject that binds the information from all columns.
+
+2. **Reasoning Criteria:**
+   - Think about how each column maps to candidate entities in the ontology.
+   - Consider the direct relationships between these candidates and their neighbors in the RDF subgraph.
+   - A strong candidate for the OAE will be one that:
+     - Has direct or clearly inferred relationships with most or all of the column-level entities.
+     - Can semantically contain or contextualize the data represented in the entire row.
+
+3. **Output Format:**
+   - Provide a ranked list of the 15 best-fitting candidate OAEs in descending order of suitability.
+   - For the top 3 candidates, include a brief justification explaining why the entity is a strong semantic fit.
+
+
+## Input
+
+1. CSV Data:
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| row_id | 2, 1, 4 |
+| patient_id | PAT00001, PAT00004, PAT00002 |
+| measurement_code | E11.9, Z99.89, R00.0 |
+| measurement_value | 56.48, 101.93, 78.52 |
+| measurement_unit | mm[Hg], /minn, mg/dL |
+| measurement_date | 2025-02-17, 2025-01-27, 2025-02-03 |
+
+2. URIs of Candidate classes you can choose from:
+
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+
+
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options
+
+## Example Format
+
+<output>
+{"overarching_spanning_entity":"https://example.com#Foo"}
+</output>
+
+       
+

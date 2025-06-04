@@ -1,0 +1,81 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "predicate": "local identifier (no explicit ontology path)",
+                "path_id": 0
+            },
+            "justification": "No provided ontology path directly represents a row identifier or local surrogate key. This column is best used as an internal mapping key or to construct unique URIs for DrugPrescription individuals.",
+            "transformation": "Use to construct a unique URI for each DrugPrescription resource, e.g., baseURI/DrugPrescription/{row_id}."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "Path 1 connects DrugPrescription to Patient via AIDAVA:hasPatient, which is the most direct and semantically correct link for a patient identifier. Other paths (e.g., hasSubjectPseudoIdentifier) are designed for privacy-preserving IDs, not direct patient references.",
+            "transformation": "Map patient_id to an AIDAVA:Patient instance; ensure ID formatting matches the Patient URI pattern used in the RDF graph."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 5
+            },
+            "justification": "Path 5 (hasCode → Code) is the most appropriate as ATC codes are medical coding systems and the property is designed to link to such codes. Although path 6 (hasCode → Terminology) exists, Code is the more precise class for representing actual code values.",
+            "transformation": "Map medication_atc_code as the code value in a sphn:Code instance; ensure value conforms to ATC code formatting."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIndicationToStart",
+                "path_id": 12
+            },
+            "justification": "Path 12 links DrugPrescription to Diagnosis via hasIndicationToStart, which is intended for the clinical justification for prescribing the drug (such as a diagnosis code). Path 13 (hasIndicationToStart → Intent) is not as suitable for diagnosis coding.",
+            "transformation": "Map diagnosis_code as the code of a Diagnosis instance; may require instantiating a Diagnosis individual and assigning the code."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 18
+            },
+            "justification": "Path 18 (hasDateTime) is the only path that directly associates a date/time value with the DrugPrescription. The other date-related paths (19, 20) refer specifically to administration times, which are not the same as creation date.",
+            "transformation": "Convert creation_date to xsd:dateTime format, e.g., '2021-09-12T00:00:00'."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFrequency",
+                "path_id": 11
+            },
+            "justification": "Path 11 (hasFrequency → Quantity) is appropriate because 'times_a_day' represents the frequency of administration, which is modeled as a Quantity. No other path represents dosing frequency.",
+            "transformation": "Convert times_a_day to a numeric value and map to the appropriate field (e.g., value) of a Quantity instance."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrugQuantity",
+                "path_id": 10
+            },
+            "justification": "Path 10 (hasDrugQuantity → Quantity) is the most relevant because 'dosage' expresses the amount/form of drug per administration. Path 15 (hasQuantity → Quantity) might refer to overall quantity, but hasDrugQuantity is more specific to the context.",
+            "transformation": "Parse dosage into value and unit (e.g., '1 capsule' → value: 1, unit: capsule) and map to a Quantity instance accordingly."
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "path_id": 0
+            },
+            "justification": "No explicit path for row_id in the ontology; it is an internal CSV row identifier and maps best to the main entity as a local identifier or index without further semantic mapping.",
+            "transformation": "No transformation; treat as internal identifier."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 23
+            },
+            "justification": "patient_id represents a unique patient identifier; path 23 goes from ProblemCondition to Patient and then to PatientIdentifier, which semantically fits best as it captures patient identity rather than the patient entity itself or other patient attributes.",
+            "transformation": "Ensure patient_id is formatted as a string literal matching PatientIdentifier datatype."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 5
+            },
+            "justification": "diagnosis_code maps directly to the ProblemCondition's hasCode property to Code entity (path 5). Although there is a 2-hop path to Code's properties (paths 66-68), the direct hasCode link is optimal for representing the diagnosis code itself.",
+            "transformation": "Convert diagnosis_code to string literal matching Code identifier or code value datatype."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 14
+            },
+            "justification": "created_at is a timestamp for the ProblemCondition instance creation; path 14 directly links ProblemCondition to dateTime which is appropriate. Alternative datetime paths (e.g., hasOnsetDateTime, hasRecordDateTime) are semantically different and less fitting for creation timestamp.",
+            "transformation": "Convert string 'YYYY-MM-DD HH:mm:ss' to xsd:dateTime format 'YYYY-MM-DDTHH:mm:ss'."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 79
+            },
+            "justification": "org_code identifies the organization providing data; path 8 leads to DataProviderInstitute, and path 79 extends to its Code, capturing the code of the organization, which fits org_code better than just linking to the institute (path 8) alone.",
+            "transformation": "Map org_code as a string literal for Code identifier."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition/https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute/https://biomedit.ch/rdf/sphn-ontology/sphn#hasName",
+                "path_id": 81
+            },
+            "justification": "org_name corresponds to the name of the data provider institute; path 81 is a 2-hop path from ProblemCondition to DataProviderInstitute and then to its name property, semantically precise for organization names.",
+            "transformation": "Ensure org_name is a string literal compatible with xsd:string."
+        }
+    ]
+}

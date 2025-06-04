@@ -1,0 +1,58 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier",
+                "path_id": 32
+            },
+            "justification": "The 'row_id' represents a unique identifier for each measurement record. Path 32 provides a direct identifier for Measurement, which is semantically appropriate and straightforward.",
+            "transformation": "Convert the row_id to a string datatype matching xsd:string if needed."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient/https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier",
+                "path_id": 26
+            },
+            "justification": "The patient_id corresponds to an identifier for the patient linked to the measurement. Path 26 via hasPatient to PatientIdentifier semantically matches the patient_id column better than the direct patient resource.",
+            "transformation": "Ensure patient_id values conform to the expected format for PatientIdentifier, possibly URI encoding or prefixing."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "Measurement_code maps naturally to the hasCode property of Measurement pointing to a Code entity. Although 2-hop paths exist to Terminology (path 5), the code itself is the core concept represented here.",
+            "transformation": "No transformation needed if codes are strings; ensure proper datatype or URI formatting as per Code entity requirements."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasValue",
+                "path_id": 87
+            },
+            "justification": "Measurement_value corresponds to the numeric or string value of the measurement quantity. The 2-hop path via hasQuantity to hasValue (string datatype) fits best given example values are decimal numbers represented as strings.",
+            "transformation": "Convert values to xsd:string or xsd:double depending on data quality; here string is safer given mixed formats."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity/https://biomedit.ch/rdf/sphn-ontology/sphn#hasUnit",
+                "path_id": 85
+            },
+            "justification": "Measurement_unit describes the unit of the measured quantity and thus maps to the hasUnit property of Quantity, which is the natural semantic representation for units.",
+            "transformation": "Map unit strings to standard ontology units if possible; otherwise, keep as is with xsd:string datatype."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement/https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "Measurement_date corresponds to when the measurement was taken, matching the hasMeasurementDateTime property of Measurement with xsd:dateTime datatype. This path is more precise than generic hasDateTime (path 18).",
+            "transformation": "Convert date strings to xsd:dateTime format (e.g., ISO 8601) ensuring time component if needed."
+        }
+    ]
+}

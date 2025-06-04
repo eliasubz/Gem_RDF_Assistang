@@ -1,0 +1,236 @@
+# RDF Mapping Assistant for Complex Ontological Relationships
+    
+## Objective
+Given a CSV dataset and a set of rdf_types, choose 15 candidates to act as a mainentity connecting all column entity.
+
+## Ontology Metadata
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Input
+
+1. CSV Data:
+
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| row_id | 3, 1, 2 |
+| patient_id | PAT00001, PAT00003, PAT00002 |
+| measurement_code | R00.0, E11.9, R50.9 |
+| measurement_value | 101.93, 78.52, 81.12 |
+| measurement_unit | /minn, mg/dL, mm[Hg] |
+| measurement_date | 2025-02-19, 2025-02-03, 2025-01-27 |
+
+
+2. Possible Classes:
+- http://terminology.hl7.org/ValueSet/encounter-class
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HistologyInvasiveBreastCancer
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/SocialHistory
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets
+- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance
+- https://biomedit.ch/rdf/sphn-ontology/aidava-ontology
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AcidCitrateDextrose
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent_consequences
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent_outcome
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Age
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AlcoholBased
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AldehydeBased
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AldehydeBasedStabilizerForCTCs
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Allergen
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode
+- https://biomedit.ch/rdf/sphn-ontology/sphn#AllprotectTissueReagent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Biosample
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea_calculationMethod
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature
+- https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CareHandling
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Catheter
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CellPreparationTubeCitrate
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CellPreparationTubeHeparin
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CentralVenousPressure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ChemicalAdditivesStabilizers
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ChromosomalLocation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Chromosome
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CitratePhosphateDextrose
+- https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Code
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Comparator
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Consent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DataRelease
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination_method
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Drug
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription
+- https://biomedit.ch/rdf/sphn-ontology/sphn#EDTAAndGel
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Electrocardiogram
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis_rank
+- https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure_rank
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Gene
+- https://biomedit.ch/rdf/sphn-ontology/sphn#GeneticVariation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#GenomicPosition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#GenomicPosition_coordinateConvention
+- https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Glass
+- https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter
+- https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate
+- https://biomedit.ch/rdf/sphn-ontology/sphn#HeatStabilization
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Hirudin
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Intent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LabAnalyzer
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Laterality
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LithiumHeparin
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LithiumHeparinAndGel
+- https://biomedit.ch/rdf/sphn-ontology/sphn#LithiumHeparinAndRubberPlug
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Location
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+- https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod
+- https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice
+- https://biomedit.ch/rdf/sphn-ontology/sphn#NeutralBufferedFormalin
+- https://biomedit.ch/rdf/sphn-ontology/sphn#NonAldehydeBasedStabilizerForCellFreeNucleicAcids
+- https://biomedit.ch/rdf/sphn-ontology/sphn#NonaldehydeBasedWithoutAceticAcid
+- https://biomedit.ch/rdf/sphn-ontology/sphn#NonaldehydeWithAceticAcid
+- https://biomedit.ch/rdf/sphn-ontology/sphn#NonbufferedFormalin
+- https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis
+- https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment
+- https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment_criteria
+- https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment_progressionType
+- https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment_result
+- https://biomedit.ch/rdf/sphn-ontology/sphn#OptimumCuttingTemperatureMedium
+- https://biomedit.ch/rdf/sphn-ontology/sphn#OrageneCollectionContainerOrEquivalent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Organism
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Other
+- https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PAXgeneBloodDNA
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PAXgeneBloodRNAplus
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PAXgeneBoneMarrowRNA
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PAXgeneTissue
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PharmaceuticalDoseForm
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PhysicalFiltrationSystem
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PhysiologicState
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PolyethyleneTubeSterile
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PolypropyleneTubeSterile
+- https://biomedit.ch/rdf/sphn-ontology/sphn#PotassiumEDTA
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Principal
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ProteaseInhibitors
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Protein
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity
+- https://biomedit.ch/rdf/sphn-ontology/sphn#RNALater
+- https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Reference
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange
+- https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate
+- https://biomedit.ch/rdf/sphn-ontology/sphn#S8820ProteaseInhibitorTabletsOrEquivalent
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Sample
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Sample_fixationType
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Sample_primaryContainer
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SerumSeparatorTubeWithClotActivator
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SerumTubeWithoutClotActivator
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SingleNucleotideVariation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SnapFreezing
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SodiumCitrate
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SodiumEDTA
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SodiumFluoridePotassiumOxalate
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SodiumHeparin
+- https://biomedit.ch/rdf/sphn-ontology/sphn#StoolCollectionContainerWithDNAStabilizer
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Substance
+- https://biomedit.ch/rdf/sphn-ontology/sphn#SystemicArterialBloodPressure
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TempusTube
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea_specialtyName
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TraceElementsTube
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Transcript
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen_fixationType
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen_primaryContainer
+- https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage
+- https://biomedit.ch/rdf/sphn-ontology/sphn#Unit
+- https://biomedit.ch/rdf/sphn-ontology/sphn#VacuumTechnologyStabilization
+- https://biomedit.ch/rdf/sphn-ontology/sphn#ValueSet
+- https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor
+- https://biomedit.ch/rdf/sphn-ontology/sphn#VariantNotation
+- https://biomedit.ch/rdf/sphn-ontology/sphn#replaces
+
+## Task:
+
+1. Analyze whether there is a single overarching entity (OAE) that could represent the entire table. The OAE is a conceptual class or entity that all individual column-level entities could be associated with as sub-properties, attributes, or relations. In other words, the table rows could be instances of this overarching entity, and the columns would correspond to its features or components.
+
+2. Based on the list of ontology entities, suggest 15 ranked candidate OAEs in descending order of relevance or appropriateness.
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options
+
+
+   
+## Example Format
+
+<output>
+[
+  {
+    "label": "Entity",
+    "iri": "https://example.org/ontology#Entity",
+    "description": "A general class representing an item or concept, possibly including attributes or values."
+  }
+]
+</output>
+
+        

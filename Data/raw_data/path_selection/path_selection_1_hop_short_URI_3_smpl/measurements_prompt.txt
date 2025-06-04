@@ -1,0 +1,116 @@
+# RDF Mapping Assistant for Complex Ontological Relationships
+
+## Objective
+Given a CSV dataset and a set of ontology paths rooted in a main entity class, map each column to the most semantically appropriate ontology path, producing RDF triples for later use.
+
+## Ontology Metadata
+- **Main Entity Type**: `sphn:Measurement`
+- **Ontology Source**: https://biomedit.ch/rdf/sphn-ontology/sphn
+
+## Input
+1. Main Entity Type: https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+2. Available Paths:
+
+
+1. (sphn:Measurement) => [AIDAVA:hasPatient] => (AIDAVA:Patient)
+2. (sphn:Measurement) => [sphn:hasAdministrativeCase] => (sphn:AdministrativeCase)
+3. (sphn:Measurement) => [sphn:hasBodySite] => (sphn:BodySite)
+4. (sphn:Measurement) => [sphn:hasCode] => (sphn:Code)
+5. (sphn:Measurement) => [sphn:hasCode] => (sphn:Terminology)
+6. (sphn:Measurement) => [sphn:hasDataDetermination] => (sphn:DataDetermination)
+7. (sphn:Measurement) => [sphn:hasDataFile] => (sphn:DataFile)
+8. (sphn:Measurement) => [sphn:hasDataProviderInstitute] => (sphn:DataProviderInstitute)
+9. (sphn:Measurement) => [sphn:hasLabTest] => (sphn:LabTest)
+10. (sphn:Measurement) => [sphn:hasMeasurementMethod] => (sphn:MeasurementMethod)
+11. (sphn:Measurement) => [sphn:hasMedicalDevice] => (sphn:MedicalDevice)
+12. (sphn:Measurement) => [sphn:hasQualitativeResultCode] => (sphn:Code)
+13. (sphn:Measurement) => [sphn:hasQualitativeResultCode] => (sphn:Terminology)
+14. (sphn:Measurement) => [sphn:hasQuantity] => (sphn:Quantity)
+15. (sphn:Measurement) => [sphn:hasReferenceRange] => (sphn:ReferenceRange)
+16. (sphn:Measurement) => [sphn:hasSample] => (sphn:Sample)
+17. (sphn:Measurement) => [sphn:hasSubjectPseudoIdentifier] => (sphn:SubjectPseudoIdentifier)
+18. (sphn:Measurement) => [sphn:hasDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+19. (sphn:Measurement) => [sphn:hasFreeText] => (http://www.w3.org/2001/XMLSchema#string)
+20. (sphn:Measurement) => [sphn:hasMeasurementDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+21. (sphn:Measurement) => [sphn:hasQualitativeResult] => (http://www.w3.org/2001/XMLSchema#string)
+22. (sphn:Measurement) => [AIDAVA:hasPatient] => (AIDAVA:Patient)
+23. (sphn:Measurement) => [sphn:hasAdministrativeCase] => (sphn:AdministrativeCase)
+24. (sphn:Measurement) => [sphn:hasBodySite] => (sphn:BodySite)
+25. (sphn:Measurement) => [sphn:hasCode] => (sphn:Code)
+26. (sphn:Measurement) => [sphn:hasCode] => (sphn:Terminology)
+27. (sphn:Measurement) => [sphn:hasDataDetermination] => (sphn:DataDetermination)
+28. (sphn:Measurement) => [sphn:hasDataFile] => (sphn:DataFile)
+29. (sphn:Measurement) => [sphn:hasDataProviderInstitute] => (sphn:DataProviderInstitute)
+30. (sphn:Measurement) => [sphn:hasLabTest] => (sphn:LabTest)
+31. (sphn:Measurement) => [sphn:hasMeasurementMethod] => (sphn:MeasurementMethod)
+32. (sphn:Measurement) => [sphn:hasMedicalDevice] => (sphn:MedicalDevice)
+33. (sphn:Measurement) => [sphn:hasQualitativeResultCode] => (sphn:Code)
+34. (sphn:Measurement) => [sphn:hasQualitativeResultCode] => (sphn:Terminology)
+35. (sphn:Measurement) => [sphn:hasQuantity] => (sphn:Quantity)
+36. (sphn:Measurement) => [sphn:hasReferenceRange] => (sphn:ReferenceRange)
+37. (sphn:Measurement) => [sphn:hasSample] => (sphn:Sample)
+38. (sphn:Measurement) => [sphn:hasSubjectPseudoIdentifier] => (sphn:SubjectPseudoIdentifier)
+39. (sphn:Measurement) => [sphn:hasDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+40. (sphn:Measurement) => [sphn:hasFreeText] => (http://www.w3.org/2001/XMLSchema#string)
+41. (sphn:Measurement) => [sphn:hasMeasurementDateTime] => (http://www.w3.org/2001/XMLSchema#dateTime)
+42. (sphn:Measurement) => [sphn:hasQualitativeResult] => (http://www.w3.org/2001/XMLSchema#string)
+### Prefix Map
+
+- `sphn:` → `https://biomedit.ch/rdf/sphn-ontology/sphn#`
+- `AIDAVA:` → `https://biomedit.ch/rdf/sphn-ontology/AIDAVA/`
+
+### Instructions for output
+
+When producing the final mapping, use **full URIs** for all ontology paths by expanding the prefixes based on the prefix map above.
+
+
+
+3. CSV Data:
+
+### CSV Data (Preview)
+
+| Column Name | Example Values |
+|-------------|----------------|
+| row_id | 2, 1, 3 |
+| patient_id | PAT00004, PAT00002, PAT00003 |
+| measurement_code | R00.0, Z99.89, R50.9 |
+| measurement_value | 101.93, 81.12, 56.48 |
+| measurement_unit | mm[Hg], mg/dL, /minn |
+| measurement_date | 2025-01-27, 2025-02-19, 2025-02-17 |
+
+## Requirements
+For each CSV column:
+1. Identify the most semantically appropriate path from the main entity through the ontology
+2. Select exactly one optimal path for each column
+3. Document your reasoning for choosing each path, including any alternatives considered
+4. Handle nested relationships and complex datatypes appropriately
+
+## Expected Output
+For each column, provide:
+1. Column number/name
+2. The complete selected path using proper ontology notation (e.g., entity:property1/property2/property3) and the number of the path that is provided also in the input
+3. Brief justification for the selected mapping (1-2 sentences)
+4. Any data transformation required (datatype conversion, formatting, etc.)
+
+
+
+## Example Format
+"column_mappings": [
+    {
+        "column_name": "entity_id",
+        "path": {
+            "source_entity": "http://example.org/ontology#Observation",
+            "target_entity": "http://example.org/ontology#Entity",
+            "predicate": "http://example.org/ontology#refersToEntity",
+            "path_id": 1
+        },
+        "justification": "The 'entity_id' field represents a unique identifier associated with the main observation, making this path semantically appropriate.",
+        "transformation": "Ensure the ID format matches URI requirements (e.g., prefix or encode)."
+    },
+]
+
+## Additional Notes
+- Prioritize semantic accuracy over path length
+- Consider domain and range constraints of properties
+- Account for cardinality constraints in the ontology
+- Flag any columns that may require multiple path options

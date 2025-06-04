@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "DrugAdministrationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "description": "An event of administering a drug, capturing the context of medication, patient, dosage, and related timing. It can act as the main entity connecting medication, patient, dose, frequency, and date."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction between a patient and the healthcare system. It may be suitable if the table covers actions taken in the context of a clinic/hospital visit."
+        },
+        {
+            "label": "DrugPrescription",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "description": "A formal instruction by a healthcare professional to administer medication to a patient. May encapsulate information about patient, identifier, drug, diagnosis, dose, and prescription timing."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Anything observed about a patient, e.g., medication taken, diagnosis assigned, or measurements made. Broad enough to span multiple clinical data types."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure",
+            "description": "A healthcare activity performed on a patient. Drug administration or diagnostic assignment could be modeled as procedures."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis related to a patient. Suitable if the medication is modeled as treatment for a specific diagnosis, and all columns relate to a single clinical cause."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "A substance used for treatment. If the table is primarily about drug regimens, with other details as attributes of medication use."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "The outcome of a lab test or clinical event. Possible choice if rows are outcomes of various clinical processes recorded together."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A healthcare subject. Less ideal as the main entity—but can be used if every row refers to different aspects of the patient's healthcare trajectory."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Event or value measured, such as dosage or times per day. Suitable if medication dosing is conceptualized as a measurement activity."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "A problem or condition that warrants medical attention, linking diagnosis and medication use at the event level."
+        },
+        {
+            "label": "Sample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Sample",
+            "description": "A specimen or sample entity, could be used if information describes individual samples or extracts. May be less relevant here."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A very general, high-level class—any SPHN concept. Use only if none of the more specific options fit."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "An identified condition in a patient. Possible if all columns are related to events linked to diagnosis coding."
+        },
+        {
+            "label": "MeasurementMethod",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod",
+            "description": "The method by which a measurement or activity (such as medication administration) is performed."
+        }
+    ]
+}

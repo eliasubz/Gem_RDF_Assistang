@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A clinical or laboratory observation representing measurement or assessment of a patient's state, encompassing measurement code, value, unit, and date."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A comprehensive report that may summarize observations, measurements and their interpretations for a patient."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving healthcare, identified by patient_id; central to linking data entities."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "A specific measurement event or result, potentially describing the measurement code, value, unit and date."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "A specialized observation category that includes vital physiological measurements such as blood pressure and heart rate."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categories classifying observations such as laboratory, social history, and vital signs."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "An identifier assigned to a patient, e.g., patient_id, used for linking patient data."
+        },
+        {
+            "label": "MeasurementUnit",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+            "description": "An entity representing units of measure such as mm[Hg], /min, mg/dL."
+        },
+        {
+            "label": "MeasurementCode",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A coded concept representing the specific measurement or observation type, e.g., R00.0."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event or interaction during which observations and measurements occur."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "A temporal entity representing when measurements or observations are recorded."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A medical procedure or action that might be associated with the measurement or observation."
+        },
+        {
+            "label": "Quantity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "description": "A generic representation of numerical measurement values."
+        },
+        {
+            "label": "SubjectName",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName",
+            "description": "An entity representing the name or title of the subject (patient)."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Demographic attribute possibly linked to patient entity but not directly in this table."
+        }
+    ]
+}

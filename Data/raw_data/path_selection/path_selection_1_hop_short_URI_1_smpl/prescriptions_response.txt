@@ -1,0 +1,81 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile",
+                "path_id": 7
+            },
+            "justification": "While 'row_id' is a unique identifier for each record, it can be mapped to the 'hasDataFile' property to link the prescription record to its data file, assuming the data file acts as an identifier or associated data container.",
+            "transformation": "Format the ID as a URI or string consistent with ontology expectations."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPatient",
+                "path_id": 1
+            },
+            "justification": "Patient ID directly relates to the 'hasPatient' property, making this the most semantically appropriate link to associate the prescription with a patient entity.",
+            "transformation": "Ensure patient IDs are formatted as URIs or literals compatible with the patient entity."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Drug",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrug",
+                "path_id": 9
+            },
+            "justification": "The ATC code specifies the drug involved in the prescription, so linking it via 'hasDrug' to a Drug entity is most appropriate.",
+            "transformation": "Map the ATC code to a code property within the Drug entity, possibly as a literal or coded value."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasIndicationToStart",
+                "path_id": 12
+            },
+            "justification": "The diagnosis code indicates the medical condition for which the prescription is indicated, aligning with 'hasIndicationToStart' pointing to a Diagnosis entity.",
+            "transformation": "Ensure the diagnosis code is formatted correctly as a coded literal or linked entity."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime",
+                "path_id": 18
+            },
+            "justification": "The creation date naturally maps to the 'hasDateTime' property with an XML Schema dateTime datatype, which is appropriate for timestamp data.",
+            "transformation": "Convert date string to ISO 8601 dateTime format."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasFrequency",
+                "path_id": 11
+            },
+            "justification": "Number of times per day is a frequency measure, best represented via 'hasFrequency' linked to a Quantity entity.",
+            "transformation": "Convert to an integer or decimal literal as appropriate."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrugQuantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDrugQuantity",
+                "path_id": 10
+            },
+            "justification": "The dosage specifies the amount of drug prescribed, aligning with 'hasDrugQuantity' to specify the quantity involved.",
+            "transformation": "Format as a string or numeric literal, possibly including units."
+        }
+    ]
+}

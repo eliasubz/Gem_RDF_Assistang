@@ -1,0 +1,84 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "PatientEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "An entity representing a healthcare encounter or interaction, which could connect patient, diagnosis, medication, and procedure details."
+        },
+        {
+            "label": "PatientRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A comprehensive entity representing a patient's health record, capturing various aspects like diagnosis, medication, and observations."
+        },
+        {
+            "label": "MedicalCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "A high-level entity representing a medical case or record that encompasses multiple clinical data points."
+        },
+        {
+            "label": "ClinicalObservation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "An entity for clinical observations, including vital signs, lab results, and other measurements."
+        },
+        {
+            "label": "MedicationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DrugAdministrationEvent",
+            "description": "An entity representing the administration of medication within a clinical context."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Diagnosis",
+            "description": "An overarching entity that covers various diagnostic codes and classification, linking diagnoses to observations."
+        },
+        {
+            "label": "SampleSpecimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/TumorSpecimen",
+            "description": "Entity representing biological samples, such as tumor or tissue specimens, collected from a patient."
+        },
+        {
+            "label": "ProcedureRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A broad entity encapsulating clinical procedures, radiological exams, and interventions."
+        },
+        {
+            "label": "ObservationSet",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "An entity grouping related observations such as vital signs or laboratory tests."
+        },
+        {
+            "label": "BiologicalSample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sample",
+            "description": "An entity representing any specimen collected for analysis, including tissue, blood, etc."
+        },
+        {
+            "label": "HealthEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/HealthcareEncounter",
+            "description": "A higher level entity representing any health-related event or interaction."
+        },
+        {
+            "label": "PatientActivity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An entity denoting activities or states related to the patient, including diagnoses, treatments, and observations."
+        },
+        {
+            "label": "MedicalProfile",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "A comprehensive entity combining patient demographics, clinical data, and history."
+        },
+        {
+            "label": "ClinicalDataset",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/aidava-ontology",
+            "description": "An overarching entity representing a dataset of clinical information for analysis and integration."
+        },
+        {
+            "label": "TreatmentRecord",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyTreatmentAssessment",
+            "description": "Entity covering treatment assessments and progressions, possibly linked to diagnosis and medication."
+        },
+        {
+            "label": "SampleCollectionEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/Sample",
+            "description": "An entity representing the event of sample collection, associating samples with patients and procedures."
+        }
+    ]
+}

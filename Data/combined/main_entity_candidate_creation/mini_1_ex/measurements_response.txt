@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents a measurement or assertion made about a patient, including clinical measurements and test results."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A clinical report containing diagnostic information, often aggregating multiple observations and measurements for a patient."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "An individual receiving healthcare services; the subject of clinical data including measurements and observations."
+        },
+        {
+            "label": "Measurement",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "A specific measured value with associated unit and context."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "Categorizes observations into types, which can guide interpretation of clinical measurements."
+        },
+        {
+            "label": "Specimen",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen",
+            "description": "Material sample from which measurements or observations are derived."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "An act or process performed relating to the acquisition of the measurement or observation."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Unique identifiers associated with a patient entity."
+        },
+        {
+            "label": "Unit",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Unit",
+            "description": "Measurement units corresponding to observed values."
+        },
+        {
+            "label": "VitalSigns",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns",
+            "description": "Clinical vital signs as a category of observations."
+        },
+        {
+            "label": "MeasurementMethod",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#MeasurementMethod",
+            "description": "Describes the method or procedure used to carry out a measurement."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An interaction or episode of healthcare delivery to a patient."
+        },
+        {
+            "label": "ClinicalEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents clinical conditions or events possibly linked to observations."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Modeling temporal information related to observations or measurements."
+        },
+        {
+            "label": "Quantity",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+            "description": "A measurable amount or number, e.g., measurement values recorded in observations."
+        }
+    ]
+}

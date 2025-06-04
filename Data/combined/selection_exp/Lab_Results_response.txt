@@ -1,0 +1,74 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Represents an administrative record encompassing patient, encounter, codes, and time, highly relevant for a table summarizing a single 'case' or event in patient's care."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+            "description": "Describes a person receiving healthcare; often serves as the entity to which identifiers, demographic data, and episodes are attached. Could be used if the table is strictly one-row-per-patient."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "A clinical intervention or event; could serve as a main entity if the table records instances of medical procedures linked to patients, codes, and outcomes."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "A measurement or finding on a patient, capturing values, codes, times, and possibly context. Suitable if each row represents an observation event."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A summary record which could aggregate clinical observations, times, patient and provider information, fitting data spanning multiple aspects of a diagnostic episode."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition/diagnosis present in the patient at a given time, potentially serving as a container for code, date, and creator attributes."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "A focused diagnosis entity, generally used for cancer-related encounters; relevant if the table captures tumor or cancer data."
+        },
+        {
+            "label": "LabResult",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult",
+            "description": "Encapsulates results of clinical or laboratory tests; could aggregate patient, codes, result values, and collection times."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "An entity representing a patient pseudonym, useful if the dataset is anonymized and all data are organized around subject IDs."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "A record or class focused on an individual's unique healthcare identifier; useful if the row granularity is ID-based but less encompassing than broader encounter/case classes."
+        },
+        {
+            "label": "SPHNConcept",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept",
+            "description": "A very general, abstract class able to span various SPHN-defined entities; use with caution as it sacrifices specificity."
+        },
+        {
+            "label": "AdministrativeGender",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender",
+            "description": "Represents the administrative gender, included here if gender is an organizing feature, but generally too narrow for mainentity."
+        },
+        {
+            "label": "ObservationCategory",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory",
+            "description": "A grouping of observation types, could serve as a main node if the dataset’s key granularity is category-based."
+        },
+        {
+            "label": "Biobanksample",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample",
+            "description": "Physical biological sample from which further laboratory or clinical data are derived; relevant if core columns are derived from biosamples."
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "DrugPrescription",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription",
+            "description": "Represents a prescription of medication to a patient, including drug, dosage, frequency, and associated diagnosis."
+        },
+        {
+            "label": "Medication",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication",
+            "description": "Refers to a medicinal product administered to a patient, may include attributes like dosage and frequency."
+        },
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "Represents a health condition or diagnosis affecting a patient, related to diagnosis codes."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents a patient, generally the subject of health data including prescriptions and diagnoses."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "Represents a report for diagnostic findings linked to patients and medical events."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "Represents an interaction between a patient and a healthcare provider encompassing diagnoses, procedures, and prescriptions."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Represents medical procedures including administration of drugs or diagnostics."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Represents clinical observations or recorded measurements related to a patient."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Represents identifiers assigned to patients, like patient_id."
+        },
+        {
+            "label": "DrugAdministrationEvent",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent",
+            "description": "Represents the event of administering a drug to a patient including dosage and timing."
+        },
+        {
+            "label": "TherapeuticArea",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea",
+            "description": "Represents the medical or therapeutic area related to the medication or condition."
+        },
+        {
+            "label": "PharmaceuticalDoseForm",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#PharmaceuticalDoseForm",
+            "description": "Represents the form of the medication product such as tablet, capsule, ampule."
+        },
+        {
+            "label": "TimesAday",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Represents timing patterns or frequency concepts related to medication administration."
+        },
+        {
+            "label": "CreationDate",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataDetermination",
+            "description": "Represents temporal metadata regarding when data (like prescription or diagnosis data) was created."
+        },
+        {
+            "label": "Diagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis",
+            "description": "Represents diagnoses recorded for patients often linked with diagnosis codes."
+        }
+    ]
+}

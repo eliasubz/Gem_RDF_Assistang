@@ -1,0 +1,79 @@
+{
+    "spanning_entity_candidates": [
+        {
+            "label": "Condition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition",
+            "description": "A clinical condition or diagnosis associated with the patient, covering diagnosis codes and related medical information."
+        },
+        {
+            "label": "DiagnosticReport",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport",
+            "description": "A report detailing diagnostic findings and results, linking diagnostic codes, date of creation, and institutional data."
+        },
+        {
+            "label": "HealthcareEncounter",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter",
+            "description": "An event representing a healthcare encounter, linking the patient, diagnosis, organization, and timestamp details."
+        },
+        {
+            "label": "Patient",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+            "description": "Represents the patient entity, connecting patient identifiers and related personal medical information."
+        },
+        {
+            "label": "Procedure",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure",
+            "description": "Medical procedures performed on the patient, which could relate to diagnosis and healthcare institution."
+        },
+        {
+            "label": "Observation",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation",
+            "description": "Measurements or simple observations that can link diagnosis codes and dates within clinical data."
+        },
+        {
+            "label": "OncologyDiagnosis",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis",
+            "description": "Specific class for oncology-related diagnoses, appropriate if diagnosis_code relates to cancers."
+        },
+        {
+            "label": "AdministrativeCase",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase",
+            "description": "Administrative record linking patient cases, organizational context, diagnosis and timestamps."
+        },
+        {
+            "label": "SubjectPseudoIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier",
+            "description": "Identifier class for pseudonymized patient or subject IDs, good for patient_id column linkage."
+        },
+        {
+            "label": "DataProviderInstitute",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+            "description": "Represents the organization providing data or service, links org_code and org_name."
+        },
+        {
+            "label": "TimePattern",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#TimePattern",
+            "description": "Encapsulates time-related data such as created_at, suitable for temporal information integration."
+        },
+        {
+            "label": "Code",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+            "description": "A general coding system concept, applicable to diagnosis_code and other coded attributes."
+        },
+        {
+            "label": "PatientIdentifier",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier",
+            "description": "Identifier for patients, used to link patient_id in the dataset to patient entities."
+        },
+        {
+            "label": "ValueSet",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ValueSet",
+            "description": "A set of controlled vocabulary or codes, potential candidate to represent diagnosis_code semantics."
+        },
+        {
+            "label": "ProblemCondition",
+            "iri": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+            "description": "Represents problems or conditions associated with the patient, connecting diagnosis and clinical context."
+        }
+    ]
+}

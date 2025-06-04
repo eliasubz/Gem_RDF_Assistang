@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "The 'row_id' appears to serve as a unique identifier for each measurement, and using 'hasMeasurementDateTime' aligns with the context of measurement data, although ideally a separate identifier property should be used. Given the options, this path offers a relevant semantic link.",
+            "transformation": "Convert to ISO 8601 dateTime format if necessary, or assign as a string identifier."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' directly correlates with the 'hasPatient' relationship, making this path semantically correct for linking measurements to patients.",
+            "transformation": "Map the patient_id string to the URI of the patient resource, if available, or include as a literal."
+        },
+        {
+            "column_name": "measurement_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 4
+            },
+            "justification": "Measurement code values specify the type or category of measurement, aligning with the 'hasCode' property pointing to a Code entity.",
+            "transformation": "Ensure code values are encoded as literals or linked to corresponding Code resources if available."
+        },
+        {
+            "column_name": "measurement_value",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "The measurement value naturally maps to the 'hasQuantity' property, representing the quantitative result of the measurement.",
+            "transformation": "Convert string values to numeric literals as appropriate, ensuring units are handled separately."
+        },
+        {
+            "column_name": "measurement_unit",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity",
+                "path_id": 14
+            },
+            "justification": "Units specify the measurement's magnitude and are best linked via the quantity's unit attribute or as an annotation.",
+            "transformation": "Map units to appropriate unit resources or include as a literal property of the Quantity."
+        },
+        {
+            "column_name": "measurement_date",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementDateTime",
+                "path_id": 20
+            },
+            "justification": "This column directly corresponds to the 'hasMeasurementDateTime' property, which captures when the measurement was taken.",
+            "transformation": "Format date values as ISO 8601 dateTime strings."
+        }
+    ]
+}

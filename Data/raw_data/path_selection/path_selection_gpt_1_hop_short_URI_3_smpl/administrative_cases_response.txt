@@ -1,0 +1,70 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "predicate": "http://www.w3.org/2002/07/owl#NamedIndividual",
+                "path_id": 0
+            },
+            "justification": "There is no explicit path in the provided ontology paths for a technical row identifier. As such, 'row_id' is best used as the local identifier for the RDF resource representing the ProblemCondition itself, not as a property. This would typically be used to construct the subject URI for each ProblemCondition instance.",
+            "transformation": "Use as the local name/URI fragment for the ProblemCondition instance. E.g., concatenate with a base URI to mint a unique ProblemCondition IRI."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient",
+                "path_id": 1
+            },
+            "justification": "The 'patient_id' column represents the patient associated with the problem condition. Path 1 (hasPatient) directly links ProblemCondition to Patient, which is the intended relationship. No further 2-hop path is available for Patient from the provided list.",
+            "transformation": "Map the patient_id value to an instance of AIDAVA:Patient, minting or matching a URI accordingly."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#Code",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode",
+                "path_id": 5
+            },
+            "justification": "The 'diagnosis_code' is a code that describes the problem condition. Path 5 (hasCode to Code) is the most direct and semantically precise mapping. There is also a path to Terminology (path 6), but unless the code is being mapped to a specific terminology system or includes system metadata, the Code class is the better fit.",
+            "transformation": "Ensure the code value is rendered as a literal or as the identifier of a Code resource as expected by the ontology. If further system info is available, mapping to Terminology (path 6) could be considered."
+        },
+        {
+            "column_name": "created_at",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime",
+                "path_id": 17
+            },
+            "justification": "The 'created_at' column most closely corresponds to the time the record was created. Path 17 (hasRecordDateTime) directly refers to when the ProblemCondition record was made. No 2-hop alternative to dateTime is available in the provided paths.",
+            "transformation": "Convert to xsd:dateTime format if necessary (e.g., from string to ISO 8601 dateTime)."
+        },
+        {
+            "column_name": "org_code",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "The 'org_code' column represents the institution providing the data. Path 8 (hasDataProviderInstitute) is the direct mapping from ProblemCondition to DataProviderInstitute, which is semantically correct. No 2-hop path with finer granularity (e.g., code as part of the Institute resource) is available.",
+            "transformation": "Map org_code to a DataProviderInstitute instance, minting or matching a URI using the code."
+        },
+        {
+            "column_name": "org_name",
+            "path": {
+                "source_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition",
+                "target_entity": "https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute",
+                "predicate": "https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute",
+                "path_id": 8
+            },
+            "justification": "The 'org_name' is the name of the data providing institute, which is captured by the same DataProviderInstitute entity reached by path 8. Since no further direct path for the name is provided, it should be attached as a label or property of the DataProviderInstitute instance created from org_code.",
+            "transformation": "Associate the org_name value (as rdfs:label or similar) with the DataProviderInstitute instance identified by org_code."
+        }
+    ]
+}

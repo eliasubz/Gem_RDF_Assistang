@@ -1,0 +1,67 @@
+{
+    "column_mappings": [
+        {
+            "column_name": "row_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasIdentifier",
+                "path_id": 46
+            },
+            "justification": "'row_id' is a unique identifier for each drug prescription record. Although the ontology does not explicitly list a direct identifier property for DrugPrescription, path 46 provides an identifier at the AdministrativeCase level which is related but not directly suitable. No direct 1-hop identifier property for DrugPrescription is found, so as no alternative is better, we use the administrative case identifier as a proxy. Alternatively, a custom property could be used if available. This is a limitation due to the ontology. ",
+            "transformation": "Convert integer to string and ensure it's URI-safe if used as an identifier."
+        },
+        {
+            "column_name": "patient_id",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/AIDAVA:hasPatient/AIDAVA:hasPatientIdentifier",
+                "path_id": 25
+            },
+            "justification": "The 'patient_id' corresponds directly to a patient identifier. Path 25 leads from DrugPrescription to Patient then to PatientIdentifier, which semantically matches a patient ID. No deeper nested path provides a better semantic match for patient ID.",
+            "transformation": "Use as string literal; ensure no whitespace and consistent casing."
+        },
+        {
+            "column_name": "medication_atc_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDrug/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 48
+            },
+            "justification": "The medication ATC code is best represented as the identifier of the Code associated with the Drug. Path 64/65 lead to Drug then Code, and path 48 specifies the Code's identifier which aligns with ATC code semantics. This is more accurate than mapping directly to Drug or a higher-level code without identifier.",
+            "transformation": "Use as string literal; validate format against ATC code standards."
+        },
+        {
+            "column_name": "diagnosis_code",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasIndicationToStart/sphn:hasCode/sphn:hasIdentifier",
+                "path_id": 81
+            },
+            "justification": "Diagnosis code corresponds to the identifier of the Code related to the IndicationToStart (Diagnosis). Path 81 leads to the Code's identifier under Diagnosis, which semantically fits a diagnosis code. Alternative paths to Intent code or other codes are less relevant.",
+            "transformation": "Use as string literal; ensure code format consistency."
+        },
+        {
+            "column_name": "creation_date",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasDateTime",
+                "path_id": 18
+            },
+            "justification": "'creation_date' best maps to the creation or recording timestamp of the DrugPrescription, which is represented by hasDateTime (path 18). No more specific date property linked to creation is given, so this is the optimal choice over other dateTimes related to administration or administrative case.",
+            "transformation": "Convert string 'YYYY-MM-DD HH:mm:ss' to xsd:dateTime format with 'T' separator (e.g., '2022-09-08T00:00:00')."
+        },
+        {
+            "column_name": "times_a_day",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasFrequency/sphn:hasValue",
+                "path_id": 76
+            },
+            "justification": "The frequency of administration (times a day) corresponds to the numeric value of the Quantity representing frequency. Path 76 leads to hasValue of hasFrequency Quantity, which matches the concept. Longer paths including units or comparator are not more semantically precise for the count itself.",
+            "transformation": "Convert numeric value to xsd:double or integer as appropriate."
+        },
+        {
+            "column_name": "dosage",
+            "path": {
+                "full_path": "https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription/sphn:hasQuantity/sphn:hasValue",
+                "path_id": 97
+            },
+            "justification": "Dosage is best modeled as the value of the Quantity related to the DrugPrescription's quantity. Path 15 leads to Quantity, and path 97 accesses its numeric value. Although dosage may include unit or form (e.g., 'capsule'), the given example is a string; thus, value is best for dosage amount. No better nested path provides a more accurate dosage representation.",
+            "transformation": "Extract numeric part if possible; otherwise store as string literal."
+        }
+    ]
+}
