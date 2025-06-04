@@ -14,13 +14,13 @@ Given a CSV dataset and a set of rdf_types, choose 15 candidates to act as a mai
 
 | Column Name | Example Values |
 |-------------|----------------|
-| row_id | 5, 2, 4 |
-| patient_id | PAT00001, PAT00003, PAT00004 |
-| medication_atc_code | J01AA01, C03DA01, R03AC02 |
-| diagnosis_code | 345678, 456789, 789012 |
-| creation_date | 2022-09-08 00:00:00, 2021-09-12 00:00:00, 2021-04-25 00:00:00 |
-| times_a_day | 5, 3, 4 |
-| dosage | 2 teaspoon, 1 ampule, 1 capsule |
+| row_id | 1, 2, 3 |
+| patient_id | PAT00001, PAT00004, PAT00003 |
+| medication_atc_code | R03AC02, C03DA01, J01AA01 |
+| diagnosis_code | 456789, 012345, 345678 |
+| creation_date | 2022-09-08 00:00:00, 2021-01-01 00:00:00, 2021-04-25 00:00:00 |
+| times_a_day | 5, 4, 3 |
+| dosage | 2 drop, 1 ampule, 1 capsule |
 
 
 2. Possible Classes:

@@ -15,10 +15,10 @@ Given a CSV dataset and a set of rdf_types, choose 15 candidates to act as a mai
 | Column Name | Example Values |
 |-------------|----------------|
 | patient_id | 129342KW |
-| id | L3328, L3326, L3327 |
-| 0467 | 788479004, 1148504005, 780836005 |
-| 3651 | 100, 60, 145 |
-| 2287 | gperdL, meqperL, mmolperL |
+| id | L3329, L3327, L3331 |
+| 0467 | 780834008, 416766001, 788479004 |
+| 3651 | 145, 17.2, 200 |
+| 2287 | mgperdL, mmolperL, gperdL |
 | 6935 | 2023-08-05T12:00:00.0000 |
 
 

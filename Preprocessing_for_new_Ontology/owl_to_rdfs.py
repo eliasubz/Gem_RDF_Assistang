@@ -1,5 +1,8 @@
 import re
 
+# Preprocessing for ontology
+# This script breaks up OWL strucutres in ontologies
+
 
 def flatten_union_axioms(input_file, output_file):
     with open(input_file, "r", encoding="utf-8") as f:

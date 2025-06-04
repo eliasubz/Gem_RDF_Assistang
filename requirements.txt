@@ -1,8 +1,0 @@
-fastembed>=0.5.1
-kink>=0.8.1
-python-dotenv>=1.0.1
-qdrant-client>=1.13.0
-sentence-transformers>=3.3.1
-genai>=2.0.0
-numpy>=2.0.0
-fastembed 

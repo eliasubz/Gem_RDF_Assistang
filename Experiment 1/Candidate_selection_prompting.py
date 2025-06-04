@@ -16,24 +16,22 @@ LLM_API_KEY = os.getenv("POPENAI_API_KEY")
 
 # === Configuration ===
 # Folder for curated dataset
+# 1. Choose Input folder
 INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\curated_dataset"
 )
 INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\combined"
 )
-# Raw data
-# INPUT_CSV_FOLDER = (
-#     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\raw_data"
-# )
-# Change this depending on the model
+# 2. Choose Experiment
 experiment = "no_refinement\\nano"
 experiment = "mini_no_refinement"
 experiment = "nano_no_refinement"
 experiment = "gpt_no_refinement"
 experiment = "mini_no_refinement"
-SEND_TO_API = False  # Change to True if you want to get responses from OpenAI
-# INPUT_CSV_FOLDER = r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\raw_data"ENTITY_FILE = "working_memory/clean_entities.txt"
+# 3. Review (False) old experiments or conduct (True) new ones
+SEND_TO_API = False
+
 
 CANDIDATE_CREATION_RESPONSES_FOLDER = os.path.join(
     INPUT_CSV_FOLDER, "selection_exp"  # + experiment
@@ -46,8 +44,6 @@ OUTPUT_FOLDER = os.path.join(CANDIDATE_CREATION_RESPONSES_FOLDER, experiment)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 print(f"Output will be saved to: {OUTPUT_FOLDER}\n")
 
-
-# GROUND_TRUTH_PATH = "curated_dataset/solution"
 
 RDF_TTL_PATH = "aidava-sphn-flat.ttl"
 TOP_K_LIST = [5, 10, 15]

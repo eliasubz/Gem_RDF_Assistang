@@ -28,13 +28,15 @@ class Spanning_entity_output(BaseModel):
     spanning_entity_candidates: list[entity]
 
 
-# === Prerequisite ===
-# base/solution folder that holds the correct entity
+#
 
 # === Configuration ===
+# 1. Choose one of the experiments
 experiment = "\\gpt"
 experiment = "\\mini"
 experiment = "\\nano"
+
+# 2. Choose one of the CSV folders
 # experiment = ""
 INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\raw_data"
@@ -45,11 +47,12 @@ INPUT_CSV_FOLDER = (
 INPUT_CSV_FOLDER = (
     r"C:\Users\elias\Documents\ANI\Bachelor_Baby\llm_assistant\Data\combined"
 )
-# Change this depending on the model
+# 3. Only Change this if you want to make a new experiment
 OUTPUT_FOLDER = os.path.join(
     INPUT_CSV_FOLDER, "main_entity_candidate_creation" + experiment
 )
-SEND_TO_API = True  # Change to True if you want to get responses from OpenAI
+# 4. Set False if you want to review experiments and True if you want to make new ones
+SEND_TO_API = False
 ENTITY_FILE = "working_memory/clean_entities.txt"
 
 

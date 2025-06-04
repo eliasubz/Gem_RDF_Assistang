@@ -33,12 +33,12 @@ Given a CSV dataset and a set of `rdf_types`, identify and rank 15 candidate ent
 
 | Column Name | Example Values |
 |-------------|----------------|
-| row_id | 5, 4, 6 |
-| patient_id | PAT00004, PAT00006, PAT00003 |
+| row_id | 1, 2, 3 |
+| patient_id | PAT00006, PAT00004, PAT00005 |
 | diagnosis_code | 901234, 345678, 567890 |
-| created_at | 2022-11-27 00:00:00, 2023-04-30 00:00:00, 2022-12-29 00:00:00 |
-| org_code | ORG005, ORG001, ORG002 |
-| org_name | Care Center, Health Clinic A, Green Valley Hospital |
+| created_at | 2023-04-30 00:00:00, 2022-12-29 00:00:00, 2021-04-24 00:00:00 |
+| org_code | ORG001, ORG005, ORG002 |
+| org_name | Green Valley Hospital, Care Center, Health Clinic A |
 
 2. URIs of Candidate classes you can choose from:
 
@@ -47,11 +47,6 @@ Given a CSV dataset and a set of `rdf_types`, identify and rank 15 candidate ent
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
 - https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
-- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
-- https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
-- https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination
-- https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest
-- https://biomedit.ch/rdf/sphn-ontology/sphn#DataRelease
 
 
 

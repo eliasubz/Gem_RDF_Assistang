@@ -34,9 +34,9 @@ Given a CSV dataset and a set of `rdf_types`, identify and rank 15 candidate ent
 | Column Name | Example Values |
 |-------------|----------------|
 | patient_id | 129342KW |
-| id | L3380, L3375, L3377 |
-| code_snomed | Chronic obstructive pulmonary disease, Cerebrovascular accident, Atrial fibrillation |
-| date | 2023-08-08T12:27:23.0000, 2023-08-04T08:13:34.0000, 2023-08-07T20:05:17.0000 |
+| id | L3381, L3380, L3375 |
+| code_snomed | Smoker, Cerebrovascular accident, Heart failure |
+| date | 2023-08-12T16:20:59.0000, 2023-08-14T11:59:59.0000, 2023-08-08T12:27:23.0000 |
 
 2. URIs of Candidate classes you can choose from:
 

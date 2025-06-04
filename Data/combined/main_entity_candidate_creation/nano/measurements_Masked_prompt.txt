@@ -14,12 +14,12 @@ Given a CSV dataset and a set of rdf_types, choose 15 candidates to act as a mai
 
 | Column Name | Example Values |
 |-------------|----------------|
-| row_id | 3, 2, 4 |
-| patient_id | PAT00003, PAT00001, PAT00004 |
-| 4578 | R50.9, E11.9, R00.0 |
-| 9806 | 81.12, 56.48, 78.52 |
-| 7945 | /minn, mg/dL, mm[Hg] |
-| 7795 | 2025-02-19, 2025-01-27, 2025-02-03 |
+| row_id | 1, 2, 3 |
+| patient_id | PAT00001, PAT00003, PAT00002 |
+| 4578 | Z99.89, E11.9, R50.9 |
+| 9806 | 56.48, 81.12, 78.52 |
+| 7945 | /minn, mm[Hg], mg/dL |
+| 7795 | 2025-02-19, 2025-02-03, 2025-01-27 |
 
 
 2. Possible Classes:

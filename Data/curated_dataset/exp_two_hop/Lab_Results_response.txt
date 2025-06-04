@@ -10,7 +10,7 @@
             },
             "justification": "This column appears to contain patient identifiers, which logically map to the Patient entity through the 'hasPatient' relationship from Measurement.",
             "transformation": "No transformation needed; value is a string identifier."
-        },3945
+        },
         {
             "column_name": "id",
             "path": {
